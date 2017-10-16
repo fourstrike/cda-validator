@@ -1,0 +1,405 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../../Stylesheet/cda.xsl"?>
+<!-- CDA Form Definition Document for Questionnaires/Surveys -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../Schema/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+	xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc" classCode="DOCCLIN" moodCode="EVN">
+	<realmCode code="DK"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- MedCom Danish QFDD-profile OID -->
+	<templateId root="1.2.208.184.12.1"/>
+	<!-- The next templateId, conforms the Questinnaere Form Definition Document-level -->
+	<templateId root="1.2.208.184.12.1.1.1"/>
+	<id extension="gg2386d0-79ea-11e3-981f-0800200c9a66" root="1.2.208.184"
+		assigningAuthorityName="MedCom"/>
+	<!-- This code is LOINC -->
+	<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="74468-0"
+		displayName="Form Definition Document"/>
+	<title>Kansas City Cardiomyopathy Questionnaire (KCCQ-12)</title>
+	<sdtc:statusCode code="new"/>
+	<effectiveTime value="20150429100025+0100"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="en-US"/>
+	<versionNumber value="4712"/>
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+		<patientRole classCode="PAT">
+			<id nullFlavor="NI"/>
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT" contextControlCode="OP">
+		<time value="20150429100025+0100"/>
+		<assignedAuthor classCode="ASSIGNED">
+			<!-- This is the identfication of the organization, we don't use the personal level identification-->
+			<id extension="310541000016007" root="1.2.208.176.1.1" assigningAuthorityName="SOR"/>
+			<addr use="WP">
+				<streetAddressLine>Hjertemedicinsk afdeling B</streetAddressLine>
+				<streetAddressLine>Valdemarsgade 53</streetAddressLine>
+				<postalCode>5700</postalCode>
+				<city>Svendborg</city>
+				<country>Danmark</country>
+			</addr>
+			<telecom value="tel:65112233" use="WP"/>
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>Peter</given>
+					<family>Petersen</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id extension="310541000016007" root="1.2.208.176.1.1" assigningAuthorityName="SOR"/>
+				<name>Odense Universitetshospital - Svendborg Sygehus</name>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+
+	<custodian typeCode="CST">
+		<assignedCustodian classCode="ASSIGNED">
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id extension="310541000016007" root="1.2.208.176.1.1" assigningAuthorityName="SOR"/>
+				<name>Odense Universitetshospital - Svendborg Sygehus</name>
+				<telecom value="tel:65112233" use="WP"/>
+				<addr use="WP">
+					<streetAddressLine>Hjertemedicinsk afdeling B</streetAddressLine>
+					<streetAddressLine>Valdemarsgade 53</streetAddressLine>
+					<postalCode>5700</postalCode>
+					<city>Svendborg</city>
+					<country>Danmark</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+
+	<component typeCode="COMP" contextConductionInd="true">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+					<code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Section 1</title>
+					<text>1. Heart failure affects different people in different ways. Some feel shortness of breath while others feel fatigue. Please<br/>
+				    indicate how much you are limited by heart failure (shortness of breath or fatigue) in your ability to do the following<br/>
+				    activities over the past 2 weeks.</text>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- Question Organizer template -->
+							<templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+							<statusCode code="COMPLETED"/>
+							<!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="1"/>
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+									<id extension="ob1" root="Some-root-OID"
+										assigningAuthorityName="Some-Assigning-Authority-Name"/>
+									<code code="q1" codeSystem="Some-Question-OID"
+										displayName="Some-Display-Name"
+										codeSystemName="Some-CodeSystem-Name">
+										<originalText>a. Showering/bathing</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="Some-Question-OID"
+										displayName="Extremely Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A2" codeSystem="Some-Question-OID"
+										displayName="Quite a bit Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A3" codeSystem="Some-Question-OID"
+										displayName="Moderately Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A4" codeSystem="Some-Question-OID"
+										displayName="Slightly Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A5" codeSystem="Some-Question-OID"
+										displayName="Not at all Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A6" codeSystem="Some-Question-OID"
+										displayName="Limited for other reasons or did not do the activity"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="2"/>
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Questions Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+									<id extension="ob2" root="Some-root-OID"
+										assigningAuthorityName="Some-Assigning-Authority-Name"/>
+									<code code="q2" codeSystem="Some-Question-OID"
+										displayName="Some-Display-Name"
+										codeSystemName="Some-CodeSystem-Name">
+										<originalText>b. Walking 1 block on level ground</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="Some-Question-OID"
+										displayName="Extremely Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A2" codeSystem="Some-Question-OID"
+										displayName="Quite a bit Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A3" codeSystem="Some-Question-OID"
+										displayName="Moderately Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A4" codeSystem="Some-Question-OID"
+										displayName="Slightly Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A5" codeSystem="Some-Question-OID"
+										displayName="Not at all Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A6" codeSystem="Some-Question-OID"
+										displayName="Limited for other reasons or did not do the activity"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="3"/>
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Questions Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+									<id extension="ob3" root="Some-root-OID"
+										assigningAuthorityName="Some-Assigning-Authority-Name"/>
+									<code code="q3" codeSystem="Some-Question-OID"
+										displayName="Some-Display-Name"
+										codeSystemName="Some-CodeSystem-Name">
+										<originalText>c. Hurrying or jogging (as if to catch a bus)</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="Some-Question-OID"
+										displayName="Extremely Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A2" codeSystem="Some-Question-OID"
+										displayName="Quite a bit Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A3" codeSystem="Some-Question-OID"
+										displayName="Moderately Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A4" codeSystem="Some-Question-OID"
+										displayName="Slightly Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A5" codeSystem="Some-Question-OID"
+										displayName="Not at all Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A6" codeSystem="Some-Question-OID"
+										displayName="Limited for other reasons or did not do the activity"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+
+
+
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+					<code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Section 2</title>
+					<text>2. How much does your heart failure affect your lifestyle? <br/> Please indicate how your heart failure may have limited your
+						participation in the following activities over the past 2 weeks</text>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- Question Organizer template -->
+							<templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+							<statusCode code="COMPLETED"/>
+							<!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="1"/>
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+									<id extension="ob9" root="Some-root-OID"
+										assigningAuthorityName="Some-Assigning-Authority-Name"/>
+									<code code="q9" codeSystem="Some-Question-OID"
+										displayName="Some-Display-Name"
+										codeSystemName="Some-CodeSystem-Name">
+										<originalText>a. Hobbies, recreational activities</originalText>
+									</code>
+									<value xsi:type="CE" code="G1" codeSystem="Some-Question-OID"
+										displayName="Severely	Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="G2" codeSystem="Some-Question-OID"
+										displayName="Limited quite a bit"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A3" codeSystem="Some-Question-OID"
+										displayName="Moderately Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A4" codeSystem="Some-Question-OID"
+										displayName="Slightly Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="G3" codeSystem="Some-Question-OID"
+										displayName="Did not limit at all"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="G4" codeSystem="Some-Question-OID"
+										displayName="Does not apply or did not do for	other reasons"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="2"/>
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+									<id extension="ob10" root="Some-root-OID"
+										assigningAuthorityName="Some-Assigning-Authority-Name"/>
+									<code code="q10" codeSystem="Some-Question-OID"
+										displayName="Some-Display-Name"
+										codeSystemName="Some-CodeSystem-Name">
+										<originalText>b. Working or doing household chores</originalText>
+									</code>
+									<value xsi:type="CE" code="G1" codeSystem="Some-Question-OID"
+										displayName="Severely	Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="G2" codeSystem="Some-Question-OID"
+										displayName="Limited quite a bit"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A3" codeSystem="Some-Question-OID"
+										displayName="Moderately Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A4" codeSystem="Some-Question-OID"
+										displayName="Slightly Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="G3" codeSystem="Some-Question-OID"
+										displayName="Did not limit at all"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="G4" codeSystem="Some-Question-OID"
+										displayName="Does not apply or did not do for	other reasons"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="3"/>
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+									<id extension="ob11" root="Some-root-OID"
+										assigningAuthorityName="Some-Assigning-Authority-Name"/>
+									<code code="q11" codeSystem="Some-Question-OID"
+										displayName="Some-Display-Name"
+										codeSystemName="Some-CodeSystem-Name">
+										<originalText>c. Visiting family or	friends out of your home</originalText>
+									</code>
+									<value xsi:type="CE" code="G1" codeSystem="Some-Question-OID"
+										displayName="Severely	Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="G2" codeSystem="Some-Question-OID"
+										displayName="Limited quite a bit"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A3" codeSystem="Some-Question-OID"
+										displayName="Moderately Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="A4" codeSystem="Some-Question-OID"
+										displayName="Slightly Limited"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="G3" codeSystem="Some-Question-OID"
+										displayName="Did not limit at all"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<value xsi:type="CE" code="G4" codeSystem="Some-Question-OID"
+										displayName="Does not apply or did not do for other reasons"
+										codeSystemName="Some-CodeSystem-Name"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+
+			<!-- This component defines the Copyright section -->
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!--templateID for the Copyright Section-->
+					<templateId root="2.16.840.1.113883.10.20.32.2.2"/>
+					<title>Copyright section</title>
+					<languageCode code="en-US"/>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<observation classCode="OBS" moodCode="EVN">
+							<!--templateID for the Copyright Pattern Observation-->
+							<templateId root="2.16.840.1.113883.10.20.32.4.21"/>
+							<code code="COPY" codeSystem="2.16.840.1.113883.6.1"
+								displayName="Code for Copyright" codeSystemName="LOINC"/>
+							<value xsi:type="ST">Copyright text must be written here</value>
+						</observation>
+					</entry>
+				</section>
+			</component>
+
+		</structuredBody>
+	</component>
+</ClinicalDocument>

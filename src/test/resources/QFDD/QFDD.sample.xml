@@ -1,0 +1,394 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../../Stylesheet/cda.xsl"?>
+<!-- CDA Form Definition Document for Questionnaires/Surveys -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:sdtc="urn:hl7-org:sdtc">
+	<realmCode code="UV" />
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+	<!-- General Form Definition Header Template -->
+	<templateId root="2.16.840.1.113883.10.20.32" />
+	<!-- *** Note: The next templateId, code and title will differ depending 
+		on what type of document is being sent. *** -->
+	<!-- conforms to the document specific requirements -->
+	<templateId root="2.16.840.1.113883.10.20.32.1.1" />
+	<id extension="aa127024.1" root="2.16.840.1.113883.3.1817" />
+	<!-- code should be LOINC, but could come from a different code system -->
+	<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+		code="x.x.x.x" displayName="Form Definition Document" />
+	<title>Remote Patient Monitoring Survey</title>
+	<sdtc:statusCode code="NEW" />
+	<effectiveTime value="20130328" />
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
+	<languageCode code="en-US" />
+	<recordTarget>
+		<patientRole classCode="PAT">
+			<id extension="2512484916" root="1.2.208.176.1.2"
+				assigningAuthorityName="CPR" />
+			<addr use="H">
+				<streetAddressLine>Skovvejen 12</streetAddressLine>
+				<streetAddressLine>Landet</streetAddressLine>
+				<postalCode>5700</postalCode>
+				<city>Svendborg</city>
+				<country>Danmark</country>
+			</addr>
+			<telecom value="tel:65123456" use="H" />
+			<telecom value="mailto:nab@udkantsdanmark.dk" use="WP" />
+			<patient classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>Nancy</given>
+					<given>Ann</given>
+					<family>Berggren</family>
+				</name>
+				<administrativeGenderCode code="F"
+					codeSystem="2.16.840.1.113883.5.1" />
+				<birthTime value="19481225000000+0000" />
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20110624" />
+		<assignedAuthor>
+			<id root="2.16.840.1.113883.3.1817.1.6" extension="1" />
+			<addr use="WP">
+				<streetAddressLine>3855 SW 153rd</streetAddressLine>
+				<city>Drive Beavertonn</city>
+				<state>Oregon</state>
+				<postalCode>97006</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(913)-207-8226" use="WP" />
+			<assignedPerson>
+				<name>Continua Health Alliance Staff</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="2.16.840.1.113883.3.1817.1.6" extension="2" />
+				<name>Continua Health Alliance</name>
+				<telecom value="tel:(913)-207-8226" use="WP" />
+				<addr use="WP">
+					<streetAddressLine>3855 SW 153rd</streetAddressLine>
+					<city>Drive Beavertonn</city>
+					<state>Oregon</state>
+					<postalCode>97006</postalCode>
+					<country>USA</country>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.3.1817.1.6" extension="1" />
+				<name>Continua Health Alliance</name>
+				<telecom value="tel:(913)-207-8226" use="WP" />
+				<addr use="WP">
+					<streetAddressLine>3855 SW 153rd</streetAddressLine>
+					<city>Drive Beavertonn</city>
+					<state>Oregon</state>
+					<postalCode>97006</postalCode>
+					<country>USA</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.32.2.1" />
+					<id extension="aa127024.aa127024-dpquiz" root="2.16.840.1.113883.3.1817.1.6" />
+					<code code="74468-0" codeSystem="2.16.840.1.113883.6.1" />
+					<title>Hello %First Name% please answer the following questions</title>
+					<text></text>
+					<entry typeCode="DRIV">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- Question Organizer template -->
+							<templateId root="2.16.840.1.113883.10.20.32.4.1" />
+							<statusCode code="COMPLETED" />
+							<!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+							<component>
+								<sequenceNumber value="1" />
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern -->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8" />
+									<id extension="ob1" root="2.16.840.1.113883.3.1817.1.6" />
+									<code code="q1" codeSystem="Continua-Q-OID">
+										<originalText>Are there any new circumstances that influence
+											your mental well-being?</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="Continua-ANS-OID"
+										displayName="Yes" />
+									<value xsi:type="CE" code="A2" codeSystem="Continua-ANS-OID"
+										displayName="No" />
+									<entryRelationship typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation -->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20" />
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1" />
+											<value xsi:type="IVL_INT">
+												<!--minimum options -->
+												<low value="1" />
+												<!--maximum options -->
+												<high value="1" />
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+							<component>
+								<sequenceNumber value="2" />
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Questions Pattern -->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8" />
+									<id extension="ob2" root="2.16.840.1.113883.3.1817.1.6" />
+									<code code="q2" codeSystem="Continua-Q-OID">
+										<originalText>Select mental conditions that where applicable
+											at any moment in time last week.</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="Continua-ANS-OID"
+										displayName="Depressed" />
+									<value xsi:type="CE" code="A2" codeSystem="Continua-ANS-OID"
+										displayName="Cheerful" />
+									<value xsi:type="CE" code="A3" codeSystem="Continua-ANS-OID"
+										displayName="Tired" />
+									<entryRelationship typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation -->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20" />
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1" />
+											<value xsi:type="IVL_INT">
+												<!--minimum options -->
+												<low value="1" />
+												<!--maximum options -->
+												<high value="3" />
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+							<component>
+								<sequenceNumber value="3" />
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Text Question Pattern -->
+									<templateId root="2.16.840.1.113883.10.20.32.4.9" />
+									<id extension="ob3" root="2.16.840.1.113883.3.1817.1.6" />
+									<code code="q3" codeSystem="Continua-Q-OID">
+										<originalText>What are the new circumstances that influence
+											your mental well-being?</originalText>
+									</code>
+								</observation>
+							</component>
+							<component>
+								<sequenceNumber value="4" />
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Numeric Question Pattern -->
+									<templateId root="2.16.840.1.113883.10.20.32.4.7" />
+									<id extension="ob4" root="2.16.840.1.113883.3.1817.1.6" />
+									<code code="q4" codeSystem="Continua-Q-OID">
+										<originalText>How many hours did you sleep last night?</originalText>
+									</code>
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="DEF">
+											<!--templateID for the Question Feedback Pattern -->
+											<templateId root="2.16.840.1.113883.10.20.32.4.6" />
+											<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+												code="74466-4" displayName="Feedback to user post question response Question" />
+											<!--this should be value element -->
+											<value xsi:type="ST">Don’t take coffee just before going to
+												bed</value>
+											<precondition typeCode="PRCN">
+												<templateId root="2.16.840.1.113883.10.20.32.4.4" />
+												<criterion classCode="OBS" moodCode="EVN.CRT">
+													<templateId root="2.16.840.1.113883.10.20.32.4.3" />
+													<code code="q4" codeSystem="CONTINUA-Q-OID" />
+													<value xsi:type="IVL_INT">
+														<low value="0" />
+														<high value="6" />
+													</value>
+												</criterion>
+											</precondition>
+										</observation>
+									</entryRelationship>
+									<referenceRange typeCode="REFV">
+										<!--templateID for the Question Reference Range Pattern -->
+										<templateId root="2.16.840.1.113883.10.20.32.4.5" />
+										<observationRange>
+											<value xsi:type="IVL_INT">
+												<low value="0" />
+												<high value="24" />
+											</value>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+							<component>
+								<sequenceNumber value="5" />
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern -->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8" />
+									<!--templateID for the Discrete Slider Question Pattern -->
+									<templateId root="2.16.840.1.113883.10.20.33.4.11" />
+									<id extension="ob5" root="2.16.840.1.113883.3.1817.1.6" />
+									<code code="q5" codeSystem="Continua-Q-OID">
+										<originalText>How do you rate the side effects of your
+											medicine</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="Continua-ANS-OID"
+										displayName="No" />
+									<value xsi:type="CE" code="A2" codeSystem="Continua-ANS-OID"
+										displayName="Minor" />
+									<value xsi:type="CE" code="A3" codeSystem="Continua-ANS-OID"
+										displayName="Considerable" />
+									<value xsi:type="CE" code="A4" codeSystem="Continua-ANS-OID"
+										displayName="Severe" />
+									<entryRelationship typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation -->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20" />
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1" />
+											<value xsi:type="IVL_INT">
+												<!--minimum options -->
+												<low value="0" />
+												<!--maximum options -->
+												<high value="1" />
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+							<component>
+								<sequenceNumber value="6" />
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Text Question Pattern -->
+									<templateId root="2.16.840.1.113883.10.20.32.4.9" />
+									<id extension="ob6" root="2.16.840.1.113883.3.1817.1.6" />
+									<code code="q6" codeSystem="CONTINUA-Q-OID">
+										<originalText>What are the new circumstances that influence
+											your mental well-being?</originalText>
+									</code>
+								</observation>
+							</component>
+							<component>
+								<sequenceNumber value="7" />
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern -->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8" />
+									<id extension="ob7" root="2.16.840.1.113883.3.1817.1.6" />
+									<code code="q7" codeSystem="Continua-OID">
+										<originalText>Your last pulse value was quite high. Is there
+											anything that could explain this high value?</originalText>
+									</code>
+									<value xsi:type="CE" code="C1" codeSystem="Continua-Q-OID"
+										displayName="Yes, probably" />
+									<value xsi:type="CE" code="C2" codeSystem="Continua-Q-OID"
+										displayName="No, there was nothing unusual" />
+									<entryRelationship typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation -->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20" />
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1" />
+											<value xsi:type="IVL_INT">
+												<!--minimum options -->
+												<low value="0" />
+												<!--maximum options -->
+												<high value="1" />
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+							<component>
+								<sequenceNumber value="8" />
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern -->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8" />
+									<id extension="ob8" root="2.16.840.1.113883.3.1817.1.6" />
+									<code code="q8" codeSystem="Continua-Q-OID">
+										<originalText>What could explain your high pulse?</originalText>
+									</code>
+									<value xsi:type="CE" code="GUID1" codeSystem="Continua-ANS-OID"
+										displayName="I had a stressful day" />
+									<value xsi:type="CE" code="GUID2" codeSystem="Continua-ANS-OID"
+										displayName="I couldn't take my medication" />
+									<value xsi:type="CE" code="GUID3" codeSystem="Continua-ANS-OID"
+										displayName="I had some physical excercise before" />
+									<value xsi:type="CE" code="GUID4" codeSystem="Continua-ANS-OID"
+										displayName="I have been drinking more than usual" />
+									<value xsi:type="CE" code="GUID5" codeSystem="Continua-ANS-OID"
+										displayName="Another reason…" />
+									<entryRelationship typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation -->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20" />
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1" />
+											<value xsi:type="IVL_INT">
+												<!--minimum options -->
+												<low value="1" />
+												<!--maximum options -->
+												<high value="5" />
+											</value>
+										</observation>
+									</entryRelationship>
+									<!--Precondition for asking this question. Ask this question only 
+										if the answer to question q7 is "C1". -->
+									<precondition typeCode="PRCN">
+										<templateId root="2.16.840.1.113883.10.20.32.4.4" />
+										<criterion classCode="OBS" moodCode="EVN.CRT">
+											<templateId root="2.16.840.1.113883.10.20.32.4.3" />
+											<code code="q7" codeSystem="CONTINUA-Q-OID" />
+											<value xsi:type="CE" code="C1" codeSystem="CONTINUA-ANS-OID" />
+										</criterion>
+									</precondition>
+								</observation>
+							</component>
+							<component>
+								<sequenceNumber value="9" />
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern -->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8" />
+									<id extension="ob9" root="2.16.840.1.113883.3.1817.1.6" />
+									<code code="q9" codeSystem="Continua-OID">
+										<originalText>How well do you tolerate the medication
+											prescribed by your care manager?</originalText>
+									</code>
+									<value xsi:type="CE" code="GUID6" codeSystem="Continua-ANS-OID"
+										displayName="Very good" />
+									<value xsi:type="CE" code="GUID7" codeSystem="Continua-ANS-OID"
+										displayName="Good" />
+									<value xsi:type="CE" code="GUID8" codeSystem="Continua-ANS-OID"
+										displayName="Average" />
+									<value xsi:type="CE" code="GUID9" codeSystem="Continua-ANS-OID"
+										displayName="Bad" />
+									<value xsi:type="CE" code="GUID10" codeSystem="Continua-ANS-OID"
+										displayName="Very Bad" />
+									<entryRelationship typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation -->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20" />
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1" />
+											<value xsi:type="IVL_INT">
+												<!--minimum options -->
+												<low value="1" />
+												<!--maximum options -->
+												<high value="1" />
+											</value>
+										</observation>
+									</entryRelationship>
+									<!--Precondition for asking this question. Ask this question only 
+										if the answer to question q7 is "C2". -->
+									<precondition typeCode="PRCN">
+										<templateId root="2.16.840.1.113883.10.20.32.4.4" />
+										<criterion classCode="OBS" moodCode="EVN.CRT">
+											<templateId root="2.16.840.1.113883.10.20.32.4.3" />
+											<code code="q7" codeSystem="CONTINUA-Q-OID" />
+											<value xsi:type="CE" code="C2" codeSystem="CONTINUA-ANS-OID" />
+										</criterion>
+									</precondition>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

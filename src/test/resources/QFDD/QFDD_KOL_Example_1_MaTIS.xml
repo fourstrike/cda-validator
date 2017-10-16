@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CDA Form Definition Document for Questionnaires/Surveys -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:hl7-org:v3 ../../Schema/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+ xmlns:sdtc="urn:hl7-org:sdtc" xmlns:voc="urn:hl7-org:v3/voc" classCode="DOCCLIN" moodCode="EVN">
+	<realmCode code="UV"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- MedCom Danish QFDD-profile OID -->
+	<templateId root="1.2.208.184.12.1"/>
+	<!-- The next templateId, indicates constraints at the Questinnaere Form Definition Document-level -->
+	<templateId root="1.2.208.184.12.1.1.1"/>
+	<id extension="c8f1acf0-2e28-11e6-bdf4-0800200c9a66" root="1.2.208.184"
+		assigningAuthorityName="MedCom"/>
+	<!-- This code is LOINC -->
+	<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="74468-0"
+		displayName="Questionnaire Form Definition Document"/>
+	<title>KOL spørgeskema</title>
+	<sdtc:statusCode code="NEW"/>
+	<effectiveTime value="20160609123030+0200"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="da-DK"/>
+	<recordTarget>
+		<patientRole nullFlavor="NI">
+			<id nullFlavor="NI"/>
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT" contextControlCode="OP">
+		<time value="20160609120130+0200"/>
+		<assignedAuthor classCode="ASSIGNED">
+			<!-- This is the identfication of the organization, we don't use the personal level identification-->
+			<id extension="368061000016003" root="1.2.208.176.1.1" assigningAuthorityName="SOR"/>
+			<addr use="WP">
+				<streetAddressLine>Lungemedicinsk afdeling</streetAddressLine>
+				<streetAddressLine>Mølleparkvej 4</streetAddressLine>
+				<postalCode>9000</postalCode>
+				<city>Aalborg</city>
+				<country>Danmark</country>
+			</addr>
+			<telecom value="tel:97664800" use="WP"/>
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>Anders</given>
+					<family>Andersen</family>
+				</name>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id extension="368061000016003" root="1.2.208.176.1.1" assigningAuthorityName="SOR"/>
+				<name>Aalborg Universitetshospital</name>
+				<telecom nullFlavor="NI"/>
+				<addr use="WP">
+					<streetAddressLine nullFlavor="NI"/>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+
+	<custodian typeCode="CST">
+		<assignedCustodian classCode="ASSIGNED">
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id extension="368061000016003" root="1.2.208.176.1.1" assigningAuthorityName="SOR"/>
+				<name>Aalborg Universitetshospital</name>
+				<telecom value="tel:97664800" use="WP"/>
+				<addr use="WP">
+					<streetAddressLine>Lungemedicinsk afdeling</streetAddressLine>
+					<streetAddressLine>Mølleparkvej 4</streetAddressLine>
+					<postalCode>9000</postalCode>
+					<city>Aalborg</city>
+					<country>Danmark</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+
+	<component typeCode="COMP" contextConductionInd="true">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<!-- This component defines the introduction to the questionnaere. It has no Entry element, hence it is information only -->
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!--templateID for Section-->
+					<templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+					<title>Vejledning</title>
+					<text>I forbindelse med dine netop udførte målinger skal vi bede dig besvare følgende spørgsmål.</text>
+					<languageCode code="da-DK"/>
+				</section>
+			</component>
+
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+					<code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Spørgsmål 1</title>
+					<text>Spørgsmål 1</text>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- Question Organizer template -->
+							<templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+							<statusCode code="COMPLETED"/>
+							<!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="1"/>
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+									<id extension="d5fff265-4afe-47c1-909b-53ee0b7458f9" root="1.2.208.184"
+										assigningAuthorityName="MedCom"/>
+									<code code="q10-100" codeSystem="1.2.208.184.100.2"
+										displayName="Har du taget antibiotika siden sidste måling? (Ja/Nej)"
+										codeSystemName="MedCom Prompt Table">
+										<originalText>Har du taget antibiotika siden sidste måling? (Ja/Nej)</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="1.2.208.184.100.2"
+										displayName="Ja"
+										codeSystemName="MedCom Prompt Table"/>
+									<value xsi:type="CE" code="A2" codeSystem="1.2.208.184.100.2"
+										displayName="Nej"
+										codeSystemName="MedCom Prompt Table"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+			
+			<!-- This component shows the use of precondition - Only ask the next qustion if Yes was answered to the previous one -->
+			
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+					<code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Spørgsmål 1a.</title>
+					<text>Spørgsmål 1a.</text>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- Question Organizer template -->
+							<templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+							<statusCode code="COMPLETED"/>
+							<!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="2"/>
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+									<id extension="e7fe98dd-2b01-47f8-a44f-4d969ca1f5d3" root="1.2.208.184"
+										assigningAuthorityName="MedCom"/>
+									<code code="q10-101" codeSystem="1.2.208.184.100.2"
+										displayName="Var brug af antibiotika pga. forværring i KOL? (Ja/Nej)"
+										codeSystemName="MedCom Prompt Table">
+										<originalText>Var brug af antibiotika pga. forværring i KOL? (Ja/Nej)</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="1.2.208.184.100.2"
+										displayName="Ja"
+										codeSystemName="MedCom Prompt Table"/>
+									<value xsi:type="CE" code="A2" codeSystem="1.2.208.184.100.2"
+										displayName="Nej"
+										codeSystemName="MedCom Prompt Table"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+									<precondition typeCode="PRCN">
+										<templateId root="2.16.840.1.113883.10.20.32.4.3"/>
+										<criterion classCode="OBS" moodCode="EVN.CRT">
+											<templateId root="2.16.840.1.113883.10.20.32.4.3"/>
+											<code code="q10-100" codeSystem="1.2.208.184.100.2" codeSystemName="MedCom Prompt Table">
+												<translation code="MedCom"></translation>
+											</code>
+											<value xsi:type="CE" code="A1" displayName="Ja" codeSystem="1.2.208.184.100.2" codeSystemName="MedCom Prompt Table"/>
+										</criterion>
+									</precondition>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+			
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+					<code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Spørgsmål 2</title>
+					<text>Spørgsmål 2</text>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- Question Organizer template -->
+							<templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+							<statusCode code="COMPLETED"/>
+							<!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="3"/>
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+									<id extension="aa3488cd-6575-4286-a3a5-2ea21b22839c" root="1.2.208.184"
+										assigningAuthorityName="MedCom"/>
+									<code code="q10-200" codeSystem="1.2.208.184.100.2"
+										displayName="Har du mere åndenød? (Ja/Nej)"
+										codeSystemName="MedCom Prompt Table">
+										<originalText>Har du mere åndenød? (Ja/Nej)</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="1.2.208.184.100.2"
+										displayName="Ja"
+										codeSystemName="MedCom Prompt Table"/>
+									<value xsi:type="CE" code="A2" codeSystem="1.2.208.184.100.2"
+										displayName="Nej"
+										codeSystemName="MedCom Prompt Table"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+
+
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+					<code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Spørgsmål 3</title>
+					<text>Spørgsmål 3</text>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- Question Organizer template -->
+							<templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+							<statusCode code="COMPLETED"/>
+							<!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="4"/>
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+									<id extension="b63185ac-03f8-48ae-a5dc-924e6ff1c661" root="1.2.208.184"
+										assigningAuthorityName="MedCom"/>
+									<code code="q10-300" codeSystem="1.2.208.184.100.2"
+										displayName="Har du mere hoste? (Ja/Nej)"
+										codeSystemName="MedCom Prompt Table">
+										<originalText>Har du mere hoste? (Ja/Nej)</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="1.2.208.184.100.2"
+										displayName="Ja"
+										codeSystemName="MedCom Prompt Table"/>
+									<value xsi:type="CE" code="A2" codeSystem="1.2.208.184.100.2"
+										displayName="Nej"
+										codeSystemName="MedCom Prompt Table"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+
+
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+					<code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Spørgsmål 4</title>
+					<text>Spørgsmål 4</text>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- Question Organizer template -->
+							<templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+							<statusCode code="COMPLETED"/>
+							<!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="5"/>
+								<observation classCode="OBS" moodCode="DEF">
+									<!--templateID for the Multiple Choice Question Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+									<id extension="453166f4-8b68-4e86-8e3a-6b1ebf7450de" root="1.2.208.184"
+										assigningAuthorityName="MedCom"/>
+									<code code="q10-400" codeSystem="1.2.208.184.100.2"
+										displayName="Har du mere åndenød hoste eller slim? (Ja/Nej)"
+										codeSystemName="MedCom Prompt Table">
+										<originalText>Har du mere åndenød hoste eller slim? (Ja/Nej)</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="1.2.208.184.100.2"
+										displayName="Ja"
+										codeSystemName="MedCom Prompt Table"/>
+									<value xsi:type="CE" code="A2" codeSystem="1.2.208.184.100.2"
+										displayName="Nej"
+										codeSystemName="MedCom Prompt Table"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+			
+
+			<!-- This component defines the final comments of the questionnaere. It has no Entry element, hence it is information only -->
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!--templateID for Section-->
+					<templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+					<title>Afslutning</title>
+					<text>Mange tak for din deltagelse.
+						Med venlig hilsen</text>
+					<languageCode code="da-DK"/>
+				</section>
+			</component>
+
+			<!-- This component defines the Copyright section -->
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!--templateID for the Copyright Section-->
+					<templateId root="2.16.840.1.113883.10.20.32.2.2"/>
+					<title>Copyright section</title>
+					<text>Copyright section</text>
+					<languageCode code="da-DK"/>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<observation classCode="OBS" moodCode="EVN">
+							<!--templateID for the Copyright Pattern Observation-->
+							<templateId root="2.16.840.1.113883.10.20.32.4.21"/>
+							<code code="COPY" codeSystem="2.16.840.1.113883.6.1"
+								displayName="Code for Copyright" codeSystemName="LOINC"/>
+							<value xsi:type="ST">Copyright tekst skrives her</value>
+						</observation>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

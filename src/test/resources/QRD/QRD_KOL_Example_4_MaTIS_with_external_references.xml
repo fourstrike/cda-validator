@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../Stylesheet/cda.xsl"?>
+<!-- Questionnaire Response Document, contains the response to the Form Definition Document that contains questions. -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:hl7-org:v3 ../../../PHMR/Schema/CDA_SDTC.xsd" xmlns="urn:hl7-org:v3"
+ xmlns:voc="urn:hl7-org:v3/voc" classCode="DOCCLIN" moodCode="EVN">
+	<realmCode code="DK"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- MedCom Danish QRD-profile OID -->
+	<templateId root="1.2.208.184.13.1"/>
+	<!-- The next templateId, conforms the Questinnaere Response Document-level -->
+	<templateId root="1.2.208.184.13.1.1.1"/>
+	<id extension="d3c0a950-dbbf-42e6-ba90-af898eaf78ac" root="1.2.208.184"
+		assigningAuthorityName="MedCom"/>
+	<!-- This code is LOINC -->
+	<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="74465-6"
+		displayName="Questionnaire Response Document"/>
+	<title>KOL spørgeskema</title>
+	<effectiveTime value="20160713144510+0200"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="HL7"/>
+	<languageCode code="da-DK"/>
+	<versionNumber value="1"/>
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+		<patientRole classCode="PAT">
+			<id extension="2002562939" root="1.2.208.176.1.2" assigningAuthorityName="CPR"/>
+			<addr use="H">
+				<streetAddressLine>Tårnhøjvej 47 </streetAddressLine>
+				<streetAddressLine>Landet</streetAddressLine>
+				<postalCode>9220</postalCode>
+				<city>Aalborg Øst</city>
+				<country>Danmark</country>
+			</addr>
+			<telecom value="tel:65123456" use="H"/>
+			<telecom value="mailto:nab@udkantsdanmark.dk" use="WP"/>
+			<patient classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>Jakob</given>
+					<family>Svendsen</family>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"
+					codeSystemName="HL7"/>
+				<birthTime value="19560220000000+0000"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT" contextControlCode="OP">
+		<time value="20160713144510+0200"/>
+		<assignedAuthor classCode="ASSIGNED">
+			<id extension="2002562939" root="1.2.208.176.1.2" assigningAuthorityName="CPR"/>
+			<!-- The PAN IG includes conformance constraints on the code element. 
+         This author/assignedAuthor/code/@code must be a code from one of 
+         two value sets: 
+				    PersonalRelationshipRoleType or ResponsibleParty. Both of these 
+         value sets include codes from the HL7 RoleCode Code System. 
+			-->
+			<code code="SELF" displayName="Self" codeSystem="2.16.840.1.113883.5.111"
+				codeSystemName="HL7 Role code"/>
+			<addr use="H">
+				<streetAddressLine>Tårnhøjvej 47 </streetAddressLine>
+				<streetAddressLine>Landet</streetAddressLine>
+				<postalCode>9220</postalCode>
+				<city>Aalborg Øst</city>
+				<country>Danmark</country>
+			</addr>
+			<telecom value="tel:65123456" use="H"/>
+			<telecom value="mailto:nab@udkantsdanmark.dk" use="WP"/>
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<given>Jakob</given>
+					<family>Svendsen</family>
+				</name>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+	<custodian typeCode="CST">
+		<assignedCustodian classCode="ASSIGNED">
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id extension="368061000016003" root="1.2.208.176.1.1" assigningAuthorityName="SOR"/>
+				<name>Aalborg Universitetshospital</name>
+				<telecom value="tel:97664800" use="WP"/>
+				<addr use="WP">
+					<streetAddressLine>Lungemedicinsk afdeling</streetAddressLine>
+					<streetAddressLine>Mølleparkvej 4</streetAddressLine>
+					<postalCode>9000</postalCode>
+					<city>Aalborg</city>
+					<country>Danmark</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+
+	<!-- The document is intended to have multiple recipients. This example only includes the Primary Care physician (PCP). -->
+
+	<!-- Primary Care physician (PCP) as recipient -->
+	<informationRecipient typeCode="PRCP">
+		<intendedRecipient classCode="ASSIGNED">
+			<!-- The physician's number (Ydernummer). -->
+			<id extension="624799" root="1.2.208.176.1.4"
+				assigningAuthorityName="Region Midtjylland"/>
+			<telecom use="WP" value="tel:99331800"/>
+			<informationRecipient classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<prefix>Uddannelsesamanuensis</prefix>
+					<given>Hans</given>
+					<family>Jensen</family>
+				</name>
+			</informationRecipient>
+			<receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<!-- Organization (SOR-ID)-->
+				<id extension="478791000016005" root="1.2.208.176.1.1" assigningAuthorityName="SOR"/>
+				<name>Lægerne Sløjfen</name>
+				<telecom value="tel:99331800" use="WP"/>
+				<addr use="WP">
+					<streetAddressLine>Fyrkildevej 7, 1</streetAddressLine>
+					<postalCode>9220</postalCode>
+					<city>Aalborg Øst</city>
+					<country>Danmark</country>
+				</addr>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+
+	<component typeCode="COMP" contextConductionInd="true">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<!-- This component defines the introduction to the questionnaere. It has no Entry element, hence it is information only -->
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!--templateID for Section-->
+					<templateId root="2.16.840.1.113883.10.20.33.2.1"/>
+					<title>Vejledning</title>
+					<text>I forbindelse med dine netop udførte målinger skal vi bede dig besvare følgende spørgsmål igen.</text>
+					<languageCode code="da-DK"/>
+				</section>
+			</component>
+
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!--templateId for the Questionnaire Response Section-->
+					<templateId root="2.16.840.1.113883.10.20.33.2.1"/>
+					<code code="74465-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Spørgsmål 1</title>
+					<text>Spørgsmål 1</text>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- templateId for the Answers Organizer-->
+							<templateId root="2.16.840.1.113883.10.20.33.4.1"/>
+							<statusCode code="COMPLETED"/>
+							<!-- Contains response to numeric, multiple choice, text, analog or discrete slider question templates defined in the Form Definition Document IG-->
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="1"/>
+								<!-- The following observation contains the response(s) -->
+								<observation classCode="OBS" moodCode="EVN">
+									<!--templateID for the Multiple Choice Response Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.33.4.5"/>
+									<id extension="51717ba1-fb84-459e-92ea-ef0a335b94ec" root="1.2.208.184"/>
+									<code code="q10-100" codeSystem="1.2.208.184.100.2"
+										displayName="Har du taget antibiotika siden sidste måling? (Ja/Nej)"
+										codeSystemName="MedCom Prompt Table">
+										<originalText>Har du taget antibiotika siden sidste måling? (Ja/Nej)</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="1.2.208.184.100.2"
+										displayName="Ja" codeSystemName="MedCom Prompt Table"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+									<!-- Reference to The Questionnaire Form Definition Document-->
+									<reference typeCode="REFR">
+										<templateId  root="1.2.208.184.6.1"/>
+										<externalDocument classCode="DOC">
+											<!-- Id of External document -->
+											<id extension="https://svn.medcom.dk/svn/drafts/QFDD/QFDD_KOL_Example_1_MaTIS.xml"
+												root="1.2.208.184"/>
+											<!-- External Document reference is a URL reference -->
+											<id root="1.2.208.184.5" extension="3"/>
+											<!-- Id of External observation -->
+											<id extension="d5fff265-4afe-47c1-909b-53ee0b7458f9"
+												root="1.2.208.184"/>
+											<code code="74468-0" codeSystem="2.16.840.1.113883.6.1"
+												displayName="Questionnaire Form Definition Document"/>
+										</externalDocument>
+									</reference>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!--templateId for the Questionnaire Response Section-->
+					<templateId root="2.16.840.1.113883.10.20.33.2.1"/>
+					<code code="74465-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Spørgsmål 1a.</title>
+					<text>Spørgsmål 1a</text>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- templateId for the Answers Organizer-->
+							<templateId root="2.16.840.1.113883.10.20.33.4.1"/>
+							<statusCode code="COMPLETED"/>
+							<!-- Contains response to numeric, multiple choice, text, analog or discrete slider question templates defined in the Form Definition Document IG-->
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="2"/>
+								<!-- The following observation contains the response(s) -->
+								<observation classCode="OBS" moodCode="EVN">
+									<!--templateID for the Multiple Choice Response Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.33.4.5"/>
+									<id extension="65f7d8b2-063a-477d-bac1-c24a6d383169" root="1.2.208.184"/>
+									<code code="q10-101" codeSystem="1.2.208.184.100.2"
+										displayName="Var brug af antibiotika pga. forværring i KOL? (Ja/Nej)"
+										codeSystemName="MedCom Prompt Table">
+										<originalText>Var brug af antibiotika pga. forværring i KOL? (Ja/Nej)</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="1.2.208.184.100.2"
+										displayName="Ja" codeSystemName="MedCom Prompt Table"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+									<!-- Reference to The Questionnaire Form Definition Document-->
+									<reference typeCode="REFR">
+										<templateId  root="1.2.208.184.6.1"/>
+										<externalDocument classCode="DOC">
+											<!-- Id of External document -->
+											<id extension="https://svn.medcom.dk/svn/drafts/QFDD/QFDD_KOL_Example_1_MaTIS.xml"
+												root="1.2.208.184"/>
+											<!-- External Document reference is a URL reference -->
+											<id root="1.2.208.184.5" extension="3"/>
+											<!-- Id of External observation -->
+											<id extension="e7fe98dd-2b01-47f8-a44f-4d969ca1f5d3"
+												root="1.2.208.184"/>
+											<code code="74468-0" codeSystem="2.16.840.1.113883.6.1"
+												displayName="Questionnaire Form Definition Document"/>
+										</externalDocument>
+									</reference>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!--templateId for the Questionnaire Response Section-->
+					<templateId root="2.16.840.1.113883.10.20.33.2.1"/>
+					<code code="74465-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Spørgsmål 2.</title>
+					<text>Spørgsmål 2</text>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- templateId for the Answers Organizer-->
+							<templateId root="2.16.840.1.113883.10.20.33.4.1"/>
+							<statusCode code="COMPLETED"/>
+							<!-- Contains response to numeric, multiple choice, text, analog or discrete slider question templates defined in the Form Definition Document IG-->
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="3"/>
+								<!-- The following observation contains the response(s) -->
+								<observation classCode="OBS" moodCode="EVN">
+									<!--templateID for the Multiple Choice Response Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.33.4.5"/>
+									<id extension="39a7489f-0889-44c5-a66b-9be486c104dc" root="1.2.208.184"/>
+									<code code="q10-200" codeSystem="1.2.208.184.100.2"
+										displayName="Har du mere åndenød? (Ja/Nej)"
+										codeSystemName="MedCom Prompt Table">
+										<originalText>Har du mere åndenød? (Ja/Nej)</originalText>
+									</code>
+									<value xsi:type="CE" code="A2" codeSystem="1.2.208.184.100.2"
+										displayName="Nej" codeSystemName="MedCom Prompt Table"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+									<!-- Reference to The Questionnaire Form Definition Document-->
+									<reference typeCode="REFR">
+										<templateId  root="1.2.208.184.6.1"/>
+										<externalDocument classCode="DOC">
+											<!-- Id of External document -->
+											<id extension="https://svn.medcom.dk/svn/drafts/QFDD/QFDD_KOL_Example_1_MaTIS.xml"
+												root="1.2.208.184"/>
+											<!-- External Document reference is a URL reference -->
+											<id root="1.2.208.184.5" extension="3"/>
+											<!-- Id of External observation -->
+											<id extension="aa3488cd-6575-4286-a3a5-2ea21b22839c"
+												root="1.2.208.184"/>
+											<code code="74468-0" codeSystem="2.16.840.1.113883.6.1"
+												displayName="Questionnaire Form Definition Document"/>
+										</externalDocument>
+									</reference>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!--templateId for the Questionnaire Response Section-->
+					<templateId root="2.16.840.1.113883.10.20.33.2.1"/>
+					<code code="74465-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Spørgsmål 3.</title>
+					<text>Spørgsmål 3</text>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- templateId for the Answers Organizer-->
+							<templateId root="2.16.840.1.113883.10.20.33.4.1"/>
+							<statusCode code="COMPLETED"/>
+							<!-- Contains response to numeric, multiple choice, text, analog or discrete slider question templates defined in the Form Definition Document IG-->
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="4"/>
+								<!-- The following observation contains the response(s) -->
+								<observation classCode="OBS" moodCode="EVN">
+									<!--templateID for the Multiple Choice Response Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.33.4.5"/>
+									<id extension="d70a9222-ef6a-4b4b-81f7-ea7d2cb9598d" root="1.2.208.184"/>
+									<code code="q10-300" codeSystem="1.2.208.184.100.2"
+										displayName="Har du mere hoste? (Ja/Nej)"
+										codeSystemName="MedCom Prompt Table">
+										<originalText>Har du mere hoste? (Ja/Nej)</originalText>
+									</code>
+									<value xsi:type="CE" code="A2" codeSystem="1.2.208.184.100.2"
+										displayName="Nej" codeSystemName="MedCom Prompt Table"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+									<!-- Reference to The Questionnaire Form Definition Document-->
+									<reference typeCode="REFR">
+										<templateId  root="1.2.208.184.6.1"/>
+										<externalDocument classCode="DOC">
+											<!-- Id of External document -->
+											<id extension="https://svn.medcom.dk/svn/drafts/QFDD/QFDD_KOL_Example_1_MaTIS.xml"
+												root="1.2.208.184"/>
+											<!-- External Document reference is a URL reference -->
+											<id root="1.2.208.184.5" extension="3"/>
+											<!-- Id of External observation -->
+											<id extension="b63185ac-03f8-48ae-a5dc-924e6ff1c661"
+												root="1.2.208.184"/>
+											<code code="74468-0" codeSystem="2.16.840.1.113883.6.1"
+												displayName="Questionnaire Form Definition Document"/>
+										</externalDocument>
+									</reference>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!--templateId for the Questionnaire Response Section-->
+					<templateId root="2.16.840.1.113883.10.20.33.2.1"/>
+					<code code="74465-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Spørgsmål 4.</title>
+					<text>Spørgsmål 4</text>
+					<entry typeCode="DRIV" contextConductionInd="true">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<!-- templateId for the Answers Organizer-->
+							<templateId root="2.16.840.1.113883.10.20.33.4.1"/>
+							<statusCode code="COMPLETED"/>
+							<!-- Contains response to numeric, multiple choice, text, analog or discrete slider question templates defined in the Form Definition Document IG-->
+							<component typeCode="COMP" contextConductionInd="true">
+								<sequenceNumber value="5"/>
+								<!-- The following observation contains the response(s) -->
+								<observation classCode="OBS" moodCode="EVN">
+									<!--templateID for the Multiple Choice Response Pattern-->
+									<templateId root="2.16.840.1.113883.10.20.33.4.5"/>
+									<id extension="b903ec24-e0b7-4073-a392-7ff579ea9408" root="1.2.208.184"/>
+									<code code="q10-400" codeSystem="1.2.208.184.100.2"
+										displayName="Har du mere åndenød hoste eller slim? (Ja/Nej)"
+										codeSystemName="MedCom Prompt Table">
+										<originalText>Har du mere åndenød hoste eller slim? (Ja/Nej)</originalText>
+									</code>
+									<value xsi:type="CE" code="A1" codeSystem="1.2.208.184.100.2"
+										displayName="Ja" codeSystemName="MedCom Prompt Table"/>
+									<entryRelationship typeCode="SUBJ" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<!--templateID for the Question Options Pattern Observation-->
+											<templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+											<code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"/>
+											<value xsi:type="IVL_INT">
+												<!--minimum options-->
+												<low value="1"/>
+												<!--maximum options-->
+												<high value="1"/>
+											</value>
+										</observation>
+									</entryRelationship>
+									<!-- Reference to The Questionnaire Form Definition Document-->
+									<reference typeCode="REFR">
+										<templateId  root="1.2.208.184.6.1"/>
+										<externalDocument classCode="DOC">
+											<!-- Id of External document -->
+											<id extension="https://svn.medcom.dk/svn/drafts/QFDD/QFDD_KOL_Example_1_MaTIS.xml"
+												root="1.2.208.184"/>
+											<!-- External Document reference is a URL reference -->
+											<id root="1.2.208.184.5" extension="3"/>
+											<!-- Id of External observation -->
+											<id extension="453166f4-8b68-4e86-8e3a-6b1ebf7450de"
+												root="1.2.208.184"/>
+											<code code="74468-0" codeSystem="2.16.840.1.113883.6.1"
+												displayName="Questionnaire Form Definition Document"/>
+										</externalDocument>
+									</reference>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>
