@@ -29,6 +29,8 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
+import dk.medcom.cda.validation.ValidationBuilder;
+import net.ihe.gazelle.IHEPaths;
 import org.apache.commons.io.IOUtils;
 import org.openehealth.ipf.modules.cda.CDAR2Constants;
 import org.slf4j.Logger;
@@ -189,47 +191,25 @@ public class CDAServlet {
 
 	private synchronized ValidationResponse validateDocument(final String document,
 			final List<ValidationEntry> charsetWarning, final CDAType type) {
-		final ValidationResponse validationResponse = new ValidationResponse();
 
-		// Template ID's:
+	    final ValidationResponse validationResponse = new ValidationResponse();
+
+        final String cdaXsdPath = context.getRealPath("/WEB-INF/classes/gazelle/ihe/xsd/CDA.xsd");
+        final String valueSetPath = context.getRealPath("/WEB-INF/classes/gazelle/ihe/valueSets");
+        final String cdaXslPath = context.getRealPath("/WEB-INF/classes/gazelle/ihe/mbvalidatorDetailedResult.xsl");
+
+        // Template ID's:
 		// QRD : 1.2.208.184.13.1
 		// QFDD: 1.2.208.184.12.1
 		// PHMR: 1.2.208.184.11.1
 
 		try {
+			final ValidationResponse response = ValidationBuilder.forCDAType(type)
+                    .withCdaXsdPath(resolveCDAXsdPathFromType(type))
+                    .withValueSetPath(valueSetPath)
+                    .withCdaXslPath(cdaXslPath)
+                    .validate(document);
 
-			final CollectingValidationHandler validationHandler = new CollectingValidationHandler();
-
-			switch (type) {
-			case PHMR:
-				new IHEObjectsCheckerEngine(context, "/gazelle/phmr/schemas/infrastructure/CDA_SDTC.xsd")
-						.validate(document, type, validationHandler);
-				new SaxonEngine("/schematrons/conf-phmr-dk.sch.xml").validate(document, type, validationHandler);
-				new SaxonEngine("/schematrons" + CDAR2Constants.CDA_PHMR_SCHEMATRON_RULES).validate(document, type,
-						validationHandler);
-				new SaxonEngine("/schematrons" + "/Personal Healthcare Monitoring Report 1.2.sch.xml")
-						.validate(document, type, validationHandler);
-				new PHMRDKSpecificEngine().validate(document, type, validationHandler);
-				break;
-			case QFDD:
-				new IHEObjectsCheckerEngine(context, "/gazelle/qfdd/schemas/infrastructure/CDA_SDTC.xsd")
-						.validate(document, type, validationHandler);
-				new SaxonEngine("/schematrons/conf-qfdd-sch.xml").validate(document, type, validationHandler);
-				new SaxonEngine("/schematrons/conf-qfdd-sch-dk.xml").validate(document, type, validationHandler);
-				break;
-			case QRDOC:
-				new IHEObjectsCheckerEngine(context).validate(document, type, validationHandler);
-				new SaxonEngine("/schematrons/conf-qrdoc-sch.xml").validate(document, type, validationHandler);
-				new SaxonEngine("/schematrons/conf-qrdoc-sch-dk.xml").validate(document, type, validationHandler);
-				break;
-			case NONE:
-				new IHEObjectsCheckerEngine(context).validate(document, type, validationHandler);
-				break;
-			default:
-				break;
-			}
-
-			validationResponse.apply(validationHandler.getDiagnostics());
 			validationResponse.getWarnings().addAll(charsetWarning);
 		} catch (final Exception e) {
 			logger.error(e.getMessage(), e);
@@ -243,4 +223,19 @@ public class CDAServlet {
 		return validationResponse;
 
 	}
+
+    private String resolveCDAXsdPathFromType(CDAType type) {
+	    switch(type) {
+            case PHMR:
+                return context.getRealPath("/WEB-INF/classes/gazelle/gazelle/phmr/schemas/infrastructure/CDA_SDTC.xsd");
+            case QFDD:
+                return context.getRealPath("/WEB-INF/classes/gazelle/qfdd/schemas/infrastructure/CDA_SDTC.xsd");
+            case QRDOC:
+                return context.getRealPath("/WEB-INF/classes/gazelle/ihe/xsd/CDA.xsd");
+
+            case NONE:
+            default:
+                return context.getRealPath("/WEB-INF/classes/gazelle/ihe/xsd/CDA.xsd");
+        }
+    }
 }

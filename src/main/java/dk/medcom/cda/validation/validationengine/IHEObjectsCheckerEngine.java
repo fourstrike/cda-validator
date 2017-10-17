@@ -33,12 +33,12 @@ public class IHEObjectsCheckerEngine implements IValidationEngine {
 		paths = new IHEPaths(context.getRealPath("/WEB-INF/classes/gazelle/ihe/xsd/CDA.xsd"),
 				context.getRealPath("/WEB-INF/classes/gazelle/ihe/valueSets"),
 				context.getRealPath("/WEB-INF/classes/gazelle/ihe/mbvalidatorDetailedResult.xsl"));
-		
-//		paths = new IHEPaths(new ClassPathResource("/gazelle/ihe/xsd/CDA.xsd").getAsURL().getPath(),
-//				new ClassPathResource("/gazelle/ihe/valueSets").getAsURL().getPath(),
-//				new ClassPathResource("/gazelle/ihe/mbvalidatorDetailedResult.xsl").getAsURL().getPath());
 	}
-	
+
+	public IHEObjectsCheckerEngine(String cdaXSDPath, String valueSetRepoPath, String cdaXslPath) {
+		this.paths = new IHEPaths(cdaXSDPath, valueSetRepoPath, cdaXslPath);
+	}
+
 	public IHEObjectsCheckerEngine(final ServletContext context, final String xsdPath) throws MalformedURLException {
 		paths = new IHEPaths(context.getRealPath("/WEB-INF/classes") + xsdPath,
 				context.getRealPath("/WEB-INF/classes") + "/gazelle/ihe/valueSets",
