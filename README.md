@@ -3,29 +3,8 @@
 This project contains a servlet that is able to validte:
 
  * CDA documents according to the HL7 CDA R2 standard
-
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+ * CDA documents according to the MedCom profiles QFDD, QRD and PHMR with danish adaptions
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Run mvn compile war:war verify in order to get the servlet build. Deploy the servlet to any Java EE compliant server and you're good to go. The serlvet is self-contained and holds no state
