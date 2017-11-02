@@ -242,8 +242,7 @@
 
 
 
-    <!-- <xs:element name="precondition" type="POCD_MT000040.Precondition2"
-	minOccurs="0" maxOccurs="unbounded" />-->
+	<xs:element name="precondition" type="POCD_MT000040.Precondition2" />
  <xs:complexType name="POCD_MT000040.Precondition2">
     <xs:sequence>
       <xs:element name="realmCode" type="hl7:CS" minOccurs="0" maxOccurs="unbounded"/>

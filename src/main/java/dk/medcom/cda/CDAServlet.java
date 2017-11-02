@@ -198,11 +198,6 @@ public class CDAServlet {
         final String valueSetPath = context.getRealPath("/WEB-INF/classes/gazelle/ihe/valueSets");
         final String cdaXslPath = context.getRealPath("/WEB-INF/classes/gazelle/ihe/mbvalidatorDetailedResult.xsl");
 
-        // Template ID's:
-		// QRD : 1.2.208.184.13.1
-		// QFDD: 1.2.208.184.12.1
-		// PHMR: 1.2.208.184.11.1
-
 		try {
 			final ValidationResponse response = ValidationBuilder.forCDAType(type)
                     .withCdaXsdPath(resolveCDAXsdPathFromType(type))

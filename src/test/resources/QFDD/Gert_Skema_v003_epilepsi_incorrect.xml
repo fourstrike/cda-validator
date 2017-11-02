@@ -1811,7 +1811,7 @@
                                     </entryRelationship>
                                     <!-- The above question should only be asked if the answer to the question with code Q038
                                         is answered with the value.@code="A038.3" OR the value.@code="A038.4" -->
-                                    <sdtc:precondition typeCode="PRCN">
+                                    <sdtc:preconditionNonExisting typeCode="PRCN">
                                         <sdtc:templateId root="2.16.840.1.113883.10.20.32.4.12"/>
                                         <sdtc:atLeastOneTrue>
                                             <sdtc:templateId root="2.16.840.1.113883.10.20.32.4.15"/>
@@ -1833,7 +1833,7 @@
                                                 </sdtc:criterion>
                                             </sdtc:precondition>
                                         </sdtc:atLeastOneTrue>
-                                    </sdtc:precondition>
+                                    </sdtc:preconditionNonExisting>
                                 </observation>
                             </component>
                         </organizer>
