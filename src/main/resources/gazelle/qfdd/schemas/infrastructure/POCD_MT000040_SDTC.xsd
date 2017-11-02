@@ -855,6 +855,9 @@
                 maxOccurs="unbounded" />
             <xs:element name="reference" type="POCD_MT000040.Reference" minOccurs="0" maxOccurs="unbounded" />
             <xs:element name="precondition" type="POCD_MT000040.Precondition" minOccurs="0" maxOccurs="unbounded" />
+            <!--  Begin Extension:(SDTC)  -->
+			<xs:element ref="sdtc:precondition" minOccurs="0" maxOccurs="unbounded"/>
+			<!--   End Extension: (SDTC)  -->
             <xs:element name="referenceRange" type="POCD_MT000040.ReferenceRange" minOccurs="0" maxOccurs="unbounded" />
             <!-- Begin Extension: (SDTC) -->
             <xs:element ref="sdtc:inFulfillmentOf1" minOccurs="0" maxOccurs="unbounded" />
@@ -963,6 +966,9 @@
             <xs:element name="participant" type="POCD_MT000040.Participant2" minOccurs="0" maxOccurs="unbounded" />
             <xs:element name="reference" type="POCD_MT000040.Reference" minOccurs="0" maxOccurs="unbounded" />
             <xs:element name="precondition" type="POCD_MT000040.Precondition" minOccurs="0" maxOccurs="unbounded" />
+            <!--  Begin Extension:(SDTC)  -->
+			<xs:element ref="sdtc:precondition" minOccurs="0" maxOccurs="unbounded"/>
+			<!--   End Extension: (SDTC)  -->
             <xs:element name="component" type="POCD_MT000040.Component4" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
         <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />

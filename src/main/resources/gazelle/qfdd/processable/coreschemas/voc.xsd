@@ -603,6 +603,9 @@ RoseTree XML to Schema: $Id: VocabXMLtoXSD.xsl,v 1.6 2005/05/24 00:14:18 lmckenz
                <xs:enumeration value="TRNS"/>
                <xs:enumeration value="VERIF"/>
                <xs:enumeration value="XACT"/>
+               <!-- SDTC QFDD extensions start -->
+               <xs:enumeration value="GROUPER"/>
+               <!-- SDTC QFDD extensions end -->
             </xs:restriction>
          </xs:simpleType>
       </xs:union>
