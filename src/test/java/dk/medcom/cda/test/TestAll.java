@@ -1,6 +1,5 @@
 package dk.medcom.cda.test;
 
-import dk.medcom.cda.test.qfdd.validation.dk.SDTCExtensionTests;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -19,7 +18,6 @@ import dk.medcom.cda.test.servlet.TestServlet;
 		RuleConfPhmrDKSchematronTest.class,
 		RuleConfQfddSchematronTest.class,
 		RuleConfQfddDKSchematronTest.class,
-		SDTCExtensionTests.class,
 		RuleConfQrdocSchematronTest.class,
 		RuleConfQrdocDKSchematronTest.class,
 		TestServlet.class})

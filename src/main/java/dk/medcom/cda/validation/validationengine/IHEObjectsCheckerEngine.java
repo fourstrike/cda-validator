@@ -1,5 +1,6 @@
 package dk.medcom.cda.validation.validationengine;
 
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.util.List;
 import java.util.function.Consumer;

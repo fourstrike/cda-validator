@@ -92,7 +92,18 @@ public class TestServlet implements IRandomTestData, IDocumentTest {
 		final HttpResponse response = client.execute(request);
 		assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
     }
-    
+
+	@Test
+	public void testDoPostValidateQFDDWithSTDC() throws Exception {
+		final String xml = createDocument("file:src/test/resources/QFDD/Gert_Skema_v003_epilepsi.xml");
+		final CloseableHttpClient client = HttpClientBuilder.create().build();
+		final String type = CDAType.QFDD.name();
+		final HttpUriRequest request = validate(xml, type);
+
+		final HttpResponse response = client.execute(request);
+		assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
+	}
+
     @Test
     public void testDoPostValidateQRD() throws Exception {
     	final String xml = createDocument("file:src/test/resources/QRD/QRD_KOL_Example_1_MaTIS_with_extended_referencies.xml");
