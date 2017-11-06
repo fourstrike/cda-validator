@@ -14,7 +14,7 @@ Simply run:
 mvn package
 ~~~
 
-in order to build the service. Deploy the servlet to any Java EE compliant server and you're good to go. The serlvet is self-contained and holds no state.
+In order to build the service, deploy the servlet to any Java EE compliant server and you're good to go. The servlet is self-contained and holds no state.
 
 ## How to deploy with docker
 
@@ -45,7 +45,7 @@ docker build -t goimplementit:cda-validator .
 docker run -p 8443:8443 -it goimplementit:cda-validator
 ~~~
 
-Notice when tomcat is starts it will prompt for a password matching your certificate-file.
+Notice when tomcat is started it will prompt for a password matching your certificate-file.
 
 Dependending on you certificates you should again be able to use your favorite HTTP client:
 
