@@ -6,7 +6,7 @@
         <xs:documentation>
       Copyright (c) 2015 Health Level Seven.
       All rights reserved.
-      
+
       Redistribution and use in source and binary forms, with or
       without modification, are permitted provided that the following
       conditions are met:
@@ -19,9 +19,9 @@
       provided with the distribution.
       3. All advertising materials mentioning features or use of this
       software must display the following acknowledgement:
-      
+
       This product includes software developed by Health Level Seven.
-      
+
       THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS
       ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT
       NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
@@ -40,12 +40,12 @@
       2012-07-06  Created POCD_MT000040_SDTC.xsd (this file) this file is an edited version of POCD_MT000040.xsd that contains the SDTC extensions.
     </xs:documentation>
         <xs:documentation>
-      2012-07-06 Added extensions approved by SDWG prior to 2012-07-06: 
+      2012-07-06 Added extensions approved by SDWG prior to 2012-07-06:
                     RelatedSubject/sdtc:id,
                     SubjectPerson/sdtc:id,
                     Patient/sdtc:deceasedInd,
                     SubjectPerson/sdtc:deceasedInd,
-                    Patient/sdtc:deceasedTime, 
+                    Patient/sdtc:deceasedTime,
                     SubjectPerson/sdtc:deceasedTime,
                     Encounter/sdtc:dischargeDispositionCode,
                     Patient/sdtc:raceCode,
@@ -65,7 +65,7 @@
                     SubjectPerson/sdtc:multipleBirthOrderNumber
                  Added extensions approved by SDWG on 2014-12-18:
                     Patient/sdtc:ethnicGroupCode,
-                    SubjectPerson/sdtc:ethnicGroupCode         
+                    SubjectPerson/sdtc:ethnicGroupCode
     </xs:documentation>
         <xs:documentation>
       2015-04-01 Added extension approved by SDWG on 2014-01-xx:
@@ -98,7 +98,7 @@
           2016-05-12 Added extension approved by SDWG on 2016-01-28
                      Component4/priorityNumber
       </xs:documentation>
-    
+
     </xs:annotation>
     <xs:include schemaLocation="../../processable/coreschemas/datatypes.xsd" />
     <xs:include schemaLocation="../../processable/coreschemas/voc.xsd" />
@@ -349,7 +349,7 @@
             <xs:element name="sequenceNumber" type="INT" minOccurs="0" />
             <!-- Begin Extension: (SDTC) -->
             <xs:element ref="sdtc:priorityNumber" minOccurs="0" />
-            <!-- End Extension: (SDTC) -->      
+            <!-- End Extension: (SDTC) -->
             <xs:element name="seperatableInd" type="BL" minOccurs="0" />
             <xs:choice>
                 <xs:element name="act" type="POCD_MT000040.Act" />
@@ -855,6 +855,9 @@
                 maxOccurs="unbounded" />
             <xs:element name="reference" type="POCD_MT000040.Reference" minOccurs="0" maxOccurs="unbounded" />
             <xs:element name="precondition" type="POCD_MT000040.Precondition" minOccurs="0" maxOccurs="unbounded" />
+            <!--  Begin Extension:(SDTC)  -->
+			<xs:element ref="sdtc:precondition" minOccurs="0" maxOccurs="unbounded"/>
+			<!--   End Extension: (SDTC)  -->
             <xs:element name="referenceRange" type="POCD_MT000040.ReferenceRange" minOccurs="0" maxOccurs="unbounded" />
             <!-- Begin Extension: (SDTC) -->
             <xs:element ref="sdtc:inFulfillmentOf1" minOccurs="0" maxOccurs="unbounded" />
@@ -963,6 +966,9 @@
             <xs:element name="participant" type="POCD_MT000040.Participant2" minOccurs="0" maxOccurs="unbounded" />
             <xs:element name="reference" type="POCD_MT000040.Reference" minOccurs="0" maxOccurs="unbounded" />
             <xs:element name="precondition" type="POCD_MT000040.Precondition" minOccurs="0" maxOccurs="unbounded" />
+            <!--  Begin Extension:(SDTC)  -->
+			<xs:element ref="sdtc:precondition" minOccurs="0" maxOccurs="unbounded"/>
+			<!--   End Extension: (SDTC)  -->
             <xs:element name="component" type="POCD_MT000040.Component4" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
         <xs:attribute name="nullFlavor" type="NullFlavor" use="optional" />

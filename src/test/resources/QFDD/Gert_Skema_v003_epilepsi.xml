@@ -1,0 +1,2030 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CDA Form Definition Document for Questionnaires/Surveys -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:v3 ../../Desktop/drafts/Standarder/HL7/PRO/Schema/CDA_SDTC.xsd"
+    xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:voc="urn:hl7-org:v3/voc"
+    classCode="DOCCLIN" moodCode="EVN">
+    <realmCode code="UV"/>
+    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+    <!-- MedCom Danish QFDD-profile OID -->
+    <templateId root="1.2.208.184.12.1"/>
+    <!-- The next templateId, indicates constraints at the Questinnaere Form Definition Document-level -->
+    <templateId root="1.2.208.184.12.1.1.1"/>
+    <id extension="abf8f805-d7e2-4185-9310-1cd53d2e9675" root="1.2.208.184"
+        assigningAuthorityName="MedCom"/>
+    <!-- This code is LOINC -->
+    <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="74468-0"
+        displayName="Form Definition Document"/>
+    <title>Epilepsiskema</title>
+    <sdtc:statusCode code="NEW"/>
+    <effectiveTime value="201710010000+0100"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+    <languageCode code="da-DK"/>
+    <versionNumber value="2"/>
+    <recordTarget nullFlavor="NI">
+        <patientRole nullFlavor="NI">
+            <id nullFlavor="NI"/>
+        </patientRole>
+    </recordTarget>
+    <author typeCode="AUT" contextControlCode="OP">
+        <time value="201707191423+0100"/>
+        <assignedAuthor classCode="ASSIGNED">
+            <!-- This is the identfication of the organization, we don't use the personal level identification-->
+            <id extension="368061000016003" root="1.2.208.176.1.1" assigningAuthorityName="SOR"/>
+            <addr use="WP">
+                <streetAddressLine>Lungemedicinsk afdeling</streetAddressLine>
+                <streetAddressLine>Mølleparkvej 4</streetAddressLine>
+                <postalCode>9000</postalCode>
+                <city>Aalborg</city>
+                <country>Danmark</country>
+            </addr>
+            <telecom value="tel:97664800" use="WP"/>
+            <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                <name>
+                    <given>Anders</given>
+                    <family>Andersen</family>
+                </name>
+            </assignedPerson>
+            <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+                <id extension="368061000016003" root="1.2.208.176.1.1" assigningAuthorityName="SOR"/>
+                <name>Aalborg Universitetshospital</name>
+                <telecom nullFlavor="NI"/>
+                <addr use="WP">
+                    <streetAddressLine nullFlavor="NI"/>
+                </addr>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+
+    <custodian typeCode="CST">
+        <assignedCustodian classCode="ASSIGNED">
+            <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+                <id extension="368061000016003" root="1.2.208.176.1.1" assigningAuthorityName="SOR"/>
+                <name>Aalborg Universitetshospital</name>
+                <telecom value="tel:97664800" use="WP"/>
+                <addr use="WP">
+                    <streetAddressLine>Lungemedicinsk afdeling</streetAddressLine>
+                    <streetAddressLine>Mølleparkvej 4</streetAddressLine>
+                    <postalCode>9000</postalCode>
+                    <city>Aalborg</city>
+                    <country>Danmark</country>
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+
+    <component typeCode="COMP" contextConductionInd="true">
+        <structuredBody classCode="DOCBODY" moodCode="EVN">
+            <!-- This component defines the introduction to the questionnaere. It has no Entry element, hence it is information only -->
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!--templateID for Section-->
+                    <templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+                    <title>Vejledning</title>
+                    <text>Dette spørgeskema vil hjælpe dig og din læge med at.......</text>
+                    <languageCode code="da-DK"/>
+                </section>
+            </component>
+
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!--templateID for Section-->
+                    <templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+                    <!-- The next id identifies the section uniquely   -->
+                    <id root="1.2.208.184" extension="00831483-902e-4818-ae61-8514300a8744"/>
+                    <code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Symptomer</title>
+                    <text>Symtptomer</text>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        <organizer classCode="BATTERY" moodCode="EVN">
+                            <!-- Question Organizer template -->
+                            <templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+                            <id root="1.2.208.184.100.2" extension="GLO0001"
+                                assigningAuthorityName="MedCom"/>
+                            <!-- The next code is used as the organizer description   -->
+                            <code code="ORGD001" codeSystem="1.2.208.184.100.2"
+                                displayName="Hvornår havde du dit seneste anfald?"
+                                codeSystemName="MedCom prompt table">
+                                <originalText>Hvornår havde du dit seneste anfald?</originalText>
+                            </code>
+                            <statusCode code="COMPLETED"/>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="1"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Numeric Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.7"/>
+                                    <id extension="GLO0002" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q001" codeSystem="1.2.208.184.100.2"
+                                        displayName="År" codeSystemName="MedCom prompt table">
+                                        <originalText>Hvilket årtal havde du dit seneste anfald?</originalText>
+                                    </code>
+                                    <referenceRange typeCode="REFV">
+                                        <!--templateID for the Question Reference Range Pattern-->
+                                        <templateId root="2.16.840.1.113883.10.20.32.4.5"/>
+                                        <observationRange>
+                                            <value xsi:type="IVL_INT">
+                                                <low value="1900"/>
+                                                <high value="2017"/>
+                                            </value>
+                                        </observationRange>
+                                    </referenceRange>
+                                </observation>
+                            </component>
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="2"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Numeric Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.7"/>
+                                    <id extension="GLO0003" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q002" codeSystem="1.2.208.184.100.2"
+                                        displayName="Måned" codeSystemName="MedCom prompt table">
+                                        <originalText>Hvilken måned havde du dit seneste anfald?</originalText>
+                                    </code>
+                                    <referenceRange typeCode="REFV">
+                                        <!--templateID for the Question Reference Range Pattern-->
+                                        <templateId root="2.16.840.1.113883.10.20.32.4.5"/>
+                                        <observationRange>
+                                            <value xsi:type="IVL_INT">
+                                                <low value="1"/>
+                                                <high value="12"/>
+                                            </value>
+                                        </observationRange>
+                                    </referenceRange>
+                                </observation>
+                            </component>
+                        </organizer>
+                    </entry>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        <organizer classCode="BATTERY" moodCode="EVN">
+                            <!-- Question Organizer template -->
+                            <templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+                            <id root="1.2.208.184.100.2" extension="GLO0004"
+                                assigningAuthorityName="MedCom"/>
+                            <!-- The next code is used as the organizer description   -->
+                            <code code="ORGD002" codeSystem="1.2.208.184.100.2"
+                                displayName="????????" codeSystemName="MedCom prompt table">
+                                <originalText>????????</originalText>
+                            </code>
+                            <statusCode code="COMPLETED"/>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="3"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Numeric Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.7"/>
+                                    <id extension="GLO0005" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q003" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Hvor mange anfald har du haft det sidste år?</originalText>
+                                    </code>
+                                    <referenceRange typeCode="REFV">
+                                        <!--templateID for the Question Reference Range Pattern-->
+                                        <templateId root="2.16.840.1.113883.10.20.32.4.5"/>
+                                        <observationRange>
+                                            <value xsi:type="IVL_INT">
+                                                <low value="0"/>
+                                                <high value="1000"/>
+                                            </value>
+                                        </observationRange>
+                                    </referenceRange>
+                                </observation>
+                            </component>
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="4"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Numeric Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.7"/>
+                                    <id extension="GLO0006" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q004" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Hvor mange anfald med fjernhed har du haft de sidste 3 måneder?</originalText>
+                                    </code>
+                                    <referenceRange typeCode="REFV">
+                                        <!--templateID for the Question Reference Range Pattern-->
+                                        <templateId root="2.16.840.1.113883.10.20.32.4.5"/>
+                                        <observationRange>
+                                            <value xsi:type="IVL_INT">
+                                                <low value="0"/>
+                                                <high value="1000"/>
+                                            </value>
+                                        </observationRange>
+                                    </referenceRange>
+                                </observation>
+                            </component>
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="5"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Numeric Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.7"/>
+                                    <id extension="GLO0007" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q005" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Hvor mange anfald med kramper har du haft de sidste 3 måneder?</originalText>
+                                    </code>
+                                    <referenceRange typeCode="REFV">
+                                        <!--templateID for the Question Reference Range Pattern-->
+                                        <templateId root="2.16.840.1.113883.10.20.32.4.5"/>
+                                        <observationRange>
+                                            <value xsi:type="IVL_INT">
+                                                <low value="0"/>
+                                                <high value="1000"/>
+                                            </value>
+                                        </observationRange>
+                                    </referenceRange>
+                                </observation>
+                            </component>
+                        </organizer>
+                    </entry>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        <organizer classCode="BATTERY" moodCode="EVN">
+                            <!-- Question Organizer template -->
+                            <templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+                            <id root="1.2.208.184.100.2" extension="GLO0008"
+                                assigningAuthorityName="MedCom"/>
+                            <!-- The next code is used as the organizer description   -->
+                            <code code="ORGD003" codeSystem="1.2.208.184.100.2"
+                                codeSystemName="MedCom prompt table">
+                                <originalText>Disse spørgsmål besvares kun hvis du har haft mindst ét anfald det sidste år</originalText>
+                            </code>
+                            <statusCode code="COMPLETED"/>
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="6"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0009" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q006" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Opstår dine anfald kun under søvn?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A006.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ja"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A006.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Nej"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                    <precondition typeCode="PRCN">
+                                        <templateId root="2.16.840.1.113883.10.20.32.4.4"/>
+                                        <criterion classCode="OBS" moodCode="EVN.CRT">
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.3"/>
+                                            <code code="Q003" codeSystem="1.2.208.184.100.2"
+                                                codeSystemName="MedCom prompt table"/>
+                                            <value xsi:type="IVL_INT">
+                                                <low value="1"/>
+                                                <high value="1000"/>
+                                            </value>
+                                        </criterion>
+                                    </precondition>
+                                </observation>
+                            </component>
+
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="7"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0010" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q007" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Er dine anfald forværret?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A007.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ja"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A007.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Nej"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                    <precondition typeCode="PRCN">
+                                        <templateId root="2.16.840.1.113883.10.20.32.4.4"/>
+                                        <criterion classCode="OBS" moodCode="EVN.CRT">
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.3"/>
+                                            <code code="Q003" codeSystem="1.2.208.184.100.2"
+                                                codeSystemName="MedCom prompt table"/>
+                                            <value xsi:type="IVL_INT">
+                                                <low value="1"/>
+                                                <high value="1000"/>
+                                            </value>
+                                        </criterion>
+                                    </precondition>
+                                </observation>
+                            </component>
+
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="8"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0011" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q008" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Har du haft skader ved anfald?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A008.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Nej"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A008.2"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Ja, men ikke alvorlige"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A008.3"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Alvorlig skade (fx knoglebrud, snitskader)"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                    <precondition typeCode="PRCN">
+                                        <templateId root="2.16.840.1.113883.10.20.32.4.4"/>
+                                        <criterion classCode="OBS" moodCode="EVN.CRT">
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.3"/>
+                                            <code code="Q003" codeSystem="1.2.208.184.100.2"
+                                                codeSystemName="MedCom prompt table"/>
+                                            <value xsi:type="IVL_INT">
+                                                <low value="1"/>
+                                                <high value="1000"/>
+                                            </value>
+                                        </criterion>
+                                    </precondition>
+                                </observation>
+                            </component>
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="10"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0012" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q010" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Har du siden sidste kontakt med ambulatoriet været i kontakt med skadestuen pga din epilepsi?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A010.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ja"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A010.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Nej"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                    <precondition typeCode="PRCN">
+                                        <templateId root="2.16.840.1.113883.10.20.32.4.4"/>
+                                        <criterion classCode="OBS" moodCode="EVN.CRT">
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.3"/>
+                                            <code code="Q003" codeSystem="1.2.208.184.100.2"
+                                                codeSystemName="MedCom prompt table"/>
+                                            <value xsi:type="IVL_INT">
+                                                <low value="1"/>
+                                                <high value="1000"/>
+                                            </value>
+                                        </criterion>
+                                    </precondition>
+                                </observation>
+                            </component>
+                        </organizer>
+                    </entry>
+                </section>
+            </component>
+
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!--templateID for Section-->
+                    <templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+                    <code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Pårørende</title>
+                    <text>Pårørende</text>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        <organizer classCode="BATTERY" moodCode="EVN">
+                            <!-- Question Organizer template -->
+                            <templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+                            <id root="1.2.208.184.100.2" extension="GLO0013"
+                                assigningAuthorityName="MedCom"/>
+                            <statusCode code="COMPLETED"/>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="11"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0014" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q011" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Er dine pårørende bekymrede for dig på grund af din epilepsi?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A011.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Aldrig"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A011.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Sjældent"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A011.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Af og til"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A011.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ofte"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A011.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ved ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A011.6"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ikke relevant"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                        </organizer>
+                    </entry>
+                </section>
+            </component>
+
+
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!--templateID for Section-->
+                    <templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+                    <code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Bivirkninger og velbefindende</title>
+                    <text>Bivirkninger og velbefindende</text>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        <organizer classCode="BATTERY" moodCode="EVN">
+                            <!-- Question Organizer template -->
+                            <templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+                            <id root="1.2.208.184.100.2" extension="GLO0015"
+                                assigningAuthorityName="MedCom"/>
+                            <!-- The next code is used as the organizer description   -->
+                            <code code="ORGD003" codeSystem="1.2.208.184.100.2"
+                                codeSystemName="MedCom prompt table">
+                                <originalText>I løbet af de sidste 4 uger, i hvilken grad har du været plaget af:</originalText>
+                            </code>
+                            <statusCode code="COMPLETED"/>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="12"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0016" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q012" codeSystem="1.2.208.184.100.2"
+                                        displayName="Hovedpine?"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af hovedpine?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A012.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A012.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A012.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A012.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A012.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="13"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0017" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q013" codeSystem="1.2.208.184.100.2"
+                                        displayName="Svimmelhed?"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af svimmelhed?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A013.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A013.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A013.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A013.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A013.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="14"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0018" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q014" codeSystem="1.2.208.184.100.2"
+                                        displayName="Rysten?" codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af rysten?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A014.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A014.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A014.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A014.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A014.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="15"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0019" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q015" codeSystem="1.2.208.184.100.2"
+                                        displayName="Dobbeltsyn og andre synsforstyrrelser"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af dobbeltsyn og andre synsforstyrrelser?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A015.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A015.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A015.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A015.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A015.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="16"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0020" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q016" codeSystem="1.2.208.184.100.2"
+                                        displayName="Manglende appetit?"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af manglende appetit?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A016.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A016.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A016.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A016.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A016.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="17"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0021" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q017" codeSystem="1.2.208.184.100.2"
+                                        displayName="At du spiser for meget?"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af at du spiser for meget?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A017.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A017.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A017.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A017.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A017.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="18"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0022" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q018" codeSystem="1.2.208.184.100.2"
+                                        displayName="Besvær med at huske?"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af besvær med at huske?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A018.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A018.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A018.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A018.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A018.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="19"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0023" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q019" codeSystem="1.2.208.184.100.2"
+                                        displayName="At du har svært ved at koncentrere dig?"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af at du har svært ved at koncentrere dig?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A019.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A019.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A019.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A019.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A019.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="20"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0024" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q020" codeSystem="1.2.208.184.100.2"
+                                        displayName="En følelse af, at du let bliver aggressiv?"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af en følelse af, at du let bliver aggressiv?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A020.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A020.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A020.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A020.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A020.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="21"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0025" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q021" codeSystem="1.2.208.184.100.2"
+                                        displayName="Svær træthed?"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af svær træthed?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A021.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A021.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A021.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A021.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A021.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="22"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0026" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q022" codeSystem="1.2.208.184.100.2"
+                                        displayName="Tristhed?" codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af tristhed?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A022.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A022.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A022.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A022.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A022.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="23"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0027" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q023" codeSystem="1.2.208.184.100.2"
+                                        displayName="At være bange for at få et nyt anfald i løbet af de næste uger?"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af at være bange for at få et nyt anfald i løbet af de næste uger?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A023.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A023.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A023.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A023.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A023.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="24"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0028" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q024" codeSystem="1.2.208.184.100.2"
+                                        displayName="Manglende interesse for eller manglende glæde ved seksualitet?"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af manglende interesse for eller manglende glæde ved seksualitet?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A024.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A024.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A024.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A024.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A024.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="25"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0029" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q025" codeSystem="1.2.208.184.100.2"
+                                        displayName="Har du i løbet af de sidste fire uger haft selvmordstanker?"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I hvilken grad har du været plaget af har du i løbet af de sidste fire uger haft selvmordstanker??</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A025.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Slet ikke"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A025.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A025.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Noget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A025.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="En hel del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A025.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Særdeles meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                        </organizer>
+                    </entry>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        <organizer classCode="BATTERY" moodCode="EVN">
+                            <!-- Question Organizer template -->
+                            <templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+                            <id root="1.2.208.184.100.2" extension="GLO0015"
+                                assigningAuthorityName="MedCom"/>
+                            <!-- The next code is used as the organizer description   -->
+                            <code code="ORGD006" codeSystem="1.2.208.184.100.2"
+                                codeSystemName="MedCom prompt table">
+                                <originalText>I de sidste 2 uger...:</originalText>
+                            </code>
+                            <statusCode code="COMPLETED"/>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="26"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0031" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q031" codeSystem="1.2.208.184.100.2"
+                                        displayName="har jeg været glad og i godt humør"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I de sidste 2 uger har jeg været glad og i godt humør</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A026.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Hele tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A026.2"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A026.3"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Lidt mere end halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A026.4"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Lidt mindre end halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A026.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A026.6"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="På intet tidspunkt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="27"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0032" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q027" codeSystem="1.2.208.184.100.2"
+                                        displayName="har jeg følt mig rolig og afslappet"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I de sidste 2 uger har jeg følt mig rolig og afslappet</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A027.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Hele tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A027.2"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A027.3"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Lidt mere end halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A027.4"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Lidt mindre end halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A027.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A027.6"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="På intet tidspunkt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="28"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0033" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q028" codeSystem="1.2.208.184.100.2"
+                                        displayName="har jeg følt mig aktiv og energisk"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I de sidste 2 uger har jeg følt mig aktiv og energisk</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A028.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Hele tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A028.2"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A028.3"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Lidt mere end halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A028.4"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Lidt mindre end halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A028.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A028.6"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="På intet tidspunkt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="29"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0034" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q029" codeSystem="1.2.208.184.100.2"
+                                        displayName="er jeg vågnet frisk og udhvilet"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I de sidste 2 uger er jeg vågnet frisk og udhvilet</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A029.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Hele tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A029.2"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A029.3"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Lidt mere end halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A029.4"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Lidt mindre end halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A029.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A029.6"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="På intet tidspunkt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="30"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0035" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q030" codeSystem="1.2.208.184.100.2"
+                                        displayName="har min dagligdag været fyldt med ting der interesserer mig"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>I de sidste 2 uger har min dagligdag været fyldt med ting der interesserer mig</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A030.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Hele tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A030.2"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A030.3"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Lidt mere end halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A030.4"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Lidt mindre end halvdelen af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A030.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Lidt af tiden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A030.6"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="På intet tidspunkt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                        </organizer>
+                    </entry>
+                </section>
+            </component>
+
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!--templateID for Section-->
+                    <templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+                    <code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Helbred</title>
+                    <text>Helbred</text>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        <organizer classCode="BATTERY" moodCode="EVN">
+                            <!-- Question Organizer template -->
+                            <templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+                            <id root="1.2.208.184.100.2" extension="GLO0036"
+                                assigningAuthorityName="MedCom"/>
+                            <statusCode code="COMPLETED"/>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="31"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0037" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q031" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Hvordan synes du dit helbred er alt i alt?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A031.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Fremragende"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A031.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Vældig godt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A031.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Godt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A031.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="Mindre godt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A031.5"
+                                        codeSystem="1.2.208.184.100.2" displayName="Dårligt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="32"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0038" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q032" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Sammenlignet med for ét år siden, hvordan er dit helbred alt i alt nu?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A032.1"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Meget bedre nu end for et år siden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A032.2"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Noget bedre nu end for et siden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A032.3"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Nogenlunde det samme"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A032.4"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Noget dårligere nu en for et år siden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A032.5"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Meget dårligere nu end for et år siden"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="33"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0039" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q033" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Har du andre sygdomme eller lidelser, der i højere grad påvirker dit helbred end din epilepsi?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A033.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ja"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A033.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Nej"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                        </organizer>
+                    </entry>
+                </section>
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!--templateID for Section-->
+                    <templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+                    <code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Medicinsk behandling</title>
+                    <text>Medicinsk behandling</text>
+                    <languageCode code="da-DK"/>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        <organizer classCode="BATTERY" moodCode="EVN">
+                            <!-- Question Organizer template -->
+                            <templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+                            <id root="1.2.208.184.100.2" extension="GLO0040"
+                                assigningAuthorityName="MedCom"/>
+                            <!-- The next code is used as the organizer description   -->
+                            <code code="ORGD007" codeSystem="1.2.208.184.100.2"
+                                codeSystemName="MedCom prompt table">
+                                <originalText>De næste spørgsmål handler om din medicinske behandling</originalText>
+                            </code>
+                            <statusCode code="COMPLETED"/>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="35"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0041" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q035" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Hvor ofte tror du, at du har glemt at tage noget af din medicin?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A035.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Dagligt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A035.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ugentligt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A035.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Månedligt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A035.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="Sjældent/aldrig"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="36"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0042" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q036" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Oplever du, at din epilepsimedicin, giver bivirkninger?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A036.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Nej"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A036.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ja, lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A036.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ja, en del"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A036.4"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ja, meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                        </organizer>
+                    </entry>
+                </section>
+            </component>
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!--templateID for Section-->
+                    <templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+                    <code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Arbejde</title>
+                    <text>Arbejde</text>
+                    <languageCode code="da-DK"/>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        <organizer classCode="BATTERY" moodCode="EVN">
+                            <!-- Question Organizer template -->
+                            <templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+                            <id root="1.2.208.184.100.2" extension="GLO0043"
+                                assigningAuthorityName="MedCom"/>
+                            <!-- The next code is used as the organizer description   -->
+                            <code code="ORGD008" codeSystem="1.2.208.184.100.2"
+                                codeSystemName="MedCom prompt table">
+                                <originalText>De næste spørgsmål handler om arbejde (hvis du er studerende regnes dette som arbejde)</originalText>
+                            </code>
+                            <statusCode code="COMPLETED"/>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="37"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0044" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q037" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Har du inden for de sidste 12 mdr følt dig belastet af din arbejdssituation?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A037.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Nej"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A037.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ja, lidt"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A037.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ja, meget"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A037.4"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Jeg er ikke længere på arb.markedet"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="38"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0045" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q038" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Hvor meget arbejder du nu sammenlignet med for 12 mdr siden?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A038.1"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Jeg arbejder mere"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A038.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Cirka det samme"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A038.3"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Jeg arbejder mindre"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A038.4"
+                                        codeSystem="1.2.208.184.100.2"
+                                        displayName="Jeg er ikke længere på arb.markedet"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="39"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0046" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q039" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Hvis du arbejder mindre nu: skyldes det din epilepsi?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A039.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ja"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A039.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Delvis"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A039.3"
+                                        codeSystem="1.2.208.184.100.2" displayName="Nej"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                    <!-- The above question should only be asked if the answer to the question with code Q038
+                                        is answered with the value.@code="A038.3" OR the value.@code="A038.4" -->
+                                    <sdtc:precondition typeCode="PRCN">
+                                        <sdtc:templateId root="2.16.840.1.113883.10.20.32.4.12"/>
+                                        <sdtc:atLeastOneTrue>
+                                            <sdtc:templateId root="2.16.840.1.113883.10.20.32.4.15"/>
+                                            <sdtc:id extension="SPR001" root="1.2.208.184.100.2"/>
+                                            <sdtc:precondition>
+                                                <sdtc:criterion classCode="OBS" moodCode="EVN.CRT">
+                                                  <templateId root="2.16.840.1.113883.10.20.32.4.3"/>
+                                                  <code code="Q038" codeSystem="1.2.208.184.100.2"
+                                                  codeSystemName="MedCom prompt table"/>
+                                                  <value xsi:type="CE" code="A038.3"/>
+                                                </sdtc:criterion>
+                                            </sdtc:precondition>
+                                            <sdtc:precondition>
+                                                <sdtc:criterion classCode="OBS" moodCode="EVN.CRT">
+                                                  <templateId root="2.16.840.1.113883.10.20.32.4.3"/>
+                                                  <code code="Q038" codeSystem="1.2.208.184.100.2"
+                                                  codeSystemName="MedCom prompt table"/>
+                                                  <value xsi:type="CE" code="A038.4"/>
+                                                </sdtc:criterion>
+                                            </sdtc:precondition>
+                                        </sdtc:atLeastOneTrue>
+                                    </sdtc:precondition>
+                                </observation>
+                            </component>
+                        </organizer>
+                    </entry>
+                </section>
+            </component>
+
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!--templateID for Section-->
+                    <templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+                    <code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Socialt</title>
+                    <text>Socialt</text>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        <organizer classCode="BATTERY" moodCode="EVN">
+                            <!-- Question Organizer template -->
+                            <templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+                            <id root="1.2.208.184.100.2" extension="GLO0047"
+                                assigningAuthorityName="MedCom"/>
+                            <statusCode code="COMPLETED"/>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="40"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0048" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q040" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Medfører din epilepsi alvorlige begrænsninger for dig?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A040.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Nej"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A040.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ja. Skriv evt. hvordan:"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                            <!-- Associated question only asked if the answer to question Q040 has the value/@code="A040.2" -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="4101"/>  <!-- This is an inserted sequence number, the value could be chosen better -->
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Text Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.9"/>
+                                    <id extension="GLO0049" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q041" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Angiv hvordan din epilepsi medfører alvorlige begrænsninger for dig:</originalText>
+                                    </code>
+                                    <precondition typeCode="PRCN">
+                                        <templateId root="2.16.840.1.113883.10.20.32.4.4"/>
+                                        <criterion classCode="OBS" moodCode="EVN.CRT">
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.3"/>
+                                            <code code="Q040" codeSystem="1.2.208.184.100.2"
+                                                codeSystemName="MedCom prompt table"/>
+                                            <value xsi:type="CE" code="A040.2"/>
+                                        </criterion>
+                                    </precondition>
+                                </observation>
+                            </component>
+                        </organizer>
+                    </entry>
+                </section>
+            </component>
+
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!--templateID for Section-->
+                    <templateId root="2.16.840.1.113883.10.20.32.2.1"/>
+                    <code code="74468-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Graviditet</title>
+                    <text>Graviditet</text>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        <organizer classCode="BATTERY" moodCode="EVN">
+                            <!-- Question Organizer template -->
+                            <templateId root="2.16.840.1.113883.10.20.32.4.1"/>
+                            <id root="1.2.208.184.100.2" extension="GLO0053"
+                                assigningAuthorityName="MedCom"/>
+                            <statusCode code="COMPLETED"/>
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="43"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0054" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q044" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Er du gravid?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A044.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ja"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A044.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Nej"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT" >
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+
+
+                            <!-- Contains Continua Numeric, Multiple Choice or other defined templates -->
+                            <component typeCode="COMP" contextConductionInd="true">
+                                <sequenceNumber value="44"/>
+                                <observation classCode="OBS" moodCode="DEF">
+                                    <!--templateID for the Multiple Choice Question Pattern-->
+                                    <templateId root="2.16.840.1.113883.10.20.32.4.8"/>
+                                    <id extension="GLO0055" root="1.2.208.184.100.2"
+                                        assigningAuthorityName="MedCom"/>
+                                    <code code="Q045" codeSystem="1.2.208.184.100.2"
+                                        codeSystemName="MedCom prompt table">
+                                        <originalText>Planlægger du graviditet inden for de næste 12 måneder?</originalText>
+                                    </code>
+                                    <value xsi:type="CE" code="A045.1"
+                                        codeSystem="1.2.208.184.100.2" displayName="Ja"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <value xsi:type="CE" code="A045.2"
+                                        codeSystem="1.2.208.184.100.2" displayName="Nej"
+                                        codeSystemName="MedCom prompt table"/>
+                                    <entryRelationship typeCode="SUBJ" contextConductionInd="true">
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <!--templateID for the Question Options Pattern Observation-->
+                                            <templateId root="2.16.840.1.113883.10.20.32.4.20"/>
+                                            <code code="74467-2" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                            <value xsi:type="IVL_INT">
+                                                <!--minimum options-->
+                                                <low value="1"/>
+                                                <!--maximum options-->
+                                                <high value="1"/>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </component>
+                        </organizer>
+                    </entry>
+                </section>
+            </component>
+
+            <!-- This component defines the Copyright section -->
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!--templateID for the Copyright Section-->
+                    <templateId root="2.16.840.1.113883.10.20.32.2.2"/>
+                    <title>Copyright</title>
+                    <text>Dette skema er ophavsretligt beskyttet.</text>
+                    <languageCode code="da-DK"/>
+                    <entry typeCode="DRIV" contextConductionInd="true">
+                        <observation classCode="OBS" moodCode="EVN">
+                            <!--templateID for the Copyright Pattern Observation-->
+                            <templateId root="2.16.840.1.113883.10.20.32.4.21"/>
+                            <code code="COPY" codeSystem="2.16.840.1.113883.6.1"
+                                displayName="Code for Copyright" codeSystemName="LOINC"/>
+                            <value xsi:type="ST">Copyright, SDS, 2017</value>
+                        </observation>
+                    </entry>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

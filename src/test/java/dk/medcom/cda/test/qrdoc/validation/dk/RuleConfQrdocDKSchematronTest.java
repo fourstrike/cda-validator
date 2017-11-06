@@ -26,6 +26,7 @@ import dk.medcom.cda.test.IDocumentTest;
 import dk.medcom.cda.test.IRandomTestData;
 import dk.medcom.cda.test.IValidationTest;
 import dk.medcom.cda.validation.validationengine.SaxonEngine;
+import static dk.medcom.cda.test.matchers.ValidationEntryMatchers.hasErrorCode;
 
 public class RuleConfQrdocDKSchematronTest implements IValidationTest, ICDATest, IRandomTestData, IDocumentTest {
 

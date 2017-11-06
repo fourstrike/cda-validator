@@ -10,12 +10,10 @@ import dk.medcom.cda.test.qfdd.validation.dk.RuleConfQfddDKSchematronTest;
 import dk.medcom.cda.test.qfdd.validation.dk.RuleConfQfddSchematronTest;
 import dk.medcom.cda.test.qrdoc.validation.dk.RuleConfQrdocDKSchematronTest;
 import dk.medcom.cda.test.qrdoc.validation.dk.RuleConfQrdocSchematronTest;
-import dk.medcom.cda.test.servlet.SubmitDocumentTest;
 import dk.medcom.cda.test.servlet.TestServlet;
 
 @RunWith(Suite.class)
-@SuiteClasses({ 
-		SubmitDocumentTest.class, 
+@SuiteClasses({
 		RuleConfPhmrDKTest.class,
 		RuleConfPhmrDKSchematronTest.class,
 		RuleConfQfddSchematronTest.class,

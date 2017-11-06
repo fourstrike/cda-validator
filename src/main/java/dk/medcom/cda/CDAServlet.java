@@ -57,190 +57,190 @@ import dk.medcom.cda.validation.validationengine.SaxonEngine;
 @Produces({ MediaType.APPLICATION_JSON })
 public class CDAServlet {
 
-	public static final Logger logger = LoggerFactory.getLogger(CDAServlet.class);
+    public static final Logger logger = LoggerFactory.getLogger(CDAServlet.class);
 
-	@Context
-	private ServletContext context;
+    @Context
+    private ServletContext context;
 
-	public CDAServlet() {
-		// http://oehf.github.io/ipf/ipf-modules-cda/
-		// https://www.projects.openhealthtools.org/sf/wiki/do/viewPage/projects.mdht/wiki/MDHTValidationAPIs
-		// http://cda-validation.nist.gov/cda-validation/validation.html
-		// https://github.com/phax/ph-schematron
-		// https://github.com/krasserm/ipf/blob/master/modules/cda/core/src/test/java/org/openehealth/ipf/modules/cda/support/HITSPC37ValidationTest.java
-		// http://www.openehealth.org/display/ipf2/Core+features#Corefeatures-schematronvalidation
-		// http://www.openehealth.org/display/ipf2/IPF+reference+-+single#IPFreference-single-CDAprofilesupport
+    public CDAServlet() {
+        // http://oehf.github.io/ipf/ipf-modules-cda/
+        // https://www.projects.openhealthtools.org/sf/wiki/do/viewPage/projects.mdht/wiki/MDHTValidationAPIs
+        // http://cda-validation.nist.gov/cda-validation/validation.html
+        // https://github.com/phax/ph-schematron
+        // https://github.com/krasserm/ipf/blob/master/modules/cda/core/src/test/java/org/openehealth/ipf/modules/cda/support/HITSPC37ValidationTest.java
+        // http://www.openehealth.org/display/ipf2/Core+features#Corefeatures-schematronvalidation
+        // http://www.openehealth.org/display/ipf2/IPF+reference+-+single#IPFreference-single-CDAprofilesupport
 
-	}
+    }
 
-	@Path("transform")
-	@POST
-	@Consumes(MediaType.APPLICATION_XML)
-	@Produces(MediaType.TEXT_HTML)
-	public String xsltTransform(final String document) {
-		try {
-			final TransformerFactory factory = TransformerFactory.newInstance();
+    @Path("transform")
+    @POST
+    @Consumes(MediaType.APPLICATION_XML)
+    @Produces(MediaType.TEXT_HTML)
+    public String xsltTransform(final String document) {
+        try {
+            final TransformerFactory factory = TransformerFactory.newInstance();
 
-			//final InputStream stream = context.getResourceAsStream("/WEB-INF/classes/CDA.xsl");
-			final InputStream stream = CDAServlet.class.getResourceAsStream("/CDA.xsl");
-			final Source xslt = new StreamSource(stream, "");
-			final Transformer transformer = factory.newTransformer(xslt);
+            //final InputStream stream = context.getResourceAsStream("/WEB-INF/classes/CDA.xsl");
+            final InputStream stream = CDAServlet.class.getResourceAsStream("/CDA.xsl");
+            final Source xslt = new StreamSource(stream, "");
+            final Transformer transformer = factory.newTransformer(xslt);
 
-			final Source text = new StreamSource(IOUtils.toInputStream(document, Charset.forName("UTF-8")));
-			final StreamResult outputTarget = new StreamResult(new StringWriter());
-			transformer.transform(text, outputTarget);
+            final Source text = new StreamSource(IOUtils.toInputStream(document, Charset.forName("UTF-8")));
+            final StreamResult outputTarget = new StreamResult(new StringWriter());
+            transformer.transform(text, outputTarget);
 
-			return outputTarget.getWriter().toString();
-		} catch (final TransformerException e) {
-			logger.warn(e.getMessage(), e);
-			return "Unable to view document";
-		}
-	}
+            return outputTarget.getWriter().toString();
+        } catch (final TransformerException e) {
+            logger.warn(e.getMessage(), e);
+            return "Unable to view document";
+        }
+    }
 
-	@Path("validate/{cdaType}")
-	@POST
-	@Consumes(MediaType.APPLICATION_XML)
-	public ValidationResponse validate(@DefaultValue("NONE") @PathParam("cdaType") final CDAType type,
-			final String document) throws Exception {
+    @Path("validate/{cdaType}")
+    @POST
+    @Consumes(MediaType.APPLICATION_XML)
+    public ValidationResponse validate(@DefaultValue("NONE") @PathParam("cdaType") final CDAType type,
+                                       final String document) throws Exception {
 
-		final List<ValidationEntry> charsetWarning = Lists.newArrayList();
-		final String workingDocument = fixCharset(document, charsetWarning);
+        final List<ValidationEntry> charsetWarning = Lists.newArrayList();
+        final String workingDocument = fixCharset(document, charsetWarning);
 
-		try {
-			verifyXmlStructure(workingDocument, charsetWarning);
-		} catch (ParserConfigurationException | SAXException | IOException e) {
-			return generateSingleValidationError(
-					new ValidationEntry(e.getMessage(), null, "Document could not be parsed as XML"), e);
-		}
+        try {
+            verifyXmlStructure(workingDocument, charsetWarning);
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            return generateSingleValidationError(
+                    new ValidationEntry(e.getMessage(), null, "Document could not be parsed as XML"), e);
+        }
 
-		try {
-			return validateDocument(workingDocument, charsetWarning, type);
-		} catch (final Exception e) {
-			return generateSingleValidationError(
-					new ValidationEntry(e.getMessage(), null, "Document could not be parsed as a CDA"), e);
-		}
-	}
+        try {
+            return validateDocument(workingDocument, charsetWarning, type);
+        } catch (final Exception e) {
+            return generateSingleValidationError(
+                    new ValidationEntry(e.getMessage(), null, "Document could not be parsed as a CDA"), e);
+        }
+    }
 
-	@Path("types")
-	@GET
-	public List<CDAProfile> legalCDAProfiles() {
-		return Lists.newArrayList(new CDAProfile(CDAType.NONE, "Pure CDA R2 validation", true),
-				new CDAProfile(CDAType.PHMR, "Personal Healthcare Monitoring Report", false),
-				new CDAProfile(CDAType.QFDD, "Questionnaire Form Definition Document", false),
-				new CDAProfile(CDAType.QRDOC, "Questionnaire Response Document", false));
-	}
+    @Path("types")
+    @GET
+    public List<CDAProfile> legalCDAProfiles() {
+        return Lists.newArrayList(new CDAProfile(CDAType.NONE, "Pure CDA R2 validation", true),
+                new CDAProfile(CDAType.PHMR, "Personal Healthcare Monitoring Report", false),
+                new CDAProfile(CDAType.QFDD, "Questionnaire Form Definition Document", false),
+                new CDAProfile(CDAType.QRDOC, "Questionnaire Response Document", false));
+    }
 
-	private ValidationResponse generateSingleValidationError(final ValidationEntry invalidCDAValidationEntry,
-			final Exception e) {
-		logger.error(e.getMessage(), e);
-		final Map<Level, List<ValidationEntry>> errorMap = Maps.newHashMap();
-		final ValidationResponse validationResponse = new ValidationResponse();
-		errorMap.put(Level.ERROR, Lists.<ValidationEntry>newArrayList(invalidCDAValidationEntry));
-		validationResponse.apply(errorMap);
-		return validationResponse;
-	}
+    private ValidationResponse generateSingleValidationError(final ValidationEntry invalidCDAValidationEntry,
+                                                             final Exception e) {
+        logger.error(e.getMessage(), e);
+        final Map<Level, List<ValidationEntry>> errorMap = Maps.newHashMap();
+        final ValidationResponse validationResponse = new ValidationResponse();
+        errorMap.put(Level.ERROR, Lists.<ValidationEntry>newArrayList(invalidCDAValidationEntry));
+        validationResponse.apply(errorMap);
+        return validationResponse;
+    }
 
-	private void verifyXmlStructure(final String xml, final List<ValidationEntry> warnings)
-			throws ParserConfigurationException, SAXException, IOException {
-		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		factory.setValidating(false);
-		factory.setNamespaceAware(true);
-		final DocumentBuilder builder = factory.newDocumentBuilder();
-		builder.setErrorHandler(new SimpleErrorHandler(warnings));
-		builder.parse(new ByteArrayInputStream(xml.getBytes("utf-8")));
-	}
+    private void verifyXmlStructure(final String xml, final List<ValidationEntry> warnings)
+            throws ParserConfigurationException, SAXException, IOException {
+        final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setValidating(false);
+        factory.setNamespaceAware(true);
+        final DocumentBuilder builder = factory.newDocumentBuilder();
+        builder.setErrorHandler(new SimpleErrorHandler(warnings));
+        builder.parse(new ByteArrayInputStream(xml.getBytes("utf-8")));
+    }
 
-	class SimpleErrorHandler implements ErrorHandler {
+    class SimpleErrorHandler implements ErrorHandler {
 
-		private final List<ValidationEntry> warnings;
+        private final List<ValidationEntry> warnings;
 
-		public SimpleErrorHandler(final List<ValidationEntry> warnings) {
-			this.warnings = warnings;
-		}
+        public SimpleErrorHandler(final List<ValidationEntry> warnings) {
+            this.warnings = warnings;
+        }
 
-		@Override
-		public void warning(final SAXParseException e) throws SAXException {
-			warnings.add(new ValidationEntry(e.getMessage(), null, null));
-		}
+        @Override
+        public void warning(final SAXParseException e) throws SAXException {
+            warnings.add(new ValidationEntry(e.getMessage(), null, null));
+        }
 
-		@Override
-		public void error(final SAXParseException e) throws SAXException {
-			warnings.add(new ValidationEntry(e.getMessage(), null, null));
-		}
+        @Override
+        public void error(final SAXParseException e) throws SAXException {
+            warnings.add(new ValidationEntry(e.getMessage(), null, null));
+        }
 
-		@Override
-		public void fatalError(final SAXParseException e) throws SAXException {
-			warnings.add(new ValidationEntry(e.getMessage(), null, null));
-		}
-	}
+        @Override
+        public void fatalError(final SAXParseException e) throws SAXException {
+            warnings.add(new ValidationEntry(e.getMessage(), null, null));
+        }
+    }
 
-	private String fixCharset(final String document, final List<ValidationEntry> charsetWarning) {
-		final String workingDocument;
-		final CharsetMatch m = new CharsetDetector().setText(document.getBytes()).detect();
-		if (!"UTF-8".equalsIgnoreCase(m.getName())) {
-			final byte bytes[] = document.getBytes(Charset.forName(m.getName()));
-			workingDocument = new String(bytes, Charset.forName("UTF-8"));
-			charsetWarning.add(new ValidationEntry("Charset detected to be " + m.getName(), "CDA", "Wrong Charset"));
-		} else {
-			workingDocument = document;
-		}
-		return workingDocument;
-	}
+    private String fixCharset(final String document, final List<ValidationEntry> charsetWarning) {
+        final String workingDocument;
+        final CharsetMatch m = new CharsetDetector().setText(document.getBytes()).detect();
+        if (!"UTF-8".equalsIgnoreCase(m.getName())) {
+            final byte bytes[] = document.getBytes(Charset.forName(m.getName()));
+            workingDocument = new String(bytes, Charset.forName("UTF-8"));
+            charsetWarning.add(new ValidationEntry("Charset detected to be " + m.getName(), "CDA", "Wrong Charset"));
+        } else {
+            workingDocument = document;
+        }
+        return workingDocument;
+    }
 
-	private synchronized ValidationResponse validateDocument(final String document,
-			final List<ValidationEntry> charsetWarning, final CDAType type) {
-		final ValidationResponse validationResponse = new ValidationResponse();
+    private synchronized ValidationResponse validateDocument(final String document,
+                                                             final List<ValidationEntry> charsetWarning, final CDAType type) {
+        final ValidationResponse validationResponse = new ValidationResponse();
 
-		// Template ID's:
-		// QRD : 1.2.208.184.13.1
-		// QFDD: 1.2.208.184.12.1
-		// PHMR: 1.2.208.184.11.1
+        // Template ID's:
+        // QRD : 1.2.208.184.13.1
+        // QFDD: 1.2.208.184.12.1
+        // PHMR: 1.2.208.184.11.1
 
-		try {
+        try {
 
-			final CollectingValidationHandler validationHandler = new CollectingValidationHandler();
+            final CollectingValidationHandler validationHandler = new CollectingValidationHandler();
 
-			switch (type) {
-			case PHMR:
-				new IHEObjectsCheckerEngine(context, "/gazelle/phmr/schemas/infrastructure/CDA_SDTC.xsd")
-						.validate(document, type, validationHandler);
-				new SaxonEngine("/schematrons/conf-phmr-dk.sch.xml").validate(document, type, validationHandler);
-				new SaxonEngine("/schematrons" + CDAR2Constants.CDA_PHMR_SCHEMATRON_RULES).validate(document, type,
-						validationHandler);
-				new SaxonEngine("/schematrons" + "/Personal Healthcare Monitoring Report 1.2.sch.xml")
-						.validate(document, type, validationHandler);
-				new PHMRDKSpecificEngine().validate(document, type, validationHandler);
-				break;
-			case QFDD:
-				new IHEObjectsCheckerEngine(context, "/gazelle/qfdd/schemas/infrastructure/CDA_SDTC.xsd")
-						.validate(document, type, validationHandler);
-				new SaxonEngine("/schematrons/conf-qfdd-sch.xml").validate(document, type, validationHandler);
-				new SaxonEngine("/schematrons/conf-qfdd-sch-dk.xml").validate(document, type, validationHandler);
-				break;
-			case QRDOC:
-				new IHEObjectsCheckerEngine(context).validate(document, type, validationHandler);
-				new SaxonEngine("/schematrons/conf-qrdoc-sch.xml").validate(document, type, validationHandler);
-				new SaxonEngine("/schematrons/conf-qrdoc-sch-dk.xml").validate(document, type, validationHandler);
-				break;
-			case NONE:
-				new IHEObjectsCheckerEngine(context).validate(document, type, validationHandler);
-				break;
-			default:
-				break;
-			}
+            switch (type) {
+                case PHMR:
+                    new IHEObjectsCheckerEngine(context, "/gazelle/phmr/schemas/infrastructure/CDA_SDTC.xsd")
+                            .validate(document, type, validationHandler);
+                    new SaxonEngine("/schematrons/conf-phmr-dk.sch.xml").validate(document, type, validationHandler);
+                    new SaxonEngine("/schematrons" + CDAR2Constants.CDA_PHMR_SCHEMATRON_RULES).validate(document, type,
+                            validationHandler);
+                    new SaxonEngine("/schematrons" + "/Personal Healthcare Monitoring Report 1.2.sch.xml")
+                            .validate(document, type, validationHandler);
+                    new PHMRDKSpecificEngine().validate(document, type, validationHandler);
+                    break;
+                case QFDD:
+                    new IHEObjectsCheckerEngine(context, "/gazelle/qfdd/schemas/infrastructure/CDA_SDTC.xsd")
+                            .validate(document, type, validationHandler);
+                    new SaxonEngine("/schematrons/conf-qfdd-sch.xml").validate(document, type, validationHandler);
+                    new SaxonEngine("/schematrons/conf-qfdd-sch-dk.xml").validate(document, type, validationHandler);
+                    break;
+                case QRDOC:
+                    new IHEObjectsCheckerEngine(context).validate(document, type, validationHandler);
+                    new SaxonEngine("/schematrons/conf-qrdoc-sch.xml").validate(document, type, validationHandler);
+                    new SaxonEngine("/schematrons/conf-qrdoc-sch-dk.xml").validate(document, type, validationHandler);
+                    break;
+                case NONE:
+                    new IHEObjectsCheckerEngine(context).validate(document, type, validationHandler);
+                    break;
+                default:
+                    break;
+            }
 
-			validationResponse.apply(validationHandler.getDiagnostics());
-			validationResponse.getWarnings().addAll(charsetWarning);
-		} catch (final Exception e) {
-			logger.error(e.getMessage(), e);
-			final ImmutableMap<Level, List<ValidationEntry>> response = ImmutableMap
-					.<Level, List<ValidationEntry>>builder()
-					.put(Level.ERROR, Lists.<ValidationEntry>newArrayList(
-							new ValidationEntry(e.getMessage(), "", "Exception: Internal unhandled server error")))
-					.build();
-			validationResponse.apply(response);
-		}
-		return validationResponse;
+            validationResponse.apply(validationHandler.getDiagnostics());
+            validationResponse.getWarnings().addAll(charsetWarning);
+        } catch (final Exception e) {
+            logger.error(e.getMessage(), e);
+            final ImmutableMap<Level, List<ValidationEntry>> response = ImmutableMap
+                    .<Level, List<ValidationEntry>>builder()
+                    .put(Level.ERROR, Lists.<ValidationEntry>newArrayList(
+                            new ValidationEntry(e.getMessage(), "", "Exception: Internal unhandled server error")))
+                    .build();
+            validationResponse.apply(response);
+        }
+        return validationResponse;
 
-	}
+    }
 }
