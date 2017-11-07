@@ -127,7 +127,7 @@ public class CDAServlet {
         return Lists.newArrayList(new CDAProfile(CDAType.NONE, "Pure CDA R2 validation", true),
                 new CDAProfile(CDAType.PHMR, "Personal Healthcare Monitoring Report", false),
                 new CDAProfile(CDAType.QFDD, "Questionnaire Form Definition Document", false),
-                new CDAProfile(CDAType.QRDOC, "Questionnaire Response Document", false));
+                new CDAProfile(CDAType.QRD, "Questionnaire Response Document", false));
     }
 
     private ValidationResponse generateSingleValidationError(final ValidationEntry invalidCDAValidationEntry,
@@ -217,10 +217,10 @@ public class CDAServlet {
                     new SaxonEngine("/schematrons/conf-qfdd-sch.xml").validate(document, type, validationHandler);
                     new SaxonEngine("/schematrons/conf-qfdd-sch-dk.xml").validate(document, type, validationHandler);
                     break;
-                case QRDOC:
+                case QRD:
                     new IHEObjectsCheckerEngine(context).validate(document, type, validationHandler);
-                    new SaxonEngine("/schematrons/conf-qrdoc-sch.xml").validate(document, type, validationHandler);
-                    new SaxonEngine("/schematrons/conf-qrdoc-sch-dk.xml").validate(document, type, validationHandler);
+                    new SaxonEngine("/schematrons/conf-qrd-sch.xml").validate(document, type, validationHandler);
+                    new SaxonEngine("/schematrons/conf-qrd-sch-dk.xml").validate(document, type, validationHandler);
                     break;
                 case NONE:
                     new IHEObjectsCheckerEngine(context).validate(document, type, validationHandler);

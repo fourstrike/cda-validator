@@ -11,7 +11,7 @@ Furthermore the project contains a simple angularjs client for the service.
 Simply run:
 
 ~~~
-mvn package
+mvn clean verify
 ~~~
 
 In order to build the service, deploy the servlet to any Java EE compliant server and you're good to go. The servlet is self-contained and holds no state.
@@ -52,3 +52,5 @@ Dependending on you certificates you should again be able to use your favorite H
 ~~~
 curl https://localhost:8443/validator/service/CDA/types
 ~~~
+
+The web site is now available at http://localhost:8080/validator

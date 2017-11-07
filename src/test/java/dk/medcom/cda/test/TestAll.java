@@ -8,8 +8,8 @@ import dk.medcom.cda.test.phmr.validation.dk.RuleConfPhmrDKSchematronTest;
 import dk.medcom.cda.test.phmr.validation.dk.RuleConfPhmrDKTest;
 import dk.medcom.cda.test.qfdd.validation.dk.RuleConfQfddDKSchematronTest;
 import dk.medcom.cda.test.qfdd.validation.dk.RuleConfQfddSchematronTest;
-import dk.medcom.cda.test.qrdoc.validation.dk.RuleConfQrdocDKSchematronTest;
-import dk.medcom.cda.test.qrdoc.validation.dk.RuleConfQrdocSchematronTest;
+import dk.medcom.cda.test.qrd.validation.dk.RuleConfQrdDKSchematronTest;
+import dk.medcom.cda.test.qrd.validation.dk.RuleConfQrdSchematronTest;
 import dk.medcom.cda.test.servlet.TestServlet;
 
 @RunWith(Suite.class)
@@ -18,8 +18,8 @@ import dk.medcom.cda.test.servlet.TestServlet;
 		RuleConfPhmrDKSchematronTest.class,
 		RuleConfQfddSchematronTest.class,
 		RuleConfQfddDKSchematronTest.class,
-		RuleConfQrdocSchematronTest.class,
-		RuleConfQrdocDKSchematronTest.class,
+		RuleConfQrdSchematronTest.class,
+		RuleConfQrdDKSchematronTest.class,
 		TestServlet.class})
 public class TestAll {
 

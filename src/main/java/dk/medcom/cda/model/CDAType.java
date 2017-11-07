@@ -4,5 +4,5 @@ import javax.xml.bind.annotation.XmlEnum;
 
 @XmlEnum
 public enum CDAType {
-	PHMR, QFDD, QRDOC, NONE;
+	PHMR, QFDD, QRD, NONE;
 }

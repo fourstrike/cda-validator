@@ -1,8 +1,5 @@
 package dk.medcom.cda.test.servlet;
 
-import static org.hamcrest.CoreMatchers.not;
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 import java.io.UnsupportedEncodingException;
@@ -13,7 +10,6 @@ import javax.servlet.DispatcherType;
 
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.io.IOUtils;
-import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
@@ -30,6 +26,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.google.inject.servlet.GuiceFilter;
+
+import static org.hamcrest.CoreMatchers.not;
+
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.is;
 
 import dk.medcom.cda.CDAContextListener;
 import dk.medcom.cda.model.CDAType;
@@ -68,7 +69,7 @@ public class TestServlet implements IRandomTestData, IDocumentTest {
 		final String responceBody = IOUtils.toString(response.getEntity().getContent(), Charset.defaultCharset());
 		assertThat(responceBody, containsString("PHMR"));
 		assertThat(responceBody, containsString("QFDD"));
-		assertThat(responceBody, containsString("QRDOC"));
+		assertThat(responceBody, containsString("QRD"));
     }
     
     @Test
@@ -108,7 +109,7 @@ public class TestServlet implements IRandomTestData, IDocumentTest {
     public void testDoPostValidateQRD() throws Exception {
     	final String xml = createDocument("file:src/test/resources/QRD/QRD_KOL_Example_1_MaTIS_with_extended_referencies.xml");
     	final CloseableHttpClient client = HttpClientBuilder.create().build();
-		final String type = CDAType.QRDOC.name();
+		final String type = CDAType.QRD.name();
 		final HttpUriRequest request = validate(xml, type);
 		
 		final HttpResponse response = client.execute(request);

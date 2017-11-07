@@ -1,6 +1,5 @@
 package dk.medcom.cda.validation.validationengine;
 
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.util.List;
 import java.util.function.Consumer;
@@ -36,7 +35,7 @@ public class IHEObjectsCheckerEngine implements IValidationEngine {
 				context.getRealPath("/WEB-INF/classes/gazelle/ihe/mbvalidatorDetailedResult.xsl"));
 	}
 
-	public IHEObjectsCheckerEngine(String cdaXSDPath, String valueSetRepoPath, String cdaXslPath) {
+	public IHEObjectsCheckerEngine(final String cdaXSDPath, final String valueSetRepoPath, final String cdaXslPath) {
 		this.paths = new IHEPaths(cdaXSDPath, valueSetRepoPath, cdaXslPath);
 	}
 
@@ -51,7 +50,7 @@ public class IHEObjectsCheckerEngine implements IValidationEngine {
 
 		try {	
 			final DetailedResult result;
-			if(CDAType.NONE == type || CDAType.QFDD == type || CDAType.QRDOC == type )
+			if(CDAType.NONE == type || CDAType.QFDD == type || CDAType.QRD == type )
 				result = net.ihe.gazelle.cdabasic.validator.MicroDocumentValidationWrapper.validate(documentAsString, paths);
 			else if(CDAType.PHMR == type)
 				result = net.ihe.gazelle.assembler.ccdav21.MicroDocumentValidationWrapper.validate(documentAsString, paths);
