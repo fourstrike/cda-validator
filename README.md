@@ -33,7 +33,7 @@ Now you can use the service via your favorite HTTP client:
 curl http://localhost:8080/validator/service/CDA/types
 ~~~
 
-It is also possible to deploy the service as HTTPS. Simply insert two ".pem" files into the folder: "tomcat/ssl":
+It is also possible to deploy the service as HTTPS. Simply copy two ".pem" files into the folder: "tomcat/conf":
 
  * key.pem
  * cert.pem
