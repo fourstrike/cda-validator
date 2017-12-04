@@ -12,7 +12,7 @@ public class TestWar {
 		
 		final Server server = new Server(8080);
 		server.setHandler(new WebAppContext(
-				"target/dk.medcom.cda-1.0.1.war", "/"));
+				"target/dk.medcom.cda-1.0.2.war", "/"));
 		// server.setHandler(new WebAppContext("hitspValidation.war", "/"));
 		server.start();
 	}
