@@ -6,6 +6,8 @@ This project contains a service that is able to validate:
 
 Furthermore the project contains a simple angularjs client for the service.
 
+![Scheme](images/cda-validator.gif)
+
 ## How to build
 
 Simply run:
