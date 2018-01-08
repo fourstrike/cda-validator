@@ -6,7 +6,7 @@
 	<groupId>dk.medcom.cda</groupId>
 	<artifactId>dk.medcom.cda</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -113,13 +113,14 @@
 		<dependency>
 			<groupId>com.helger</groupId>
 			<artifactId>ph-schematron</artifactId>
-			<version>4.3.0</version>
+			<version>4.3.4</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sf.saxon</groupId>
 			<artifactId>Saxon-HE</artifactId>
-			<version>9.7.0-18</version>
+			<version>9.8.0-7</version>
 		</dependency>
+
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
