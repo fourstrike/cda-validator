@@ -29,6 +29,12 @@ docker build -t goimplementit:cda-validator .
 docker run -p 8080:8080 -it goimplementit:cda-validator
 ~~~
 
+-or just run the one liner in the project root:
+
+~~~
+mvn clean compile war:war && docker build -t goimplementit:cda-validator . && docker run -p 8080:8080 -it goimplementit:cda-validator
+~~~
+
 Now you can use the service via your favorite HTTP client:
 
 ~~~
