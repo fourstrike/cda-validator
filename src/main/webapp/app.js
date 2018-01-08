@@ -17,10 +17,11 @@ angular.module('myApp', [
   return{
     host : $location.host(),
     port : $location.port(),
+    protocol : $location.protocol(),
     path : window.location.pathname.replace('/app/', ''),
     validateString : function(type, xmlString) {
       return $http({
-        url: 'http://' + this.host + ':' + this.port  + this.path + 'service/CDA/validate/' + type,
+        url: this.protocol + '://' + this.host + ':' + this.port  + this.path + 'service/CDA/validate/' + type,
         method: 'POST',
         headers: {
           'Content-Type': 'application/xml'
@@ -31,14 +32,14 @@ angular.module('myApp', [
 
     cdaTypes : function() {
       return $http({
-        url: 'http://' + this.host + ':' + this.port + this.path + 'service/CDA/types',
+        url: this.protocol + '://' + this.host + ':' + this.port + this.path + 'service/CDA/types',
         method: 'GET'
       })
     },
 
     openWindowWithCDAXSLTTransformation : function(cdaXmlString) {
       return $http({
-        url: 'http://' + this.host + ':' + this.port + this.path + 'service/CDA/transform',
+        url: this.protocol + '://' + this.host + ':' + this.port + this.path + 'service/CDA/transform',
         method: 'POST',
         headers: {
           'Content-Type': 'application/xml'
