@@ -70,7 +70,7 @@ public class CDAServlet {
         // https://github.com/krasserm/ipf/blob/master/modules/cda/core/src/test/java/org/openehealth/ipf/modules/cda/support/HITSPC37ValidationTest.java
         // http://www.openehealth.org/display/ipf2/Core+features#Corefeatures-schematronvalidation
         // http://www.openehealth.org/display/ipf2/IPF+reference+-+single#IPFreference-single-CDAprofilesupport
-
+		System.setProperty("javax.xml.transform.TransformerFactory","com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
     }
 
     @Path("transform")
@@ -79,21 +79,23 @@ public class CDAServlet {
     @Produces(MediaType.TEXT_HTML)
     public String xsltTransform(final String document) {
         try {
+        		final String trimmed = document.trim().replaceFirst("^([\\W]+)<","<");
+        		
             final TransformerFactory factory = TransformerFactory.newInstance();
 
-            //final InputStream stream = context.getResourceAsStream("/WEB-INF/classes/CDA.xsl");
+//            final InputStream stream = context.getResourceAsStream("/WEB-INF/classes/CDA.xsl");
             final InputStream stream = CDAServlet.class.getResourceAsStream("/CDA.xsl");
             final Source xslt = new StreamSource(stream, "");
             final Transformer transformer = factory.newTransformer(xslt);
 
-            final Source text = new StreamSource(IOUtils.toInputStream(document, Charset.forName("UTF-8")));
+            final Source text = new StreamSource(IOUtils.toInputStream(trimmed, Charset.forName("UTF-8")));
             final StreamResult outputTarget = new StreamResult(new StringWriter());
             transformer.transform(text, outputTarget);
 
             return outputTarget.getWriter().toString();
         } catch (final TransformerException e) {
             logger.warn(e.getMessage(), e);
-            return "Unable to view document";
+            return "Unable to view document ("+e.getMessage()+")";
         }
     }
 
