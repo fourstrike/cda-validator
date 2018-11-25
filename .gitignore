@@ -66,3 +66,6 @@ fabric.properties
 .gitignore
 .idea/
 cda-validator.iml
+.project
+.classpath
+.settings
