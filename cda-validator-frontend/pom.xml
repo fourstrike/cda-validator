@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- run 'mvn clean compile war:war' from project root to make deployable
+        war -->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>dk.medcom.cda</groupId>
+    <artifactId>cda-validator-frontend</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.3</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <parent>
+        <groupId>dk.medcom.cda</groupId>
+        <artifactId>cda-validator</artifactId>
+        <version>1.0.3</version>
+    </parent>
+</project>
