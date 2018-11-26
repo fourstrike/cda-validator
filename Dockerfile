@@ -1,4 +1,4 @@
-FROM tomcat:9.0.2-jre8
+FROM tomcat:9.0.13-jre8
 COPY target/*.war /usr/local/tomcat/webapps/validator.war
 ADD tomcat/conf /usr/local/tomcat/conf/
 
