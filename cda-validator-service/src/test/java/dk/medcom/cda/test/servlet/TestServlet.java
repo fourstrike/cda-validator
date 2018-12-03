@@ -38,106 +38,107 @@ import dk.medcom.cda.test.IDocumentTest;
 import dk.medcom.cda.test.IRandomTestData;
 
 public class TestServlet implements IRandomTestData, IDocumentTest {
-	private Server server;
+  public static final int PORT = 9080;
+  private Server server;
 
-	@Before
-	public void before() throws Exception {
-		server = new Server(8080);
+  @Before
+  public void before() throws Exception {
+    server = new Server(PORT);
 
-		final ServletContextHandler sch = new ServletContextHandler(server, "/");
-		sch.addEventListener(new CDAContextListener());
-		sch.addFilter(GuiceFilter.class, "/*", EnumSet.of(DispatcherType.REQUEST));
-		sch.addServlet(DefaultServlet.class, "/");
-		sch.setWelcomeFiles(new String[] { "index.html" });
-		sch.setResourceBase("src/main/webapp/app");
+    final ServletContextHandler sch = new ServletContextHandler(server, "/");
+    sch.addEventListener(new CDAContextListener());
+    sch.addFilter(GuiceFilter.class, "/*", EnumSet.of(DispatcherType.REQUEST));
+    sch.addServlet(DefaultServlet.class, "/");
+    sch.setWelcomeFiles(new String[]{"index.html"});
+    sch.setResourceBase("src/main/webapp/app");
 
-		server.start();
-	}
-	
-	@After
-	public void after() throws Exception {
-		server.stop();
-	}
-	
-    @Test
-    public void testDoGetTypes() throws Exception {
-    	final CloseableHttpClient client = HttpClientBuilder.create().build();
-		final HttpUriRequest request = new HttpGet("http://localhost:8080/service/CDA/types");
-		
-		final HttpResponse response = client.execute(request);
-		assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
-		final String responceBody = IOUtils.toString(response.getEntity().getContent(), Charset.defaultCharset());
-		assertThat(responceBody, containsString("PHMR"));
-		assertThat(responceBody, containsString("QFDD"));
-		assertThat(responceBody, containsString("QRD"));
-    }
-    
-    @Test
-    public void testDoPostValidatePHMR() throws Exception {
-    	final String xml = createDocument("file:src/test/resources/PHMR/PHMR.sample.xml");
-    	final CloseableHttpClient client = HttpClientBuilder.create().build();
-		final String type = CDAType.PHMR.name();
-		final HttpUriRequest request = validate(xml, type);
-		
-		final HttpResponse response = client.execute(request);
-		assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
-    }
-    
-    @Test
-    public void testDoPostValidateQFDD() throws Exception {
-    	final String xml = createDocument("file:src/test/resources/QFDD/QFD_Example_1_Numeric_Question.xml");
-    	final CloseableHttpClient client = HttpClientBuilder.create().build();
-		final String type = CDAType.QFDD.name();
-		final HttpUriRequest request = validate(xml, type);
-		
-		final HttpResponse response = client.execute(request);
-		assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
-    }
+    server.start();
+  }
 
-	@Test
-	public void testDoPostValidateQFDDWithSTDC() throws Exception {
-		final String xml = createDocument("file:src/test/resources/QFDD/Gert_Skema_v003_epilepsi.xml");
-		final CloseableHttpClient client = HttpClientBuilder.create().build();
-		final String type = CDAType.QFDD.name();
-		final HttpUriRequest request = validate(xml, type);
+  @After
+  public void after() throws Exception {
+    server.stop();
+  }
 
-		final HttpResponse response = client.execute(request);
-		assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
-	}
+  @Test
+  public void testDoGetTypes() throws Exception {
+    final CloseableHttpClient client = HttpClientBuilder.create().build();
+    final HttpUriRequest request = new HttpGet("http://localhost:" + PORT + "/service/CDA/types");
 
-    @Test
-    public void testDoPostValidateQRD() throws Exception {
-    	final String xml = createDocument("file:src/test/resources/QRD/QRD_KOL_Example_1_MaTIS_with_extended_referencies.xml");
-    	final CloseableHttpClient client = HttpClientBuilder.create().build();
-		final String type = CDAType.QRD.name();
-		final HttpUriRequest request = validate(xml, type);
-		
-		final HttpResponse response = client.execute(request);
-		assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
-    }
+    final HttpResponse response = client.execute(request);
+    assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
+    final String responceBody = IOUtils.toString(response.getEntity().getContent(), Charset.defaultCharset());
+    assertThat(responceBody, containsString("PHMR"));
+    assertThat(responceBody, containsString("QFDD"));
+    assertThat(responceBody, containsString("QRD"));
+  }
 
-	@Test
-	public void testDoPostTransform() throws Exception {
-		final String xml = createDocument("file:src/test/resources/PHMR/PHMR_Nancy.xml");
-		final CloseableHttpClient client = HttpClientBuilder.create().build();
-		final HttpUriRequest request = transform(xml);
+  @Test
+  public void testDoPostValidatePHMR() throws Exception {
+    final String xml = createDocument("file:src/test/resources/PHMR/PHMR.sample.xml");
+    final CloseableHttpClient client = HttpClientBuilder.create().build();
+    final String type = CDAType.PHMR.name();
+    final HttpUriRequest request = validate(xml, type);
 
-		final HttpResponse response = client.execute(request);
-		assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
-		assertThat(EntityUtils.toString(response.getEntity()), not(is("Unable to view document")));
-	}
+    final HttpResponse response = client.execute(request);
+    assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
+  }
 
-	private HttpUriRequest validate(final String xml, final String type) throws UnsupportedEncodingException {
-		final HttpUriRequest request = RequestBuilder.post("http://localhost:8080/service/CDA/validate/" + type)
-													 .setHeader("Content-Type", "application/xml")
-    											     .setEntity(new StringEntity(xml)).build();
-		return request;
-	}
+  @Test
+  public void testDoPostValidateQFDD() throws Exception {
+    final String xml = createDocument("file:src/test/resources/QFDD/QFD_Example_1_Numeric_Question.xml");
+    final CloseableHttpClient client = HttpClientBuilder.create().build();
+    final String type = CDAType.QFDD.name();
+    final HttpUriRequest request = validate(xml, type);
 
-	private HttpUriRequest transform(final String xml) throws UnsupportedEncodingException {
-		final HttpUriRequest request = RequestBuilder.post("http://localhost:8080/service/CDA/transform")
-				.setHeader("Content-Type", "application/xml")
-				.setEntity(new StringEntity(xml)).build();
-		return request;
-	}
+    final HttpResponse response = client.execute(request);
+    assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
+  }
+
+  @Test
+  public void testDoPostValidateQFDDWithSTDC() throws Exception {
+    final String xml = createDocument("file:src/test/resources/QFDD/Gert_Skema_v003_epilepsi.xml");
+    final CloseableHttpClient client = HttpClientBuilder.create().build();
+    final String type = CDAType.QFDD.name();
+    final HttpUriRequest request = validate(xml, type);
+
+    final HttpResponse response = client.execute(request);
+    assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
+  }
+
+  @Test
+  public void testDoPostValidateQRD() throws Exception {
+    final String xml = createDocument("file:src/test/resources/QRD/QRD_KOL_Example_1_MaTIS_with_extended_referencies.xml");
+    final CloseableHttpClient client = HttpClientBuilder.create().build();
+    final String type = CDAType.QRD.name();
+    final HttpUriRequest request = validate(xml, type);
+
+    final HttpResponse response = client.execute(request);
+    assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
+  }
+
+  @Test
+  public void testDoPostTransform() throws Exception {
+    final String xml = createDocument("file:src/test/resources/PHMR/PHMR_Nancy.xml");
+    final CloseableHttpClient client = HttpClientBuilder.create().build();
+    final HttpUriRequest request = transform(xml);
+
+    final HttpResponse response = client.execute(request);
+    assertThat(response.getStatusLine().getStatusCode(), is(HttpStatus.SC_OK));
+    assertThat(EntityUtils.toString(response.getEntity()), not(is("Unable to view document")));
+  }
+
+  private HttpUriRequest validate(final String xml, final String type) throws UnsupportedEncodingException {
+    final HttpUriRequest request = RequestBuilder.post("http://localhost:" + PORT + "/service/CDA/validate/" + type)
+            .setHeader("Content-Type", "application/xml")
+            .setEntity(new StringEntity(xml)).build();
+    return request;
+  }
+
+  private HttpUriRequest transform(final String xml) throws UnsupportedEncodingException {
+    final HttpUriRequest request = RequestBuilder.post("http://localhost:" + PORT + "/service/CDA/transform")
+            .setHeader("Content-Type", "application/xml")
+            .setEntity(new StringEntity(xml)).build();
+    return request;
+  }
 }
