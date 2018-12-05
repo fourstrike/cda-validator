@@ -6,7 +6,7 @@
     <groupId>dk.medcom.cda</groupId>
     <artifactId>cda-validator-service</artifactId>
     <packaging>war</packaging>
-    <version>1.0.3</version>
+    <version>1.1.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -14,7 +14,7 @@
     <parent>
         <groupId>dk.medcom.cda</groupId>
         <artifactId>cda-validator</artifactId>
-        <version>1.0.3</version>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
 
     <dependencies>
@@ -68,12 +68,12 @@
         <dependency>
             <groupId>com.helger</groupId>
             <artifactId>ph-schematron</artifactId>
-            <version>4.3.4</version>
+            <version>5.0.7</version>
         </dependency>
         <dependency>
             <groupId>net.sf.saxon</groupId>
             <artifactId>Saxon-HE</artifactId>
-            <version>9.8.0-7</version>
+            <version>9.9.0-2</version>
         </dependency>
 
         <dependency>
@@ -266,4 +266,46 @@
             </exclusions>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/classes/resources/</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${project.parent.basedir}/cda-validator-frontend/cda-validator-app/dist/cda-validator-app</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.2</version>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Manufacturer>GoImplement.it</Manufacturer>
+						</manifestEntries>
+					</archive>
+					<webResources>
+						<resource>
+						<directory>${project.build.directory}/classes/resources/</directory>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+        </plugins>
+    </build>
 </project>

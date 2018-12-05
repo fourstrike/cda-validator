@@ -69,3 +69,7 @@ cda-validator.iml
 .project
 .classpath
 .settings
+
+cda-validator-frontend/cda-validator-app/node
+cda-validator-frontend/cda-validator-app/node_modules
+cda-validator-frontend/cda-validator-app/dist
