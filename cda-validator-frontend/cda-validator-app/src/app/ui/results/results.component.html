@@ -1,0 +1,68 @@
+<!-- Validation results -->
+<section *ngIf="stringToValidate.length > 0" id="validationResults">
+    <div class="container">
+
+      <h1>
+        <span *ngIf="errors.length == 1">
+          {{errors.length}} ERROR,
+        </span>
+        <span *ngIf="errors.length != 1">
+          {{errors.length}} ERRORS,
+        </span>
+
+        <span *ngIf="warnings.length == 1">
+          {{warnings.length}} WARNING,
+        </span>
+        <span *ngIf="warnings.length != 1">
+          {{warnings.length}} WARNINGS,
+        </span>
+
+        <span *ngIf="infos.length == 1">
+          {{infos.length}} INFO
+        </span>
+        <span *ngIf="infos.length != 1">
+          {{infos.length}} INFOS
+        </span>
+      </h1>
+
+      <div class="alert alert-success" role="success" *ngIf="errors.length == 0">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        Congratulations you have a valid document! &nbsp;
+        <button (click)="onClickViewIt()" type="button" class="btn btn-success">View It!</button>
+      </div>
+
+      <div *ngFor="let error of errors">
+        <div class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"><b>&nbsp;{{error.errorCode}}</b></span>
+          <span class="sr-only">Error: </span>
+          <div>&nbsp;</div>
+          <div><i>{{error.location}}</i></div>
+          <div>&nbsp;</div>
+          <div>{{error.message}}</div>
+        </div>
+      </div>
+
+      <div *ngFor="let warning of warnings">
+        <div class="alert alert-warning" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"><b>&nbsp;{{warning.errorCode}}</b></span>
+          <span class="sr-only">Error: </span>
+          <div>&nbsp;</div>
+          <div><i>{{warning.location}}</i></div>
+          <div>&nbsp;</div>
+          <div>{{warning.message}}</div>
+        </div>
+      </div>
+
+      <div *ngFor="let info of infos">
+        <div class="alert alert-info" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"><b>&nbsp;{{info.errorCode}}</b></span>
+          <span class="sr-only">Error: </span>
+          <div>&nbsp;</div>
+          <div><i>{{info.location}}</i></div>
+          <div>&nbsp;</div>
+          <div>{{info.message}}</div>
+        </div>
+      </div>
+
+    </div>
+  </section>

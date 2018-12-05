@@ -1,0 +1,62 @@
+<!-- File upload validation -->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="intro-text">
+
+          <span class="name">Validate File</span>
+
+          <hr class="star-light">
+
+          <form class="form-horizontal">
+
+            <div class="panel panel-default form-group">
+              <div class="panel-heading">
+                <h3 class="panel-title">Pick a CDA profile</h3>
+              </div>
+              <div class="panel-body">
+                <div *ngIf='cdaTypes' class="btn-group btn-group-justified" data-toggle="buttons">
+                  <label *ngFor='let validationType of cdaTypes' class="btn btn-default {{validationType.default === true ? 'active' : ''}}"
+                    (click)="onValidationTypeChange(validationType.type)">
+                    <input type="radio" value="{{validationType.type}}"> {{validationType.type}}
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default form-group">
+              <div class="panel-heading">
+                <h3 class="panel-title">Input you data</h3>
+              </div>
+              <div class="panel-body col-sm-20">
+                <div class="fileinput fileinput-new input-group col-sm-20" data-provides="fileinput">
+                  <div class="form-control full-width" data-trigger="fileinput">
+                    <i class="glyphicon glyphicon-file fileinput-exists"></i>
+                    <span class="fileinput-filename"></span>
+                  </div>
+                  <span class="input-group-addon btn btn-default btn-file">
+                    <span class="fileinput-new">Select file</span>
+                    <span class="fileinput-exists">Change</span>
+                    <input type="file" name="..." (change)="onStringToValidateChange($event)" />
+                  </span>
+                  <a href="view_file_upload" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-20">
+                <button [disabled]="isValidationDisabled" (click)=onClickValidate() id="validateButton" type="button"
+                  ng-click="validate()" style="display: block; width: 100%;" class="btn btn-success full-width">Validate</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<app-results [errors]="errors" [warnings]="warnings" [infos]="infos" [stringToValidate]=stringToValidate></app-results>
