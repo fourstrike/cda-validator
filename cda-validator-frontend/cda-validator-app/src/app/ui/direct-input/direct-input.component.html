@@ -37,6 +37,8 @@
 
             <div class="form-group">
               <div class="col-sm-20">
+                <app-disclaimer></app-disclaimer>
+
                 <button [disabled]="isValidationDisabled" (click)=onClickValidate() id="validateButton" type="button"
                   ng-click="validate()" style="display: block; width: 100%;" class="btn btn-success full-width">Validate</button>
               </div>
