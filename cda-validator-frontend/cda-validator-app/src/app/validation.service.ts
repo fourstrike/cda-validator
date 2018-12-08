@@ -6,15 +6,26 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ValidationService {
-  constructor(private http: HttpClient) { }
+  private baseUrl: string;
+
+  constructor(private http: HttpClient) {
+
+    const location = document.location;
+    let host = location.host;
+    let protocol = location.protocol;
+    let path = location.pathname;
+    this.baseUrl = protocol + "//" + host + path;
+
+    console.log("Picked base URL: " + this.baseUrl)
+  }
 
   getCDATypes() {
-    return this.http.get('http://localhost:8080/validator/service/CDA/types');
+    return this.http.get(this.baseUrl + "service/CDA/types");
   }
 
   validate(type: string, str: string) {
     return this.http
-               .post('http://localhost:8080/validator/service/CDA/validate/' + type,
+               .post(this.baseUrl + "service/CDA/validate/" + type,
                      str,
                      this.xmlPostOptions())
 
@@ -22,7 +33,7 @@ export class ValidationService {
 
   transformCDADocument(content: string) {
     return this.http
-               .post('http://localhost:8080/validator/service/CDA/transform',
+               .post(this.baseUrl + "service/CDA/transform",
                      content,
                      {
                       headers: new HttpHeaders({
