@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidationService } from '../../validation.service'
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-file-upload',
@@ -18,7 +19,8 @@ export class FileUploadComponent implements OnInit {
   warnings: any[] = []
   infos: any[] = []
 
-  constructor(private validation: ValidationService) { }
+  constructor(private validation: ValidationService,
+              private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
     this.isValidationDisabled = true;
@@ -56,10 +58,13 @@ export class FileUploadComponent implements OnInit {
 
   onClickValidate() {
     console.log("Validation initiated")
+    this.spinner.show();
     let res = this.validation.validate(this.pickedCDAType, this.stringToValidate)
                   .subscribe(
                     (data: any) => {
                       console.log(data);
+                      this.spinner.hide();
+
                       this.errors = data.errors;
                       this.warnings = data.warnings;
                       this.infos = data.infos;
@@ -67,7 +72,10 @@ export class FileUploadComponent implements OnInit {
                       const element = document.querySelector('#validationResults');
                       element.scrollIntoView();
                     },
-                    error => console.log(error)
+                    error => {
+                      console.log(error);
+                      this.spinner.hide();
+                    }
                   );
   }
 }
