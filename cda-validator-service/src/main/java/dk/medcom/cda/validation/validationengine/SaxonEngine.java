@@ -1,119 +1,80 @@
 package dk.medcom.cda.validation.validationengine;
 
-import java.io.File;
-import java.io.StringReader;
-import java.util.List;
-
-import javax.xml.transform.stream.StreamSource;
-
-import org.oclc.purl.dsdl.svrl.ActivePattern;
-import org.oclc.purl.dsdl.svrl.FailedAssert;
-import org.oclc.purl.dsdl.svrl.FiredRule;
-import org.oclc.purl.dsdl.svrl.SchematronOutputType;
-
 import com.google.common.base.Strings;
-import com.helger.schematron.ISchematronResource;
-import com.helger.schematron.pure.SchematronResourcePure;
-
+import com.helger.schematron.xslt.SchematronResourceSCH;
 import dk.medcom.cda.CollectingValidationHandler;
 import dk.medcom.cda.CollectingValidationHandler.Level;
 import dk.medcom.cda.IValidationEngine;
 import dk.medcom.cda.model.CDAType;
 import dk.medcom.cda.model.ValidationEntry;
+import org.oclc.purl.dsdl.svrl.FailedAssert;
+import org.oclc.purl.dsdl.svrl.SchematronOutputType;
+
+import javax.xml.transform.stream.StreamSource;
+import java.io.File;
+import java.io.StringReader;
+import java.nio.file.Path;
 
 public class SaxonEngine implements IValidationEngine {
 
-  final ISchematronResource aResPure;
+  final SchematronResourceSCH schematronResource;
 
   public SaxonEngine(final String profilePath) {
-    aResPure = SchematronResourcePure.fromClassPath(profilePath);
-    if (!aResPure.isValidSchematron())
+    schematronResource = SchematronResourceSCH.fromClassPath(profilePath);
+    if (!schematronResource.isValidSchematron())
       throw new RuntimeException("Could not resolve schema");
+    schematronResource.setURIResolver((href, base) -> {
+      File f = new File(href);
+      return new StreamSource(f);
+    });
   }
 
   public SaxonEngine(final File file) {
-    aResPure = SchematronResourcePure.fromFile(file);
-    if (!aResPure.isValidSchematron())
+    schematronResource = SchematronResourceSCH.fromFile(file);
+    if (!schematronResource.isValidSchematron())
       throw new RuntimeException("Could not resolve schema");
+    schematronResource.setURIResolver((href, base) -> {
+      String path = file.getParentFile().toPath().toString() + File.separatorChar;;
+      File f = new File(path + href);
+      return new StreamSource(f);
+    });
   }
 
   @Override
   public void validate(final String documentAsString, final CDAType type,
                        final CollectingValidationHandler validationHandler) {
 
+    final SchematronOutputType validationResult;
     try {
-
-      final SchematronOutputType validationResult = aResPure
+      validationResult = schematronResource
               .applySchematronValidationToSVRL(new StreamSource(new StringReader(documentAsString)));
-
-      final List<Object> failedValidationObjects = validationResult.getActivePatternAndFiredRuleAndFailedAssert();
-
-      // The code should preferably be in the id of the assertion. It is
-      // however not the case with any one of the ones imported from 3.
-      // party - hence, the hackish way of storing the code is
-      // continuingly used.
-
-      String code = null;
-      // populate validation handler with results
-      for (final Object validationObject : failedValidationObjects) {
-        if (validationObject instanceof FiredRule) {
-          code = ((FiredRule) validationObject).getId();
-        } else if (validationObject instanceof ActivePattern) {
-        } else if (validationObject instanceof FailedAssert) {
-          final FailedAssert failedAssertElm = (FailedAssert) validationObject;
-          final String location = failedAssertElm.getLocation();
-          String message = failedAssertElm.getText();
-          String flag = failedAssertElm.getFlag();
-
-          // Heuristic
-          try {
-            if (message != null && flag == null) {
-              final String[] messages = message.split(":");
-              if (messages[0].contains("error"))
-                flag = "error";
-              if (messages[0].contains("warning"))
-                flag = "warning";
-              if (messages.length == 3) {
-                code = messages[1].trim();
-                message = messages[2].trim();
-              }
-            }
-          } catch (final Exception e) {
-            e.printStackTrace();
-          }
-
-          // Use the following when the schematrons have been
-          // corrected:
-          // final String code = failedAssertElm.getId();
-
-          final int locOfFirst = message.indexOf(":");
-          final int locOfSecond = message.indexOf(":", locOfFirst + 1);
-          if (!(locOfFirst == -1 || locOfSecond == -1)) {
-            code = message.substring(locOfFirst + 2, locOfSecond).trim();
-          }
-
-          final ValidationEntry diagnosis = new ValidationEntry(message, location, code);
-          // determine if it is an error, warning or info.
-          final Level level = getLevelFromFlag(flag);
-
-          switch (level) {
-            case ERROR:
-              validationHandler.handleError(diagnosis);
-              break;
-            case WARNING:
-              validationHandler.handleWarning(diagnosis);
-              break;
-            case INFO:
-              validationHandler.handleInfo(diagnosis);
-              break;
-          }
-        }
-      }
-
-    } catch (final Exception e) {
-      validationHandler.handleError(new ValidationEntry("Internal error", "Custom Saxon", "Custom Saxon"));
+    } catch (Exception e) {
+      throw new RuntimeException(e.getMessage(), e);
     }
+
+    validationResult.getActivePatternAndFiredRuleAndFailedAssert()
+            .stream().filter(FailedAssert.class::isInstance).map(FailedAssert.class::cast)
+            .map(fa -> new ValidationEntry().setErrorCode(fa.getRole()).setLocation(fa.getLocation()).setMessage(fa.getText()))
+            .forEach(ve ->
+                    {
+                      final Level level = getLevelFromFlag(ve.getErrorCode());
+
+                      switch (level) {
+                        case ERROR:
+                          validationHandler.handleError(ve);
+                          break;
+                        case WARNING:
+                          validationHandler.handleWarning(ve);
+                          break;
+                        case INFO:
+                          validationHandler.handleInfo(ve);
+                          break;
+                      }
+                    }
+            );
+
   }
+
 
   private Level getLevelFromFlag(final String flag) {
     if (Strings.isNullOrEmpty(flag))

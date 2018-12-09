@@ -24,24 +24,28 @@ public class ValidationEntry {
 		return message;
 	}
 
-	public void setMessage(final String message) {
+	public ValidationEntry setMessage(final String message) {
 		this.message = message;
+		return this;
+
 	}
 
 	public String getErrorCode() {
 		return errorCode;
 	}
 
-	public void setErrorCode(final String errorCode) {
+	public ValidationEntry setErrorCode(final String errorCode) {
 		this.errorCode = errorCode;
+		return this;
 	}
 
 	public String getLocation() {
 		return location;
 	}
 
-	public void setLocation(final String location) {
+	public ValidationEntry setLocation(final String location) {
 		this.location = location;
+		return this;
 	}
 
 	@Override
