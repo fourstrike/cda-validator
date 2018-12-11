@@ -50,7 +50,7 @@ public class IHEObjectsCheckerEngine implements IValidationEngine {
 
 		try {	
 			final DetailedResult result;
-			if(CDAType.NONE == type || CDAType.QFDD == type || CDAType.QRD == type )
+			if(CDAType.NONE == type || CDAType.QFDD == type || CDAType.QRD == type || CDAType.CPD == type)
 				result = net.ihe.gazelle.cdabasic.validator.MicroDocumentValidationWrapper.validate(documentAsString, paths);
 			else if(CDAType.PHMR == type)
 				result = net.ihe.gazelle.assembler.ccdav21.MicroDocumentValidationWrapper.validate(documentAsString, paths);
@@ -102,24 +102,20 @@ public class IHEObjectsCheckerEngine implements IValidationEngine {
 	private <NotificationTemplate extends Notification> void applyFindings(final Class<NotificationTemplate> clazz,
 			final CollectingValidationHandler validationHandler, final List<?> mDAerrors) {
 
-		FluentIterable.from(mDAerrors).filter(clazz).forEach(new Consumer<NotificationTemplate>() {
+		FluentIterable.from(mDAerrors).filter(clazz).forEach(t -> {
+      final ValidationEntry ve = new ValidationEntry(t.getDescription(), t.getLocation(), t.getIdentifiant());
+      if (ve.getMessage().toUpperCase().startsWith("ERROR")) {
+        validationHandler.handleError(ve);
+        if (!Error.class.equals(t.getClass()))
+          System.out.println("Bad error");
+      }
 
-			@Override
-			public void accept(final NotificationTemplate t) {
-				final ValidationEntry ve = new ValidationEntry(t.getDescription(), t.getLocation(), t.getIdentifiant());
-				if (ve.getMessage().toUpperCase().startsWith("ERROR")) {
-					validationHandler.handleError(ve);
-					if (!Error.class.equals(t.getClass()))
-						System.out.println("Bad error");
-				}
-
-				else if (ve.getMessage().toUpperCase().startsWith("WARNING")) {
-					validationHandler.handleWarning(ve);
-					if (!Warning.class.equals(t.getClass()))
-						System.out.println("Bad warning");
-				} else
-					validationHandler.handleInfo(ve);
-			}
-		});
+      else if (ve.getMessage().toUpperCase().startsWith("WARNING")) {
+        validationHandler.handleWarning(ve);
+        if (!Warning.class.equals(t.getClass()))
+          System.out.println("Bad warning");
+      } else
+        validationHandler.handleInfo(ve);
+    });
 	}
 }
