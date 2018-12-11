@@ -4,7 +4,7 @@ import dk.medcom.cda.CollectingValidationHandler;
 import dk.medcom.cda.model.CDAType;
 import dk.medcom.cda.test.IDocumentTest;
 import dk.medcom.cda.test.IValidationTest;
-import dk.medcom.cda.validation.validationengine.SaxonEngine;
+import dk.medcom.cda.validation.validationengine.ArtDecorSaxonEngine;
 import org.junit.Before;
 import org.junit.Test;
 import org.openhealthtools.mdht.uml.cda.ClinicalDocument;
@@ -25,12 +25,12 @@ public class ArtDecorSchematronTests implements IValidationTest, IDocumentTest {
   private String validDocument;
   private ClinicalDocument clinicalDocument;
 
-  private SaxonEngine rule;
+  private ArtDecorSaxonEngine rule;
 
 
   @Before
   public void before() throws IOException {
-    rule = new SaxonEngine(new File("src/main/schematron/medcom-documents-S_R.sch"));
+    rule = new ArtDecorSaxonEngine(new File("src/main/schematron/medcom-documents-S_R.sch"));
     validationHandler = new CollectingValidationHandler();
     final String baseDocument = "file:src/test/resources/CPD/CPD-DK_Care_Plan_Diabetes_Example_1_2018-11-02.xml";
     validDocument = createDocument(baseDocument);
