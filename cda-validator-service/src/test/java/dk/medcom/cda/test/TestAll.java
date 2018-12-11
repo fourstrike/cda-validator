@@ -1,5 +1,6 @@
 package dk.medcom.cda.test;
 
+import dk.medcom.cda.test.cpd.validation.dk.ArtDecorSchematronTests;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -14,13 +15,15 @@ import dk.medcom.cda.test.servlet.TestServlet;
 
 @RunWith(Suite.class)
 @SuiteClasses({
-		RuleConfPhmrDKTest.class,
-		RuleConfPhmrDKSchematronTest.class,
-		RuleConfQfddSchematronTest.class,
-		RuleConfQfddDKSchematronTest.class,
-		RuleConfQrdSchematronTest.class,
-		RuleConfQrdDKSchematronTest.class,
-		TestServlet.class})
+        RuleConfPhmrDKTest.class,
+        RuleConfPhmrDKSchematronTest.class,
+        RuleConfQfddSchematronTest.class,
+        RuleConfQfddDKSchematronTest.class,
+        RuleConfQrdSchematronTest.class,
+        RuleConfQrdDKSchematronTest.class,
+        TestServlet.class,
+        ArtDecorSchematronTests.class
+})
 public class TestAll {
 
 }
