@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../Stylesheet/CDA.xsl"?>
+<!--
+ Title:        Care Plan
+ Filename:     CPD-DK_Care_Plan_Diabetes_Example_1_2018-11-02.xml
+ Created by:   MedCom
+
+ Created as an example of showing a GP Diabetes FLP (Forløbsplan for Diabetes) as a DK-CPD Care Plan
+
+ $LastChangedDate: 2018-11-04 13:43 $
+
+ ********************************************************
+ Disclaimer: This sample file contains representative data elements to represent a Care Plan.
+ The file depicts a fictional character's health data. Any resemblance to a real person is coincidental.
+ To illustrate as many data elements as possible, the clinical scenario may not be plausible.
+ The data in this sample file is not intended to represent real patients, people or clinical events.
+ This sample is designed to be used in conjunction with the C-CDA Clinical Notes Implementation Guide.
+ ********************************************************
+  -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="urn:hl7-org:v3 ../Schema/infrastructure/cda/CDA_SDTC.xsd"
+                  xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:voc="urn:hl7-org:v3/voc">
+    <!-- ** CDA Header ** -->
+    <realmCode code="DK"/>
+    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+    <!-- MedCom DK CPD TemplateId-->
+    <templateId root="1.2.208.184.15.1"/>
+    <!-- DocumentId -->
+    <id root="31D27E18-C69D-4AF6-AE46-0414695AE8FD"/>
+    <!-- code for the care plan -->
+    <code code="81215-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+          displayName="Care plan - recommended C-CDA R2.0 &amp; R2.1 sections"/>
+    <title>Min forløbsplan for Diabetes</title>
+    <!-- effectiveTime = Document creation date, no timestamp -->
+    <effectiveTime value="20180928000000+0000"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+    <languageCode code="da-DK"/>
+    <!-- This document is the first document in the set (see setId for id for the set -->
+    <setId root="A7CA2951-CF03-4D8E-AE14-BAC25051E850"/>
+    <versionNumber value="1"/>
+
+    <!-- Patient (recordTarget) -->
+    <recordTarget>
+        <patientRole classCode="PAT">
+            <id extension="2512489996" root="1.2.208.176.1.2" assigningAuthorityName="CPR"/>
+            <addr use="H">
+                <streetAddressLine>Testpark Allé 48</streetAddressLine>
+                <postalCode>3400</postalCode>
+                <city>Hillerød</city>
+                <country>Danmark</country>
+            </addr>
+            <telecom value="tel:12345678" use="H"/>
+            <patient classCode="PSN" determinerCode="INSTANCE">
+                <name>
+                    <given>Nancy</given>
+                    <given>Test</given>
+                    <family>Berggren</family>
+                </name>
+                <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1"/>
+                <birthTime value="19481225000000+0000"/>
+            </patient>
+            <providerOrganization>
+                <id root="1.2.208.176.1.1" extension="191901000016999" assigningAuthorityName="SOR"/>
+                <name>Lægehuset Valdemarsgade</name>
+                <telecom value="tel:65119999" use="WP"/>
+                <addr>
+                    <streetAddressLine>Valdemarsgade 10</streetAddressLine>
+                    <postalCode>5700</postalCode>
+                    <city>Svendborg</city>
+                    <country>Danmark</country>
+                </addr>
+            </providerOrganization>
+        </patientRole>
+    </recordTarget>
+
+    <!-- Author -->
+    <author>
+        <time value="20180515101900+0200"/>
+        <assignedAuthor>
+            <id root="1.2.208.176.1.1" extension="191901000016999" assigningAuthorityName="SOR"/>
+            <addr use="WP">
+                <streetAddressLine>Valdemarsgade 10</streetAddressLine>
+                <postalCode>5700</postalCode>
+                <city>Svendborg</city>
+                <country>Danmark</country>
+            </addr>
+            <telecom value="tel:65119999" use="WP"/>
+            <assignedPerson>
+                <name>
+                    <prefix>Læge</prefix>
+                    <given>Anders</given>
+                    <family>Andersen</family>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id root="1.2.208.176.1.1" extension="191901000016999" assigningAuthorityName="SOR"/>
+                <name>Lægehuset Valdemarsgade</name>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+
+    <!-- Custodian -->
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="1.2.208.176.1.1" extension="191901000016999" assigningAuthorityName="SOR"/>
+                <name>Lægehuset Valdemarsgade</name>
+                <telecom value="tel:65119999" use="WP"/>
+                <addr use="WP">
+                    <streetAddressLine>Valdemarsgade 10</streetAddressLine>
+                    <postalCode>5700</postalCode>
+                    <city>Svendborg</city>
+                    <country>Danmark</country>
+                </addr>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+
+    <!-- documentationOf TBD -->
+    <documentationOf>
+        <templateId root="a" extension="b"/>
+        <serviceEvent classCode="PCPR">
+            <effectiveTime>
+                <low value="20180928000000+0000"/>
+                <high value="20180928000000+0000"/>
+            </effectiveTime>
+        </serviceEvent>
+    </documentationOf>
+    <!-- The Care Plan is continually evolving and dynamic. The Care Plan CDA instance
+      is NOT dynamic. Each time a Care Plan CDA is generated it represents a snapshot
+      in time of the Care Plan at that moment. Whenever a care provider or patient
+      generates a Care Plan, it should be noted through relatedDocument
+      whether the current Care Plan replaces or appends another Care Plan.
+      The relatedDocumentTypeCode indicates whether the current document is
+      an addendum to the ParentDocument (APND (append)) or the current document
+      is a replacement of the ParentDocument (RPLC (replace)). -->
+    <!-- This document is the first in a set, hence no relatedDocument
+       describes the parent document
+    <relatedDocument typeCode="RPLC">
+       <parentDocument>
+          <id root="223769BE-F6EE-4B04-A0CE-B56AE998C880"/>
+          <code code="81215-6"
+             codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+             displayName="Care plan - recommended C-CDA R2.0 &amp; R2.1 sections"/>
+          <setId root="A7CA2951-CF03-4D8E-AE14-BAC25051E850"/>
+          <versionNumber value="1"/>
+       </parentDocument>
+    </relatedDocument>
+    -->
+    <!--
+ ********************************************************
+ CDA Body
+ ********************************************************
+ -->
+    <component>
+        <structuredBody>
+            <!--
+   *********************************************************************
+   Health Concerns section indeholder:
+     * Tilstande (Ikke at forveksle med FSIII Helbredstilstande
+     * Diagnoser
+     * Funktionsevne
+   ********************************************************************
+   -->
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!-- Health Concerns Section -->
+                    <templateId root="1.2.208.184.15.1.10.20.1" extension="2018-09-28"/>
+                    <code code="75310-3" displayName="Health Concerns" codeSystem="2.16.840.1.113883.6.1"
+                          codeSystemName="LOINC"/>
+                    <title>Tilstande, diagnoser mm.</title>
+                    <text/>
+                    <component typeCode="COMP" contextConductionInd="true">
+                        <section classCode="DOCSECT" moodCode="EVN">
+                            <templateId root="1.2.208.184.15.1.10.20.1.2" extension="2018-11-28"/>
+                            <code code="FLPDiagnosisCode" codeSystem="1.2.208.184.100.1"
+                                  codeSystemName="MedCom Message Codes"
+                                  displayName="Forløbsplan diagnose kode"/>
+                            <title nullFlavor="NI"/>
+                            <text>
+                                <table border="1" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th align="left" colspan="2">Diagnoser</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>T90</td>
+                                            <td>Diabetes</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </text>
+
+                            <entry typeCode="DRIV" contextConductionInd="true">
+                                <act classCode="ACT" moodCode="EVN">
+                                    <!-- Health Concern Act templateId-->
+                                    <templateId root="1.2.208.184.15.1.10.20.1.21" extension="2018-09-28"/>
+
+                                    <id root="4EAB0E52-DD7D-4285-99EB-72D32DDB195C"/>
+                                    <code code="75310-3" codeSystem="2.16.840.1.113883.6.1"
+                                          codeSystemName="LOINC" displayName="Health Concern"/>
+                                    <!-- This Health Concern has a statusCode of active because it is an active concern -->
+                                    <statusCode code="active"/>
+                                    <!-- The effective time is the date that the Health Concern started being followed -
+                                          this does not necessarily correlate to the onset date of the contained health issues-->
+                                    <effectiveTime value="20121017000000+0000"/>
+                                    <author typeCode="AUT" contextControlCode="OP">
+                                        <time value="20180925103000+0200"/>
+                                        <assignedAuthor>
+                                            <id root="1.2.208.176.1.1" extension="191901000016999"
+                                                assigningAuthorityName="SOR"/>
+                                            <addr use="WP">
+                                                <streetAddressLine>Valdemarsgade 10</streetAddressLine>
+                                                <postalCode>5700</postalCode>
+                                                <city>Svendborg</city>
+                                                <country>Danmark</country>
+                                            </addr>
+                                            <telecom value="tel:65119999" use="WP"/>
+                                            <assignedPerson>
+                                                <name>
+                                                    <prefix>SpecialLæge</prefix>
+                                                    <given>Søren</given>
+                                                    <family>Sørensen</family>
+                                                </name>
+                                            </assignedPerson>
+                                            <representedOrganization>
+                                                <id root="1.2.208.176.1.1" extension="191901000016999"
+                                                    assigningAuthorityName="SOR"/>
+                                                <name>Lægehuset Valdemarsgade</name>
+                                            </representedOrganization>
+                                        </assignedAuthor>
+                                    </author>
+                                    <!-- Health Concern Diagnosis: Diabetes -->
+                                    <entryRelationship typeCode="REFR">
+                                        <!-- Problem Observation -->
+                                        <observation classCode="OBS" moodCode="EVN">
+                                            <id root="233D05C6-42BB-4627-94C9-9C6AF7416F2A"/>
+                                            <code code="ALGA01" codeSystem="1.2.208.176.2.4"
+                                                  codeSystemName="Sundhedsvæsenets Klassifikations System"
+                                                  displayName="aktionsdiagnose"/>
+                                            <effectiveTime>
+                                                <!-- Date of diagnosis -->
+                                                <low value="20121017112135+0200"/>
+                                                <high nullFlavor="NI"/>
+                                            </effectiveTime>
+                                            <!-- codesystem has to be changed -->
+                                            <value xsi:type="CD" code="T90" codeSystem="1.2.208.176.99.99.99"
+                                                   codeSystemName="ICPC-2-DK" displayName="Diabetes"/>
+                                        </observation>
+                                    </entryRelationship>
+                                </act>
+                            </entry>
+                        </section>
+                    </component>
+                </section>
+            </component>
+            <!--
+                   ********************************************************
+                   Goals Section
+                   ********************************************************
+               -->
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!-- Goals Section -->
+                    <templateId root="1.2.208.184.15.1.10.20.2" extension="2018-09-28"/>
+                    <code code="61146-7" displayName="Goals" codeSystem="2.16.840.1.113883.6.1"
+                          codeSystemName="LOINC"/>
+                    <title>Mine mål</title>
+                    <text/>
+                    <component typeCode="COMP" contextConductionInd="true">
+                        <section classCode="DOCSECT" moodCode="EVN">
+                            <templateId root="1.2.208.184.15.1.10.20.2.2" extension="2018-11-28"/>
+                            <code code="FlpKolGoalText" codeSystem="1.2.208.184.100.1"
+                                  codeSystemName="MedCom Message Codes" displayName="Mine mål"/>
+                            <title nullFlavor="NI"/>
+                            <text>
+                                <table border="1" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th align="left">Mine mål</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td ID="PatientGoal1">Langtidsblodsukker: Under 58-64<br/>Blodtryk:
+                                                Under 130/80<br/>Koleserol: Under 1.8
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </text>
+                            <entry typeCode="DRIV" contextConductionInd="true">
+                                <observation classCode="OBS" moodCode="GOL">
+                                    <!-- Goal Observation -->
+                                    <templateId root="1.2.208.184.15.1.10.20.2.20" extension="2018-09-28"/>
+                                    <!-- Goal Observation unique id-->
+                                    <id root="3700B3B0-FBED-11E2-B778-0800200C9A66"/>
+                                    <code nullFlavor="NA"/>
+                                    <text>
+                                        <reference value="#PatientGoal1"/>
+                                    </text>
+                                    <statusCode code="active"/>
+                                    <effectiveTime value="20140121104000+0100"/>
+                                    <value xsi:type="ST" nullFlavor="NA"/>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+                </section>
+            </component>
+
+
+            <!--
+     ********************************************************
+     Outcomes Section
+     ********************************************************
+   -->
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!-- Outcomes Section  -->
+                    <templateId root="1.2.208.184.15.1.10.20.4" extension="2018-09-28"/>
+                    <code code="11383-7" displayName="Patient Problem Outcome Section"
+                          codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Resultater</title>
+                    <text>Seneste fem målinger</text>
+                    <!--
+       ********************************************************
+       Langtidsblodsukker målinger
+       ********************************************************
+     -->
+
+                    <component typeCode="COMP" contextConductionInd="true">
+                        <section classCode="DOCSECT" moodCode="EVN">
+                            <templateId root="1.2.208.184.15.1.10.20.4.2" extension="2018-11-28"/>
+                            <title>Langtidsblodsukker (mmol/mol)</title>
+                            <text>
+                                <table border="1" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Værdi</th>
+                                            <th>Dato</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>22.5 mmol/mol</td>
+                                            <td>24-08-18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>22.8 mmol/mol</td>
+                                            <td>28-08-18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>22.0 mmol/mol</td>
+                                            <td>07-09-18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>23.0 mmol/mol</td>
+                                            <td>13-09-18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>24.0 mmol/mol</td>
+                                            <td>25-09-18</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </text>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Observation Langtidsblodsukker 1 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="A2A1C1F6-8B3C-45D2-B012-C279539CE607"/>
+                                    <code code="NPU27300" codeSystem="1.2.208.176.2.1"
+                                          displayName="Hæmoglobin A1c (IFCC);Hb(B)"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180824121545+0200"/>
+                                    <value xsi:type="PQ" value="22.5" unit="mmol/mol"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Observation Langtidsblodsukker 2-->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="F9007504-86DB-45A5-8336-FAD18CF391C6"/>
+                                    <code code="NPU27300" codeSystem="1.2.208.176.2.1"
+                                          displayName="Hæmoglobin A1c (IFCC);Hb(B)"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180828113634+0200"/>
+                                    <value xsi:type="PQ" value="22.8" unit="mmol/mol"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Observation Langtidsblodsukker 3 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="2A19FCD3-4FD0-4B3B-B8D8-D8E8C834C0CA"/>
+                                    <code code="NPU27300" codeSystem="1.2.208.176.2.1"
+                                          displayName="Hæmoglobin A1c (IFCC);Hb(B)"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180907125006+0200"/>
+                                    <value xsi:type="PQ" value="22.0" unit="mmol/mol"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Observation Langtidsblodsukker 4 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="BC877107-5BEF-40B9-A778-048AB324077D"/>
+                                    <code code="NPU27300" codeSystem="1.2.208.176.2.1"
+                                          displayName="Hæmoglobin A1c (IFCC);Hb(B)"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180913105006+0200"/>
+                                    <value xsi:type="PQ" value="23.0" unit="mmol/mol"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Observation Langtidsblodsukker 5 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="611A5EA7-6CBA-4D27-B772-AA75A02F9A63"/>
+                                    <code code="NPU27300" codeSystem="1.2.208.176.2.1"
+                                          displayName="Hæmoglobin A1c (IFCC);Hb(B)"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180925105006+0200"/>
+                                    <value xsi:type="PQ" value="24.0" unit="mmol/mol"/>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+
+                    <!--
+       ********************************************************
+       Blodtryks målinger
+       ********************************************************
+     -->
+
+                    <component typeCode="COMP" contextConductionInd="true">
+                        <section classCode="DOCSECT" moodCode="EVN">
+                            <templateId root="1.2.208.184.15.1.10.20.4.2" extension="2018-11-28"/>
+                            <title>Blodtryk (mmHg)</title>
+                            <text>
+                                <table border="1" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Systolisk Værdi</th>
+                                            <th>Diatolisk Værdi</th>
+                                            <th>Dato</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>150 mmHg</td>
+                                            <td>90 mmHg</td>
+                                            <td>24-08-18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>140 mmHg</td>
+                                            <td>85 mmHg</td>
+                                            <td>28-08-18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>132 mmHg</td>
+                                            <td>80 mmHg</td>
+                                            <td>07-09-18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>120 mmHg</td>
+                                            <td>83 mmHg</td>
+                                            <td>13-09-18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>120 mmHg</td>
+                                            <td>80 mmHg</td>
+                                            <td>25-09-18</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </text>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Systolisk blodtryk 1 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="916991C7-E2BF-4E1D-B814-41C4917ECB09"/>
+                                    <code code="DNK05472" codeSystem="1.2.208.176.2.1"
+                                          displayName="Blodtryk systolisk;Arm"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180824095200+0200"/>
+                                    <value xsi:type="PQ" value="150" unit="mmHg"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Diastolisk blodtryk 1 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="C0F92FE2-847B-4B33-892A-F08D3D5001F6"/>
+                                    <code code="DNK05473" codeSystem="1.2.208.176.2.1"
+                                          displayName="Blodtryk diastolisk;Arm"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180824095200+0200"/>
+                                    <value xsi:type="PQ" value="90" unit="mmHg"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Systolisk blodtryk 2 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="8EEA223E-CFA0-4612-AB3A-029DC7B58DCF"/>
+                                    <code code="DNK05472" codeSystem="1.2.208.176.2.1"
+                                          displayName="Blodtryk systolisk;Arm"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180828144200+0200"/>
+                                    <value xsi:type="PQ" value="140" unit="mmHg"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Diastolisk blodtryk 2 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="E8CC2C88-583F-4089-AC8D-6F314E82F29B"/>
+                                    <code code="DNK05473" codeSystem="1.2.208.176.2.1"
+                                          displayName="Blodtryk diastolisk;Arm"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180828144200+0200"/>
+                                    <value xsi:type="PQ" value="85" unit="mmHg"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Systolisk blodtryk 3 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="D364AF9A-E2C9-46E3-A625-97D739B281A7"/>
+                                    <code code="DNK05472" codeSystem="1.2.208.176.2.1"
+                                          displayName="Blodtryk systolisk;Arm"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180907151200+0200"/>
+                                    <value xsi:type="PQ" value="132" unit="mmHg"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Diastolisk blodtryk 3 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="5F503DBB-8FD0-4DCC-BF2C-96A430C84BBB"/>
+                                    <code code="DNK05473" codeSystem="1.2.208.176.2.1"
+                                          displayName="Blodtryk diastolisk;Arm"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180907151200+0200"/>
+                                    <value xsi:type="PQ" value="80" unit="mmHg"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Systolisk blodtryk 4 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="800D16F1-17B0-417A-8826-447E84CB9BCE"/>
+                                    <code code="DNK05472" codeSystem="1.2.208.176.2.1"
+                                          displayName="Blodtryk systolisk;Arm"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180913082500+0200"/>
+                                    <value xsi:type="PQ" value="120" unit="mmHg"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Diastolisk blodtryk 4 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="AC5AB1D2-A861-46B7-9E9F-68BB0FBEC815"/>
+                                    <code code="DNK05473" codeSystem="1.2.208.176.2.1"
+                                          displayName="Blodtryk diastolisk;Arm"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180913082500+0200"/>
+                                    <value xsi:type="PQ" value="83" unit="mmHg"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Systolisk blodtryk 5 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="8A900A58-957A-4708-9F85-1C8198767FC9"/>
+                                    <code code="DNK05472" codeSystem="1.2.208.176.2.1"
+                                          displayName="Blodtryk systolisk;Arm"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180925182710+0200"/>
+                                    <value xsi:type="PQ" value="120" unit="mmHg"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Diastolisk blodtryk 5 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="9B252D80-3C3C-48A9-B4A9-49853C7E53F9"/>
+                                    <code code="DNK05473" codeSystem="1.2.208.176.2.1"
+                                          displayName="Blodtryk diastolisk;Arm"
+                                          codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180925182710+0200"/>
+                                    <value xsi:type="PQ" value="80" unit="mmHg"/>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+
+                    <!--
+       ********************************************************
+       LDL Kolesterol
+       ********************************************************
+     -->
+                    <component typeCode="COMP" contextConductionInd="true">
+                        <section classCode="DOCSECT" moodCode="EVN">
+                            <templateId root="1.2.208.184.15.1.10.20.4.2" extension="2018-11-28"/>
+                            <title>LDL Kolesterol (mmol/L)</title>
+                            <text>
+                                <table border="1" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Værdi</th>
+                                            <th>Dato</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2.5 mmol/L</td>
+                                            <td>28-08-18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.2 mmol/L</td>
+                                            <td>06-09-18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7.2 mmol/L</td>
+                                            <td>07-09-18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7.7 mmol/L</td>
+                                            <td>13-09-18</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5.2 mmol/L</td>
+                                            <td>25-09-18</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </text>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Observation LDL Kolesterol 1 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="37DC6D6F-4A12-442D-AB69-909DC95C740B"/>
+                                    <code code="NPU01568" codeSystem="1.2.208.176.2.1"
+                                          displayName="Kolesterol LDL;P" codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180828192730+0200"/>
+                                    <value xsi:type="PQ" value="2.5" unit="mmol/L"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Observation LDL Kolesterol 2 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="C309A7A8-764F-4F9F-9E11-E0673E25A883"/>
+                                    <code code="NPU01568" codeSystem="1.2.208.176.2.1"
+                                          displayName="Kolesterol LDL;P" codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180906194800+0200"/>
+                                    <value xsi:type="PQ" value="2.2" unit="mmol/L"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Observation LDL Kolesterol 3 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="684F645B-B166-4F74-B4A2-3F0EF724AA7C"/>
+                                    <code code="NPU01568" codeSystem="1.2.208.176.2.1"
+                                          displayName="Kolesterol LDL;P" codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180907195210+0200"/>
+                                    <value xsi:type="PQ" value="7.2" unit="mmol/L"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Observation LDL Kolesterol 4 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="DD6B3D93-3702-4693-AC21-6B68FCFF0152"/>
+                                    <code code="NPU01568" codeSystem="1.2.208.176.2.1"
+                                          displayName="Kolesterol LDL;P" codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180913193221+0200"/>
+                                    <value xsi:type="PQ" value="7.7" unit="mmol/L"/>
+                                </observation>
+                            </entry>
+                            <entry typeCode="COMP" contextConductionInd="true">
+                                <!-- Outcome Observation LDL Kolesterol 5 -->
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <!-- Outcomes observation  -->
+                                    <templateId root="1.2.208.184.15.1.10.20.4.20" extension="2018-09-28"/>
+                                    <id root="77E9E2B2-5880-446B-8798-B8628BF27DF5"/>
+                                    <code code="NPU01568" codeSystem="1.2.208.176.2.1"
+                                          displayName="Kolesterol LDL;P" codeSystemName="NPU terminologien"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20180925191201+0200"/>
+                                    <value xsi:type="PQ" value="7.7" unit="mmol/L"/>
+                                </observation>
+                            </entry>
+                        </section>
+                    </component>
+                </section>
+            </component>
+            <!--
+   ********************************************************
+   Interventions Section = Planlagte og gennemførte.
+   ********************************************************
+   -->
+            <component typeCode="COMP" contextConductionInd="true">
+                <section classCode="DOCSECT" moodCode="EVN">
+                    <!-- Interventions Section -->
+                    <templateId root="1.2.208.184.15.1.10.20.3" extension="2018-09-28"/>
+                    <code code="62387-6" displayName="Interventions" codeSystem="2.16.840.1.113883.6.1"
+                          codeSystemName="LOINC"/>
+                    <title>Udførte eller planlagt interventioner</title>
+                    <text/>
+                    <!--
+     ********************************************************
+     Planlagte interventioner
+     ********************************************************
+     -->
+                    <component typeCode="COMP" contextConductionInd="true">
+                        <section classCode="DOCSECT" moodCode="EVN">
+                            <!-- Interventions Act -->
+                            <templateId root="1.2.208.184.15.1.10.20.3.2" extension="2018-11-28"/>
+                            <code code="PlannedInterventionText" codeSystem="1.2.208.184.100.1"
+                                  codeSystemName="MedCom Message Codes"/>
+                            <title>Husk at bestille tid til...</title>
+                            <text>
+                                <table border="1" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th align="left" colspan="1">Husk at bestille tid til...</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td ID="PlannedInterventionText1">Øjenlæge mindst hver 2. år</td>
+                                        </tr>
+                                        <tr>
+                                            <td ID="PlannedInterventionText2">Fodterapeut mindst 1 gang
+                                                årligt
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td ID="PlannedInterventionText3">Influenzavaccination mellem 1
+                                                okt. og 31 dec.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </text>
+                            <entry typeCode="DRIV" contextConductionInd="true">
+                                <!--  Planned intervention Act:
+                             This entry shows an act in intent mood = planned intervention -->
+                                <encounter classCode="ACT" moodCode="INT">
+                                    <!-- Interventions Act templateId-->
+                                    <templateId root="1.2.208.184.15.1.10.20.3.20" extension="2018-09-28"/>
+                                    <id root="85FA4B62-E3A9-4385-B064-FE04CCA35ADB"/>
+                                    <code nullFlavor="NI"/>
+                                    <text>
+                                        <reference value="#PlannedInterventionText1"/>
+                                    </text>
+                                    <statusCode code="active"/>
+                                    <effectiveTime nullFlavor="NI">
+                                        <low nullFlavor="NI"/>
+                                        <high nullFlavor="NI"/>
+                                    </effectiveTime>
+                                </encounter>
+                            </entry>
+                            <entry typeCode="DRIV" contextConductionInd="true">
+                                <!--  Planned intervention Act:
+                             This entry shows an act in intent mood = planned intervention -->
+                                <encounter classCode="ACT" moodCode="INT">
+                                    <!-- Interventions Act templateId-->
+                                    <templateId root="1.2.208.184.15.1.10.20.3.20" extension="2018-09-28"/>
+                                    <id root="CA3EEBFE-DF7A-430E-96D9-DDCFF7663C86"/>
+                                    <code nullFlavor="NI"/>
+                                    <text>
+                                        <reference value="#PlannedInterventionText2"/>
+                                    </text>
+                                    <statusCode code="active"/>
+                                    <effectiveTime nullFlavor="NI">
+                                        <low nullFlavor="NI"/>
+                                        <high nullFlavor="NI"/>
+                                    </effectiveTime>
+                                </encounter>
+                            </entry>
+                            <entry typeCode="DRIV" contextConductionInd="true">
+                                <!--  Planned intervention Act:
+                             This entry shows an act in intent mood = planned intervention -->
+                                <encounter classCode="ACT" moodCode="INT">
+                                    <!-- Interventions Act templateId-->
+                                    <templateId root="1.2.208.184.15.1.10.20.3.20" extension="2018-09-28"/>
+                                    <id root="8CB11CC1-48A5-49CF-B8A6-C8120B7C7B66"/>
+                                    <code nullFlavor="NI"/>
+                                    <text>
+                                        <reference value="#PlannedInterventionText3"/>
+                                    </text>
+                                    <statusCode code="active"/>
+                                    <effectiveTime nullFlavor="NI">
+                                        <low nullFlavor="NI"/>
+                                        <high nullFlavor="NI"/>
+                                    </effectiveTime>
+                                </encounter>
+                            </entry>
+                        </section>
+                    </component>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

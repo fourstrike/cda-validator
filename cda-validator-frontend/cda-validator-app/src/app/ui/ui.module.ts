@@ -6,10 +6,16 @@ import { FooterComponent } from './footer/footer.component';
 import { DirectInputComponent } from './direct-input/direct-input.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ResultsComponent } from './results/results.component';
+<<<<<<< HEAD
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 
 @NgModule({
   declarations: [LayoutComponent, HeaderComponent, FooterComponent, DirectInputComponent, FileUploadComponent, ResultsComponent, DisclaimerComponent],
+=======
+
+@NgModule({
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent, DirectInputComponent, FileUploadComponent, ResultsComponent],
+>>>>>>> feature/CPD-schematron
   imports: [
     CommonModule
   ],

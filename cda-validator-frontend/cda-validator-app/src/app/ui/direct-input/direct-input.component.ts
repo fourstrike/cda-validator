@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidationService } from '../../validation.service'
+<<<<<<< HEAD
 import { NgxSpinnerService } from 'ngx-spinner';
+=======
+>>>>>>> feature/CPD-schematron
 
 @Component({
   selector: 'app-direct-input',
@@ -19,8 +22,12 @@ export class DirectInputComponent implements OnInit {
   warnings: any[] = []
   infos: any[] = []
 
+<<<<<<< HEAD
   constructor(private validation: ValidationService,
               private spinner: NgxSpinnerService) { }
+=======
+  constructor(private validation: ValidationService) { }
+>>>>>>> feature/CPD-schematron
 
   ngOnInit() {
     this.isValidationDisabled = true;
@@ -49,13 +56,19 @@ export class DirectInputComponent implements OnInit {
 
   onClickValidate() {
     console.log("Validation initiated")
+<<<<<<< HEAD
     this.spinner.show();
+=======
+>>>>>>> feature/CPD-schematron
     let res = this.validation.validate(this.pickedCDAType, this.stringToValidate)
                   .subscribe(
                     (data: any) => {
                       console.log(data);
+<<<<<<< HEAD
                       this.spinner.hide();
 
+=======
+>>>>>>> feature/CPD-schematron
                       this.errors = data.errors;
                       this.warnings = data.warnings;
                       this.infos = data.infos;
@@ -63,10 +76,14 @@ export class DirectInputComponent implements OnInit {
                       const element = document.querySelector('#validationResults');
                       element.scrollIntoView();
                     },
+<<<<<<< HEAD
                     error => {
                       console.log(error);
                       this.spinner.hide();
                     }
+=======
+                    error => console.log(error)
+>>>>>>> feature/CPD-schematron
                   );
   }
 }
