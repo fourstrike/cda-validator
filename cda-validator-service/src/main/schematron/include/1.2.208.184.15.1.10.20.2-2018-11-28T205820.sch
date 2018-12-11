@@ -10,22 +10,20 @@ Description: Template CDA Section (prototype, directly derived from POCD_RM00004
     <title>Goal Section</title>
    <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]
 Item: (GoalSection)
 -->
 
 <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]
 Item: (GoalSection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]" id="d5441727e295-false-d7191068e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]" id="d4347009e246-false-d5226971e0">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="string(@classCode) = ('DOCSECT') or not(@classCode)">(GoalSection): The value for classCode SHALL be 'DOCSECT'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="string(@moodCode) = ('EVN') or not(@moodCode)">(GoalSection): The value for moodCode SHALL be 'EVN'. Found: "<value-of select="@moodCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']) &gt;= 1">(GoalSection): element hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] is mandatory [min 1x].</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']) &lt;= 1">(GoalSection): element hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] appears too often [max 1x].</assert>
-        <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:templateId[@root = '2.16.840.1.113883.10.12.201']) &gt;= 1">(GoalSection): element hl7:templateId[@root = '2.16.840.1.113883.10.12.201'] is required [min 1x].</assert>
-        <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:templateId[@root = '2.16.840.1.113883.10.12.201']) &lt;= 1">(GoalSection): element hl7:templateId[@root = '2.16.840.1.113883.10.12.201'] appears too often [max 1x].</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:id) &lt;= 1">(GoalSection): element hl7:id appears too often [max 1x].</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10871-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]) &lt;= 1">(GoalSection): element hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10871-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor] appears too often [max 1x].</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:title) &lt;= 1">(GoalSection): element hl7:title appears too often [max 1x].</assert>
@@ -33,15 +31,15 @@ Item: (GoalSection)
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:confidentialityCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16926-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]) &lt;= 1">(GoalSection): element hl7:confidentialityCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16926-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor] appears too often [max 1x].</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:languageCode) &lt;= 1">(GoalSection): element hl7:languageCode appears too often [max 1x].</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:subject[hl7:relatedSubject[@classCode]]) &lt;= 1">(GoalSection): element hl7:subject[hl7:relatedSubject[@classCode]] appears too often [max 1x].</assert>
-        <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:component[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2.2'] and hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'][@extension = '2018-09-28'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]) &gt;= 1">(GoalSection): element hl7:component[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2.2'] and hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'][@extension = '2018-09-28'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]] is mandatory [min 1x].</assert>
-        <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:component[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2.2'] and hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'][@extension = '2018-09-28'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]) &lt;= 1">(GoalSection): element hl7:component[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2.2'] and hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'][@extension = '2018-09-28'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]] appears too often [max 1x].</assert>
+        <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:component[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2.2'][@extension = '2018-11-28']]]) &gt;= 1">(GoalSection): element hl7:component[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2.2'][@extension = '2018-11-28']]] is mandatory [min 1x].</assert>
+        <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="count(hl7:component[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2.2'][@extension = '2018-11-28']]]) &lt;= 1">(GoalSection): element hl7:component[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2.2'][@extension = '2018-11-28']]] appears too often [max 1x].</assert>
     </rule>
    <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']
 Item: (GoalSection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']" id="d5441727e298-false-d7191634e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']" id="d4347009e249-false-d5227506e0">
         <extends rule="II"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='II' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(GoalSection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:II", found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="string(@extension) = ('2018-09-28') or not(@extension)">(GoalSection): The value for extension SHALL be '2018-09-28'. Found: "<value-of select="@extension"/>"</assert>
@@ -50,29 +48,19 @@ Item: (GoalSection)
     </rule>
    <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:templateId[@root = '2.16.840.1.113883.10.12.201']
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:id
 Item: (GoalSection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:templateId[@root = '2.16.840.1.113883.10.12.201']" id="d5441727e301-false-d7191654e0">
-        <extends rule="II"/>
-        <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='II' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(GoalSection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:II", found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
-        <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="string(@root) = ('2.16.840.1.113883.10.12.201')">(GoalSection): The value for root SHALL be '2.16.840.1.113883.10.12.201'. Found: "<value-of select="@root"/>"</assert>
-    </rule>
-   <!--
-Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:id
-Item: (GoalSection)
--->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:id" id="d5441727e303-false-d7191667e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:id" id="d4347009e252-false-d5227525e0">
         <extends rule="II"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='II' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(GoalSection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:II", found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
     </rule>
    <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10871-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10871-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
 Item: (GoalSection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10871-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]" id="d5441727e304-false-d7191679e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10871-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]" id="d4347009e253-false-d5227537e0">
         <extends rule="CE"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='CE' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(GoalSection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:CE", found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
         <let name="theCode" value="@code"/>
@@ -81,28 +69,28 @@ Item: (GoalSection)
     </rule>
    <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:title
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:title
 Item: (GoalSection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:title" id="d5441727e306-false-d7191698e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:title" id="d4347009e255-false-d5227556e0">
         <extends rule="ST"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='ST' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(GoalSection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:ST", found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
     </rule>
    <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:text
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:text
 Item: (GoalSection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:text" id="d5441727e307-false-d7191707e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:text" id="d4347009e256-false-d5227565e0">
         <extends rule="SD.TEXT"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='SD.TEXT' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(GoalSection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:SD.TEXT", found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
     </rule>
    <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:confidentialityCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16926-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:confidentialityCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16926-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
 Item: (GoalSection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:confidentialityCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16926-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]" id="d5441727e308-false-d7191719e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:confidentialityCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16926-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]" id="d4347009e257-false-d5227577e0">
         <extends rule="CE"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='CE' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(GoalSection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:CE", found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
         <let name="theCode" value="@code"/>
@@ -111,26 +99,26 @@ Item: (GoalSection)
     </rule>
    <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:languageCode
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:languageCode
 Item: (GoalSection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:languageCode" id="d5441727e310-false-d7191741e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:languageCode" id="d4347009e259-false-d5227599e0">
         <extends rule="CS"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='CS' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(GoalSection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:CS", found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
     </rule>
 
    <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]
 Item: (GoalSection)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.320
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]
 Item: (CDASubjectBody)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.320" test="string(@typeCode) = ('SBJ') or not(@typeCode)">(CDASubjectBody): The value for typeCode SHALL be 'SBJ'. Found: "<value-of select="@typeCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.320" test="string(@contextControlCode) = ('OP') or not(@contextControlCode)">(CDASubjectBody): The value for contextControlCode SHALL be 'OP'. Found: "<value-of select="@contextControlCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.320" test="count(hl7:awarenessCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10310-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]) &lt;= 1">(CDASubjectBody): element hl7:awarenessCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10310-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor] appears too often [max 1x].</assert>
@@ -140,10 +128,10 @@ Item: (CDASubjectBody)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.320
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:awarenessCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10310-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:awarenessCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10310-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
 Item: (CDASubjectBody)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:awarenessCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10310-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:awarenessCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10310-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]">
         <let name="theCode" value="@code"/>
         <let name="theCodeSystem" value="@codeSystem"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.320" test="@nullFlavor or exists(doc('include/voc-2.16.840.1.113883.1.11.10310-DYNAMIC.xml')//valueSet[1][conceptList/concept[@code = $theCode][@codeSystem = $theCodeSystem]])">(CDASubjectBody): The element value SHALL be one of '2.16.840.1.113883.1.11.10310 TargetAwareness (DYNAMIC)'.</assert>
@@ -151,10 +139,10 @@ Item: (CDASubjectBody)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.320
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]
 Item: (CDASubjectBody)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.320" test="@classCode">(CDASubjectBody): attribute @classCode SHALL be present.</assert>
         <let name="theAttValue" value="distinct-values(tokenize(normalize-space(@classCode),'\s'))"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.320" test="not(@classCode) or empty($theAttValue[not(. = (doc('include/voc-2.16.840.1.113883.1.11.19368-DYNAMIC.xml')/*/valueSet/conceptList/concept/@code))])">(CDASubjectBody): The value for classCode SHALL be selected from value set '2.16.840.1.113883.1.11.19368' x_DocumentSubject (DYNAMIC).</assert>
@@ -164,10 +152,10 @@ Item: (CDASubjectBody)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.320
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.19563-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.19563-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
 Item: (CDASubjectBody)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.19563-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.19563-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]">
         <let name="theCode" value="@code"/>
         <let name="theCodeSystem" value="@codeSystem"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.320" test="@nullFlavor or exists(doc('include/voc-2.16.840.1.113883.1.11.19563-DYNAMIC.xml')//valueSet[1][conceptList/concept[@code = $theCode][@codeSystem = $theCodeSystem]])">(CDASubjectBody): The element value SHALL be one of '2.16.840.1.113883.1.11.19563 PersonalRelationshipRoleType (DYNAMIC)'.</assert>
@@ -175,22 +163,22 @@ Item: (CDASubjectBody)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.320
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:addr
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:addr
 Item: (CDASubjectBody)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.320
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:telecom
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:telecom
 Item: (CDASubjectBody)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.320
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:subject
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:subject
 Item: (CDASubjectBody)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:subject">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:subject">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.320" test="string(@classCode) = ('PSN') or not(@classCode)">(CDASubjectBody): The value for classCode SHALL be 'PSN'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.320" test="string(@determinerCode) = ('INSTANCE') or not(@determinerCode)">(CDASubjectBody): The value for determinerCode SHALL be 'INSTANCE'. Found: "<value-of select="@determinerCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.320" test="count(hl7:administrativeGenderCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.1-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]) &lt;= 1">(CDASubjectBody): element hl7:administrativeGenderCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.1-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor] appears too often [max 1x].</assert>
@@ -199,16 +187,16 @@ Item: (CDASubjectBody)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.320
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:subject/hl7:name
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:subject/hl7:name
 Item: (CDASubjectBody)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.320
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:subject/hl7:administrativeGenderCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.1-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:subject/hl7:administrativeGenderCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.1-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
 Item: (CDASubjectBody)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:subject/hl7:administrativeGenderCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.1-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:subject/hl7:administrativeGenderCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.1-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]">
         <let name="theCode" value="@code"/>
         <let name="theCodeSystem" value="@codeSystem"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.320" test="@nullFlavor or exists(doc('include/voc-2.16.840.1.113883.1.11.1-DYNAMIC.xml')//valueSet[1][conceptList/concept[@code = $theCode][@codeSystem = $theCodeSystem]])">(CDASubjectBody): The element value SHALL be one of '2.16.840.1.113883.1.11.1 AdministrativeGender (DYNAMIC)'.</assert>
@@ -216,22 +204,22 @@ Item: (CDASubjectBody)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.320
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:subject/hl7:birthTime
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:subject[hl7:relatedSubject[@classCode]]/hl7:relatedSubject[@classCode]/hl7:subject/hl7:birthTime
 Item: (CDASubjectBody)
 -->
 
 <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]
 Item: (GoalSection)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.318
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]
 Item: (CDAAuthorBody)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.318" test="string(@typeCode) = ('AUT') or not(@typeCode)">(CDAAuthorBody): The value for typeCode SHALL be 'AUT'. Found: "<value-of select="@typeCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.318" test="string(@contextControlCode) = ('OP') or not(@contextControlCode)">(CDAAuthorBody): The value for contextControlCode SHALL be 'OP'. Found: "<value-of select="@contextControlCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.318" test="count(hl7:functionCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10267-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]) &lt;= 1">(CDAAuthorBody): element hl7:functionCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10267-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor] appears too often [max 1x].</assert>
@@ -243,10 +231,10 @@ Item: (CDAAuthorBody)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.318
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:functionCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10267-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:functionCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10267-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
 Item: (CDAAuthorBody)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:functionCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10267-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:functionCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.10267-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]">
         <let name="theCode" value="@code"/>
         <let name="theCodeSystem" value="@codeSystem"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.318" test="@nullFlavor or exists(doc('include/voc-2.16.840.1.113883.1.11.10267-DYNAMIC.xml')//valueSet[1][conceptList/concept[@code = $theCode][@codeSystem = $theCodeSystem]])">(CDAAuthorBody): The element value SHALL be one of '2.16.840.1.113883.1.11.10267 ParticipationFunction (DYNAMIC)'.</assert>
@@ -254,16 +242,16 @@ Item: (CDAAuthorBody)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.318
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:time
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:time
 Item: (CDAAuthorBody)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.318
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor
 Item: (CDAAuthorBody)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.318" test="string(@classCode) = ('ASSIGNED') or not(@classCode)">(CDAAuthorBody): The value for classCode SHALL be 'ASSIGNED'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.318" test="count(hl7:id) &gt;= 1">(CDAAuthorBody): element hl7:id is required [min 1x].</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.318" test="count(hl7:code) &lt;= 1">(CDAAuthorBody): element hl7:code appears too often [max 1x].</assert>
@@ -274,62 +262,62 @@ Item: (CDAAuthorBody)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.318
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:id
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:id
 Item: (CDAAuthorBody)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.318
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:code
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:code
 Item: (CDAAuthorBody)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.318
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:addr
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:addr
 Item: (CDAAuthorBody)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.318
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:telecom
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:telecom
 Item: (CDAAuthorBody)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.318
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedPerson
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedPerson
 Item: (CDAAuthorBody)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.152
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedPerson
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedPerson
 Item: (CDAPerson)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedPerson">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedPerson">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.152" test="string(@classCode) = ('PSN') or not(@classCode)">(CDAPerson): The value for classCode SHALL be 'PSN'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.152" test="string(@determinerCode) = ('INSTANCE') or not(@determinerCode)">(CDAPerson): The value for determinerCode SHALL be 'INSTANCE'. Found: "<value-of select="@determinerCode"/>"</assert>
     </rule>
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.152
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedPerson/hl7:name
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedPerson/hl7:name
 Item: (CDAPerson)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.318
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice
 Item: (CDAAuthorBody)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.315
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice
 Item: (CDADevice)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.315" test="string(@classCode) = ('DEV') or not(@classCode)">(CDADevice): The value for classCode SHALL be 'DEV'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.315" test="string(@determinerCode) = ('INSTANCE') or not(@determinerCode)">(CDADevice): The value for determinerCode SHALL be 'INSTANCE'. Found: "<value-of select="@determinerCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.315" test="count(hl7:code[@codeSystem = doc('include/voc-2.16.840.1.113883.1.11.16040-DYNAMIC.xml')//valueSet[1]/completeCodeSystem/@codeSystem or concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16040-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]) &lt;= 1">(CDADevice): element hl7:code[@codeSystem = doc('include/voc-2.16.840.1.113883.1.11.16040-DYNAMIC.xml')//valueSet[1]/completeCodeSystem/@codeSystem or concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16040-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor] appears too often [max 1x].</assert>
@@ -339,10 +327,10 @@ Item: (CDADevice)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.315
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice/hl7:code[@codeSystem = doc('include/voc-2.16.840.1.113883.1.11.16040-DYNAMIC.xml')//valueSet[1]/completeCodeSystem/@codeSystem or concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16040-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice/hl7:code[@codeSystem = doc('include/voc-2.16.840.1.113883.1.11.16040-DYNAMIC.xml')//valueSet[1]/completeCodeSystem/@codeSystem or concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16040-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
 Item: (CDADevice)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice/hl7:code[@codeSystem = doc('include/voc-2.16.840.1.113883.1.11.16040-DYNAMIC.xml')//valueSet[1]/completeCodeSystem/@codeSystem or concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16040-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice/hl7:code[@codeSystem = doc('include/voc-2.16.840.1.113883.1.11.16040-DYNAMIC.xml')//valueSet[1]/completeCodeSystem/@codeSystem or concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16040-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]">
         <let name="theCode" value="@code"/>
         <let name="theCodeSystem" value="@codeSystem"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.315" test="@nullFlavor or exists(doc('include/voc-2.16.840.1.113883.1.11.16040-DYNAMIC.xml')//valueSet[1][conceptList/concept[@code = $theCode][@codeSystem = $theCodeSystem] | completeCodeSystem[@codeSystem=$theCodeSystem]])">(CDADevice): The element value SHALL be one of '2.16.840.1.113883.1.11.16040 EntityCode (DYNAMIC)'.</assert>
@@ -350,28 +338,28 @@ Item: (CDADevice)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.315
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice/hl7:manufacturerModelName
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice/hl7:manufacturerModelName
 Item: (CDADevice)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.315
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice/hl7:softwareName
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:assignedAuthoringDevice/hl7:softwareName
 Item: (CDADevice)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.318
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization
 Item: (CDAAuthorBody)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization
 Item: (CDAOrganization)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="string(@classCode) = ('ORG') or not(@classCode)">(CDAOrganization): The value for classCode SHALL be 'ORG'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="string(@determinerCode) = ('INSTANCE') or not(@determinerCode)">(CDAOrganization): The value for determinerCode SHALL be 'INSTANCE'. Found: "<value-of select="@determinerCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="count(hl7:standardIndustryClassCode) &lt;= 1">(CDAOrganization): element hl7:standardIndustryClassCode appears too often [max 1x].</assert>
@@ -380,40 +368,40 @@ Item: (CDAOrganization)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:id
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:id
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:name
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:name
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:telecom
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:telecom
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:addr
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:addr
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:standardIndustryClassCode
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:standardIndustryClassCode
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf
 Item: (CDAOrganization)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="string(@classCode) = ('PART') or not(@classCode)">(CDAOrganization): The value for classCode SHALL be 'PART'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="count(hl7:code) &lt;= 1">(CDAOrganization): element hl7:code appears too often [max 1x].</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="count(hl7:statusCode[@code = doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/*/@code or @nullFlavor]) &lt;= 1">(CDAOrganization): element hl7:statusCode[@code = doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/*/@code or @nullFlavor] appears too often [max 1x].</assert>
@@ -423,22 +411,22 @@ Item: (CDAOrganization)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:id
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:id
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:code
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:code
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:statusCode[@code = doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/*/@code or @nullFlavor]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:statusCode[@code = doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/*/@code or @nullFlavor]
 Item: (CDAOrganization)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:statusCode[@code = doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/*/@code or @nullFlavor]">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:statusCode[@code = doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/*/@code or @nullFlavor]">
         <let name="theCode" value="@code"/>
         <let name="theCodeSystem" value="@codeSystem"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="@nullFlavor or exists(doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/concept[@code = $theCode] or completeCodeSystem)">(CDAOrganization): The element value SHALL be one of '2.16.840.1.113883.1.11.15999 RoleStatus (DYNAMIC)'.</assert>
@@ -446,16 +434,16 @@ Item: (CDAOrganization)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:effectiveTime
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:effectiveTime
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization
 Item: (CDAOrganization)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="string(@classCode) = ('ORG') or not(@classCode)">(CDAOrganization): The value for classCode SHALL be 'ORG'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="string(@determinerCode) = ('INSTANCE') or not(@determinerCode)">(CDAOrganization): The value for determinerCode SHALL be 'INSTANCE'. Found: "<value-of select="@determinerCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="count(hl7:standardIndustryClassCode) &lt;= 1">(CDAOrganization): element hl7:standardIndustryClassCode appears too often [max 1x].</assert>
@@ -463,46 +451,46 @@ Item: (CDAOrganization)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:id
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:id
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:name
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:name
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:telecom
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:telecom
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:addr
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:addr
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:standardIndustryClassCode
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:author[hl7:assignedAuthor]/hl7:assignedAuthor/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:standardIndustryClassCode
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant
 Item: (GoalSection)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.319
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant
 Item: (CDAinformantBody)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.319" test="string(@typeCode) = ('INF') or not(@typeCode)">(CDAinformantBody): The value for typeCode SHALL be 'INF'. Found: "<value-of select="@typeCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.319" test="string(@contextControlCode) = ('OP') or not(@contextControlCode)">(CDAinformantBody): The value for contextControlCode SHALL be 'OP'. Found: "<value-of select="@contextControlCode"/>"</assert>
         <let name="elmcount" value="count(hl7:assignedEntity | hl7:relatedEntity[@classCode])"/>
@@ -512,16 +500,16 @@ Item: (CDAinformantBody)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.319
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity
 Item: (CDAinformantBody)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.153
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity
 Item: (CDAAssignedEntity)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.153" test="string(@classCode) = ('ASSIGNED') or not(@classCode)">(CDAAssignedEntity): The value for classCode SHALL be 'ASSIGNED'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.153" test="count(hl7:id) &gt;= 1">(CDAAssignedEntity): element hl7:id is required [min 1x].</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.153" test="count(hl7:code) &lt;= 1">(CDAAssignedEntity): element hl7:code appears too often [max 1x].</assert>
@@ -531,62 +519,62 @@ Item: (CDAAssignedEntity)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.153
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:id
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:id
 Item: (CDAAssignedEntity)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.153
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:code
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:code
 Item: (CDAAssignedEntity)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.153
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:addr
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:addr
 Item: (CDAAssignedEntity)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.153
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:telecom
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:telecom
 Item: (CDAAssignedEntity)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.153
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:assignedPerson
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:assignedPerson
 Item: (CDAAssignedEntity)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.152
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:assignedPerson
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:assignedPerson
 Item: (CDAPerson)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:assignedPerson">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:assignedPerson">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.152" test="string(@classCode) = ('PSN') or not(@classCode)">(CDAPerson): The value for classCode SHALL be 'PSN'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.152" test="string(@determinerCode) = ('INSTANCE') or not(@determinerCode)">(CDAPerson): The value for determinerCode SHALL be 'INSTANCE'. Found: "<value-of select="@determinerCode"/>"</assert>
     </rule>
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.152
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:assignedPerson/hl7:name
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:assignedPerson/hl7:name
 Item: (CDAPerson)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.153
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization
 Item: (CDAAssignedEntity)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization
 Item: (CDAOrganization)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="string(@classCode) = ('ORG') or not(@classCode)">(CDAOrganization): The value for classCode SHALL be 'ORG'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="string(@determinerCode) = ('INSTANCE') or not(@determinerCode)">(CDAOrganization): The value for determinerCode SHALL be 'INSTANCE'. Found: "<value-of select="@determinerCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="count(hl7:standardIndustryClassCode) &lt;= 1">(CDAOrganization): element hl7:standardIndustryClassCode appears too often [max 1x].</assert>
@@ -595,40 +583,40 @@ Item: (CDAOrganization)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:id
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:id
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:name
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:name
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:telecom
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:telecom
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:addr
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:addr
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:standardIndustryClassCode
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:standardIndustryClassCode
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf
 Item: (CDAOrganization)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="string(@classCode) = ('PART') or not(@classCode)">(CDAOrganization): The value for classCode SHALL be 'PART'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="count(hl7:code) &lt;= 1">(CDAOrganization): element hl7:code appears too often [max 1x].</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="count(hl7:statusCode[@code = doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/*/@code or @nullFlavor]) &lt;= 1">(CDAOrganization): element hl7:statusCode[@code = doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/*/@code or @nullFlavor] appears too often [max 1x].</assert>
@@ -638,22 +626,22 @@ Item: (CDAOrganization)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:id
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:id
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:code
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:code
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:statusCode[@code = doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/*/@code or @nullFlavor]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:statusCode[@code = doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/*/@code or @nullFlavor]
 Item: (CDAOrganization)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:statusCode[@code = doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/*/@code or @nullFlavor]">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:statusCode[@code = doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/*/@code or @nullFlavor]">
         <let name="theCode" value="@code"/>
         <let name="theCodeSystem" value="@codeSystem"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="@nullFlavor or exists(doc('include/voc-2.16.840.1.113883.1.11.15999-DYNAMIC.xml')//valueSet[1]/conceptList/concept[@code = $theCode] or completeCodeSystem)">(CDAOrganization): The element value SHALL be one of '2.16.840.1.113883.1.11.15999 RoleStatus (DYNAMIC)'.</assert>
@@ -661,16 +649,16 @@ Item: (CDAOrganization)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:effectiveTime
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:effectiveTime
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization
 Item: (CDAOrganization)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="string(@classCode) = ('ORG') or not(@classCode)">(CDAOrganization): The value for classCode SHALL be 'ORG'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="string(@determinerCode) = ('INSTANCE') or not(@determinerCode)">(CDAOrganization): The value for determinerCode SHALL be 'INSTANCE'. Found: "<value-of select="@determinerCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.151" test="count(hl7:standardIndustryClassCode) &lt;= 1">(CDAOrganization): element hl7:standardIndustryClassCode appears too often [max 1x].</assert>
@@ -678,46 +666,46 @@ Item: (CDAOrganization)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:id
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:id
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:name
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:name
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:telecom
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:telecom
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:addr
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:addr
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.151
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:standardIndustryClassCode
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:assignedEntity/hl7:representedOrganization/hl7:asOrganizationPartOf/hl7:wholeOrganization/hl7:standardIndustryClassCode
 Item: (CDAOrganization)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.319
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:relatedEntity[@classCode]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:relatedEntity[@classCode]
 Item: (CDAinformantBody)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.316
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:relatedEntity[@classCode]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:relatedEntity[@classCode]
 Item: (CDARelatedEntity)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:relatedEntity[@classCode]">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:relatedEntity[@classCode]">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.316" test="@classCode">(CDARelatedEntity): attribute @classCode SHALL be present.</assert>
         <let name="theAttValue" value="distinct-values(tokenize(normalize-space(@classCode),'\s'))"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.316" test="not(@classCode) or empty($theAttValue[not(. = (doc('include/voc-2.16.840.1.113883.1.11.19316-DYNAMIC.xml')/*/valueSet/conceptList/concept/@code))])">(CDARelatedEntity): The value for classCode SHALL be selected from value set '2.16.840.1.113883.1.11.19316' RoleClassMutualRelationship (DYNAMIC).</assert>
@@ -728,10 +716,10 @@ Item: (CDARelatedEntity)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.316
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.19563-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.19563-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
 Item: (CDARelatedEntity)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.19563-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:code[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.19563-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]">
         <let name="theCode" value="@code"/>
         <let name="theCodeSystem" value="@codeSystem"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.316" test="@nullFlavor or exists(doc('include/voc-2.16.840.1.113883.1.11.19563-DYNAMIC.xml')//valueSet[1][conceptList/concept[@code = $theCode][@codeSystem = $theCodeSystem]])">(CDARelatedEntity): The element value SHALL be one of '2.16.840.1.113883.1.11.19563 PersonalRelationshipRoleType (DYNAMIC)'.</assert>
@@ -739,51 +727,51 @@ Item: (CDARelatedEntity)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.316
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:addr
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:addr
 Item: (CDARelatedEntity)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.316
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:telecom
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:telecom
 Item: (CDARelatedEntity)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.316
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:effectiveTime
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:effectiveTime
 Item: (CDARelatedEntity)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.316
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:relatedPerson
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:relatedPerson
 Item: (CDARelatedEntity)
 -->
 
 <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.152
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:relatedPerson
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:relatedPerson
 Item: (CDAPerson)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:relatedPerson">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:relatedPerson">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.152" test="string(@classCode) = ('PSN') or not(@classCode)">(CDAPerson): The value for classCode SHALL be 'PSN'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.152" test="string(@determinerCode) = ('INSTANCE') or not(@determinerCode)">(CDAPerson): The value for determinerCode SHALL be 'INSTANCE'. Found: "<value-of select="@determinerCode"/>"</assert>
     </rule>
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.152
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:relatedPerson/hl7:name
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:informant/hl7:relatedEntity[@classCode]/hl7:relatedPerson/hl7:name
 Item: (CDAPerson)
 -->
 
 <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:entry
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:entry
 Item: (GoalSection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:entry">
-        <extends rule="d7193626e0-false-d7194613e0"/>
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:entry">
+        <extends rule="d5229484e0-false-d5230471e0"/>
         <let name="theAttValue" value="distinct-values(tokenize(normalize-space(@typeCode),'\s'))"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="not(@typeCode) or empty($theAttValue[not(. = (doc('include/voc-2.16.840.1.113883.1.11.19446-DYNAMIC.xml')/*/valueSet/conceptList/concept/@code))])">(GoalSection): The value for typeCode SHALL be selected from value set '2.16.840.1.113883.1.11.19446' x_ActRelationshipEntry (DYNAMIC).</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="string(@contextConductionInd) = ('true') or not(@contextConductionInd)">(GoalSection): The value for contextConductionInd SHALL be 'true'. Found: "<value-of select="@contextConductionInd"/>"</assert>
@@ -791,10 +779,10 @@ Item: (GoalSection)
 
    <!--
 Template derived rules for ID: 2.16.840.1.113883.10.12.300
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:entry
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:entry
 Item: (CDAClinicalStatement)
 -->
-    <rule id="d7193626e0-false-d7194613e0" abstract="true">
+    <rule id="d5229484e0-false-d5230471e0" abstract="true">
         <let name="elmcount" value="count(hl7:act[hl7:templateId[@root = '2.16.840.1.113883.10.12.301']] | hl7:encounter[hl7:templateId[@root = '2.16.840.1.113883.10.12.302']] | hl7:observation[hl7:templateId[@root = '2.16.840.1.113883.10.12.303']] | hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']] | hl7:organizer[hl7:templateId[@root = '2.16.840.1.113883.10.12.305']] | hl7:procedure[hl7:templateId[@root = '2.16.840.1.113883.10.12.306']] | hl7:regionOfInterest[hl7:templateId[@root = '2.16.840.1.113883.10.12.307']] | hl7:substanceAdministration[hl7:templateId[@root = '2.16.840.1.113883.10.12.308']] | hl7:supply[hl7:templateId[@root = '2.16.840.1.113883.10.12.309']])"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.300" test="$elmcount &gt;= 1">(CDAClinicalStatement): choice (hl7:act[hl7:templateId[@root = '2.16.840.1.113883.10.12.301']]  or  hl7:encounter[hl7:templateId[@root = '2.16.840.1.113883.10.12.302']]  or  hl7:observation[hl7:templateId[@root = '2.16.840.1.113883.10.12.303']]  or  hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]  or  hl7:organizer[hl7:templateId[@root = '2.16.840.1.113883.10.12.305']]  or  hl7:procedure[hl7:templateId[@root = '2.16.840.1.113883.10.12.306']]  or  hl7:regionOfInterest[hl7:templateId[@root = '2.16.840.1.113883.10.12.307']]  or  hl7:substanceAdministration[hl7:templateId[@root = '2.16.840.1.113883.10.12.308']]  or  hl7:supply[hl7:templateId[@root = '2.16.840.1.113883.10.12.309']]) does not contain enough elements [min 1x]</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.300" test="$elmcount &lt;= 1">(CDAClinicalStatement): choice (hl7:act[hl7:templateId[@root = '2.16.840.1.113883.10.12.301']]  or  hl7:encounter[hl7:templateId[@root = '2.16.840.1.113883.10.12.302']]  or  hl7:observation[hl7:templateId[@root = '2.16.840.1.113883.10.12.303']]  or  hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]  or  hl7:organizer[hl7:templateId[@root = '2.16.840.1.113883.10.12.305']]  or  hl7:procedure[hl7:templateId[@root = '2.16.840.1.113883.10.12.306']]  or  hl7:regionOfInterest[hl7:templateId[@root = '2.16.840.1.113883.10.12.307']]  or  hl7:substanceAdministration[hl7:templateId[@root = '2.16.840.1.113883.10.12.308']]  or  hl7:supply[hl7:templateId[@root = '2.16.840.1.113883.10.12.309']]) contains too many elements [max 1x]</assert>
@@ -802,10 +790,10 @@ Item: (CDAClinicalStatement)
 
    <!--
 Template derived rules for ID: 1.2.208.184.15.1.10.20.2
-Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:component[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2.2'] and hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'][@extension = '2018-09-28'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]
+Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:component[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2.2'][@extension = '2018-11-28']]]
 Item: (GoalSection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]/hl7:component[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2.2'] and hl7:templateId[@root = '1.2.208.184.15.1.10.20.2'][@extension = '2018-09-28'] and hl7:templateId[@root = '2.16.840.1.113883.10.12.201']]]">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2']]/hl7:component[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.2.2'][@extension = '2018-11-28']]]">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="string(@typeCode) = ('COMP') or not(@typeCode)">(GoalSection): The value for typeCode SHALL be 'COMP'. Found: "<value-of select="@typeCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.2" test="string(@contextConductionInd) = ('true') or not(@contextConductionInd)">(GoalSection): The value for contextConductionInd SHALL be 'true'. Found: "<value-of select="@contextConductionInd"/>"</assert>
     </rule>

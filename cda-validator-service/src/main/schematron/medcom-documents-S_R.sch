@@ -143,6 +143,8 @@
         <active pattern="template-1.2.208.184.10.2-2018-11-19T211346"/>
         <active pattern="template-1.2.208.184.15.1.10.20.1-2018-11-28T205417"/>
         <active pattern="template-1.2.208.184.15.1.10.20.1.2-2018-11-19T220234"/>
+        <active pattern="template-1.2.208.184.15.1.10.20.1.20-2018-11-25T213243"/>
+        <active pattern="template-1.2.208.184.15.1.10.20.1.21-2018-11-25T212804"/>
         <active pattern="template-1.2.208.184.15.1.10.20.2-2018-11-28T205820"/>
         <active pattern="template-1.2.208.184.15.1.10.20.2.2-2018-11-19T221945"/>
         <active pattern="template-1.2.208.184.15.1.10.20.3-2018-11-28T210020"/>
@@ -170,6 +172,12 @@
     </phase>
     <phase id="HealthConcernSubSectionCDASection">
         <active pattern="template-1.2.208.184.15.1.10.20.1.2-2018-11-19T220234"/>
+    </phase>
+    <phase id="CDAHealthStatusObservation ">
+        <active pattern="template-1.2.208.184.15.1.10.20.1.20-2018-11-25T213243"/>
+    </phase>
+    <phase id="CDAHealthConcernAct">
+        <active pattern="template-1.2.208.184.15.1.10.20.1.21-2018-11-25T212804"/>
     </phase>
     <phase id="GoalSection">
         <active pattern="template-1.2.208.184.15.1.10.20.2-2018-11-28T205820"/>
@@ -223,6 +231,10 @@
     <include href="include/1.2.208.184.15.1.10.20.1-2018-11-28T205417.sch"/>
    <!-- HealthConcernSubSectionCDASection -->
     <include href="include/1.2.208.184.15.1.10.20.1.2-2018-11-19T220234.sch"/>
+   <!-- CDAHealthStatusObservation  -->
+    <include href="include/1.2.208.184.15.1.10.20.1.20-2018-11-25T213243.sch"/>
+   <!-- CDAHealthConcernAct -->
+    <include href="include/1.2.208.184.15.1.10.20.1.21-2018-11-25T212804.sch"/>
    <!-- GoalSection -->
     <include href="include/1.2.208.184.15.1.10.20.2-2018-11-28T205820.sch"/>
    <!-- GoalSubSectionCDASection -->
