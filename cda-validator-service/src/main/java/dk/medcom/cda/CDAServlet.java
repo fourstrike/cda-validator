@@ -29,6 +29,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
+import dk.medcom.cda.validation.validationengine.ArtDecorSaxonEngine;
 import org.apache.commons.io.IOUtils;
 import org.openehealth.ipf.modules.cda.CDAR2Constants;
 import org.slf4j.Logger;
@@ -226,8 +227,8 @@ public class CDAServlet {
                     new SaxonEngine("/schematrons/conf-qrd-sch-dk.xml").validate(document, type, validationHandler);
                     break;
                 case CPD:
-                    //TODO: jkv 
                     new IHEObjectsCheckerEngine(context).validate(document, type, validationHandler);
+                    new ArtDecorSaxonEngine("/art-decor/medcom-documents-S_R.sch").validate(document, type, validationHandler);
                     break;
                 case NONE:
                     new IHEObjectsCheckerEngine(context).validate(document, type, validationHandler);

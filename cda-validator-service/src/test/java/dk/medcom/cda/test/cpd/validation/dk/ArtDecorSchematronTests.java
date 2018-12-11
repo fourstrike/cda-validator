@@ -30,7 +30,7 @@ public class ArtDecorSchematronTests implements IValidationTest, IDocumentTest {
 
   @Before
   public void before() throws IOException {
-    rule = new ArtDecorSaxonEngine(new File("src/main/schematron/medcom-documents-S_R.sch"));
+    rule = new ArtDecorSaxonEngine(new File("src/main/resources/art-decor/medcom-documents-S_R.sch"));
     validationHandler = new CollectingValidationHandler();
     final String baseDocument = "file:src/test/resources/CPD/CPD-DK_Care_Plan_Diabetes_Example_1_2018-11-02.xml";
     validDocument = createDocument(baseDocument);

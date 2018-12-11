@@ -12,6 +12,7 @@ import org.oclc.purl.dsdl.svrl.SchematronOutputType;
 
 import javax.xml.transform.stream.StreamSource;
 import java.io.File;
+import java.io.InputStream;
 import java.io.StringReader;
 
 public class ArtDecorSaxonEngine implements IValidationEngine {
@@ -23,8 +24,8 @@ public class ArtDecorSaxonEngine implements IValidationEngine {
     if (!schematronResource.isValidSchematron())
       throw new RuntimeException("Could not resolve schema");
     schematronResource.setURIResolver((href, base) -> {
-      File f = new File(href);
-      return new StreamSource(f);
+      InputStream in = ArtDecorSaxonEngine.class.getResourceAsStream("/art-decor/" + href);
+      return new StreamSource(in, "");
     });
   }
 
