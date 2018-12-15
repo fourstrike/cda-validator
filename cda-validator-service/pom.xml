@@ -268,6 +268,7 @@
     </dependencies>
 
     <build>
+        <finalName>validator</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -306,6 +307,34 @@
 					</webResources>
 				</configuration>
 			</plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.28.0</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <images>
+                        <image>
+                            <alias>service</alias>
+                            <name>goimplementit/cda-validator:${project.version}</name>
+                            <build>
+                                <from>tomcat:9.0.14-jre8</from>
+                                <assembly>
+                                    <descriptor>${project.basedir}/docker-assembly.xml</descriptor>
+                                    <targetDir>/usr/local/tomcat/webapps</targetDir>
+                                    <permissions>auto</permissions>
+                                </assembly>
+
+                                <ports>
+                                    <port>8080</port>
+                                    <port>8443</port>
+                                </ports>
+
+                            </build>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

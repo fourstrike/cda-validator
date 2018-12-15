@@ -98,8 +98,8 @@ public class IHEObjectsCheckerEngine implements IValidationEngine {
     mDAerrors.stream().filter(Notification.class::isInstance).map(Notification.class::cast).forEach(t -> {
               final ValidationEntry ve = new ValidationEntry(t.getDescription(), t.getLocation(), t.getIdentifiant());
 
-              if ("cdadt-IISpec-cdadt011".equalsIgnoreCase(ve.getErrorCode())) {
-                ve.setMessage(ve.getMessage().replace("ERROR", "INFORMATION"));
+              if (t.getDescription().contains("ERROR") && "cdadt-IISpec-cdadt011".equalsIgnoreCase(ve.getErrorCode())) {
+                ve.setMessage(ve.getMessage().replace("ERROR", "Note"));
                 validationHandler.handleInfo(ve);
               } else {
                 if (ve.getMessage().toUpperCase().startsWith("ERROR")) {
@@ -110,8 +110,8 @@ public class IHEObjectsCheckerEngine implements IValidationEngine {
                   validationHandler.handleWarning(ve);
                   if (!Warning.class.equals(t.getClass()))
                     logger.error("Bad warning");
-                } else
-                  validationHandler.handleInfo(ve);
+                } /*else
+                  validationHandler.handleInfo(ve);*/
               }
             }
     );
