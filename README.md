@@ -50,12 +50,10 @@ docker build -t goimplementit:cda-validator .
 docker run -p 8443:8443 -it goimplementit:cda-validator
 ~~~
 
-Notice when tomcat is started it will prompt for a password matching your certificate-file.
-
 Depending on you certificates you should again be able to use your favorite HTTP client:
 
 ~~~
 curl https://localhost:8443/validator/service/CDA/types
 ~~~
 
-The web site is now available at http://localhost:8080/validator
+The web site is now available at http://localhost:8080/validator or https://localhost:8443/validator dependent on how you configured your Tomcat instance and which ports are exposed.
