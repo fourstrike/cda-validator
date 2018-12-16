@@ -269,43 +269,7 @@
                           codeSystemName="LOINC"/>
                     <title>Mine mål</title>
                     <text/>
-                    <component typeCode="COMP" contextConductionInd="true">
-                        <section classCode="DOCSECT" moodCode="EVN">
-                            <templateId root="1.2.208.184.15.1.10.20.2.2" extension="2018-11-28"/>
-                            <code code="FlpKolGoalText" codeSystem="1.2.208.184.100.1"
-                                  codeSystemName="MedCom Message Codes" displayName="Mine mål"/>
-                            <title nullFlavor="NI"/>
-                            <text>
-                                <table border="1" width="100%">
-                                    <thead>
-                                        <tr>
-                                            <th align="left">Mine mål</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td ID="PatientGoal1">Langtidsblodsukker: Under 58-64<br/>Blodtryk:
-                                                Under 130/80<br/>Koleserol: Under 1.8
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </text>
-                            <entry typeCode="DRIV" contextConductionInd="true">
-                                <observation classCode="OBS" moodCode="GOL">
-                                    <!-- Goal Observation -->
-                                    <templateId root="1.2.208.184.15.1.10.20.2.20" extension="2018-09-28"/>
-                                    <!-- Goal Observation unique id-->
-                                    <id root="3700B3B0-FBED-11E2-B778-0800200C9A66"/>
-                                    <code nullFlavor="NA"/>
-                                    <text><reference value="#PatientGoal1"/></text>
-                                    <statusCode code="active"/>
-                                    <effectiveTime value="20140121104000+0100"/>
-                                    <value xsi:type="ST" nullFlavor="NA"/>
-                                </observation>
-                            </entry>
-                        </section>
-                    </component>
+
                 </section>
             </component>
 

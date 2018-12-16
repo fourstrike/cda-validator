@@ -169,7 +169,6 @@
                     <code code="75310-3" displayName="Health Concerns" codeSystem="2.16.840.1.113883.6.1"
                           codeSystemName="LOINC"/>
                     <title>Tilstande, diagnoser mm.</title>
-                    <text/>
                     <component typeCode="COMP" contextConductionInd="true">
                         <section classCode="DOCSECT" moodCode="EVN">
                             <templateId root="1.2.208.184.15.1.10.20.1.2" extension="2018-11-28"/>

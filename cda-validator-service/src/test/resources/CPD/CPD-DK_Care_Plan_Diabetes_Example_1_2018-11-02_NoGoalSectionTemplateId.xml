@@ -264,7 +264,7 @@
             <component typeCode="COMP" contextConductionInd="true">
                 <section classCode="DOCSECT" moodCode="EVN">
                     <!-- Goals Section -->
-                    <templateId root="1.2.208.184.15.1.10.20.2" extension="2018-09-28"/>
+
                     <code code="61146-7" displayName="Goals" codeSystem="2.16.840.1.113883.6.1"
                           codeSystemName="LOINC"/>
                     <title>Mine mål</title>
