@@ -40,7 +40,7 @@
                     <span class="fileinput-exists">Change</span>
                     <input type="file" name="..." (change)="onStringToValidateChange($event)" />
                   </span>
-                  <a href="view_file_upload" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                  <a onclick="window.location.reload()" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                 </div>
               </div>
             </div>
@@ -61,4 +61,4 @@
   </div>
 </header>
 
-<app-results [errors]="errors" [warnings]="warnings" [infos]="infos" [stringToValidate]=stringToValidate></app-results>
+<app-results [errors]="errors" [warnings]="warnings" [infos]="infos" [stringToValidate]="stringToValidate" [successfulServiceResponseReceived]="successfulServiceResponseReceived"></app-results>

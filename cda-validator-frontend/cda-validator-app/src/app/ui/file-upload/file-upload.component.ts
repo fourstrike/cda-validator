@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidationService } from '../../validation.service'
-import { NgxSpinnerService } from 'ngx-spinner';
+import { LoadingService } from '../../loading.service'
 
 @Component({
   selector: 'app-file-upload',
@@ -9,6 +9,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class FileUploadComponent implements OnInit {
   //input
+  successfulServiceResponseReceived = false;
   isValidationDisabled: boolean = false
   cdaTypes: object;
   pickedCDAType: string = "NONE";
@@ -20,7 +21,7 @@ export class FileUploadComponent implements OnInit {
   infos: any[] = []
 
   constructor(private validation: ValidationService,
-              private spinner: NgxSpinnerService) { }
+              private loading: LoadingService) { }
 
   ngOnInit() {
     this.isValidationDisabled = true;
@@ -58,13 +59,14 @@ export class FileUploadComponent implements OnInit {
 
   onClickValidate() {
     console.log("Validation initiated")
-    this.spinner.show();
+    this.loading.show()
     let res = this.validation.validate(this.pickedCDAType, this.stringToValidate)
                   .subscribe(
                     (data: any) => {
                       console.log(data);
-                      this.spinner.hide();
+                      this.loading.hide()
 
+                      this.successfulServiceResponseReceived = true;
                       this.errors = data.errors;
                       this.warnings = data.warnings;
                       this.infos = data.infos;
@@ -74,7 +76,8 @@ export class FileUploadComponent implements OnInit {
                     },
                     error => {
                       console.log(error);
-                      this.spinner.hide();
+                      this.loading.hide()
+                      this.successfulServiceResponseReceived = false;
                     }
                   );
   }

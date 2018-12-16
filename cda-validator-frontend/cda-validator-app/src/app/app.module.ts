@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
 import { APP_BASE_HREF } from '@angular/common';
-import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxLoadingModule, NgxLoadingComponent } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -23,13 +23,13 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     }
   ],
   imports: [
-    NgxSpinnerModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    UiModule
+    UiModule,
+    NgxLoadingModule
   ],
   bootstrap: [AppComponent]
 })
