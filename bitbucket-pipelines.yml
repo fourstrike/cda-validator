@@ -6,5 +6,5 @@ pipelines:
         caches:
           - maven
         script: 
-          - mvn -B clean package
+          - mvn -B clean install
 
