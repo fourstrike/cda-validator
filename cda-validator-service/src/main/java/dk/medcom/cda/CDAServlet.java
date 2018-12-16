@@ -227,7 +227,7 @@ public class CDAServlet {
                     new SaxonEngine("/schematrons/conf-qrd-sch-dk.xml").validate(document, type, validationHandler);
                     break;
                 case CPD:
-                    new IHEObjectsCheckerEngine(context, "/gazelle/cpd/schemas/infrastructure/CDA_SDTC.xsd").validate(document, type, validationHandler);
+                    new IHEObjectsCheckerEngine(context, "/gazelle/cpd/infrastructure/cda/CDA_SDTC.xsd").validate(document, type, validationHandler);
                     new ArtDecorSaxonEngine("/art-decor/medcom-documents-S_R.sch").validate(document, type, validationHandler);
                     break;
                 case NONE:
