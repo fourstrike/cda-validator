@@ -25,7 +25,7 @@
         </span>
       </h1>
 
-      <div class="alert alert-success" role="success" *ngIf="errors.length == 0">
+      <div class="alert alert-success" role="success" *ngIf="errors.length == 0 && successfulServiceResponseReceived">
         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
         Congratulations you have a valid document! &nbsp;
         <button (click)="onClickViewIt()" type="button" class="btn btn-success">View It!</button>

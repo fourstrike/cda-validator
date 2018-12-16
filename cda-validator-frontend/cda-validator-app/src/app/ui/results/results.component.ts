@@ -11,6 +11,7 @@ export class ResultsComponent implements OnInit {
   @Input() warnings: any[] = [];
   @Input() infos: any[] = [];
   @Input() stringToValidate: string = "";
+  @Input() successfulServiceResponseReceived: boolean = false;
 
   constructor(private validation: ValidationService) { }
 
