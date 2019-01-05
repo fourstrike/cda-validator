@@ -9,6 +9,7 @@ import { ResultsComponent } from './results/results.component';
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 
 @NgModule({
+  // tslint:disable-next-line:max-line-length
   declarations: [LayoutComponent, HeaderComponent, FooterComponent, DirectInputComponent, FileUploadComponent, ResultsComponent, DisclaimerComponent],
   imports: [
     CommonModule

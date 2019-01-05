@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ValidationService } from '../../validation.service'
-import { LoadingService } from '../../loading.service'
+import { ValidationService } from '../../validation.service';
+import { LoadingService } from '../../loading.service';
 
 @Component({
   selector: 'app-direct-input',
@@ -8,17 +8,17 @@ import { LoadingService } from '../../loading.service'
   styleUrls: ['./direct-input.component.css']
 })
 export class DirectInputComponent implements OnInit {
-  //input
+  // input
   successfulServiceResponseReceived = false;
-  isValidationDisabled: boolean = false;
+  isValidationDisabled = false;
   cdaTypes: object;
-  pickedCDAType: string = "NONE";
-  stringToValidate: string = "";
+  pickedCDAType = 'NONE';
+  stringToValidate = '';
 
-  //output
-  errors: any[] = []
-  warnings: any[] = []
-  infos: any[] = []
+  // output
+  errors: any[] = [];
+  warnings: any[] = [];
+  infos: any[] = [];
 
   constructor(private validation: ValidationService,
               private loading: LoadingService) { }
@@ -34,24 +34,24 @@ export class DirectInputComponent implements OnInit {
   onStringToValidateChange(str: string) {
     this.stringToValidate = str;
 
-    if(this.stringToValidate != '') {
+    if (this.stringToValidate !== '') {
       this.isValidationDisabled = false;
     } else {
       this.isValidationDisabled = true;
     }
 
-    console.log("StringToValidate: " + this.stringToValidate + "; Validation button disabled: " + this.isValidationDisabled);
+    console.log('StringToValidate: ' + this.stringToValidate + '; Validation button disabled: ' + this.isValidationDisabled);
   }
 
   onValidationTypeChange(type: string) {
     this.pickedCDAType = type;
-    console.log("CDA type picked: " + this.pickedCDAType)
+    console.log('CDA type picked: ' + this.pickedCDAType);
   }
 
   onClickValidate() {
-    console.log("Validation initiated")
+    console.log('Validation initiated');
     this.loading.show();
-    let res = this.validation.validate(this.pickedCDAType, this.stringToValidate)
+    const res = this.validation.validate(this.pickedCDAType, this.stringToValidate)
                   .subscribe(
                     (data: any) => {
                       console.log(data);
