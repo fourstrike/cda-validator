@@ -191,6 +191,8 @@ public class CDAServlet {
         return workingDocument;
     }
 
+    final ArtDecorSaxonEngine artDecorEngine = new ArtDecorSaxonEngine("/art-decor/medcom-documents-S_R.sch");
+
     private synchronized ValidationResponse validateDocument(final String document,
                                                              final List<ValidationEntry> charsetWarning, final CDAType type) {
         final ValidationResponse validationResponse = new ValidationResponse();
@@ -228,7 +230,7 @@ public class CDAServlet {
                     break;
                 case CPD:
                     new IHEObjectsCheckerEngine(context, "/gazelle/cpd/infrastructure/cda/CDA_SDTC.xsd").validate(document, type, validationHandler);
-                    new ArtDecorSaxonEngine("/art-decor/medcom-documents-S_R.sch").validate(document, type, validationHandler);
+                    artDecorEngine.validate(document, type, validationHandler);
                     break;
                 case NONE:
                     new IHEObjectsCheckerEngine(context).validate(document, type, validationHandler);
