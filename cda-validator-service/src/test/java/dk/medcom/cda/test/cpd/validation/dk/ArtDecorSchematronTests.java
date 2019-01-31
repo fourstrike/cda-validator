@@ -155,6 +155,66 @@ public class ArtDecorSchematronTests implements IValidationTest, IDocumentTest {
     assertThat(getErrors().size(), is(1));
   }
 
+  @Test
+  public void withNoObs() throws IOException {
+
+    final String baseDocument = "file:src/test/resources/CPD/DK-CPD_Care_Plan_GGOP_specialiseret_Example_2019-01-22.xml";
+    validDocument = createDocument(baseDocument);
+    rule.validate(validDocument, CDAType.CPD, validationHandler);
+
+    assertThat(getInfos().size(), is(0));
+    assertThat(getWarnings().size(), is(0));
+    assertThat(getErrors().size(), is(0));
+  }
+
+  @Test
+  public void withDoubleActs() throws IOException {
+
+    final String baseDocument = "file:src/test/resources/CPD/DK-CPD_Care_Plan_GGOP_specialiseret_Example_2019-01-22-double-acts.xml";
+    validDocument = createDocument(baseDocument);
+    rule.validate(validDocument, CDAType.CPD, validationHandler);
+
+    assertThat(getInfos().size(), is(0));
+    assertThat(getWarnings().size(), is(0));
+    assertThat(getErrors().size(), is(1));
+  }
+
+  @Test
+  public void withNoActs() throws IOException {
+
+    final String baseDocument = "file:src/test/resources/CPD/DK-CPD_Care_Plan_GGOP_specialiseret_Example_2019-01-22-no-acts.xml";
+    validDocument = createDocument(baseDocument);
+    rule.validate(validDocument, CDAType.CPD, validationHandler);
+
+    assertThat(getInfos().size(), is(0));
+    assertThat(getWarnings().size(), is(0));
+    assertThat(getErrors().size(), is(2));
+  }
+
+  @Test
+  public void withOneObs() throws IOException {
+
+    final String baseDocument = "file:src/test/resources/CPD/DK-CPD_Care_Plan_GGOP_specialiseret_Example_2019-01-22-with-obs.xml";
+    validDocument = createDocument(baseDocument);
+    rule.validate(validDocument, CDAType.CPD, validationHandler);
+
+    assertThat(getInfos().size(), is(0));
+    assertThat(getWarnings().size(), is(0));
+    assertThat(getErrors().size(), is(0));
+  }
+
+  @Test
+  public void withThreeObs() throws IOException {
+
+    final String baseDocument = "file:src/test/resources/CPD/DK-CPD_Care_Plan_GGOP_specialiseret_Example_2019-01-22-with-more-obs.xml";
+    validDocument = createDocument(baseDocument);
+    rule.validate(validDocument, CDAType.CPD, validationHandler);
+
+    assertThat(getInfos().size(), is(0));
+    assertThat(getWarnings().size(), is(0));
+    assertThat(getErrors().size(), is(0));
+  }
+
 
   @Override
   public CollectingValidationHandler getValidationHandler() {

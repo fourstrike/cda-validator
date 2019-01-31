@@ -7,7 +7,7 @@
             <b>description: </b>
             <p>The type of document section. Possible values: review of systems, medical history, family history, microscopic findings, etc.</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.6.1" identifierName="Logical&#160;Observation&#160;Identifier&#160;Names&#160;and&#160;Codes" canonicalUri="urn:oid:2.16.840.1.113883.6.1"/>
+        <sourceCodeSystem id="2.16.840.1.113883.6.1" identifierName="Logical&#160;Observation&#160;Identifier&#160;Names&#160;and&#160;Codes" canonicalUri="http://loinc.org"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="57025-9" codeSystem="2.16.840.1.113883.6.1" displayName="Data Criteria section" level="0" type="L"/>
