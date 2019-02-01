@@ -534,22 +534,7 @@
 									</tbody>
 								</table>
 							</text>
-							<entry typeCode="DRIV" contextConductionInd="true">
-								<!-- Goal Observation -->
-								<observation classCode="OBS" moodCode="GOL">
-									<templateId root="1.2.208.184.15.1.10.20.2.20" extension="2018-09-28"/>
-									<!-- unique id in UPPER CASE-->
-									<id root="CE7CFB78-BD16-467E-8BCF-859A30341012"/>
-									<code code="ZZ0172Y"
-										displayName="Vurdering af behov for genoptræning, specialiseret genoptræning"
-										codeSystem="1.2.208.176.2.4"
-										codeSystemName="Sundhedsstyrelsens Klassifikations System"/>
-									<!-- RehabilitationPlan/RehabilitationNeedAndPotential -->
-									<text><reference value="#RehabilitationNeedAndPotential"/></text>
-									<statusCode code="active"/>
-									<value xsi:type="CD" nullFlavor="NI"/>
-								</observation>
-							</entry>
+
 						</section>
 					</component>
 				</section>

@@ -19,7 +19,7 @@ Template derived rules for ID: 2.16.840.1.113883.10.12.304
 Context: *[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]
 Item: (CDAObservationMedia)
 -->
-    <rule context="*[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]" id="d131e1345-false-d972481e0">
+    <rule context="*[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]" id="d131e1345-false-d972477e0">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.304" test="string(@classCode) = ('OBS')">(CDAObservationMedia): The value for classCode SHALL be 'OBS'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.304" test="string(@moodCode) = ('EVN') or not(@moodCode)">(CDAObservationMedia): The value for moodCode SHALL be 'EVN'. Found: "<value-of select="@moodCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.304" test="count(hl7:templateId[@root = '2.16.840.1.113883.10.12.304']) &gt;= 1">(CDAObservationMedia): element hl7:templateId[@root = '2.16.840.1.113883.10.12.304'] is required [min 1x].</assert>
@@ -34,7 +34,7 @@ Template derived rules for ID: 2.16.840.1.113883.10.12.304
 Context: *[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:templateId[@root = '2.16.840.1.113883.10.12.304']
 Item: (CDAObservationMedia)
 -->
-    <rule context="*[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:templateId[@root = '2.16.840.1.113883.10.12.304']" id="d131e1348-false-d973009e0">
+    <rule context="*[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:templateId[@root = '2.16.840.1.113883.10.12.304']" id="d131e1348-false-d973005e0">
         <extends rule="II"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.304" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='II' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(CDAObservationMedia): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:II". Found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.304" test="string(@root) = ('2.16.840.1.113883.10.12.304')">(CDAObservationMedia): The value for root SHALL be '2.16.840.1.113883.10.12.304'. Found: "<value-of select="@root"/>"</assert>
@@ -44,7 +44,7 @@ Template derived rules for ID: 2.16.840.1.113883.10.12.304
 Context: *[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:id
 Item: (CDAObservationMedia)
 -->
-    <rule context="*[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:id" id="d131e1350-false-d973022e0">
+    <rule context="*[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:id" id="d131e1350-false-d973018e0">
         <extends rule="II"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.304" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='II' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(CDAObservationMedia): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:II". Found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
     </rule>
@@ -53,7 +53,7 @@ Template derived rules for ID: 2.16.840.1.113883.10.12.304
 Context: *[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:languageCode
 Item: (CDAObservationMedia)
 -->
-    <rule context="*[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:languageCode" id="d131e1351-false-d973034e0">
+    <rule context="*[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:languageCode" id="d131e1351-false-d973030e0">
         <extends rule="CS"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.304" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='CS' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(CDAObservationMedia): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:CS". Found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
     </rule>
@@ -62,7 +62,7 @@ Template derived rules for ID: 2.16.840.1.113883.10.12.304
 Context: *[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:value
 Item: (CDAObservationMedia)
 -->
-    <rule context="*[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:value" id="d131e1355-false-d973046e0">
+    <rule context="*[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:value" id="d131e1355-false-d973042e0">
         <extends rule="ED"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.304" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='ED' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(CDAObservationMedia): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:ED". Found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
     </rule>
@@ -1106,7 +1106,7 @@ Context: *[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.
 Item: (CDAObservationMedia)
 -->
     <rule context="*[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:entryRelationship[@typeCode]">
-        <extends rule="d975787e0-false-d975790e0"/>
+        <extends rule="d975783e0-false-d975786e0"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.304" test="@typeCode">(CDAObservationMedia): attribute @typeCode SHALL be present.</assert>
         <let name="theAttValue" value="distinct-values(tokenize(normalize-space(@typeCode),'\s'))"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.304" test="not(@typeCode) or empty($theAttValue[not(. = (doc('include/voc-2.16.840.1.113883.1.11.19447-DYNAMIC.xml')/*/valueSet/conceptList/concept/@code))])">(CDAObservationMedia): The value for typeCode SHALL be selected from value set '2.16.840.1.113883.1.11.19447' x_ActRelationshipEntryRelationship (DYNAMIC).</assert>
@@ -1134,7 +1134,7 @@ Template derived rules for ID: 2.16.840.1.113883.10.12.300
 Context: *[hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]]/hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]/hl7:entryRelationship[@typeCode]
 Item: (CDAClinicalStatement)
 -->
-    <rule id="d975787e0-false-d975790e0" abstract="true">
+    <rule id="d975783e0-false-d975786e0" abstract="true">
         <let name="elmcount" value="count(hl7:act[hl7:templateId[@root = '2.16.840.1.113883.10.12.301']] | hl7:encounter[hl7:templateId[@root = '2.16.840.1.113883.10.12.302']] | hl7:observation[hl7:templateId[@root = '2.16.840.1.113883.10.12.303']] | hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']] | hl7:organizer[hl7:templateId[@root = '2.16.840.1.113883.10.12.305']] | hl7:procedure[hl7:templateId[@root = '2.16.840.1.113883.10.12.306']] | hl7:regionOfInterest[hl7:templateId[@root = '2.16.840.1.113883.10.12.307']] | hl7:substanceAdministration[hl7:templateId[@root = '2.16.840.1.113883.10.12.308']] | hl7:supply[hl7:templateId[@root = '2.16.840.1.113883.10.12.309']])"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.300" test="$elmcount &gt;= 1">(CDAClinicalStatement): choice (hl7:act[hl7:templateId[@root = '2.16.840.1.113883.10.12.301']]  or  hl7:encounter[hl7:templateId[@root = '2.16.840.1.113883.10.12.302']]  or  hl7:observation[hl7:templateId[@root = '2.16.840.1.113883.10.12.303']]  or  hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]  or  hl7:organizer[hl7:templateId[@root = '2.16.840.1.113883.10.12.305']]  or  hl7:procedure[hl7:templateId[@root = '2.16.840.1.113883.10.12.306']]  or  hl7:regionOfInterest[hl7:templateId[@root = '2.16.840.1.113883.10.12.307']]  or  hl7:substanceAdministration[hl7:templateId[@root = '2.16.840.1.113883.10.12.308']]  or  hl7:supply[hl7:templateId[@root = '2.16.840.1.113883.10.12.309']]) does not contain enough elements [min 1x]</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=2.16.840.1.113883.10.12.300" test="$elmcount &lt;= 1">(CDAClinicalStatement): choice (hl7:act[hl7:templateId[@root = '2.16.840.1.113883.10.12.301']]  or  hl7:encounter[hl7:templateId[@root = '2.16.840.1.113883.10.12.302']]  or  hl7:observation[hl7:templateId[@root = '2.16.840.1.113883.10.12.303']]  or  hl7:observationMedia[hl7:templateId[@root = '2.16.840.1.113883.10.12.304']]  or  hl7:organizer[hl7:templateId[@root = '2.16.840.1.113883.10.12.305']]  or  hl7:procedure[hl7:templateId[@root = '2.16.840.1.113883.10.12.306']]  or  hl7:regionOfInterest[hl7:templateId[@root = '2.16.840.1.113883.10.12.307']]  or  hl7:substanceAdministration[hl7:templateId[@root = '2.16.840.1.113883.10.12.308']]  or  hl7:supply[hl7:templateId[@root = '2.16.840.1.113883.10.12.309']]) contains too many elements [max 1x]</assert>

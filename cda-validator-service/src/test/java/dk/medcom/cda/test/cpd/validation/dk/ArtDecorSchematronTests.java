@@ -176,19 +176,21 @@ public class ArtDecorSchematronTests implements IValidationTest, IDocumentTest {
 
     assertThat(getInfos().size(), is(0));
     assertThat(getWarnings().size(), is(0));
-    assertThat(getErrors().size(), is(1));
+    assertThat(getErrors().size(), is(0));
   }
 
-  @Test
-  public void withNoActs() throws IOException {
 
-    final String baseDocument = "file:src/test/resources/CPD/DK-CPD_Care_Plan_GGOP_specialiseret_Example_2019-01-22-no-acts.xml";
+
+  @Test
+  public void withNoActsNoObs() throws IOException {
+
+    final String baseDocument = "file:src/test/resources/CPD/DK-CPD_Care_Plan_GGOP_specialiseret_Example_2019-01-22-no-acts-no-obs.xml";
     validDocument = createDocument(baseDocument);
     rule.validate(validDocument, CDAType.CPD, validationHandler);
 
     assertThat(getInfos().size(), is(0));
     assertThat(getWarnings().size(), is(0));
-    assertThat(getErrors().size(), is(2));
+    assertThat(getErrors().size(), is(1));
   }
 
   @Test
