@@ -18,7 +18,7 @@ Simply run:
 
 In order to build the service, deploy the servlet to any Java EE compliant server and you're good to go. The servlet is self-contained and holds no state.
 
-## How to deploy with docker
+## How to build and deploy with docker
 
 The project comes with a Dockerfile based the official tomcat docker image from dockerhub.
 To deploy the the project via the Dockerfile, simply use the following commands:

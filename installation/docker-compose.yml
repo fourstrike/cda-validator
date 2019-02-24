@@ -1,0 +1,22 @@
+version: '2'
+services:
+  cda_validator:
+    image: "goimplementit/cda-validator"
+    restart: always
+    ports:
+     - "8080:8443"
+    volumes:
+      - ./tomcat/server.xml:/usr/local/tomcat/conf/server.xml
+  portainer:
+    image: portainer/portainer
+    command: -H unix:///var/run/docker.sock
+    restart: always
+    ports:
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data:
+
