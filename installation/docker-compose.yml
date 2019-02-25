@@ -4,7 +4,8 @@ services:
     image: "goimplementit/cda-validator"
     restart: always
     ports:
-     - "8080:8443"
+     - "8080:8080"
+     - "8443:8443"
     volumes:
       - ./tomcat/server.xml:/usr/local/tomcat/conf/server.xml
   portainer:

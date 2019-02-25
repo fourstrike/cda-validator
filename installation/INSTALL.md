@@ -27,7 +27,7 @@ Unzip it to a directory of your liking and go to the newly created `install` fol
 
 ```
 unzip install.zip
-cd install
+cd installation
 ```
 
 The folder contains the following files:
