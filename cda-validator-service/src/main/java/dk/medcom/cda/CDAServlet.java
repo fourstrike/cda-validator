@@ -131,7 +131,9 @@ public class CDAServlet {
                 new CDAProfile(CDAType.PHMR, "Personal Healthcare Monitoring Report", false),
                 new CDAProfile(CDAType.QFDD, "Questionnaire Form Definition Document", false),
                 new CDAProfile(CDAType.QRD, "Questionnaire Response Document", false),
-                new CDAProfile(CDAType.CPD, "Care Plan", false));
+                new CDAProfile(CDAType.CPD, "Care Plan", false),
+                new CDAProfile(CDAType.APD, "Appointment Document", false),
+                new CDAProfile(CDAType.PDC, "Personal Data Card", false));
     }
 
     private ValidationResponse generateSingleValidationError(final ValidationEntry invalidCDAValidationEntry,
