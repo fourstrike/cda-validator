@@ -11,7 +11,7 @@
             <p>
                 <i>Discussion:</i> If the awareness, denial, unconsciousness, etc. is the subject of medical considerations (e.g., part of the problem list), one should use explicit observations in these matters as well, and should not solely rely on this simple attribute in the Participation.</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.137" identifierName="TargetAwareness" canonicalUri="urn:oid:2.16.840.1.113883.5.137"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.137" identifierName="TargetAwareness" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-TargetAwareness" canonicalUriDSTU2="http://hl7.org/fhir/v3/TargetAwareness" canonicalUriSTU3="http://hl7.org/fhir/v3/TargetAwareness" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-TargetAwareness"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="D" codeSystem="2.16.840.1.113883.5.137" displayName="denying" level="0" type="L"/>

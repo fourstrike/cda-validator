@@ -7,7 +7,7 @@
             <b>description: </b>
             <p>Clones using this x_domain should have a name "encounterParticipant".</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.90" identifierName="ParticipationType" canonicalUri="urn:oid:2.16.840.1.113883.5.90"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.90" identifierName="ParticipationType" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-ParticipationType" canonicalUriDSTU2="http://hl7.org/fhir/v3/ParticipationType" canonicalUriSTU3="http://hl7.org/fhir/v3/ParticipationType" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="ADM" codeSystem="2.16.840.1.113883.5.90" displayName="admitter" level="0" type="L"/>

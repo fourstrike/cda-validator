@@ -9,7 +9,7 @@
             <p>
                 <i>Example:</i> Married, separated, divorced, widowed, common-law marriage.</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.2" identifierName="MaritalStatus" canonicalUri="urn:oid:2.16.840.1.113883.5.2"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.2" identifierName="MaritalStatus" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-MaritalStatus" canonicalUriDSTU2="http://hl7.org/fhir/v3/MaritalStatus" canonicalUriSTU3="http://hl7.org/fhir/v3/MaritalStatus" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="A" codeSystem="2.16.840.1.113883.5.2" displayName="Annulled" level="0" type="L"/>

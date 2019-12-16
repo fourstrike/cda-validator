@@ -7,7 +7,7 @@
             <b>description: </b>
             <p>Codes representing the defined possible states of an Role, as defined by the Role class state machine.</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.1068" identifierName="Role&#160;Status" canonicalUri="urn:oid:2.16.840.1.113883.5.1068"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.1068" identifierName="Role&#160;Status" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-RoleStatus" canonicalUriDSTU2="http://hl7.org/fhir/v3/RoleStatus" canonicalUriSTU3="http://hl7.org/fhir/v3/RoleStatus" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-RoleStatus"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="normal" codeSystem="2.16.840.1.113883.5.1068" displayName="normal" level="0" type="S"/>

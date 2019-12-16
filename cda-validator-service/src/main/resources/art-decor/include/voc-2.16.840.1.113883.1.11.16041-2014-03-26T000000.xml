@@ -7,8 +7,8 @@
             <b>description: </b>
             <p>Types of Material for EntityClass "MAT"</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.1060" identifierName="Entity&#160;Code" canonicalUri="urn:oid:2.16.840.1.113883.5.1060"/>
-        <sourceCodeSystem id="2.16.840.1.113883.5.129" identifierName="SpecimenType" canonicalUri="urn:oid:2.16.840.1.113883.5.129"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.1060" identifierName="Entity&#160;Code" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-EntityCode" canonicalUriDSTU2="http://hl7.org/fhir/v3/EntityCode" canonicalUriSTU3="http://hl7.org/fhir/v3/EntityCode" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-EntityCode"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.129" identifierName="SpecimenType" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-SpecimenType" canonicalUriDSTU2="http://hl7.org/fhir/v3/SpecimenType" canonicalUriSTU3="http://hl7.org/fhir/v3/SpecimenType" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-SpecimenType"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="_ContainerEntityType" codeSystem="2.16.840.1.113883.5.1060" displayName="ContainerEntityType" level="1" type="A"/>

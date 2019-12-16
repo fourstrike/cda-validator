@@ -9,7 +9,7 @@
             <p>
                 <i>Discussion:</i> These interpretation codes are sometimes called "abnormal flags", however, the judgment of normalcy is just one of the common rough interpretations, and is often not relevant. For example, the susceptibility interpretations are not about "normalcy", and for any observation of a pathologic condition, it does not make sense to state the normalcy, since pathologic conditions are never considered "normal."</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.83" identifierName="Observation&#160;Interpretation" canonicalUri="urn:oid:2.16.840.1.113883.5.83"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.83" identifierName="Observation&#160;Interpretation" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation" canonicalUriDSTU2="http://hl7.org/fhir/v3/ObservationInterpretation" canonicalUriSTU3="http://hl7.org/fhir/v3/ObservationInterpretation" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="_GeneticObservationInterpretation" codeSystem="2.16.840.1.113883.5.83" displayName="GeneticObservationInterpretation" level="0" type="A"/>

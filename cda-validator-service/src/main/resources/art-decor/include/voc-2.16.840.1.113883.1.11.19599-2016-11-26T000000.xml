@@ -7,7 +7,7 @@
             <b>description: </b>
             <p>The set of Act class codes allowed for the ACT class clone in the CDA Clinical Statement model. The scope of this value set are those Act class codes not otherwise covered by specific classes in the CDA Clinical Statement model and required to enable representation of Clinical Statement in CDA.</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.6" identifierName="ActClass" canonicalUri="urn:oid:2.16.840.1.113883.5.6"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.6" identifierName="ActClass" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-ActClass" canonicalUriDSTU2="http://hl7.org/fhir/v3/ActClass" canonicalUriSTU3="http://hl7.org/fhir/v3/ActClass" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-ActClass"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="ACCM" codeSystem="2.16.840.1.113883.5.6" displayName="accommodation" level="0" type="L"/>

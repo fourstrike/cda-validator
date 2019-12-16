@@ -12,7 +12,7 @@
                 <i>Constraints:</i> In all observations the method is already partially specified by the Act.code. In this case, the methodCode NEED NOT be used at all. The methodCode MAY still be used to identify this method more clearly in addition to what is implied from the Act.code. However, an information consumer system or process SHOULD NOT depend on this methodCode information for method detail that is implied by the Act.code.</p>
             <p>If the methodCode is used to express method detail that is also implied by the Act.code, the methodCode MUST NOT be in conflict with the implied method of the Act.code.</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.84" identifierName="Observation&#160;Method" canonicalUri="urn:oid:2.16.840.1.113883.5.84"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.84" identifierName="Observation&#160;Method" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-ObservationMethod" canonicalUriDSTU2="http://hl7.org/fhir/v3/ObservationMethod" canonicalUriSTU3="http://hl7.org/fhir/v3/ObservationMethod" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-ObservationMethod"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="0001" codeSystem="2.16.840.1.113883.5.84" displayName="Complement fixation" level="0" type="L"/>

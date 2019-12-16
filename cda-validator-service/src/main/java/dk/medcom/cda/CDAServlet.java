@@ -81,7 +81,7 @@ public class CDAServlet {
     public String xsltTransform(final String document) {
         try {
         		final String trimmed = document.trim().replaceFirst("^([\\W]+)<","<");
-        		
+
             final TransformerFactory factory = TransformerFactory.newInstance();
 
 //            final InputStream stream = context.getResourceAsStream("/WEB-INF/classes/CDA.xsl");
@@ -193,9 +193,11 @@ public class CDAServlet {
         return workingDocument;
     }
 
-    final ArtDecorSaxonEngine artDecorEngine = new ArtDecorSaxonEngine("/art-decor/medcom-documents-S_R.sch");
+  final ArtDecorSaxonEngine artDecorEngineCpd = new ArtDecorSaxonEngine("/art-decor/medcom-documents-S_R.sch");
+  final ArtDecorSaxonEngine artDecorEngineApd = new ArtDecorSaxonEngine("/art-decor/medcom-documents-appointment_s_r.sch");
+  final ArtDecorSaxonEngine artDecorEnginePdc = new ArtDecorSaxonEngine("/art-decor/medcom-documents-PDC_s_r.sch");
 
-    private synchronized ValidationResponse validateDocument(final String document,
+  private synchronized ValidationResponse validateDocument(final String document,
                                                              final List<ValidationEntry> charsetWarning, final CDAType type) {
         final ValidationResponse validationResponse = new ValidationResponse();
 
@@ -232,8 +234,18 @@ public class CDAServlet {
                     break;
                 case CPD:
                     new IHEObjectsCheckerEngine(context, "/gazelle/cpd/infrastructure/cda/CDA_SDTC.xsd").validate(document, type, validationHandler);
-                    artDecorEngine.validate(document, type, validationHandler);
+                  artDecorEngineCpd.validate(document, type, validationHandler);
                     break;
+                case APD:
+                   new IHEObjectsCheckerEngine(context, "/gazelle/cpd/infrastructure/cda/CDA_SDTC.xsd")
+                        .validate(document, type, validationHandler);
+                   artDecorEngineApd.validate(document, type, validationHandler);
+                   break;
+                case PDC:
+                  new IHEObjectsCheckerEngine(context, "/gazelle/cpd/infrastructure/cda/CDA_SDTC.xsd")
+                        .validate(document, type, validationHandler);
+                  artDecorEnginePdc.validate(document, type, validationHandler);
+                  break;
                 case NONE:
                     new IHEObjectsCheckerEngine(context).validate(document, type, validationHandler);
                     break;

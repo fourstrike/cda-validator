@@ -34,6 +34,12 @@
 - As final fallback, when no template-id is found in the instance, code should rely on root element of the instance to determine the Schematron file name ... --><!-- template name: CarePlanDocument -->
     <map rootelement="ClinicalDocument" namespace="urn:hl7-org:v3" templateRoot="1.2.208.184.15.1" sch="medcom-documents-S_R.sch" schsvrl="medcom-documents-S_R.xsl" xsd="ClinicalDocument.xsd"/>
     <map rootelement="ClinicalDocument" namespace="urn:hl7-org:v3" sch="medcom-documents-S_R.sch" schsvrl="medcom-documents-S_R.xsl" xsd="ClinicalDocument.xsd"/>
+   <!-- template name: AppointmentDocument -->
+    <map rootelement="ClinicalDocument" namespace="urn:hl7-org:v3" templateRoot="1.2.208.184.14.1" sch="medcom-documents-appointment_s_r.sch" schsvrl="medcom-documents-appointment_s_r.xsl" xsd="ClinicalDocument.xsd"/>
+    <map rootelement="ClinicalDocument" namespace="urn:hl7-org:v3" sch="medcom-documents-appointment_s_r.sch" schsvrl="medcom-documents-appointment_s_r.xsl" xsd="ClinicalDocument.xsd"/>
+   <!-- template name: CDAClinicalDocumentStructuredBody -->
+    <map rootelement="ClinicalDocument" namespace="urn:hl7-org:v3" templateRoot="1.2.208.184.16.1" sch="medcom-documents-PDC_s_r.sch" schsvrl="medcom-documents-PDC_s_r.xsl" xsd="ClinicalDocument.xsd"/>
+    <map rootelement="ClinicalDocument" namespace="urn:hl7-org:v3" sch="medcom-documents-PDC_s_r.sch" schsvrl="medcom-documents-PDC_s_r.xsl" xsd="ClinicalDocument.xsd"/>
     
     <!-- Chapter 3: Mapping based on representing templates -->
     <!-- ========= -->
@@ -44,5 +50,13 @@
     <template id="1.2.208.184.10.2" effectiveDate="" sch="medcom-documents-S_R.sch" schsvrl="medcom-documents-S_R.xsl">
         <root rootelement="ClinicalDocument" namespace="urn:hl7-org:v3"/>
         <transaction id="1.2.208.184.4.2" effectiveDate="2018-11-19T22:06:20" statusCode="draft" name="Initial"/>
+    </template>
+    <template id="1.2.208.184.10.4" effectiveDate="" sch="medcom-documents-appointment_s_r.sch" schsvrl="medcom-documents-appointment_s_r.xsl">
+        <root rootelement="ClinicalDocument" namespace="urn:hl7-org:v3"/>
+        <transaction id="1.2.208.184.4.5" effectiveDate="2019-12-07T23:24:00" statusCode="draft" name="Initial"/>
+    </template>
+    <template id="1.2.208.184.10.3" effectiveDate="" sch="medcom-documents-PDC_s_r.sch" schsvrl="medcom-documents-PDC_s_r.xsl">
+        <root rootelement="ClinicalDocument" namespace="urn:hl7-org:v3"/>
+        <transaction id="1.2.208.184.4.8" effectiveDate="2019-12-07T23:24:59" statusCode="draft" name="Initial"/>
     </template>
 </mappings>

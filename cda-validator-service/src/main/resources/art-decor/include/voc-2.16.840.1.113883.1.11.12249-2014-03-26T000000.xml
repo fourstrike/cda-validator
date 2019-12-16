@@ -9,7 +9,7 @@
             <p>
                 <i>Example:</i> Expressed spoken, expressed written, expressed signed, received spoken, received written, received signed.</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.60" identifierName="Language&#160;Ability&#160;Mode" canonicalUri="urn:oid:2.16.840.1.113883.5.60"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.60" identifierName="Language&#160;Ability&#160;Mode" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityMode" canonicalUriDSTU2="http://hl7.org/fhir/v3/LanguageAbilityMode" canonicalUriSTU3="http://hl7.org/fhir/v3/LanguageAbilityMode" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityMode"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="ESGN" codeSystem="2.16.840.1.113883.5.60" displayName="Expressed signed" level="0" type="L"/>

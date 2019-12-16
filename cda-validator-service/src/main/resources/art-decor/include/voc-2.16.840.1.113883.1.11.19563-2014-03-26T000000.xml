@@ -9,7 +9,7 @@
             <p>
                 <i>Example:</i> Parent, sibling, unrelated friend, neighbor</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.111" identifierName="Role&#160;Code" canonicalUri="urn:oid:2.16.840.1.113883.5.111"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.111" identifierName="Role&#160;Code" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-RoleCode" canonicalUriDSTU2="http://hl7.org/fhir/v3/RoleCode" canonicalUriSTU3="http://hl7.org/fhir/v3/RoleCode" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="FAMMEMB" codeSystem="2.16.840.1.113883.5.111" displayName="family member" level="1" type="S"/>

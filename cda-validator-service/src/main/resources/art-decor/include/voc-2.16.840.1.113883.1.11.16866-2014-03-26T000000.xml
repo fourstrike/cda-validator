@@ -9,7 +9,7 @@
             <p>
                 <i>Discussion:</i> This attribute is used in orders to indicate the ordered priority, and in event documentation it indicates the actual priority used to perform the act. In definition mood it indicates the available priorities.</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.7" identifierName="Act&#160;Priority" canonicalUri="urn:oid:2.16.840.1.113883.5.7"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.7" identifierName="Act&#160;Priority" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-ActPriority" canonicalUriDSTU2="http://hl7.org/fhir/v3/ActPriority" canonicalUriSTU3="http://hl7.org/fhir/v3/ActPriority" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-ActPriority"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="A" codeSystem="2.16.840.1.113883.5.7" displayName="ASAP" level="0" type="L"/>

@@ -7,7 +7,7 @@
             <b>description: </b>
             <p>Used to enumerate the moods that a substance administration can take within the body of a clinical document.</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.1001" identifierName="Act&#160;Mood" canonicalUri="urn:oid:2.16.840.1.113883.5.1001"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.1001" identifierName="Act&#160;Mood" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-ActMood" canonicalUriDSTU2="http://hl7.org/fhir/v3/ActMood" canonicalUriSTU3="http://hl7.org/fhir/v3/ActMood" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-ActMood"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="DEF" codeSystem="2.16.840.1.113883.5.1001" displayName="definition" level="0" type="L"/>

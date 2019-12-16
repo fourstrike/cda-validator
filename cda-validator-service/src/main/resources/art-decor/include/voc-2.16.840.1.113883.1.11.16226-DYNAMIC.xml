@@ -7,8 +7,8 @@
             <b>description: </b>
             <p>Identifies the kinds of observations that can be performed</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.4" identifierName="Act&#160;Code" canonicalUri="urn:oid:2.16.840.1.113883.5.4"/>
-        <sourceCodeSystem id="2.16.840.1.113883.6.1" identifierName="Logical&#160;Observation&#160;Identifier&#160;Names&#160;and&#160;Codes" canonicalUri="http://loinc.org"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.4" identifierName="Act&#160;Code" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-ActCode" canonicalUriDSTU2="http://hl7.org/fhir/v3/ActCode" canonicalUriSTU3="http://hl7.org/fhir/v3/ActCode" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+        <sourceCodeSystem id="2.16.840.1.113883.6.1" identifierName="Logical&#160;Observation&#160;Identifier&#160;Names&#160;and&#160;Codes" canonicalUri="http://loinc.org" canonicalUriDSTU2="http://loinc.org" canonicalUriSTU3="http://loinc.org" canonicalUriR4="http://loinc.org"/>
         <publishingAuthority name="admin"/>
         <completeCodeSystem codeSystem="2.16.840.1.113883.6.1" codeSystemName="Logical&#160;Observation&#160;Identifier&#160;Names&#160;and&#160;Codes"/>
         <conceptList>

@@ -10,7 +10,7 @@
             <p>
                 <i>Usage Note:</i> x_BasicConfidentialityKind is a subset of Confidentiality codes that are used as metadata indicating the receiver responsibility to comply with normally applicable jurisdictional privacy law or disclosure authorization; that the receiver may not disclose this information except as directed by the information custodian, who may be the information subject; or that the receiver may not disclose this information except as directed by the information custodian, who may be the information subject.</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.25" identifierName="Confidentiality" canonicalUri="urn:oid:2.16.840.1.113883.5.25"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.25" identifierName="Confidentiality" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-Confidentiality" canonicalUriDSTU2="http://hl7.org/fhir/v3/Confidentiality" canonicalUriSTU3="http://hl7.org/fhir/v3/Confidentiality" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-Confidentiality"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="N" codeSystem="2.16.840.1.113883.5.25" displayName="normal" level="0" type="L"/>

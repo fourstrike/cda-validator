@@ -9,7 +9,7 @@
             <p>
                 <i>Examples:</i> A surgical Procedure act object (representing a procedure report) requires a signature of the performing and responsible surgeon, and possibly other participants. (See also: Participation.signatureText.)</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.89" identifierName="Participation&#160;Signature" canonicalUri="urn:oid:2.16.840.1.113883.5.89"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.89" identifierName="Participation&#160;Signature" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-ParticipationSignature" canonicalUriDSTU2="http://hl7.org/fhir/v3/ParticipationSignature" canonicalUriSTU3="http://hl7.org/fhir/v3/ParticipationSignature" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-ParticipationSignature"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="I" codeSystem="2.16.840.1.113883.5.89" displayName="intended" level="0" type="L"/>

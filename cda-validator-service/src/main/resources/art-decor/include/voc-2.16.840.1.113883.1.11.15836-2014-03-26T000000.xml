@@ -9,7 +9,7 @@
                     observer identification. The standards specify two minimum ethnicity categories: Hispanic or Latino, and Not Hispanic or Latino. The standards define a Hispanic or Latino as a person of "Mexican, Puerto Rican, Cuban, South or Central America, or other Spanish culture or origin, regardless of race." The standards stipulate that ethnicity data need not be limited to the two minimum categories, but any expansion must be collapsible to those categories. In addition, the standards stipulate that an individual can be Hispanic or Latino or can be Not Hispanic or Latino, but cannot
                     be both.</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.50" identifierName="Ethnicity" canonicalUri="urn:oid:2.16.840.1.113883.5.50"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.50" identifierName="Ethnicity" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-Ethnicity" canonicalUriDSTU2="http://hl7.org/fhir/v3/Ethnicity" canonicalUriSTU3="http://hl7.org/fhir/v3/Ethnicity" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-Ethnicity"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="2186-5" codeSystem="2.16.840.1.113883.5.50" displayName="Not Hispanic or Latino" level="0" type="L"/>

@@ -9,7 +9,7 @@
             <p>
                 <i>Example:</i> Excellent, good, fair, poor.</p>
         </desc>
-        <sourceCodeSystem id="2.16.840.1.113883.5.61" identifierName="Language&#160;Ability&#160;Proficiency" canonicalUri="urn:oid:2.16.840.1.113883.5.61"/>
+        <sourceCodeSystem id="2.16.840.1.113883.5.61" identifierName="Language&#160;Ability&#160;Proficiency" canonicalUri="http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency" canonicalUriDSTU2="http://hl7.org/fhir/v3/LanguageAbilityProficiency" canonicalUriSTU3="http://hl7.org/fhir/v3/LanguageAbilityProficiency" canonicalUriR4="http://terminology.hl7.org/CodeSystem/v3-LanguageAbilityProficiency"/>
         <publishingAuthority name="admin"/>
         <conceptList>
             <concept code="E" codeSystem="2.16.840.1.113883.5.61" displayName="Excellent" level="0" type="L"/>

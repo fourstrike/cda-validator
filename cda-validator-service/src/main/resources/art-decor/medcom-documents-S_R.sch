@@ -131,7 +131,7 @@
     <pattern>
         <title>CarePlanDocument</title>
         <rule context="/">
-            <assert role="warning" test="descendant-or-self::hl7:ClinicalDocument[hl7:templateId[@root = '1.2.208.184.15.1']]" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.10.2">Instance is expected to have the following element: descendant-or-self::hl7:ClinicalDocument[hl7:templateId[@root = '1.2.208.184.15.1']]</assert>
+            <assert role="warning" test="descendant-or-self::hl7:ClinicalDocument[hl7:templateId[@root = '1.2.208.184.15.1']]" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.10.2">descendant-or-self::hl7:ClinicalDocument[hl7:templateId[@root = '1.2.208.184.15.1']]: Instance is expected to have the following element: %%2</assert>
         </rule>
     </pattern>
     <include href="include/1.2.208.184.10.2-2018-11-19T211346.sch"/>
