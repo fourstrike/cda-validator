@@ -233,16 +233,16 @@ public class CDAServlet {
                     new SaxonEngine("/schematrons/conf-qrd-sch-dk.xml").validate(document, type, validationHandler);
                     break;
                 case CPD:
-                    new IHEObjectsCheckerEngine(context, "/gazelle/cpd/infrastructure.cda/CDA_SDTC.xsd").validate(document, type, validationHandler);
+                    new IHEObjectsCheckerEngine(context, "/gazelle/cpd/infrastructure/cda/CDA_SDTC.xsd").validate(document, type, validationHandler);
                   artDecorEngineCpd.validate(document, type, validationHandler);
                     break;
                 case APD:
-                   new IHEObjectsCheckerEngine(context, "/gazelle/cpd/infrastructure.cda/CDA_SDTC.xsd")
+                   new IHEObjectsCheckerEngine(context, "/gazelle/cpd/infrastructure/cda/CDA_SDTC.xsd")
                         .validate(document, type, validationHandler);
                    artDecorEngineApd.validate(document, type, validationHandler);
                    break;
                 case PDC:
-                  new IHEObjectsCheckerEngine(context, "/gazelle/cpd/infrastructure.cda/CDA_SDTC.xsd")
+                  new IHEObjectsCheckerEngine(context, "/gazelle/cpd/infrastructure/cda/CDA_SDTC.xsd")
                         .validate(document, type, validationHandler);
                   artDecorEnginePdc.validate(document, type, validationHandler);
                   break;

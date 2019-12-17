@@ -46,7 +46,7 @@ public class IHEObjectsCheckerEngine implements IValidationEngine {
 
     try {
       final DetailedResult result;
-      if (CDAType.NONE == type || CDAType.QFDD == type || CDAType.QRD == type || CDAType.CPD == type)
+      if (CDAType.NONE == type || CDAType.QFDD == type || CDAType.QRD == type || CDAType.CPD == type || CDAType.PDC == type || CDAType.APD == type)
         result = net.ihe.gazelle.cdabasic.validator.MicroDocumentValidationWrapper.validate(documentAsString, paths);
       else if (CDAType.PHMR == type)
         result = net.ihe.gazelle.assembler.ccdav21.MicroDocumentValidationWrapper.validate(documentAsString, paths);
