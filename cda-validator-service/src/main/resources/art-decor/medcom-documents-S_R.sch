@@ -44,9 +44,11 @@
         <include href="include/DTr1_EN.sch"/>
         <include href="include/DTr1_ENXP.sch"/>
         <include href="include/DTr1_hl7nl-INT.sch"/>
+        <include href="include/DTr1_hl7nl-IVL_QTY.sch"/>
         <include href="include/DTr1_hl7nl-IVL_TS.sch"/>
         <include href="include/DTr1_hl7nl-PIVL_TS.sch"/>
         <include href="include/DTr1_hl7nl-PQ.sch"/>
+        <include href="include/DTr1_hl7nl-QSET_QTY.sch"/>
         <include href="include/DTr1_hl7nl-RTO.sch"/>
         <include href="include/DTr1_hl7nl-TS.sch"/>
         <include href="include/DTr1_II.sch"/>

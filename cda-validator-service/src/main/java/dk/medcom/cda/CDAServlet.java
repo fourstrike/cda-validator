@@ -245,6 +245,7 @@ public class CDAServlet {
                   new IHEObjectsCheckerEngine(context, "/gazelle/cpd/infrastructure/cda/CDA_SDTC.xsd")
                         .validate(document, type, validationHandler);
                   artDecorEnginePdc.validate(document, type, validationHandler);
+                  new SaxonEngine("/schematrons/conf-pdc-sch-dk.xml").validate(document, type, validationHandler);
                   break;
                 case NONE:
                     new IHEObjectsCheckerEngine(context).validate(document, type, validationHandler);
