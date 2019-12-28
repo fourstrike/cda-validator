@@ -22,7 +22,9 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.DefaultServlet;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.google.inject.servlet.GuiceFilter;
@@ -39,10 +41,10 @@ import dk.medcom.cda.test.IRandomTestData;
 
 public class TestServlet implements IRandomTestData, IDocumentTest {
   public static final int PORT = 9080;
-  private Server server;
+  private static Server server;
 
-  @Before
-  public void before() throws Exception {
+  @BeforeClass
+  public static void before() throws Exception {
     server = new Server(PORT);
 
     final ServletContextHandler sch = new ServletContextHandler(server, "/");
@@ -55,8 +57,8 @@ public class TestServlet implements IRandomTestData, IDocumentTest {
     server.start();
   }
 
-  @After
-  public void after() throws Exception {
+  @AfterClass
+  public static void after() throws Exception {
     server.stop();
   }
 

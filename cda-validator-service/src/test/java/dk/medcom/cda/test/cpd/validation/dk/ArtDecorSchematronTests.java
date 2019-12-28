@@ -5,6 +5,7 @@ import dk.medcom.cda.model.CDAType;
 import dk.medcom.cda.test.IDocumentTest;
 import dk.medcom.cda.test.IValidationTest;
 import dk.medcom.cda.validation.validationengine.ArtDecorSaxonEngine;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -28,6 +29,13 @@ public class ArtDecorSchematronTests implements IValidationTest, IDocumentTest {
   public static void beforeClass() {
     rule = new ArtDecorSaxonEngine(new File("src/main/resources/art-decor/medcom-documents-S_R.sch"));
 
+  }
+
+  @AfterClass
+  public static void afterClass()
+  {
+    rule = null;
+    System.gc();
   }
 
   @Before

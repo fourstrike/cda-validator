@@ -9,7 +9,6 @@ import com.google.common.cache.LoadingCache;
 import com.helger.schematron.pure.SchematronResourcePure;
 import com.helger.schematron.svrl.jaxb.FailedAssert;
 import com.helger.schematron.svrl.jaxb.SchematronOutputType;
-import com.helger.schematron.xslt.SchematronResourceSCH;
 import dk.medcom.cda.CollectingValidationHandler;
 import dk.medcom.cda.CollectingValidationHandler.Level;
 import dk.medcom.cda.IValidationEngine;
@@ -17,7 +16,6 @@ import dk.medcom.cda.model.CDAType;
 import dk.medcom.cda.model.ValidationEntry;
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.StringReader;
 import java.nio.file.Files;
 import java.util.concurrent.ExecutionException;
@@ -75,6 +73,7 @@ public class ArtDecorSaxonEngine implements IValidationEngine {
                 return null;
               }
             });
+
     if (!schematronResource.isValidSchematron()) {
       throw new RuntimeException("Could not resolve schema");
 

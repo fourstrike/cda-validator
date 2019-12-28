@@ -63,7 +63,13 @@ public class CDAServlet {
     @Context
     private ServletContext context;
 
-    public CDAServlet() {
+  final ArtDecorSaxonEngine artDecorEngineCpd;
+  final ArtDecorSaxonEngine artDecorEngineApd;
+  final ArtDecorSaxonEngine artDecorEnginePdc;
+
+
+  public CDAServlet() {
+
         // http://oehf.github.io/ipf/ipf-modules-cda/
         // https://www.projects.openhealthtools.org/sf/wiki/do/viewPage/projects.mdht/wiki/MDHTValidationAPIs
         // http://cda-validation.nist.gov/cda-validation/validation.html
@@ -73,6 +79,9 @@ public class CDAServlet {
         // http://www.openehealth.org/display/ipf2/IPF+reference+-+single#IPFreference-single-CDAprofilesupport
       System.setProperty("javax.xml.transform.TransformerFactory","com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
 
+    artDecorEngineCpd = new ArtDecorSaxonEngine("/art-decor/medcom-documents-S_R.sch");
+    artDecorEngineApd = new ArtDecorSaxonEngine("/art-decor/medcom-documents-appointment_s_r.sch");
+    artDecorEnginePdc = null;//new ArtDecorSaxonEngine("/art-decor/medcom-documents-PDC_s_r.sch");
     }
 
     @Path("transform")
@@ -194,9 +203,6 @@ public class CDAServlet {
         return workingDocument;
     }
 
-  final ArtDecorSaxonEngine artDecorEngineCpd = new ArtDecorSaxonEngine("/art-decor/medcom-documents-S_R.sch");
-  final ArtDecorSaxonEngine artDecorEngineApd = new ArtDecorSaxonEngine("/art-decor/medcom-documents-appointment_s_r.sch");
-  final ArtDecorSaxonEngine artDecorEnginePdc = null;//new ArtDecorSaxonEngine("/art-decor/medcom-documents-PDC_s_r.sch");
 
   private synchronized ValidationResponse validateDocument(final String document,
                                                              final List<ValidationEntry> charsetWarning, final CDAType type) {
