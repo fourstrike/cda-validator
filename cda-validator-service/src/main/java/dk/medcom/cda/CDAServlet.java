@@ -71,7 +71,8 @@ public class CDAServlet {
         // https://github.com/krasserm/ipf/blob/master/modules/cda/core/src/test/java/org/openehealth/ipf/modules/cda/support/HITSPC37ValidationTest.java
         // http://www.openehealth.org/display/ipf2/Core+features#Corefeatures-schematronvalidation
         // http://www.openehealth.org/display/ipf2/IPF+reference+-+single#IPFreference-single-CDAprofilesupport
-		System.setProperty("javax.xml.transform.TransformerFactory","com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
+      System.setProperty("javax.xml.transform.TransformerFactory","com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
+
     }
 
     @Path("transform")
@@ -195,7 +196,7 @@ public class CDAServlet {
 
   final ArtDecorSaxonEngine artDecorEngineCpd = new ArtDecorSaxonEngine("/art-decor/medcom-documents-S_R.sch");
   final ArtDecorSaxonEngine artDecorEngineApd = new ArtDecorSaxonEngine("/art-decor/medcom-documents-appointment_s_r.sch");
-  final ArtDecorSaxonEngine artDecorEnginePdc = new ArtDecorSaxonEngine("/art-decor/medcom-documents-PDC_s_r.sch");
+  final ArtDecorSaxonEngine artDecorEnginePdc = null;//new ArtDecorSaxonEngine("/art-decor/medcom-documents-PDC_s_r.sch");
 
   private synchronized ValidationResponse validateDocument(final String document,
                                                              final List<ValidationEntry> charsetWarning, final CDAType type) {

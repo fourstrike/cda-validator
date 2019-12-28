@@ -1,39 +1,36 @@
 package dk.medcom.cda.validation.validationengine;
 
-import java.io.File;
-import java.io.StringReader;
-import java.util.List;
-
-import javax.xml.transform.stream.StreamSource;
-
-import org.oclc.purl.dsdl.svrl.ActivePattern;
-import org.oclc.purl.dsdl.svrl.FailedAssert;
-import org.oclc.purl.dsdl.svrl.FiredRule;
-import org.oclc.purl.dsdl.svrl.SchematronOutputType;
-
 import com.google.common.base.Strings;
 import com.helger.schematron.ISchematronResource;
 import com.helger.schematron.pure.SchematronResourcePure;
-
+import com.helger.schematron.svrl.jaxb.ActivePattern;
+import com.helger.schematron.svrl.jaxb.FailedAssert;
+import com.helger.schematron.svrl.jaxb.FiredRule;
+import com.helger.schematron.svrl.jaxb.SchematronOutputType;
 import dk.medcom.cda.CollectingValidationHandler;
 import dk.medcom.cda.CollectingValidationHandler.Level;
 import dk.medcom.cda.IValidationEngine;
 import dk.medcom.cda.model.CDAType;
 import dk.medcom.cda.model.ValidationEntry;
+import java.io.File;
+import java.io.StringReader;
+import java.util.List;
+import java.util.stream.Collectors;
+import javax.xml.transform.stream.StreamSource;
 
 public class SaxonEngine implements IValidationEngine {
 
-  final ISchematronResource aResPure;
+  final ISchematronResource schematronResource;
 
   public SaxonEngine(final String profilePath) {
-    aResPure = SchematronResourcePure.fromClassPath(profilePath);
-    if (!aResPure.isValidSchematron())
+    schematronResource = SchematronResourcePure.fromClassPath(profilePath);
+    if (!schematronResource.isValidSchematron())
       throw new RuntimeException("Could not resolve schema");
   }
 
   public SaxonEngine(final File file) {
-    aResPure = SchematronResourcePure.fromFile(file);
-    if (!aResPure.isValidSchematron())
+    schematronResource = SchematronResourcePure.fromFile(file);
+    if (!schematronResource.isValidSchematron())
       throw new RuntimeException("Could not resolve schema");
   }
 
@@ -43,7 +40,7 @@ public class SaxonEngine implements IValidationEngine {
 
     try {
 
-      final SchematronOutputType validationResult = aResPure
+      final SchematronOutputType validationResult = schematronResource
               .applySchematronValidationToSVRL(new StreamSource(new StringReader(documentAsString)));
 
       final List<Object> failedValidationObjects = validationResult.getActivePatternAndFiredRuleAndFailedAssert();
@@ -62,7 +59,7 @@ public class SaxonEngine implements IValidationEngine {
         } else if (validationObject instanceof FailedAssert) {
           final FailedAssert failedAssertElm = (FailedAssert) validationObject;
           final String location = failedAssertElm.getLocation();
-          String message = failedAssertElm.getText();
+          String message = toString(failedAssertElm);
           String flag = failedAssertElm.getFlag();
 
           // Heuristic
@@ -113,6 +110,12 @@ public class SaxonEngine implements IValidationEngine {
     } catch (final Exception e) {
       validationHandler.handleError(new ValidationEntry("Internal error", "Custom Saxon", "Custom Saxon"));
     }
+  }
+
+  public static String toString(FailedAssert failedAssertElm) {
+    return failedAssertElm.getText().getContent().stream()
+            .filter(String.class::isInstance)
+            .map(String.class::cast).collect(Collectors.joining(","));
   }
 
   private Level getLevelFromFlag(final String flag) {
