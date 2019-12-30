@@ -46,7 +46,7 @@ public class ArtDecorPDCDKSchematronValidDocumentsTests implements IValidationTe
   public static void beforeClass() {
     SLF4JBridgeHandler.install();
 
-    rule = new ArtDecorSaxonEngine(new File("src/main/resources/art-decor/medcom-documents-PDC_s_r.sch"));
+    rule = new ArtDecorSaxonEngine(new File("src/main/resources/art-decor/medcom-documents-PDC_s_r.xslt"));
   }
 
   @Parameters

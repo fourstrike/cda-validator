@@ -6,9 +6,15 @@ import com.google.common.base.Strings;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
+import com.helger.schematron.AbstractSchematronResource;
+import com.helger.schematron.ISchematronResource;
 import com.helger.schematron.pure.SchematronResourcePure;
 import com.helger.schematron.svrl.jaxb.FailedAssert;
 import com.helger.schematron.svrl.jaxb.SchematronOutputType;
+import com.helger.schematron.xslt.SchematronProviderXSLTFromSCH;
+import com.helger.schematron.xslt.SchematronProviderXSLTPrebuild;
+import com.helger.schematron.xslt.SchematronResourceSCH;
+import com.helger.schematron.xslt.SchematronResourceXSLT;
 import dk.medcom.cda.CollectingValidationHandler;
 import dk.medcom.cda.CollectingValidationHandler.Level;
 import dk.medcom.cda.IValidationEngine;
@@ -28,7 +34,7 @@ import org.xml.sax.InputSource;
 
 public class ArtDecorSaxonEngine implements IValidationEngine {
 
-  final SchematronResourcePure schematronResource;
+  final ISchematronResource schematronResource;
 
   final LoadingCache<String, byte[]> classPathCache = CacheBuilder.newBuilder().build(
           new CacheLoader<String, byte[]>() {
@@ -50,18 +56,20 @@ public class ArtDecorSaxonEngine implements IValidationEngine {
 
   public ArtDecorSaxonEngine(final String profilePath) {
 
-
-    schematronResource = SchematronResourcePure.fromClassPath(profilePath)
+    //schematronResource = SchematronResourceSCH.fromFile(ArtDecorSaxonEngine.class.getResource(profilePath).getFile() + "/" + profilePath);
+    schematronResource = SchematronResourceXSLT.fromFile(ArtDecorSaxonEngine.class.getResource(profilePath).getFile()).setURIResolver(new ClasspathResourceURIResolver());
+    //schematronResource = SchematronResourcePure.fromClassPath(profilePath)
             //ArtDecorSaxonEngine.class.getResource(profilePath).getFile())
 
-            .setEntityResolver((href, base) -> {
-      try {
-        return new InputSource(new ByteArrayInputStream(classPathCache.get("art-decor/" + href)));
-        //return new InputSource(new ByteArrayInputStream(classPathCache.get("art-decor/" + href)));
-      } catch (ExecutionException e) {
-        throw new RuntimeException(e.getMessage(), (e));
-      }
-    }).setFunctionResolver(new XPathFunctionResolver() {
+    /*        .setEntityResolver((href, base) -> {
+              try {
+                return new InputSource(
+                        new ByteArrayInputStream(classPathCache.get("art-decor/" + href)));
+                //return new InputSource(new ByteArrayInputStream(classPathCache.get("art-decor/" + href)));
+              } catch (ExecutionException e) {
+                throw new RuntimeException(e.getMessage(), (e));
+              }
+            }).setFunctionResolver(new XPathFunctionResolver() {
               @Override
               public XPathFunction resolveFunction(QName functionName,
                       int arity) {
@@ -73,7 +81,7 @@ public class ArtDecorSaxonEngine implements IValidationEngine {
                 return null;
               }
             });
-
+*/
     if (!schematronResource.isValidSchematron()) {
       throw new RuntimeException("Could not resolve schema");
 
@@ -83,18 +91,32 @@ public class ArtDecorSaxonEngine implements IValidationEngine {
   public ArtDecorSaxonEngine(final File file) {
 
     //schematronResource = SchematronResourceSCH.fromFile(file);
-    schematronResource = SchematronResourcePure
+    schematronResource = SchematronResourceXSLT.fromFile(file).setURIResolver(new ClasspathResourceURIResolver());
+
+    /*schematronResource = SchematronResourcePure
             .fromFile(file)
             .setEntityResolver((href, base) -> {
 
-      String path = file.getParentFile().toPath().toString() + File.separatorChar + href;
-      try {
-        return new InputSource(new ByteArrayInputStream(localFileCache.get(path)));
-      } catch (ExecutionException e) {
-        throw new RuntimeException(e.getMessage(), (e));
-      }
+              String path = file.getParentFile().toPath().toString() + File.separatorChar + href;
+              try {
+                return new InputSource(new ByteArrayInputStream(localFileCache.get(path)));
+              } catch (ExecutionException e) {
+                throw new RuntimeException(e.getMessage(), (e));
+              }
 
-    });
+            })
+            .setFunctionResolver(new XPathFunctionResolver() {
+              @Override
+              public XPathFunction resolveFunction(QName functionName,
+                      int arity) {
+                return null;
+              }
+            }).setVariableResolver(new XPathVariableResolver() {
+              @Override
+              public Object resolveVariable(QName variableName) {
+                return null;
+              }
+            });*/
     if (!schematronResource.isValidSchematron()) {
       throw new RuntimeException("Could not resolve schema");
     }

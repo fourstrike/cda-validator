@@ -1,0 +1,1874 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../Stylesheet/CDA.xsl"?>
+<!--
+ Title:        Care Plan
+ Filename:     C-CDA_R2_Care_Plan.xml
+ Created by:   MedCom
+ 
+ Created as an example of showing a GGOP (Specialiseret Genoptræningsplan) as a DK-CPD Care Plan
+ 
+ $LastChangedDate: 2019-01-14 14:30 $
+  
+ ********************************************************
+ Disclaimer: This sample file contains representative data elements to represent a Care Plan. 
+ The file depicts a fictional character's health data. Any resemblance to a real person is coincidental. 
+ To illustrate as many data elements as possible, the clinical scenario may not be plausible. 
+ The data in this sample file is not intended to represent real patients, people or clinical events. 
+ This sample is designed to be used in conjunction with the C-CDA Clinical Notes Implementation Guide.
+ ********************************************************
+  -->
+
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../Schema/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:voc="urn:hl7-org:v3/voc">
+	<!-- ** CDA Header ** -->
+	<realmCode code="DK"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- MedCom DK CPD TemplateId-->
+	<templateId root="1.2.208.184.15.1"/>
+	<!-- 
+		id-extension: RehabilitationPlan/Letter/Identifier 
+		id-root: version 5 uuid generated for instance by 
+		https://uuidonline.com/?version=5&namespace=5790001354145 
+		based on the EAN identifier for this message 
+	-->
+	<id extension="45249877239313" root="8EEE7D98-0323-541B-A889-C91F1ABBF334"
+		assigningAuthorityName="Odense Universitetshospital" displayable="true"/>
+	<code code="81215-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+		displayName="Care plan - recommended C-CDA R2.0 &amp; R2.1 sections"/>
+	<!-- RehabilitationPlan/TypeOfRehabilitationPlan -->
+	<title>Specialiseret: Genoptræningsplan</title>
+	<!-- RehabilitationPlan/Letter/Authorisation/Date+Time + "00+0100" -->
+	<effectiveTime value="20141220154300+0100"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="da-DK"/>
+	<!-- RehabilitationPlan/Letter/EpisodeOfCareIdentifier -->
+	<setId root="E6CAC740-B4F5-46CB-87E2-1DFF3CF14840"/>
+	<!-- RehabilitationPlan/Patient (recordTarget) -->
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+		<!-- RehabilitationPlan/Patient/<subelements> -->
+		<patientRole classCode="PAT">
+			<!-- RehabilitationPlan/Patient/CivilRegistrationNumber -->
+			<id extension="2512489996" root="1.2.208.176.1.2" assigningAuthorityName="CPR"/>
+			<!-- 
+				id-extension: RehabilitationPlan/Patient/AlternativeIdentifier  
+				id-root: version 5 uuid generated for instance by 
+				https://uuidonline.com/?version=5&namespace=5790001354145 
+				based on the EAN identifier for this message 
+			<id extension="x" root="8EEE7D98-0323-541B-A889-C91F1ABBF334" assigningAuthorityName="Odense Universitetshospital"/>
+			-->
+			<!-- RehabilitationPlan/Patient/<address elements> -->
+			<addr use="H">
+				<!-- HP is "primary home" from codeSystem 2.16.840.1.113883.5.1119 -->
+				<streetAddressLine>Hindbærvej 23</streetAddressLine>
+				<streetAddressLine>Hjallese</streetAddressLine>
+				<postalCode>5260</postalCode>
+				<city>Odense S</city>
+				<country>DK</country>
+				<!-- DK is "Denmark" from ISO 3166-1 Country Codes: 1.0.3166.1 -->
+			</addr>
+			<!-- RehabilitationPlan/Patient/CoAddress -->
+			<addr use="TMP">
+				<!-- TMP is "temporary home" from codeSystem 2.16.840.1.113883.5.1119 -->
+				<streetAddressLine>CO: Rosa Andersen</streetAddressLine>
+				<streetAddressLine>Skovgård 3</streetAddressLine>
+				<streetAddressLine>Hjallese</streetAddressLine>
+				<postalCode>5220</postalCode>
+				<city>Odense SØ</city>
+				<!-- DK is "Denmark" from ISO 3166-1 Country Codes: 1.0.3166.1 -->
+			</addr>
+			<!-- RehabilitationPlan/Patient/TelephoneSubscriber <elements> -->
+			<!-- HP is "primary home" from HL7 AddressUse 2.16.840.1.113883.5.1119 -->
+			<telecom value="tel:23321234" use="MC"/>
+			<telecom value="tel:56558745" use="H"/>
+			<telecom value="tel:25661597" use="WP"/>
+			<telecom value="mailto:nancy@berggren.dk" use="H"/>
+			<!-- RehabilitationPlan/Patient/<name elements> -->
+			<patient classCode="PSN" determinerCode="INSTANCE">
+				<!-- The first name element represents what the patient is known as -->
+				<name>
+					<given>Nancy</given>
+					<given>Ann</given>
+					<family>Berggren</family>
+				</name>
+				<!-- derived from RehabilitationPlan/Patient/CivilRegistrationNumber -->
+				<administrativeGenderCode code="F" displayName="Female"
+					codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender"/>
+				<birthTime value="19481225000000+0100"/>
+			</patient>
+			<!-- RehabilitationPlan/Sender -->
+			<providerOrganization classCode="ORG" determinerCode="INSTANCE">
+				<!-- 
+					id-extension: RehabilitationPlan// 
+					id-root: version 5 uuid generated for instance by 
+					https://uuidonline.com/?version=5&namespace=5790001354145 
+					based on the EAN identifier for this message 
+				-->
+				<id extension="4202360" root="8EEE7D98-0323-541B-A889-C91F1ABBF334"
+					assigningAuthorityName="Odense Universitetshospital" displayable="true"/>
+				<name>Odense Universitetshospital, Ortopædkirurgisk Afdeling, Q</name>
+				<telecom value="tel:54586587" use="WP"/>
+				<addr use="WP">
+					<streetAddressLine>Sdr. Boulevard 29</streetAddressLine>
+					<postalCode>5000</postalCode>
+					<city>Odense C</city>
+					<country>Denmark</country>
+				</addr>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<!-- Author -->
+	<!-- RehabilitationPlan/Sender/SignedBy -->
+	<author typeCode="AUT" contextControlCode="OP">
+		<time value="20141220154300+0100"/>
+		<assignedAuthor classCode="ASSIGNED">
+			<id extension="4202360" root="1.2.208.176.1.1" assigningAuthorityName="SOR"/>
+			<code code="Author" codeSystem="1.2.208.184.100.1" codeSystemName="MedCom Message Codes"
+				displayName="Forfatter"/>
+			<!-- RehabilitationPlan/Sender/ -->
+			<addr use="WP">
+				<streetAddressLine>Sdr. Boulevard 29</streetAddressLine>
+				<postalCode>5000</postalCode>
+				<city>Odense C</city>
+				<country>Denmark</country>
+			</addr>
+			<telecom value="tel:16986587" use="WP"/>
+			<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<prefix>Ergoterapeut</prefix>
+					<given>Arne</given>
+					<family>Bævermose</family>
+				</name>
+				<sdtc:asPatientRelationship classCode="PRS" determinerCode="INSTANCE">
+					<sdtc:code code="APFC" codeSystem="1.2.208.176.2.4" codeSystemName="SKS" displayName="Ergoterapeut"/>
+				</sdtc:asPatientRelationship>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id extension="4202360" root="1.2.208.176.1.1" assigningAuthorityName="SOR" displayable="true"/>
+				<name>Odense Universitetshospital</name>
+				<addr use="WP">
+					<streetAddressLine>Neurologisk Afdeling N2</streetAddressLine>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<!-- Co-Author -->
+	<!-- RehabilitationPlan/Sender/CoWriter -->
+	<author typeCode="AUT" contextControlCode="OP">
+		<time value="20141220154300+0100"/>
+		<assignedAuthor classCode="ASSIGNED">
+			<id extension="4202360" root="1.2.208.176.1.1" assigningAuthorityName="SOR"/>
+			<code code="Co-Author" codeSystem="1.2.208.184.100.1"
+				codeSystemName="MedCom Message Codes" displayName="Medforfatter"/>
+			<addr use="WP">
+				<streetAddressLine>Sdr. Boulevard 29</streetAddressLine>
+				<postalCode>5000</postalCode>
+				<city>Odense C</city>
+				<country>Denmark</country>
+			</addr>
+			<telecom value="tel:52659852" use="WP"/>
+			<assignedPerson classCode="PSN">
+				<name>
+					<prefix>Fysioterapeut</prefix>
+					<given>Elinor</given>
+					<family>Strøm</family>
+				</name>
+				<sdtc:asPatientRelationship classCode="PRS" determinerCode="INSTANCE">
+					<sdtc:code code="APFB" codeSystem="1.2.208.176.2.4" codeSystemName="SKS" displayName="Fysioterapeut"/>
+				</sdtc:asPatientRelationship>
+			</assignedPerson>
+			<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id extension="4202360" root="1.2.208.176.1.1" assigningAuthorityName="SOR" displayable="true"/>
+				<name>
+					Odense Universitetshospital</name>
+				<addr use="WP">
+					<streetAddressLine>Neurologisk Afdeling N2</streetAddressLine>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<!-- This participant represents the RehabilitationPlan/Relatives/Relative -->
+	<informant typeCode="INF" contextControlCode="OP">
+		<relatedEntity classCode="PRS">
+			<!-- classCode PRS represents a person with personal relationship with the patient. -->
+			<code code="SPS" displayName="SPOUSE" codeSystem="2.16.840.1.113883.5.111"
+				codeSystemName="RoleCode"/>
+			<addr use="H">
+				<streetAddressLine>Hindbærvej 23</streetAddressLine>
+				<streetAddressLine>Hjallese</streetAddressLine>
+				<city>Odense S</city>
+				<postalCode>5260</postalCode>
+			</addr>
+			<telecom value="tel:35986256" use="H"/>
+			<telecom value="tel:58056985" use="MC"/>
+			<telecom value="tel:17959864" use="WP"/>
+			<telecom value="mailto:arne_p12@gmail.com" use="H"/>
+			<relatedPerson classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<prefix>Ægtefælle</prefix>
+					<given>Arne</given>
+					<family>Petersen</family>
+				</name>
+			</relatedPerson>
+		</relatedEntity>
+	</informant>
+	<!-- This participant represents the RehabilitationPlan/Relatives/Relative -->
+	<informant typeCode="INF" contextControlCode="OP">
+		<relatedEntity classCode="PRS">
+			<code code="CON" displayName="ContactRoleType" codeSystem="2.16.840.1.113883.5.111"
+				codeSystemName="RoleCode"/>
+			<addr use="H">
+				<streetAddressLine>Hindbærvej 21</streetAddressLine>
+				<streetAddressLine>Hjallese</streetAddressLine>
+				<city>Odense S</city>
+				<postalCode>5260</postalCode>
+			</addr>
+			<relatedPerson classCode="PSN" determinerCode="INSTANCE">
+				<name>
+					<prefix>Uspecificeret pårørende</prefix>
+					<given>Mads</given>
+					<family>Jensen</family>
+				</name>
+			</relatedPerson>
+		</relatedEntity>
+	</informant>
+	<!-- Custodian -->
+	<!-- RehabilitationPlan/Sender -->
+	<custodian typeCode="CST">
+		<assignedCustodian classCode="ASSIGNED">
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<!-- 
+					id-extension: RehabilitationPlan/Sender/Identifier  
+					id-root: version 5 uuid generated for instance by 
+					https://uuidonline.com/?version=5&namespace=5790001354145 
+					based on the EAN identifier for this message 
+				-->
+				<id extension="4202360" root="8EEE7D98-0323-541B-A889-C91F1ABBF334"
+					assigningAuthorityName="Odense Universitetshospital" displayable="true"/>
+				<name>
+					Odense Universitetshospital, Ortopædkirurgisk Afdeling, Q
+				</name>
+				<telecom value="tel:54586587" use="WP"/>
+				<addr use="WP">
+					<streetAddressLine>Sdr. Boulevard 29</streetAddressLine>
+					<postalCode>5000</postalCode>
+					<city>Odense C</city>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- This represents the primary receiver of this document RehabilitationPlan/Receiver -->
+	<informationRecipient typeCode="PRCP">
+		<intendedRecipient classCode="ASSIGNED">
+			<!-- Receiving Organization Id-->
+			<!-- 
+					id-extension: RehabilitationPlan/Receiver/Identifier  
+					id-root: version 5 uuid generated for instance by 
+					https://uuidonline.com/?version=5&namespace=5790000121441 
+					based on the EAN identifier for the receiver of this message 
+				-->
+			<id extension="461" root="AE539A39-D15C-582F-AC28-CF61997224F1"
+				assigningAuthorityName="Odense kommune" displayable="true"/>
+			<informationRecipient determinerCode="INSTANCE">
+				<name>
+					Odense kommune, 
+					Aktivitet og træning, 
+					Sundhed, 
+					Ørbækvej 100, 
+					5220 Odense SØ, 
+					ean:5790000121441
+				</name>
+			</informationRecipient>
+			<!-- Receiving Organization Name -->
+			<receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+				<name>Odense kommune</name>
+				<!-- Receiving EAN Identifier -->
+				<telecom value="ean:5790000121441" use="WP"/>
+				<!-- Receiving Organization Address -->
+				<addr use="WP">
+					<streetAddressLine>Aktivitet og træning</streetAddressLine>
+					<streetAddressLine>Sundhed</streetAddressLine>
+					<streetAddressLine>Ørbækvej 100</streetAddressLine>
+					<city>Odense SØ</city>
+					<postalCode>5220</postalCode>
+				</addr>
+			</receivedOrganization>
+		</intendedRecipient>
+	</informationRecipient>
+	<!-- This participant represents the Municipality Contact of the Care Plan. -->
+	<!-- RehabilitationPlan/ContactMunicipality -->
+	<participant typeCode="ORG" contextControlCode="OP">
+		<associatedEntity classCode="CON">
+			<addr use="WP">
+				<streetAddressLine>Hestehaven 201</streetAddressLine>
+				<city>Odense SØ</city>
+				<postalCode>5220</postalCode>
+				<country>Denmark</country>
+			</addr>
+			<telecom value="tel:65516360" use="WP"/>
+			<scopingOrganization classCode="ORG" determinerCode="INSTANCE">
+				<name>
+					<prefix>Spørgsmål til kommunen: </prefix> Odense Kommune </name>
+			</scopingOrganization>
+		</associatedEntity>
+	</participant>
+	<!-- This participant represents the Regional Contact of the Care Plan. -->
+	<!-- RehabilitationPlan/ContactCounty -->
+	<participant typeCode="ORG" contextControlCode="OP">
+		<associatedEntity classCode="CON">
+			<addr use="WP">
+				<streetAddressLine>Damhaven 12</streetAddressLine>
+				<city>Vejle</city>
+				<postalCode>7100</postalCode>
+				<country>Denmark</country>
+			</addr>
+			<telecom value="tel:76631490" use="WP"/>
+			<scopingOrganization classCode="ORG" determinerCode="INSTANCE">
+				<name>
+					<prefix>Spørgsmål til regionen: </prefix> Patientkontoret Region Syddanmark
+				</name>
+			</scopingOrganization>
+		</associatedEntity>
+	</participant>
+	<documentationOf typeCode="DOC">
+		<serviceEvent classCode="ACT" moodCode="EVN">
+			<effectiveTime value="20180930090100+0100"/>
+			<!-- This performer represents the RehabilitationPlan/HealthCareTeam/Member -->
+			<performer typeCode="PRF">
+				<functionCode code="healthcare-team-member" codeSystem="1.2.208.184.100.1" codeSystemName="MedCom Message Codes" displayName="Sundhedsteam medlem"/>
+				<assignedEntity classCode="ASSIGNED">
+					<id nullFlavor="NI"/>
+					<code code="APFB" codeSystemName="SKS" codeSystem="1.2.208.176.2.4" displayName="Fysioterapeut"/>
+					<telecom value="tel:52659852" use="WP"/>
+					<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+						<name>
+							<prefix>Fysioterapeut</prefix>
+							<given>Ellinor</given>
+							<family>Strøm</family>
+						</name>
+					</assignedPerson>
+					<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+						<name>Neurologisk Afdeling N2</name>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+			<!-- This performer represents the RehabilitationPlan/HealthCareTeam/Member -->
+			<performer typeCode="PRF">
+				<functionCode code="healthcare-team-member" codeSystem="1.2.208.184.100.1" codeSystemName="MedCom Message Codes" displayName="Sundhedsteam medlem"/>
+				<assignedEntity classCode="ASSIGNED">
+					<id nullFlavor="NI"/>
+					<code code="APBA" codeSystemName="SKS" codeSystem="Personaleklassifikation" displayName="Sygeplejerske"/>
+					<telecom value="tel:21659748" use="WP"/>
+					<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+						<name>
+							<prefix>Sygeplejerske</prefix>
+							<given>Trine</given>
+							<family>Lund</family>
+						</name>
+					</assignedPerson>
+					<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+						<name>Neurologisk Afdeling N2</name>
+					</representedOrganization>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<!-- The Care Plan is continually evolving and dynamic. The Care Plan CDA instance 
+     is NOT dynamic. Each time a Care Plan CDA is generated it represents a snapshot 
+     in time of the Care Plan at that moment. Whenever a care provider or patient 
+     generates a Care Plan, it should be noted through relatedDocument 
+     whether the current Care Plan replaces or appends another Care Plan. 
+     The relatedDocumentTypeCode indicates whether the current document is 
+     an addendum to the ParentDocument (APND (append)) or the current document 
+     is a replacement of the ParentDocument (RPLC (replace)). -->
+	<!-- RehabilitationPlan/ConsentInformed -->
+	<authorization typeCode="AUTH">
+		<consent classCode="CONS" moodCode="EVN">
+			<code code="GGOP-Consent" codeSystem="1.2.208.184.100.1" codeSystemName="MedCom Message Codes"
+				displayName="ConsentInformed"/>
+			<statusCode code="completed"/>
+		</consent>
+	</authorization>
+	<!-- RehabilitationPlan/CurrentHospitalContact -->
+	<componentOf typeCode="COMP">
+		<encompassingEncounter classCode="ENC" moodCode="EVN">
+			<!-- 
+				id-extension: RehabilitationPlan/Letter/EpisodeOfCareIdentifier 
+				id-root: version 5 uuid generated for instance by https://uuidonline.com/?version=5&namespace=5790001354145 
+				based on the EAN identifier for this message
+				Letters in uppercase.
+			-->
+			<id extension="E6CAC740-B4F5-46CB-87E2-1DFF3CF14840"
+				root="8EEE7D98-0323-541B-A889-C91F1ABBF334"
+				assigningAuthorityName="Odense Universitetshospital" displayable="true"/>
+			<!-- captures that this is an inpatient encounter -->
+			<code codeSystem="2.16.840.1.113883.5.4" code="IMP" displayName="Inpatient"
+				codeSystemName="ActCode"/>
+			<effectiveTime>
+				<!-- RehabilitationPlan/CurrentHospitalContact/Start -->
+				<low value="20141213090100+0100"/>
+				<!-- RehabilitationPlan/CurrentHospitalContact/ExpectedEnd -->
+				<high value="20141220000000+0100"/>
+			</effectiveTime>
+		</encompassingEncounter>
+	</componentOf>
+	<!-- 
+	********************************************************
+	CDA Body
+	********************************************************
+	-->
+	<component typeCode="COMP" contextConductionInd="true">
+		<structuredBody moodCode="EVN" classCode="DOCBODY">
+			<!-- 
+			*********************************************************************
+			Health Concerns section indeholder:
+			  * Tilstande (Ikke at forveksle med FSIII Helbredstilstande
+			  * Diagnoser
+			  * Funktionsevne
+			********************************************************************
+			-->
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Health Concerns Section -->
+					<templateId root="1.2.208.184.15.1.10.20.1" extension="2018-09-28"/>
+					<code code="75310-3" displayName="Health Concerns Document"
+						codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Tilstande, diagnoser mm.</title>
+					<text/>
+					<!-- 1 RehabilitationPlan/InformationForPatientAndRelatives -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.1.2" extension="2018-11-28"/>
+							<code code="InformationForPatientAndRelatives"
+								codeSystem="1.2.208.184.100.1" codeSystemName="MedCom Message Codes"
+								displayName="Information om behandling til patient
+								og pårørende"/>
+							<title>Information om behandling til patient og pårørende</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th align="left">Information om behandling til patient
+												og pårørende</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td ID="InformationForPatientAndRelatives1"> Patienten
+												er informeret om det fortsatte genoptræningsforløb
+												og er instrueret, og der er udleveret øvelsesprogram
+												med udspændings- og stabilitetsøvelser for hoften.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Health Observation Status ** -->
+									<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
+									<!-- Some unique identifier -->
+									<id root="38942040-84F5-11E8-ADC0-FA7AE01BBEB1"/>
+									<code code="11323-3" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Health Status Observation"/>
+									<!-- RehabilitationPlan/InformationForPatientAndRelatives -->
+									<text><reference value="#InformationForPatientAndRelatives1"/></text>
+									<statusCode code="completed"/>
+									<value nullFlavor="NI" xsi:type="CD"/>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!-- 2 RehabilitationPlan/PracticalInformation -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.1.2" extension="2018-11-28"/>
+							<code code="PracticalInformation" codeSystem="1.2.208.184.100.1"
+								codeSystemName="MedCom Message Codes"
+								displayName="Praktiske oplysninger"/>
+							<title>Praktiske oplysninger</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th align="left">Praktiske oplysninger</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td ID="PracticalInformation1"> Pt går til
+												stolegymnastik på Højvang. Genoptræning bedes
+												ligeledes foregå her, evt. i kombination, hvis
+												muligt. </td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Health Observation Status ** -->
+									<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
+									<!-- Some unique identifier -->
+									<id root="38942040-84F5-11E8-ADC0-FA7AE01BBEB2"/>
+									<code code="11323-3" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Health Status Observation"/>
+									<!-- RehabilitationPlan/PracticalInformation -->
+									<text><reference value="#PracticalInformation1"/></text>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" nullFlavor="NI"/>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!-- 3 RehabilitationPlan/PatientSafetyAspects -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.1.2" extension="2018-11-28"/>
+							<code code="PatientSafetyAspects" codeSystem="1.2.208.184.100.1"
+								codeSystemName="MedCom Message Codes"
+								displayName="Patientsikkerhedsmæssige forhold"/>
+							<title>Patientsikkerhedsmæssige forhold</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th align="left">Patientsikkerhedsmæssige forhold</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td ID="PatientSafetyAspects1"> Patienten bruger
+												rollator udendørs, men da hun ind imellem lider af
+												svimmelhed, kan det være nødvendigt i forbindelse
+												med genoptræningen, at hun også benytter rollatoren
+												indendørs, når der er behov for dette. </td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Health Observation Status ** -->
+									<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
+									<!-- Some unique identifier -->
+									<id root="38942040-84F5-11E8-ADC0-FA7AE01BBEB3"/>
+									<code code="11323-3" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Health Status Observation"/>
+									<!-- RehabilitationPlan/PatientSafetyAspects -->
+									<text><reference value="#PatientSafetyAspects1"/></text>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" nullFlavor="NI"/>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!-- 4 RehabilitationPlan/PatientHealthSummary -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.1.2" extension="2018-11-28"/>
+							<code code="PatientHealthSummary" codeSystem="1.2.208.184.100.1"
+								codeSystemName="MedCom Message Codes"
+								displayName="Helbredsforhold inkl. beskrivelse af behandlingsforløb – Sammenfatning"/>
+							<title>Helbredsforhold inkl. beskrivelse af behandlingsforløb –
+								Sammenfatning</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th align="left">Helbredsforhold inkl. beskrivelse af
+												behandlingsforløb – Sammenfatning</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td ID="PatientHealthSummary1"> Patienten udskrives dags
+												dato velbefindende. Hun opfordres til kontakt til
+												egen Iæge med henblik på opfølgning af
+												antihypertensiv behandling i slutningen af næste
+												uge. Patienten informeres desuden om, at rette
+												henvendelse ved fornyet symptomer. Ved indlæggelsen
+												findes hypertension med systolisk blodtryk op mod
+												200. Patienten udredes med blodprøver, ekg,
+												telemetri og CTC uden abnorme fund. Hun opstartes i
+												behandling i form Amlodipin 10 mg x 1, og på dette
+												bedres symptomerne. Som bifund ved indIæggelsen,
+												desuden bursit svarende til venstre crista. Dette
+												behandles med blokade ved ortopædkirurgisk
+												vagthavende. Patienten er herefter henvist til
+												fysioterapi med henblik pa udstrækning. Patienten
+												har haft nedsat lungekapacitet (50%) siden hun var
+												20 år. I behandling med hjertemagnyl og Hydrea (en
+												slags mild kemo). Patient har desuden været indlagt
+												for nyligt med betydelig blodtryksforhøjelse. Haft
+												smerter i ve. hofte gennem ca. 1½ år. Anvender ingen
+												gangredskab inde - støtter sig til møbler. Kort
+												udendørs gangdistance med rollator sv.t. rundt om
+												huset og til postkassen. Har gået til gymnastik det
+												meste af sit liv 2 x ugentligt - stoppet for ca. 2
+												år siden. Går til stolegymnastik om vinteren. Cykler
+												på motionscykel 2 x 2½ minut dagligt (begrænset af
+												vejrtrækning). 
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Health Observation Status ** -->
+									<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
+									<!-- Some unique identifier -->
+									<id root="38942040-84F5-11E8-ADC0-FA7AE01BBEB4"/>
+									<code code="11323-3" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC"/>
+									<!-- RehabilitationPlan/PatientHealthSummary -->
+									<text><reference value="#PatientHealthSummary1"/></text>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" nullFlavor="NI"/>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!-- 5 RehabilitationPlan/AbilityAtDischargeSummary -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.1.2" extension="2018-11-28"/>
+							<code code="AbilityAtDischargeSummary" codeSystem="1.2.208.184.100.1"
+								codeSystemName="MedCom Message Codes"
+								displayName="Helbredsrelateret funktionsevne på udskrivningstidspunktet – Sammenfatning"/>
+							<title>Helbredsrelateret funktionsevne på udskrivningstidspunktet –
+								Sammenfatning</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th align="left">Helbredsrelateret funktionsevne på
+												udskrivningstidspunktet – Sammenfatning</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td ID="AbilityAtDischargeSummary1"> Aktuelt smerter
+												sv.t. ve. hofte samt trækkende ned lateralt pa hele
+												benet. Aktivitetssmerter. Ingen hvilesmerter eller
+												igangsætningssmerter. Egal fodstilling. Let
+												valgusstilling i knæ - ens. Egal benlængde. Ens
+												vægtbæring på begge UE. Bev: reduceret abduktion
+												(pga smerter sv.t. hoften) ellers fuldstændigt
+												normal bevægelighed bilateralt. Smerter når benet
+												bevæges fra fleksion mod ekstension. Har svært ved
+												at ligge på ryggen pga. smerter på forsiden af
+												hoften. Nedsat muskelkraft af ve. UE ift. hø.
+												Smerter ved piriformis test og Patrik Fabere.
+												Palpationsom sv.t. tractus, piriformis, glut. med.
+												(let grad) og iliopsoas. Forsøgt med akupunktur
+												(uden effekt), manuel udspænding samt
+												udspændingsøvelser. Man har ifm. indl. fornyligt
+												fundet bursit ve.side som er beh. med blokade v.
+												ort.kir. Blokaden har haft god effekt - pt oplever
+												smertereduktion. Ingen smertestillende. 
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Health Observation Status ** -->
+									<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
+									<!-- Some unique identifier -->
+									<id root="38942040-84F5-11E8-ADC0-FA7AE01BBEB5"/>
+									<code code="11323-3" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC"/>
+									<!-- RehabilitationPlan/AbilityAtDischargeSummary -->
+									<text><reference value="#AbilityAtDischargeSummary1"/></text>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" nullFlavor="NI"/>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!-- 6 RehabilitationPlan/AbilityAtDischargeExtended -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.1.2" extension="2018-11-28"/>
+							<code code="AbilityAtDischargeExtended" codeSystem="1.2.208.184.100.1"
+								codeSystemName="MedCom Message Codes"
+								displayName="Udvidet beskrivelse af helbredsrelateret funktionsevne på udskrivningstidspunktet"/>
+							<title>Udvidet beskrivelse af helbredsrelateret funktionsevne på
+								udskrivningstidspunktet</title>
+							<text>
+								<!-- Fra GGOP - overskrifter, der skal repræsenteres som entries i denne section
+									<Bold>8a. Kroppens funktioner og anatomi</Bold><Break/>
+									<Italic>- Mentale funktioner</Italic><Break/><Break/>
+									<Italic>- Sanser og smerter</Italic><Break/><Break/>
+									<Italic>- Stemme og tale</Italic><Break/><Break/>
+									<Italic>- Kardiovaskulære, hæmatologiske, immunologiske og respiratoriske
+										funktioner</Italic><Break/><Break/>
+									<Italic>- Fordøjelse, stoftsskifte og hormonelle funktioner</Italic><Break/><Break/>
+									<Italic>- Kønsorganer, urinveje og forplantning</Italic><Break/><Break/>
+									<Italic>- Bevægeapparatet</Italic><Break/><Break/>
+									<Italic>- Hud og tilhørende strukturers funktioner</Italic><Break/><Break/>
+									<Bold>8b. Aktiviteter og Deltagelse</Bold><Break/>
+									<Italic>- Læring og anvendelse af viden</Italic><Break/><Break/>
+									<Italic>- Almindelige opgaver og krav</Italic><Break/><Break/>
+									<Italic>- Kommunikation</Italic><Break/><Break/>
+									<Italic>- Bevægelse og færden</Italic><Break/><Break/>
+									<Italic>- Omsorg for sig selv</Italic><Break/><Break/>
+									<Italic>- Husførelse</Italic>
+									<Break/><Break/>
+									<Italic>- Interpersonelt samspil og kontakt</Italic><Break/><Break/>
+									<Italic>- Vigtige livsområder</Italic><Break/><Break/>
+									<Italic>- Samfundsliv, socialt liv og medborgerskab</Italic><Break/><Break/>
+									<Bold>8c. Omgivelsesfaktorer</Bold><Break/>
+									<Italic>- Produkter og teknologi</Italic><Break/><Break/>
+									<Italic>- Støtte og kontakt</Italic><Break/><Break/>
+									<Italic>- Holdninger</Italic><Break/><Break/>
+								-->
+								<table border="1">
+									<thead>
+										<tr>
+											<th align="left">Udvidet beskrivelse af
+												helbredsrelateret funktionsevne på
+												udskrivningstidspunktet</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td/>
+										</tr>
+									</tbody>
+								</table>
+								<table ID="AbilityAtDischargeExtended8a" border="1">
+									<thead>
+										<tr>
+											<th align="left" styleCode="Bold" colspan="2">8a.
+												Kroppens funktioner og anatomi</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td styleCode="Italic">- Mentale funktioner</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Sanser og smerter</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Stemme og tale</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Kardiovaskulære, hæmatologiske,
+												immunologiske og respiratoriske funktioner</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Fordøjelse, stoftsskifte og
+												hormonelle funktioner</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Kønsorganer, urinveje og
+												forplantning</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Bevægeapparatet</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Hud og tilhørende strukturers
+												funktioner</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+									</tbody>
+								</table>
+								<table ID="AbilityAtDischargeExtended8b" border="1">
+									<thead>
+										<tr>
+											<th align="left" styleCode="Bold" colspan="2"> 8b.
+												Aktiviteter og Deltagelse</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td styleCode="Italic">- Bevægelse og færden</td>
+											<td> Deltager relevant ved vendinger i seng mod højre.
+												Behøver støtte for at vende sig mod venstre, men
+												initierer relevant med hovedet samt roterer venstre
+												UE mod underlaget. Kan være deltagende i bækkenløft,
+												så bukserne kan trækkes op. Han behøver dog hjælp
+												til at højre UE bliver bøjet og støttet
+												undervejs.<br/><br/>
+											</td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Omsorg for sig selv</td>
+											<td> Har brug for støtte og pleje i den første tid.
+											</td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Læring og anvendelse af
+												viden</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Almindelige opgaver og
+												krav</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Kommunikation</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Kommunikation</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Husførelse</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Interpersonelt samspil og
+												kontakt</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Vigtige livsområder</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Samfundsliv, socialt liv og
+												medborgerskab</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+									</tbody>
+								</table>
+								<table ID="AbilityAtDischargeExtended8c" border="1">
+									<thead>
+										<tr>
+											<th align="left" styleCode="Bold" colspan="2"> 8c.
+												Omgivelsesfaktorer</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td styleCode="Italic">- Produkter og teknologi</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Støtte og kontakt</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+										<tr>
+											<td styleCode="Italic">- Holdninger</td>
+											<td> Lorem Ipsum </td>
+										</tr>
+									</tbody>
+								</table>
+								<table ID="AbilityAtDischargeExtendedUnspec" border="1">
+									<thead>
+										<tr>
+											<th align="left" styleCode="Bold">Uspecificeret beskrivelse af helbredsrelateret funktionsevner 
+												</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td> Lorem Ipsum </td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Health Observation Status ** -->
+									<templateId root="1.2.208.184.15.1.10.20.1.20"
+										extension="2018-09-28"/>
+									<!-- Some unique identifier -->
+									<id root="38942040-84F5-11E8-ADC0-FA7AE01BBEB6"/>
+									<code code="1132sadas3-3" codeSystem="kjsdhfdkhfskaj"
+										codeSystemName="LOINC"/>
+									<!-- RehabilitationPlan/AbilityAtDischargeExtended -->
+									<text><reference value="#AbilityAtDischargeExtended8a"/></text>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" nullFlavor="NI"/>
+								</observation>
+							</entry>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Health Observation Status ** -->
+									<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
+									<!-- Some unique identifier -->
+									<id root="38942040-84F5-11E8-ADC0-FA7AE01BBEB7"/>
+									<code code="11323-3" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC"/>
+									<!-- RehabilitationPlan/AbilityAtDischargeExtended -->
+									<text><reference value="#AbilityAtDischargeExtended8b"/></text>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" nullFlavor="NI"/>
+								</observation>
+							</entry>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Health Observation Status ** -->
+									<templateId root="1.2.208.184.15.1.10.20.1.20"
+										extension="2018-09-28"/>
+									<!-- Some unique identifier -->
+									<id root="38942040-84F5-11E8-ADC0-FA7AE01BBEB8"/>
+									<code code="11323-3" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC"/>
+									<!-- RehabilitationPlan/AbilityAtDischargeExtended -->
+									<text><reference value="#AbilityAtDischargeExtended8c"/></text>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" nullFlavor="NI"/>
+								</observation>
+							</entry>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Health Observation Status ** -->
+									<templateId root="1.2.208.184.15.1.10.20.1.20"
+										extension="2018-09-28"/>
+									<!-- Some unique identifier -->
+									<id root="38942040-84F5-11E8-ADC0-FA7AE01BBEB9"/>
+									<code code="11323-3" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC"/>
+									<!-- RehabilitationPlan/AbilityAtDischargeExtended -->
+									<text><reference value="#AbilityAtDischargeExtendedUnspec"/></text>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" nullFlavor="NI"/>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!-- 7 RehabilitationPlan/ICD10Diagnoses - structured diagnoses -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.1.2" extension="2018-11-28"/>
+							<code code="ICD10Diagnoses" codeSystem="1.2.208.184.100.1"
+								codeSystemName="MedCom Message Codes" displayName="ICD10 Diagnoser"/>
+							<title>ICD10 Diagnoser</title>
+							<text>
+								<table border="1">
+									<tbody>
+										<!-- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[1]/PrimaryDiagnosis -->
+										<tr>
+											<th language="DA" styleCode="Bold" colspan="3" align="left">ICD10 Diagnoser</th>
+										</tr>
+									</tbody>
+								</table>
+								<table border="1">
+									<tbody>
+										<tr>
+											<td styleCode="Bold">Aktionsdiagnose/Bidiagnose[1]</td>
+											<!-- or
+											<td styleCode="Bold">Bidiagnose [1]</td>
+											-->
+											<!-- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[1]/PrimaryDiagnosis/Code -->
+											<td>DS721</td>
+											<!-- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[1]/PrimaryDiagnosis/Text -->
+											<td>Pertrokantær femurfraktur</td>
+										</tr>
+										<!-- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[1]/SecondaryDiagnosis[1] -->
+										<tr>
+											<td styleCode="Bold" >- Bidiagnose/Tillægsdiagnose[1]</td>
+											<!-- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[1]/SecondaryDiagnosis[1]/Code -->
+											<td>TUL1</td>
+											<!-- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[1]/SecondaryDiagnosis[1]/Text -->
+											<td>højresidig</td>
+										</tr>
+									</tbody>
+								</table>
+								<table border="1">
+									<tbody>
+										<tr>
+											<td styleCode="Bold">Bidiagnose[2]</td>
+											<!-- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[2]/PrimaryDiagnosis/Code -->
+											<td>ZZ0162A</td>
+											<!-- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[2]/PrimaryDiagnosis/Text -->
+											<td>Neurorehabilitering af svær hjerneskade</td>
+										</tr>
+										<tr>
+											<td styleCode="Bold">- Tillægskode[1]</td>
+											<!-- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[2]/SecondaryDiagnosis[1]/Code -->
+											<td>TUL1</td>
+											<!-- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[2]/SecondaryDiagnosis[1]/Text -->
+											<td>højresidig</td>
+										</tr>
+									</tbody>
+								</table>
+								<!-- Repeating structure of tables of secondary diagnoses, 
+									where secondary diagnosis x is last primary diagnose + 1 
+									correlated with repeating row structures of additional diagnoses y's, 
+									where y is always 1 for the first and counting from there 
+								<table border="1">
+									<tbody>
+										<tr>
+											<td styleCode="Bold">Bidiagnose[x]</td>
+											<!- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[x]/PrimaryDiagnosis/Code ->
+											<td>ZZ0162A</td>
+											<!- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[x]/PrimaryDiagnosis/Text ->
+											<td>Neurorehabilitering af svær hjerneskade</td>
+										</tr>
+										<tr>
+											<td styleCode="Bold">- Tillægskode[y]</td>
+											<!- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[x]/SecondaryDiagnosis[y]/Code ->
+											<td>TUL1</td>
+											<!- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[x]/SecondaryDiagnosis[y]/Text ->
+											<td>højresidig</td>
+										</tr>
+										<tr>
+											<td styleCode="Bold">- Tillægskode [y+1]</td>
+											<!- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[x]/SecondaryDiagnosis[y+1]/Code ->
+											<td>TUL1</td>
+											<!- RehabilitationPlan/ICD10Diagnoses/ICD10Diagnose[x]/SecondaryDiagnosis[y+1]/Text ->
+											<td>højresidig</td>
+										</tr>
+									</tbody>
+								</table>
+								-->
+							</text>
+							<entry typeCode="COMP" contextConductionInd="true">
+								<!-- Diagnose med tillægskode(r) -->
+								<act classCode="ACT" moodCode="EVN">
+									<!-- Health Concern Act templateId-->
+									<templateId root="1.2.208.184.15.1.10.20.1.21" extension="2018-09-28"/>
+									<id root="4EAB0E52-DD7D-4285-99EB-72D32DDB195C"/>
+									<code code="ALGA01" codeSystem="1.2.208.176.2.4"
+										codeSystemName="Sundhedsvæsenets Klassifikations System"
+										displayName="Aktionsdiagnose"/>
+									<!-- or
+										<code code="ALGA02" codeSystem="1.2.208.176.2.4"
+										codeSystemName="Sundhedsvæsenets Klassifikations System"
+										displayName="Bidiagnose"/>
+									-->
+									<!-- This Health Concern has a statusCode of active because it is an active concern -->
+									<statusCode code="active"/>
+									<effectiveTime>
+										<low value="20130616000000+0100"/>
+									</effectiveTime>
+									<entryRelationship typeCode="REFR" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
+											<code code="29308-4" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"
+												displayName="Diagnosis"/>
+											<statusCode code="active"/>
+											<effectiveTime>
+												<low value="20130616000000+0100"/>
+											</effectiveTime>
+											<value xsi:type="CD" code="DS721" codeSystemName="ICD10"
+												codeSystem="1.2.208.176.2.4"
+												displayName="Pertrokantær femurfraktur"/>
+										</observation>
+									</entryRelationship>
+									<!-- Tillægskode = GGOP: Sekundær Diagnose -->
+									<entryRelationship typeCode="REFR" contextConductionInd="true">
+										<!-- GGOP: Sekundær Diagnose -->
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
+											<code code="29308-4" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"
+												displayName="Diagnosis"/>
+											<statusCode code="active"/>
+											<effectiveTime>
+												<low value="20130616000000+0100"/>
+											</effectiveTime>
+											<value xsi:type="CD" code="TUL1" codeSystemName="ICD10"
+												codeSystem="1.2.208.176.2.4"
+												displayName="højresidig"/>
+										</observation>
+									</entryRelationship>
+								</act>
+							</entry>
+							<entry typeCode="COMP" contextConductionInd="true">
+								<!-- Bidiagnose med tillægskode(r) -->
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="1.2.208.184.15.1.10.20.1.21" extension="2018-09-28"/>
+									<id root="4EAB0E52-DD7D-4285-99EB-72D32DDB195C"/>
+									<code code="ALGA02" codeSystem="1.2.208.176.2.4"
+										codeSystemName="Sundhedsvæsenets Klassifikations System"
+										displayName="Bidiagnose"/>
+									<!-- This Health Concern has a statusCode of active because it is an active concern -->
+									<statusCode code="active"/>
+									<effectiveTime>
+										<low value="20130616000000+0100"/>
+									</effectiveTime>
+									<entryRelationship typeCode="REFR" contextConductionInd="true">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
+											<code code="29308-4" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"
+												displayName="Diagnosis"/>
+											<statusCode code="active"/>
+											<effectiveTime>
+												<low value="20130616000000+0100"/>
+											</effectiveTime>
+											<value xsi:type="CD" code="ZZ0162A"
+												codeSystemName="ICD10" codeSystem="1.2.208.176.2.4"
+												displayName="Neurorehabilitering af svær hjerneskade"
+											/>
+										</observation>
+									</entryRelationship>
+									<!-- Tillægskode -->
+									<entryRelationship typeCode="REFR" contextConductionInd="true">
+										<!-- title>Sekundær Diagnose</title -->
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
+											<code code="29308-4" codeSystem="2.16.840.1.113883.6.1"
+												codeSystemName="LOINC"
+												displayName="Diagnosis"/>
+											
+<!--											<code code="TUL" codeSystem="1.2.208.176.2.4"
+												codeSystemName="Sundhedsvæsenets Klassifikations System"
+												displayName="Sideangivelse"/>
+-->				
+											<statusCode code="active"/>
+											<effectiveTime>
+												<low value="20130616000000+0100"/>
+											</effectiveTime>
+											<value xsi:type="CD" code="TUL1" codeSystemName="ICD10"
+												codeSystem="1.2.208.176.2.4"
+												displayName="højresidig"/>
+										</observation>
+									</entryRelationship>
+								</act>
+							</entry>
+						</section>
+					</component>
+					<!-- 8 RehabilitationPlan/ICD10Diagnoses free text diagnoses -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.1.2" extension="2018-11-28"/>
+							<code code="ICD10Diagnoses" codeSystem="1.2.208.184.100.1"
+								codeSystemName="MedCom Message Codes" displayName="ICD10 Diagnoser"/>
+							<title>ICD10 Diagnoser</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th align="left">ICD10 Diagnoser (Text based)</th>
+										</tr>
+									</thead>
+									<tbody ID="ICD10DiagnosesText">
+										<tr>
+											<td> 
+												lorem ipsum
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<!-- Aktionsdiagnose med tillægskode(r) -->
+								<act classCode="ACT" moodCode="EVN">
+									<!-- Health Concern Act templateId-->
+									<templateId root="1.2.208.184.15.1.10.20.1.21" extension="2018-09-28"/>
+									<id root="4EAB0E52-DD7D-4285-99EB-72D32DDB195C"/>
+									<code code="ALGA02" codeSystem="1.2.208.176.2.4"
+										codeSystemName="Sundhedsvæsenets Klassifikations System"
+										displayName="Bidiagnose"/>
+									<text><reference value="#ICD10DiagnosesText"/></text>
+									<!-- This Health Concern has a statusCode of active because it is an active concern -->
+									<statusCode code="active"/>
+									<effectiveTime>
+										<low value="20130616000000+0100"/>
+									</effectiveTime>
+								</act>
+							</entry>
+						</section>
+					</component>
+					<!-- 9 RehabilitationPlan/JournalExcerpt -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.1.2" extension="2018-11-28"/>
+							<code code="JournalExcerpt" codeSystem="1.2.208.184.100.1"
+								codeSystemName="MedCom Message Codes"
+								displayName="Uddrag fra journalen"/>
+							<title>Uddrag fra journalen</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th align="left">Uddrag af operationsbeskrivelse</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<!-- Signer/Date, Signer/SignedBy/Title Signer/SignedBy/PersonGivenName Signer/SignedBy/PersonGivenName  -->
+												<!--  --> 2014-12-16, Læge Kasper Jensen
+												<!-- Signer/Date -->
+											</td>
+										</tr>
+										<tr>
+											<td ID="JournalExcerpt1">The standard Lorem Ipsum
+												passage, used since the 1500s <br/> "Lorem ipsum
+												dolor sit amet, consectetur adipiscing elit, sed do
+												eiusmod tempor incididunt ut labore et dolore magna
+												aliqua. Ut enim ad minim veniam, quis nostrud
+												exercitation ullamco laboris nisi ut aliquip ex ea
+												commodo consequat. Duis aute irure dolor in
+												reprehenderit in voluptate velit esse cillum dolore
+												eu fugiat nulla pariatur. Excepteur sint occaecat
+												cupidatat non proident, sunt in culpa qui officia
+												deserunt mollit anim id est laborum." </td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Health Observation Status ** -->
+									<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
+									<!-- Some unique identifier -->
+									<id root="38942040-84F5-11E8-ADC0-FA7AE01BBEB9"/>
+									<code code="11323-3" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="General health"/>
+									<!-- RehabilitationPlan/JournalExcerpt/Comment -->
+									<text><reference value="#JournalExcerpt1"/></text>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" nullFlavor="NI"/>
+									<author typeCode="AUT" contextControlCode="OP">
+										<time value="20141216000000+0100"/>
+										<assignedAuthor classCode="ASSIGNED">
+											<id nullFlavor="NI"/>
+											<assignedPerson classCode="PSN">
+												<name>
+													<prefix>Læge</prefix>
+													<given>Kasper</given>
+													<family>Jensen</family>
+												</name>
+											</assignedPerson>
+										</assignedAuthor>
+									</author>
+								</observation>
+							</entry>
+						</section>
+					</component>
+					<!-- 10 RehabilitationPlan/JournalExcerpt -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.1.2" extension="2018-11-28"/>
+							<code code="JournalExcerpt" codeSystem="1.2.208.184.100.1"
+								codeSystemName="MedCom Message Codes"
+								displayName="Uddrag fra journalen"/>
+							<title>Uddrag fra journalen</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th align="left">Uddrag af journalnotat neurologisk
+												tilsyn</th>
+											<th/>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<!-- Signer/Date, Signer/SignedBy/Title Signer/SignedBy/PersonGivenName Signer/SignedBy/PersonGivenName  -->
+												<!--  --> 2014-12-19, Fysioterapeut Berit Hansen
+											</td>
+										</tr>
+										<tr>
+											<td ID="JournalExcerpt2"> Lorem ipsum dolor sit amet,
+												consectetur adipiscing elit. Aenean euismod neque
+												risus, eu imperdiet mauris volutpat imperdiet. Donec
+												vulputate ante id turpis pharetra, a auctor lorem
+												porta. Orci varius natoque penatibus et magnis dis
+												parturient montes, nascetur ridiculus mus. Fusce
+												faucibus erat turpis, ac volutpat sapien porta in.
+												Nullam a tincidunt ipsum, vel imperdiet dui. Proin
+												tempor eu tellus id tincidunt. Sed pulvinar quam sed
+												metus faucibus finibus. Orci varius natoque
+												penatibus et magnis dis parturient montes, nascetur
+												ridiculus mus. Ut vel tristique eros. Suspendisse
+												sed sodales est. In arcu est, eleifend sit amet
+												magna eu, eleifend commodo eros. Nullam faucibus
+												libero eu ultrices viverra.<br/> Sed vitae convallis
+												mauris. Phasellus mattis bibendum erat sit amet
+												efficitur. Nam varius arcu ac mi convallis
+												vulputate. Suspendisse tempus nunc quis lectus
+												malesuada ullamcorper. Nam nec elit metus. Ut varius
+												eu purus in auctor. Etiam tristique est id velit
+												tempor, a pretium mauris dictum. Ut id facilisis
+												erat, sit amet finibus mauris. Aliquam suscipit enim
+												dolor, vitae gravida elit fringilla et. Fusce arcu
+												lectus, ornare quis pellentesque ut, tincidunt id
+												felis. Praesent eu lacus sed dui tempus tristique.
+												<br/> Duis sed orci nulla. Maecenas nec purus a ex
+												bibendum tempus at eu elit. Duis fermentum nibh at
+												ante semper efficitur. Aliquam quis mollis erat.
+												Vivamus pretium nulla nibh, quis posuere nulla
+												tempor nec. Vivamus hendrerit lorem a molestie
+												euismod. Phasellus vehicula elit vitae sem pretium,
+												sed posuere dui pellentesque. Phasellus laoreet eu
+												ante sit amet tincidunt. Duis in sem porta mauris
+												fermentum interdum a sit amet augue. </td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Health Observation Status ** -->
+									<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
+									<!-- Some unique identifier -->
+									<id root="38942040-84F5-11E8-ADC0-FA7AE01BBE10"/>
+									<code code="11323-3" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="General health"/>
+									<!-- RehabilitationPlan/JournalExcerpt/Comment -->
+									<text><reference value="#JournalExcerpt2"/></text>
+									<statusCode code="completed"/>
+									<value xsi:type="CD" nullFlavor="NI"/>
+									<author>
+										<time value="20141219000000+0100"/>
+										<assignedAuthor classCode="ASSIGNED">
+											<id nullFlavor="NI"/>
+											<assignedPerson classCode="PSN">
+												<name>
+													<prefix>Fysioterapeut</prefix>
+													<given>Berit</given>
+													<family>Hansen</family>
+												</name>
+											</assignedPerson>
+										</assignedAuthor>
+									</author>
+								</observation>
+							</entry>
+						</section>
+					</component>
+				</section>
+			</component>
+			<!-- 
+                ********************************************************
+                Goals Section
+                ********************************************************
+            -->
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Goals Section -->
+					<templateId root="1.2.208.184.15.1.10.20.2" extension="2018-09-28"/>
+					<code code="61146-7" displayName="Goals" codeSystem="2.16.840.1.113883.6.1"
+						codeSystemName="LOINC"/>
+					<title>Mål</title>
+					<text/> 
+					<!-- RehabilitationPlan/RehabilitationNeedAndPotential -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.2.2" extension="2018-11-28"/>
+							<code code="RehabilitationNeedAndPotential"
+								codeSystem="1.2.208.184.100.1" codeSystemName="MedCom Message Codes"
+								displayName="Patientens genoptræningsbehov og potentiale"/>
+							<title>Patientens genoptræningsbehov og potentiale</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th align="left">Patientens genoptræningsbehov og
+												potentiale</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td ID="RehabilitationNeedAndPotential"> Lorem ipsum
+												dolor sit amet, consectetur adipiscing elit. Aenean
+												euismod neque risus, eu imperdiet mauris volutpat
+												imperdiet. Donec vulputate ante id turpis pharetra,
+												a auctor lorem porta. Orci varius natoque penatibus
+												et magnis dis parturient montes, nascetur ridiculus
+												mus. Fusce faucibus erat turpis, ac volutpat sapien
+												porta in. Nullam a tincidunt ipsum, vel imperdiet
+												dui. Proin tempor eu tellus id tincidunt. Sed
+												pulvinar quam sed metus faucibus finibus. Orci
+												varius natoque penatibus et magnis dis parturient
+												montes, nascetur ridiculus mus. Ut vel tristique
+												eros. Suspendisse sed sodales est. In arcu est, ...
+												tincidunt id felis. Praesent eu lacus sed dui tempus
+												tristique. <br/> Duis sed orci nulla. Maecenas nec
+												purus a ex bibendum tempus at eu elit. Duis
+												fermentum nibh at ante semper efficitur. Aliquam
+												quis mollis erat. Vivamus pretium nulla nibh, quis
+												posuere nulla tempor nec. Vivamus hendrerit lorem a
+												molestie euismod. Phasellus vehicula elit vitae sem
+												pretium, sed posuere dui pellentesque. Phasellus
+												laoreet eu ante sit amet tincidunt. Duis in sem
+												porta mauris fermentum interdum a sit amet augue.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<!-- Goal Observation -->
+								<observation classCode="OBS" moodCode="GOL">
+									<templateId root="1.2.208.184.15.1.10.20.2.20" extension="2018-09-28"/>
+									<!-- unique id in UPPER CASE-->
+									<id root="CE7CFB78-BD16-467E-8BCF-859A30341012"/>
+									<code code="ZZ0172Y"
+										displayName="Vurdering af behov for genoptræning, specialiseret genoptræning"
+										codeSystem="1.2.208.176.2.4"
+										codeSystemName="Sundhedsstyrelsens Klassifikations System"/>
+									<!-- RehabilitationPlan/RehabilitationNeedAndPotential -->
+									<text><reference value="#RehabilitationNeedAndPotential"/></text>
+									<statusCode code="active"/>
+									<value xsi:type="CD" nullFlavor="NI"/>
+								</observation>
+							</entry>
+						</section>
+					</component>
+				</section>
+			</component>
+			<!-- 
+			********************************************************
+			Interventions Section = Planlagte og gennemførte. 
+			********************************************************
+			-->
+			<component typeCode="COMP" contextConductionInd="true">
+				<section classCode="DOCSECT" moodCode="EVN">
+					<!-- Interventions Section -->
+					<templateId root="1.2.208.184.15.1.10.20.3" extension="2018-09-28"/>
+					<code code="62387-6" displayName="Interventions Provided"
+						codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+					<title>Udførte eller planlagte Interventioner</title>
+					<text/>
+					<!-- RehabilitationPlan/CurrentHospitalContact -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.3.2" extension="2018-11-28"/>
+							<code code="CurrentHospitalContact" codeSystem="1.2.208.184.100.1"
+								codeSystemName="MedCom Message Codes"
+								displayName="Aktuel sygehuskontakt"/>
+							<title>Aktuel sygehuskontakt</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th align="left">Aktuel sygehuskontakt</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td styleCode="Bold">Start: </td>
+										</tr>
+										<tr>
+											<td>13-12-2014 09:01</td>
+										</tr>
+										<tr>
+											<td styleCode="Bold">Forventet slut:</td>
+										</tr>
+										<tr>
+											<td >20-12-2014</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="COMP" contextConductionInd="true">
+								<encounter classCode="ACT" moodCode="EVN">
+									<!-- Planned Intervention -->
+									<templateId root="1.2.208.184.15.1.10.20.3.20" extension="2018-09-28"/>
+									<!-- unique id in UPPER CASE-->
+									<!-- RehabilitationPlan/Letter/EpisodeOfCareIdentifier -->
+									<id root="9A6D1BAC-17D3-4195-89A4-1121BC809B4D"/>
+									<code code="AAF1" displayName="Indlæggelse"
+										codeSystem="1.2.208.176.2.4"
+										codeSystemName="Sundhedsstyrelsens Klassifikations System"/>
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<!-- RehabilitationPlan/CurrentHospitalContact/Start -->
+										<low value="20141213090100+0100"/>
+										<!-- RehabilitationPlan/CurrentHospitalContact/ExpectedEnd -->
+										<high value="20141220000000+0100"/>
+										<!-- or <high nullFlavor="NI"/> -->
+									</effectiveTime>
+								</encounter>
+							</entry>
+						</section>
+					</component>
+					<!-- RehabilitationPlan/RehabilitationDeadline -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.3.2" extension="2018-11-28"/>
+							<code code="RehabilitationDeadline" codeSystem="1.2.208.184.100.1"
+								codeSystemName="MedCom Message Codes"
+								displayName="Tidsfrist for start af genoptræning"/>
+							<title>Tidsfrist for start af genoptræning</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th align="left">Tidsfrist for start af
+												genoptræning</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td ID="RehabilitationDeadline">Pt bedes opstartes
+												indenfor 1 måned</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="DRIV" contextConductionInd="true">
+								<encounter classCode="ACT" moodCode="INT">
+									<!-- Planned intervention -->
+									<templateId root="1.2.208.184.15.1.10.20.3.20" extension="2018-09-28"/>
+									<!-- unique id in UPPER CASE-->
+									<id root="9A6D1BAC-17D3-4195-89A4-1121BC809B4D"/>
+									<code code="AWG1"
+										displayName="Specialiseret genoptræning, start"
+										codeSystem="1.2.208.176.2.4"
+										codeSystemName="Sundhedsstyrelsens Klassifikations System"/>
+									<!-- references MUST be presented this way in the text element -->
+									<text><reference value="#RehabilitationDeadline"/></text>
+									<statusCode code="active"/>
+								</encounter>
+							</entry>
+						</section>
+					</component>
+					<!-- RehabilitationPlan/HospitalAmbulatoryControl – structured -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.3.2" extension="2018-11-28"/>
+							<code code="HospitalAmbulatoryControl" codeSystem="1.2.208.184.100.1"
+								codeSystemName="MedCom Message Codes"
+								displayName="Aftaler om kontrol og opfølgning"/>
+							<title>Aftaler om kontrol og opfølgning</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th colspan="2" align="left">Aftaler om kontrol og opfølgning</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td styleCode="Bold"> Forventet start: </td>
+											<td>25-01-2015 10:30</td>
+										</tr>
+										<tr>
+											<td styleCode="Bold">Lokation</td>
+											<td>Odense Universitetshospital, Ortopædkirurgisk Afdeling, Q,
+												Sdr. Boulevard 29, 5000 Odense C
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="COMP" contextConductionInd="true">
+								<encounter classCode="ENC" moodCode="INT">
+									<!-- Planned Intervention -->
+									<templateId root="1.2.208.184.15.1.10.20.3.20" extension="2018-09-28"/>
+									<!-- unique id in UPPER CASE-->
+									<id root="9A6D1BAC-17D3-4195-89A4-1121BC809B4D"/>
+									<code code="AAF23" displayName="Ambulant Kontrolbesøg"
+										codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4"/>
+									<statusCode code="active"/>
+									<effectiveTime>
+										<!-- RehabilitationPlan/HospitalAmbulatoryControl/ExpectedStart/Date+Time -->
+										<low value="20150125103000+0100"/>
+									</effectiveTime>
+									<performer typeCode="PRF">
+										<assignedEntity classCode="ASSIGNED">
+											<id nullFlavor="NI"/>
+											<representedOrganization classCode="ORG"
+												determinerCode="INSTANCE">
+												<!-- 
+													id-extension: RehabilitationPlan/Sender/Identifier 
+													id-root: version 5 uuid generated for instance by 
+													https://uuidonline.com/?version=5&namespace=5790002012272 
+													based on the EAN identifier for this message
+													Letters in uppercase.
+												-->
+												<id extension="4202360"
+													root="8EEE7D98-0323-541B-A889-C91F1ABBF334"
+													assigningAuthorityName="Odense Universitetshospital"
+													displayable="true"/>
+												<name>Odense Universitetshospital, Ortopædkirurgisk Afdeling, Q</name>
+												<telecom value="ean:5790002012272"/>
+												<addr use="WP">
+												<streetAddressLine>Sdr.
+												Boulevard29</streetAddressLine>
+												<postalCode>5000</postalCode>
+												<city>Odense C</city>
+												</addr>
+											</representedOrganization>
+										</assignedEntity>
+									</performer>
+								</encounter>
+							</entry>
+						</section>
+					</component>
+					<!-- RehabilitationPlan/HospitalAmbulatoryControl – unstructured -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.3.2" extension="2018-11-28"/>
+							<code code="HospitalAmbulatoryControl" codeSystem="1.2.208.184.100.1"
+								codeSystemName="MedCom Message Codes"
+								displayName="Aftaler om kontrol og opfølgning - fritekstbaseret"/>
+							<title>Aftaler om kontrol og opfølgning - fritekstbaseret</title>
+							<text>
+								<table border="1">
+									<thead>
+										<tr>
+											<th colspan="2" align="left">Aftaler om kontrol og opfølgning</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td styleCode="Bold"> Forventet start: </td>
+											<td ID="HAC">Senest 25-01-2015</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="COMP" contextConductionInd="true">
+								<encounter classCode="ENC" moodCode="INT">
+									<!-- Planned Intervention -->
+									<templateId root="1.2.208.184.15.1.10.20.3.20" extension="2018-09-28"/>
+									<!-- unique id in UPPER CASE-->
+									<id root="9A6D1BAC-17D3-4195-89A4-1121BC809B4D"/>
+									<code code="AAF23" displayName="Ambulant Kontrolbesøg"
+										codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4"/>
+									<text><reference value="#HAC"/></text>
+									<statusCode code="active"/>
+									<effectiveTime nullFlavor="NA"/>
+									<performer typeCode="PRF" nullFlavor="NA">
+										<assignedEntity classCode="ASSIGNED" nullFlavor="NA">
+											<id nullFlavor="NA"/>
+										</assignedEntity>
+									</performer>
+								</encounter>
+							</entry>
+						</section>
+					</component>
+					<!-- Forsendelsesdokumentation -->
+					<component typeCode="COMP" contextConductionInd="true">
+						<section classCode="DOCSECT" moodCode="EVN">
+							<templateId root="1.2.208.184.15.1.10.20.3.2" extension="2018-11-28"/>
+							<code code="HandoffDocumentation" codeSystem="1.2.208.184.100.1" codeSystemName="MedCom Message Codes" displayName="Forsendelsesdokumentation"/>
+							<title>Forsendelsesdokumentation</title>
+							<text>
+								<table border="1" ID="HandOffDocumentation">
+									<thead>
+										<tr>
+											<th align="left" colspan="2"
+												>Forsendelsesdokumentation</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Kuvertid</td>
+											<td ID="EnvelopeId">54382645943294</td>
+										</tr>
+										<tr>
+											<td>Brevid</td>
+											<td ID="LetterId">45249877239313</td>
+										</tr>
+										<tr>
+											<td>Meddelelsestype</td>
+											<td ID="MessageType">GGOP</td>
+										</tr>
+										<tr>
+											<td>Version</td>
+											<td ID="Version">GGOP100</td>
+										</tr>
+										<tr>
+											<td>StatisticalCode</td>
+											<td ID="StatisticalCode">GGOP2</td>
+										</tr>
+										<tr>
+											<td>Primær modtager</td>
+											<td ID="Receiver">
+												Odense kommune, 
+												Aktivitet og træning, 
+												Sundhed, 
+												Ørbækvej 100, 
+												5220, 
+												Odense SØ, 
+												ean:5790000121441
+											</td>
+										</tr>
+										<tr>
+											<td>Kopimodtager</td>
+											<td ID="CCReceiver">
+												Odense kommune, 
+												Aktivitet og træning, 
+												Sundhed, 
+												Ørbækvej 100, 
+												5220, 
+												Odense SØ, 
+												ean:5790000121441
+											</td>
+										</tr>
+										<tr>
+											<td>Kopi til egen læge</td>
+											<td ID="GPCCReceiver">
+												Lægerne i Hjallese, 
+												Odensevej 33, 
+												5260, 
+												Odense S, 
+												ean:5790002012274
+											</td>
+										</tr>
+										<tr>
+											<td>Slutstatus modtager</td>
+											<td ID="ResultReceiver">
+												Odense Universitetshospital, 
+												Ortopædkirurgisk Afdeling, 
+												ean:5790001354145
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</text>
+							<entry typeCode="COMP" contextConductionInd="true">
+								<encounter classCode="ENC" moodCode="EVN">
+									<templateId root="1.2.208.184.15.1.10.20.3.20" extension="2018-09-28"/>
+									<!-- 
+										id-extension: RehabilitationPlan/Envelope/Identifier 
+										id-root: version 5 uuid generated for instance by 
+										https://uuidonline.com/?version=5&namespace=5790001354145 
+										based on the EAN identifier for this message
+										Letters in uppercase.
+									-->
+									<id extension="54382645943294"
+										root="8EEE7D98-0323-541B-A889-C91F1ABBF334"
+										assigningAuthorityName="Odense Universitetshospital"
+										displayable="true"/>
+									<!-- 
+										id-extension: RehabilitationPlan/Letter/Identifier 
+										id-root: version 5 uuid generated for instance by 
+										https://uuidonline.com/?version=5&namespace=5790001354145 
+										based on the EAN identifier for this message
+										Letters in uppercase.
+									-->
+									<id extension="45249877239313"
+										root="8EEE7D98-0323-541B-A889-C91F1ABBF334"
+										assigningAuthorityName="Odense Universitetshospital"
+										displayable="true"/>
+									<!-- RehabilitationPlan/Letter/StatisticalCode + TypeOfRehabilitationPlan -->
+									<code code="GGOP2"
+										displayName="Specialiseret Genoptræningsplan"
+										codeSystem="1.2.208.184.100.1" 
+										codeSystemName="MedCom Message Codes"/>
+									<text><reference value="#HandOffDocumentation"/></text>
+									<statusCode code="completed"/>
+									<effectiveTime value="20141220154300+0100"/>
+									<!-- RehabilitationPlan/Receiver/ -->
+									<performer typeCode="PRF">
+										<assignedEntity classCode="ASSIGNED">
+											<!-- 
+												id-extension: RehabilitationPlan/Receiver/Identifier 
+												id-root: version 5 uuid generated for instance by 
+												https://uuidonline.com/?version=5&namespace=5790000121441 
+												based on the EAN identifier for the Receiver 
+												Letters in uppercase.
+											-->
+											<id extension="461"
+												root="AE539A39-D15C-582F-AC28-CF61997224F1"
+												assigningAuthorityName="Odense Kommune"
+												displayable="true"/>
+											<code code="Receiver" codeSystem="1.2.208.184.100.1" 
+												codeSystemName="MedCom Message Codes" displayName="Modtager"/>
+											<addr use="WP">
+												<streetAddressLine>Ørbækvej 100</streetAddressLine>
+												<city>Odense SØ</city>
+												<postalCode>5220</postalCode>
+											</addr>
+											<telecom use="WP" value="ean:5790000121441"/>
+											<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+												<name>Odense kommune, Aktivitet og træning, Sundhed</name>
+											</representedOrganization>
+										</assignedEntity>
+									</performer>
+									<!-- RehabilitationPlan/CCReceiver/ -->
+									<performer typeCode="PRF">
+										<assignedEntity classCode="ASSIGNED">
+											<!-- 
+												id-extension: RehabilitationPlan/CCReceiver/Identifier 
+												id-root: version 5 uuid generated for instance by 
+												https://uuidonline.com/?version=5&namespace=5790002012276 
+												based on the EAN identifier for the CCReceiver 
+												Letters in uppercase.
+											-->
+											<id extension="423401"
+												root="7AD107BE-84D9-5C35-B5F6-903E8CC11C55"
+												assigningAuthorityName="Odense Universitetshospital"
+												displayable="true"/>
+											<code code="CCReceiver" codeSystem="1.2.208.184.100.1" 
+												codeSystemName="MedCom Message Codes" displayName="Kopimodtager"/>
+											<addr use="WP">
+												<streetAddressLine>Sdr. Boulevard 29</streetAddressLine>
+												<city>Odense C</city>
+												<postalCode>5000</postalCode>
+											</addr>
+											<telecom use="WP" value="ean:5790002012276"/>
+											<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+												<name>Odense Universitetshospital, Neurologisk Afdeling, Klinisk Neurofysiologisk Afsnit</name>
+											</representedOrganization>
+										</assignedEntity>
+									</performer>
+									<!-- RehabilitationPlan/GPCCReceiver/ -->
+									<performer typeCode="PRF">
+										<assignedEntity classCode="ASSIGNED">
+											<!-- 
+												id-extension: RehabilitationPlan/GPCCReceiver/Identifier 
+												id-root: version 5 uuid generated for instance by 
+												https://uuidonline.com/?version=5&namespace=5790002012274 
+												based on the EAN identifier for the GPCCResultReceiver 
+												Letters in uppercase.
+											-->
+											<id extension="024015"
+												root="C06BD5E3-5614-5B0D-9FA0-35EE86EF6A4C"
+												assigningAuthorityName="Lægerne i Hjallese"
+												displayable="true"/>
+											<code code="GPCCReceiver" codeSystem="1.2.208.184.100.1" 
+												codeSystemName="MedCom Message Codes" displayName="Kopi til egen læge"/>
+											<addr use="WP">
+												<streetAddressLine>Odensevej 33</streetAddressLine>
+												<city>Odense S</city>
+												<postalCode>5260</postalCode>
+											</addr>
+											<telecom use="WP" value="ean:5790002012274"/>
+											<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+												<name>Odense kommune, Aktivitet og træning, Sundhed</name>
+											</representedOrganization>
+										</assignedEntity>
+									</performer>
+									<!-- RehabilitationPlan/FinalResult/ResultReceiver/ -->
+									<performer typeCode="PRF">
+										<assignedEntity classCode="ASSIGNED">
+											<!-- 
+												id-extension: RehabilitationPlan/FinalResult/ResultReceiver/Identifier 
+												id-root: version 5 uuid generated for instance by 
+												https://uuidonline.com/?version=5&namespace=5790001354145 
+												based on the EAN identifier for the FinalResult/ResultReceiver 
+												Letters in uppercase.
+											-->
+											<id extension="4202360"
+												root="8EEE7D98-0323-541B-A889-C91F1ABBF334"
+												assigningAuthorityName="Odense Universitetshospital"
+												displayable="true"/>
+											<code code="ResultReceiver" codeSystem="1.2.208.184.100.1" 
+												codeSystemName="MedCom Message Codes" displayName="Slutstatus Modtager"/>
+											<telecom use="WP" value="ean:5790001354145"/>
+											<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+												<name>Odense Universitetshospital, Ortopædkirurgisk Afdeling</name>
+											</representedOrganization>
+										</assignedEntity>
+									</performer>
+								</encounter>
+							</entry>
+						</section>
+					</component>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

@@ -274,6 +274,23 @@
         <finalName>validator</finalName>
         <plugins>
             <plugin>
+                <groupId>com.helger.maven</groupId>
+                <artifactId>ph-schematron-maven-plugin</artifactId>
+                <version>5.4.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>convert</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <schematronDirectory>${project.basedir}/src/main/resources/art-decor</schematronDirectory>
+                    <schematronPattern>medcom-documents-*.sch</schematronPattern>
+                    <xsltDirectory>${project.basedir}/src/main/resources/art-decor</xsltDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.0.1</version>
                 <executions>

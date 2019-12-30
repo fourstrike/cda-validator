@@ -27,7 +27,8 @@ public class ArtDecorSchematronTests implements IValidationTest, IDocumentTest {
 
   @BeforeClass
   public static void beforeClass() {
-    rule = new ArtDecorSaxonEngine(new File("src/main/resources/art-decor/medcom-documents-S_R.sch"));
+    //rule = new ArtDecorSaxonEngine(new File("src/main/resources/art-decor/medcom-documents-S_R.sch"));
+    rule = new ArtDecorSaxonEngine(new File("src/main/resources/art-decor/medcom-documents-S_R.xslt"));
 
   }
 

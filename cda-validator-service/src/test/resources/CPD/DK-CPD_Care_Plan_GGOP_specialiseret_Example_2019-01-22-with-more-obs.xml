@@ -314,8 +314,8 @@
 			</addr>
 			<telecom value="tel:65516360" use="WP"/>
 			<scopingOrganization classCode="ORG" determinerCode="INSTANCE">
-				<name>
-					<prefix>Spørgsmål til kommunen: </prefix> Odense Kommune </name>
+				<name>Spørgsmål til kommunen:</name>
+				<telecom value="tel:76631490" use="WP"/>
 			</scopingOrganization>
 		</associatedEntity>
 	</participant>
@@ -331,9 +331,8 @@
 			</addr>
 			<telecom value="tel:76631490" use="WP"/>
 			<scopingOrganization classCode="ORG" determinerCode="INSTANCE">
-				<name>
-					<prefix>Spørgsmål til regionen: </prefix> Patientkontoret Region Syddanmark
-				</name>
+				<name>Spørgsmål til regionen:</name>
+				<telecom value="tel:76631490" use="WP"/>
 			</scopingOrganization>
 		</associatedEntity>
 	</participant>
@@ -533,7 +532,7 @@
 								<observation classCode="OBS" moodCode="EVN">
 									<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
 									<id root="1.2.3.999" extension="__example only__"/>
-									<code code="11323-3" codeSystem="2.16.840.1.113883.6.1"
+									<code code="11323-3" codeSystem="2.16.840.1.113883.6.96"
 										  codeSystemName="LOINC" displayName="Health Status Observation"/>
 									<statusCode code="completed"/>
 									<effectiveTime>
@@ -546,7 +545,7 @@
 								<observation classCode="OBS" moodCode="EVN">
 									<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
 									<id root="1.2.3.999" extension="__example only__"/>
-									<code code="11323-3" codeSystem="2.16.840.1.113883.6.1"
+									<code code="11323-3" codeSystem="2.16.840.1.113883.6.96"
 										  codeSystemName="LOINC" displayName="Health Status Observation"/>
 									<statusCode code="completed"/>
 									<effectiveTime>
@@ -559,7 +558,7 @@
 								<observation classCode="OBS" moodCode="EVN">
 									<templateId root="1.2.208.184.15.1.10.20.1.20" extension="2018-09-28"/>
 									<id root="1.2.3.999" extension="__example only__"/>
-									<code code="11323-3" codeSystem="2.16.840.1.113883.6.1"
+									<code code="11323-3" codeSystem="2.16.840.1.113883.6.96"
 										  codeSystemName="LOINC" displayName="Health Status Observation"/>
 									<statusCode code="completed"/>
 									<effectiveTime>
