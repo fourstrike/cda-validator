@@ -143,17 +143,17 @@
    <!-- Create phases for more targeted validation on large instances -->
     <phase id="AllExceptClosed">
         <active pattern="template-1.2.208.184.10.3-2019-11-12T232701"/>
-        <active pattern="template-1.2.208.184.10.18-2019-12-22T112208"/>
-        <active pattern="template-1.2.208.184.10.19-2019-12-22T112900"/>
-        <active pattern="template-1.2.208.184.10.20-2019-12-22T113355"/>
-        <active pattern="template-1.2.208.184.10.21-2019-12-22T113531"/>
-        <active pattern="template-1.2.208.184.10.22-2019-12-22T113815"/>
-        <active pattern="template-1.2.208.184.10.23-2019-12-22T113956"/>
-        <active pattern="template-1.2.208.184.10.24-2019-12-22T114145"/>
-        <active pattern="template-1.2.208.184.10.25-2019-12-22T114331"/>
-        <active pattern="template-1.2.208.184.10.26-2019-12-22T114533"/>
-        <active pattern="template-1.2.208.184.10.27-2019-12-22T114644"/>
-        <active pattern="template-1.2.208.184.10.28-2019-12-22T114803"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.20-2019-12-22T114145"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.21-2019-12-22T114331"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.22-2019-12-22T114533"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.23-2019-12-22T112208"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.24-2019-12-22T114644"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.25-2019-12-22T114803"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.26-2019-12-22T112900"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.27-2019-12-22T113355"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.28-2019-12-22T113531"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.29-2019-12-22T113815"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.30-2019-12-22T113956"/>
         <active pattern="template-2.16.840.1.113883.10.12.301-2005-09-07T000000"/>
         <active pattern="template-2.16.840.1.113883.10.12.302-2005-09-07T000000"/>
         <active pattern="template-2.16.840.1.113883.10.12.303-2005-09-07T000000"/>
@@ -170,38 +170,38 @@
     <phase id="CDAClinicalDocumentStructuredBody-closed">
         <active pattern="template-1.2.208.184.10.3-2019-11-12T232701-closed"/>
     </phase>
-    <phase id="PDCDKCustodyCDAObservation">
-        <active pattern="template-1.2.208.184.10.18-2019-12-22T112208"/>
-    </phase>
-    <phase id="PDCDKCitizenCDAObservation">
-        <active pattern="template-1.2.208.184.10.19-2019-12-22T112900"/>
-    </phase>
-    <phase id="PDCDKCoverageCDAObservation">
-        <active pattern="template-1.2.208.184.10.20-2019-12-22T113355"/>
-    </phase>
-    <phase id="PDCDKOrganCDAObservation">
-        <active pattern="template-1.2.208.184.10.21-2019-12-22T113531"/>
-    </phase>
-    <phase id="PDCDKTreatmentWillCDAObservation">
-        <active pattern="template-1.2.208.184.10.22-2019-12-22T113815"/>
-    </phase>
-    <phase id="PDCDKLivingWillCDAObservation">
-        <active pattern="template-1.2.208.184.10.23-2019-12-22T113956"/>
-    </phase>
     <phase id="PDCDKLanguageCDAObservation">
-        <active pattern="template-1.2.208.184.10.24-2019-12-22T114145"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.20-2019-12-22T114145"/>
     </phase>
     <phase id="PDCDKTemporaryAddressCDAObservation">
-        <active pattern="template-1.2.208.184.10.25-2019-12-22T114331"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.21-2019-12-22T114331"/>
     </phase>
     <phase id="PDCDKDentistCDAObservation">
-        <active pattern="template-1.2.208.184.10.26-2019-12-22T114533"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.22-2019-12-22T114533"/>
+    </phase>
+    <phase id="PDCDKCustodyCDAObservation">
+        <active pattern="template-1.2.208.184.16.1.10.20.1.23-2019-12-22T112208"/>
     </phase>
     <phase id="PDCDKContactCDAObservation">
-        <active pattern="template-1.2.208.184.10.27-2019-12-22T114644"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.24-2019-12-22T114644"/>
     </phase>
     <phase id="PDCDKRelativeCDAObservation">
-        <active pattern="template-1.2.208.184.10.28-2019-12-22T114803"/>
+        <active pattern="template-1.2.208.184.16.1.10.20.1.25-2019-12-22T114803"/>
+    </phase>
+    <phase id="PDCDKCitizenCDAObservation">
+        <active pattern="template-1.2.208.184.16.1.10.20.1.26-2019-12-22T112900"/>
+    </phase>
+    <phase id="PDCDKCoverageCDAObservation">
+        <active pattern="template-1.2.208.184.16.1.10.20.1.27-2019-12-22T113355"/>
+    </phase>
+    <phase id="PDCDKOrganCDAObservation">
+        <active pattern="template-1.2.208.184.16.1.10.20.1.28-2019-12-22T113531"/>
+    </phase>
+    <phase id="PDCDKTreatmentWillCDAObservation">
+        <active pattern="template-1.2.208.184.16.1.10.20.1.29-2019-12-22T113815"/>
+    </phase>
+    <phase id="PDCDKLivingWillCDAObservation">
+        <active pattern="template-1.2.208.184.16.1.10.20.1.30-2019-12-22T113956"/>
     </phase>
     <phase id="CDAAct">
         <active pattern="template-2.16.840.1.113883.10.12.301-2005-09-07T000000"/>
@@ -233,28 +233,28 @@
 
    <!-- Include schematrons from templates with explicit * or ** context (but no representing templates), only those used in scenario template -->
 
-<!-- PDCDKCustodyCDAObservation -->
-    <include href="include/1.2.208.184.10.18-2019-12-22T112208.sch"/>
-   <!-- PDCDKCitizenCDAObservation -->
-    <include href="include/1.2.208.184.10.19-2019-12-22T112900.sch"/>
-   <!-- PDCDKCoverageCDAObservation -->
-    <include href="include/1.2.208.184.10.20-2019-12-22T113355.sch"/>
-   <!-- PDCDKOrganCDAObservation -->
-    <include href="include/1.2.208.184.10.21-2019-12-22T113531.sch"/>
-   <!-- PDCDKTreatmentWillCDAObservation -->
-    <include href="include/1.2.208.184.10.22-2019-12-22T113815.sch"/>
-   <!-- PDCDKLivingWillCDAObservation -->
-    <include href="include/1.2.208.184.10.23-2019-12-22T113956.sch"/>
-   <!-- PDCDKLanguageCDAObservation -->
-    <include href="include/1.2.208.184.10.24-2019-12-22T114145.sch"/>
+<!-- PDCDKLanguageCDAObservation -->
+    <include href="include/1.2.208.184.16.1.10.20.1.20-2019-12-22T114145.sch"/>
    <!-- PDCDKTemporaryAddressCDAObservation -->
-    <include href="include/1.2.208.184.10.25-2019-12-22T114331.sch"/>
+    <include href="include/1.2.208.184.16.1.10.20.1.21-2019-12-22T114331.sch"/>
    <!-- PDCDKDentistCDAObservation -->
-    <include href="include/1.2.208.184.10.26-2019-12-22T114533.sch"/>
+    <include href="include/1.2.208.184.16.1.10.20.1.22-2019-12-22T114533.sch"/>
+   <!-- PDCDKCustodyCDAObservation -->
+    <include href="include/1.2.208.184.16.1.10.20.1.23-2019-12-22T112208.sch"/>
    <!-- PDCDKContactCDAObservation -->
-    <include href="include/1.2.208.184.10.27-2019-12-22T114644.sch"/>
+    <include href="include/1.2.208.184.16.1.10.20.1.24-2019-12-22T114644.sch"/>
    <!-- PDCDKRelativeCDAObservation -->
-    <include href="include/1.2.208.184.10.28-2019-12-22T114803.sch"/>
+    <include href="include/1.2.208.184.16.1.10.20.1.25-2019-12-22T114803.sch"/>
+   <!-- PDCDKCitizenCDAObservation -->
+    <include href="include/1.2.208.184.16.1.10.20.1.26-2019-12-22T112900.sch"/>
+   <!-- PDCDKCoverageCDAObservation -->
+    <include href="include/1.2.208.184.16.1.10.20.1.27-2019-12-22T113355.sch"/>
+   <!-- PDCDKOrganCDAObservation -->
+    <include href="include/1.2.208.184.16.1.10.20.1.28-2019-12-22T113531.sch"/>
+   <!-- PDCDKTreatmentWillCDAObservation -->
+    <include href="include/1.2.208.184.16.1.10.20.1.29-2019-12-22T113815.sch"/>
+   <!-- PDCDKLivingWillCDAObservation -->
+    <include href="include/1.2.208.184.16.1.10.20.1.30-2019-12-22T113956.sch"/>
    <!-- CDAAct -->
     <include href="include/2.16.840.1.113883.10.12.301-2005-09-07T000000.sch"/>
    <!-- CDAEncounter -->

@@ -79,9 +79,9 @@ public class CDAServlet {
         // http://www.openehealth.org/display/ipf2/IPF+reference+-+single#IPFreference-single-CDAprofilesupport
       System.setProperty("javax.xml.transform.TransformerFactory","com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl");
 
-    artDecorEngineCpd = new ArtDecorSaxonEngine("/art-decor/medcom-documents-S_R.xslt");
-    artDecorEngineApd = new ArtDecorSaxonEngine("/art-decor/medcom-documents-appointment_s_r.xslt");
-    artDecorEnginePdc = null;//new ArtDecorSaxonEngine("/art-decor/medcom-documents-PDC_s_r.xslt");
+    artDecorEngineCpd = null;//new ArtDecorSaxonEngine("/art-decor/medcom-documents-S_R.xslt");
+    artDecorEngineApd = null;//new ArtDecorSaxonEngine("/art-decor/medcom-documents-appointment_s_r.xslt");
+    artDecorEnginePdc = new ArtDecorSaxonEngine("/art-decor/medcom-documents-PDC_s_r.xslt");
     }
 
     @Path("transform")
