@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -34,7 +34,7 @@ public class SVRLController {
     saxonEngine = new SchematronEngine(resource.getFile());
   }
 
-  @RequestMapping("/validate")
+  @PostMapping("/validate")
   public SchematronOutputType validate(
           @RequestBody(required = true) String xmlDocument) {
     return saxonEngine.validate(xmlDocument);
