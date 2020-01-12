@@ -43,11 +43,11 @@ public class SVRLController {
     saxonEngine = new SchematronEngine(resource.getFile());
   }
 
-  @PostMapping(value = "/validate", consumes = MediaType.APPLICATION_XML_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-  public ValidationResponse validate(
-          @RequestBody(required = true) String xmlDocument) {
+  @PostMapping(value = "/validate",
+               consumes = MediaType.APPLICATION_XML_VALUE,
+               produces = MediaType.APPLICATION_JSON_VALUE)
+  public ValidationResponse validate(@RequestBody(required = true) String xmlDocument) {
     var svlr = saxonEngine.validate(xmlDocument);
-
     return toReturnType(svlr);
   }
 

@@ -12,7 +12,7 @@ public class TestWar {
 		
 		final Server server = new Server(8080);
 		server.setHandler(new WebAppContext(
-				"target/cda-validator-service-1.1.0-SNAPSHOT.war", "/"));
+				"/home/vagrant/Private/go.it/cda-validator/cda-validator-service/target/validator.war", "/"));
 		// server.setHandler(new WebAppContext("hitspValidation.war", "/"));
 		server.start();
 	}

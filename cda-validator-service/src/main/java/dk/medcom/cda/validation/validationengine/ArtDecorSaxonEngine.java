@@ -1,36 +1,25 @@
 package dk.medcom.cda.validation.validationengine;
 
-import static com.google.common.io.ByteStreams.toByteArray;
-
 import com.google.common.base.Strings;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
-import com.helger.schematron.AbstractSchematronResource;
 import com.helger.schematron.ISchematronResource;
-import com.helger.schematron.pure.SchematronResourcePure;
-import com.helger.schematron.svrl.jaxb.FailedAssert;
-import com.helger.schematron.svrl.jaxb.SchematronOutputType;
-import com.helger.schematron.xslt.SchematronProviderXSLTFromSCH;
-import com.helger.schematron.xslt.SchematronProviderXSLTPrebuild;
-import com.helger.schematron.xslt.SchematronResourceSCH;
 import com.helger.schematron.xslt.SchematronResourceXSLT;
 import dk.medcom.cda.CollectingValidationHandler;
 import dk.medcom.cda.CollectingValidationHandler.Level;
 import dk.medcom.cda.IValidationEngine;
 import dk.medcom.cda.model.CDAType;
 import dk.medcom.cda.model.ValidationEntry;
-import java.io.ByteArrayInputStream;
+import org.oclc.purl.dsdl.svrl.FailedAssert;
+import org.oclc.purl.dsdl.svrl.SchematronOutputType;
+
+import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 import java.io.StringReader;
 import java.nio.file.Files;
-import java.util.concurrent.ExecutionException;
-import javax.xml.namespace.QName;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.xpath.XPathFunction;
-import javax.xml.xpath.XPathFunctionResolver;
-import javax.xml.xpath.XPathVariableResolver;
-import org.xml.sax.InputSource;
+
+import static com.google.common.io.ByteStreams.toByteArray;
 
 public class ArtDecorSaxonEngine implements IValidationEngine {
 

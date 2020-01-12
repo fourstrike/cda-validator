@@ -3,11 +3,13 @@ package dk.medcom.cda.test.servlet;
 import static org.junit.Assert.assertThat;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.EnumSet;
 
 import javax.servlet.DispatcherType;
 
+import dk.medcom.cda.configuration.EnvironmentVariableConfiguration;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
@@ -21,11 +23,7 @@ import org.apache.http.util.EntityUtils;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.DefaultServlet;
 import org.eclipse.jetty.servlet.ServletContextHandler;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 
 import com.google.inject.servlet.GuiceFilter;
 
@@ -33,6 +31,8 @@ import static org.hamcrest.CoreMatchers.not;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import dk.medcom.cda.CDAContextListener;
 import dk.medcom.cda.model.CDAType;
@@ -40,15 +40,23 @@ import dk.medcom.cda.test.IDocumentTest;
 import dk.medcom.cda.test.IRandomTestData;
 
 public class TestServlet implements IRandomTestData, IDocumentTest {
-  public static final int PORT = 9080;
+  private static final int PORT = 9080;
+  private static final String HTTP_EXAMPLE_COM = "http://example.com";
+
   private static Server server;
 
   @BeforeClass
   public static void before() throws Exception {
+    final EnvironmentVariableConfiguration mockedEnvironmentVariableConfiguration =
+            mock(EnvironmentVariableConfiguration.class);
+    when(mockedEnvironmentVariableConfiguration.getApdServiceValidationUrl()).thenReturn(new URL(HTTP_EXAMPLE_COM));
+    when(mockedEnvironmentVariableConfiguration.getPdcServiceValidationUrl()).thenReturn(new URL(HTTP_EXAMPLE_COM));
+    when(mockedEnvironmentVariableConfiguration.getCpdServiceValidationUrl()).thenReturn(new URL(HTTP_EXAMPLE_COM));
+
     server = new Server(PORT);
 
     final ServletContextHandler sch = new ServletContextHandler(server, "/");
-    sch.addEventListener(new CDAContextListener());
+    sch.addEventListener(new CDAContextListener(mockedEnvironmentVariableConfiguration));
     sch.addFilter(GuiceFilter.class, "/*", EnumSet.of(DispatcherType.REQUEST));
     sch.addServlet(DefaultServlet.class, "/");
     sch.setWelcomeFiles(new String[]{"index.html"});

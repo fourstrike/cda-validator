@@ -6,6 +6,7 @@ import java.util.EnumSet;
 
 import javax.servlet.DispatcherType;
 
+import dk.medcom.cda.configuration.EnvironmentVariableConfiguration;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.slf4j.bridge.SLF4JBridgeHandler;
@@ -23,15 +24,13 @@ public class Mainer {
 		final Server server = new Server(8080);
 
 		final ServletContextHandler sch = new ServletContextHandler(server, "/");
-		sch.addEventListener(new CDAContextListener());
+		sch.addEventListener(new CDAContextListener(new EnvironmentVariableConfiguration()));
 		sch.addFilter(GuiceFilter.class, "/*", EnumSet.of(DispatcherType.REQUEST));
 //		sch.addServlet(DefaultServlet.class, "/");
 		sch.setWelcomeFiles(new String[] { "index.html" });
 		sch.setResourceBase("src/main/resources");
 
 		server.start();
-
-		Desktop.getDesktop().browse(new URI("http://localhost:8080/"));
 	}
 
 }

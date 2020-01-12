@@ -1,13 +1,47 @@
 version: '2'
 services:
-  cda_validator:
-    image: "goimplementit/cda-validator"
+  cda-validator:
+    image: "goimplementit/cda-validator:1.2.0"
     restart: always
     ports:
      - "8080:8080"
      - "8443:8443"
+    environment:
+      - APD_SERVICE_VALIDATION_URL=http://cda-validator-schematron-appointment:8080/validate
+      - PDC_SERVICE_VALIDATION_URL=http://cda-validator-schematron-pdc:8080/validate
+      - CPD_SERVICE_VALIDATION_URL=http://cda-validator-schematron-cpd:8080/validate
     volumes:
       - ./tomcat/server.xml:/usr/local/tomcat/conf/server.xml
+  cda-validator-schematron-appointment:
+    image: "goimplementit/cda-validator-schematron:1.1.0-SNAPSHOT"
+    restart: always
+    ports:
+      - "8090:8080"
+    environment:
+      - JVM_OPTS=-Xmx2g
+      - profiles=file:/resources/medcom-documents-appointment_s_r.xslt
+    volumes:
+      - ./art-decor/:/resources/
+  cda-validator-schematron-pdc:
+    image: "goimplementit/cda-validator-schematron:1.1.0-SNAPSHOT"
+    restart: always
+    ports:
+      - "8091:8080"
+    environment:
+      - JVM_OPTS=-Xmx2g
+      - profiles=file:/resources/medcom-documents-PDC_s_r.xslt
+    volumes:
+      - ./art-decor/:/resources/
+  cda-validator-schematron-cpd:
+    image: "goimplementit/cda-validator-schematron:1.1.0-SNAPSHOT"
+    restart: always
+    ports:
+      - "8092:8080"
+    environment:
+      - JVM_OPTS=-Xmx2g
+      - profiles=file:/resources/medcom-documents-S_R.xslt
+    volumes:
+      - ./art-decor/:/resources/
   portainer:
     image: portainer/portainer
     command: -H unix:///var/run/docker.sock

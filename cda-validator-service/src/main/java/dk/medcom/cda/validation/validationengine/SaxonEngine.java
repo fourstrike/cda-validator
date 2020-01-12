@@ -3,20 +3,21 @@ package dk.medcom.cda.validation.validationengine;
 import com.google.common.base.Strings;
 import com.helger.schematron.ISchematronResource;
 import com.helger.schematron.pure.SchematronResourcePure;
-import com.helger.schematron.svrl.jaxb.ActivePattern;
-import com.helger.schematron.svrl.jaxb.FailedAssert;
-import com.helger.schematron.svrl.jaxb.FiredRule;
-import com.helger.schematron.svrl.jaxb.SchematronOutputType;
 import dk.medcom.cda.CollectingValidationHandler;
 import dk.medcom.cda.CollectingValidationHandler.Level;
 import dk.medcom.cda.IValidationEngine;
 import dk.medcom.cda.model.CDAType;
 import dk.medcom.cda.model.ValidationEntry;
+import org.oclc.purl.dsdl.svrl.ActivePattern;
+import org.oclc.purl.dsdl.svrl.FailedAssert;
+import org.oclc.purl.dsdl.svrl.FiredRule;
+import org.oclc.purl.dsdl.svrl.SchematronOutputType;
+
+import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 import java.io.StringReader;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.xml.transform.stream.StreamSource;
 
 public class SaxonEngine implements IValidationEngine {
 

@@ -4,6 +4,7 @@ import java.util.Map;
 
 import javax.inject.Singleton;
 
+import dk.medcom.cda.configuration.EnvironmentVariableConfiguration;
 import org.codehaus.jackson.jaxrs.JacksonJsonProvider;
 import org.codehaus.jackson.map.SerializationConfig.Feature;
 import org.ebaysf.web.cors.CORSFilter;
@@ -26,10 +27,21 @@ import dk.medcom.cda.servlet.JsonGeneratorConfig;
 
 public class CDAContextListener extends GuiceServletContextListener {
 
-	public CDAContextListener() {
-		SLF4JBridgeHandler.removeHandlersForRootLogger();
+  private final EnvironmentVariableConfiguration environmentVariableConfiguration;
+
+  public CDAContextListener() {
+    this.environmentVariableConfiguration = new EnvironmentVariableConfiguration();
+
+    SLF4JBridgeHandler.removeHandlersForRootLogger();
 		SLF4JBridgeHandler.install();
 	}
+
+  public CDAContextListener(EnvironmentVariableConfiguration environmentVariableConfiguration) {
+    this.environmentVariableConfiguration = environmentVariableConfiguration;
+
+    SLF4JBridgeHandler.removeHandlersForRootLogger();
+    SLF4JBridgeHandler.install();
+  }
 
 	@Override
 	protected Injector getInjector() {
@@ -38,7 +50,7 @@ public class CDAContextListener extends GuiceServletContextListener {
 
 			@Override
 			protected void configure() {
-
+        bind(EnvironmentVariableConfiguration.class).toInstance(environmentVariableConfiguration);
 				bind(CDAServlet.class).asEagerSingleton();
 			}
 

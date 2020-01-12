@@ -7,6 +7,7 @@ import dk.medcom.cda.test.IValidationTest;
 import dk.medcom.cda.validation.validationengine.ArtDecorSaxonEngine;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -23,6 +24,7 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
+@Ignore
 @RunWith(Parameterized.class)
 public class ArtDecorPDCDKSchematronValidDocumentsTests implements IValidationTest, IDocumentTest {
 

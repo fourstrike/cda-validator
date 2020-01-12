@@ -6,7 +6,7 @@
     <groupId>dk.medcom.cda</groupId>
     <artifactId>cda-validator-frontend</artifactId>
     <packaging>pom</packaging>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.2.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -14,7 +14,7 @@
     <parent>
         <groupId>dk.medcom.cda</groupId>
         <artifactId>cda-validator</artifactId>
-        <version>1.1.0-SNAPSHOT</version>
+        <version>1.2.0-SNAPSHOT</version>
     </parent>
 
     <build>
