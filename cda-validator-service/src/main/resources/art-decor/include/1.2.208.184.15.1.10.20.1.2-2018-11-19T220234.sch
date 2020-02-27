@@ -19,7 +19,7 @@ Template derived rules for ID: 1.2.208.184.15.1.10.20.1.2
 Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]
 Item: (HealthConcernSubSectionCDASection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]" id="d15974401e929-false-d19629219e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]" id="d22815354e1269-false-d26443988e0">
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.1.2" test="string(@classCode) = ('DOCSECT') or not(@classCode)">(HealthConcernSubSectionCDASection): The value for classCode SHALL be 'DOCSECT'. Found: "<value-of select="@classCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.1.2" test="string(@moodCode) = ('EVN') or not(@moodCode)">(HealthConcernSubSectionCDASection): The value for moodCode SHALL be 'EVN'. Found: "<value-of select="@moodCode"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.1.2" test="count(hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']) &gt;= 1">(HealthConcernSubSectionCDASection): element hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28'] is mandatory [min 1x].</assert>
@@ -40,7 +40,7 @@ Template derived rules for ID: 1.2.208.184.15.1.10.20.1.2
 Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']
 Item: (HealthConcernSubSectionCDASection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']" id="d15974401e932-false-d19629390e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']" id="d22815354e1272-false-d26444159e0">
         <extends rule="II"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.1.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='II' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(HealthConcernSubSectionCDASection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:II". Found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.1.2" test="string(@extension) = ('2018-11-28')">(HealthConcernSubSectionCDASection): The value for extension SHALL be '2018-11-28'. Found: "<value-of select="@extension"/>"</assert>
@@ -52,7 +52,7 @@ Template derived rules for ID: 1.2.208.184.15.1.10.20.1.2
 Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:id
 Item: (HealthConcernSubSectionCDASection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:id" id="d15974401e935-false-d19629409e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:id" id="d22815354e1275-false-d26444178e0">
         <extends rule="II"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.1.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='II' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(HealthConcernSubSectionCDASection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:II". Found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
     </rule>
@@ -61,7 +61,7 @@ Template derived rules for ID: 1.2.208.184.15.1.10.20.1.2
 Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:code[(@code = '75310-3' and @codeSystem = '2.16.840.1.113883.6.1')]
 Item: (HealthConcernSubSectionCDASection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:code[(@code = '75310-3' and @codeSystem = '2.16.840.1.113883.6.1')]" id="d15974401e936-false-d19629419e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:code[(@code = '75310-3' and @codeSystem = '2.16.840.1.113883.6.1')]" id="d22815354e1276-false-d26444188e0">
         <extends rule="CE"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.1.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='CE' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(HealthConcernSubSectionCDASection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:CE". Found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.1.2" test="@nullFlavor or (@code='75310-3' and @codeSystem='2.16.840.1.113883.6.1')">(HealthConcernSubSectionCDASection): The element value SHALL be one of 'code '75310-3' codeSystem '2.16.840.1.113883.6.1''.</assert>
@@ -71,7 +71,7 @@ Template derived rules for ID: 1.2.208.184.15.1.10.20.1.2
 Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:title
 Item: (HealthConcernSubSectionCDASection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:title" id="d15974401e938-false-d19629434e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:title" id="d22815354e1278-false-d26444203e0">
         <extends rule="ST"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.1.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='ST' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(HealthConcernSubSectionCDASection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:ST". Found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
     </rule>
@@ -80,7 +80,7 @@ Template derived rules for ID: 1.2.208.184.15.1.10.20.1.2
 Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:text
 Item: (HealthConcernSubSectionCDASection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:text" id="d15974401e939-false-d19629443e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:text" id="d22815354e1279-false-d26444212e0">
         <extends rule="SD.TEXT"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.1.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='SD.TEXT' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(HealthConcernSubSectionCDASection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:SD.TEXT". Found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
     </rule>
@@ -89,7 +89,7 @@ Template derived rules for ID: 1.2.208.184.15.1.10.20.1.2
 Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:confidentialityCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16926-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]
 Item: (HealthConcernSubSectionCDASection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:confidentialityCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16926-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]" id="d15974401e940-false-d19629455e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:confidentialityCode[concat(@code, @codeSystem) = doc('include/voc-2.16.840.1.113883.1.11.16926-DYNAMIC.xml')//valueSet[1]/conceptList/concept/concat(@code, @codeSystem) or @nullFlavor]" id="d22815354e1280-false-d26444224e0">
         <extends rule="CE"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.1.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='CE' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(HealthConcernSubSectionCDASection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:CE". Found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
         <let name="theCode" value="@code"/>
@@ -101,7 +101,7 @@ Template derived rules for ID: 1.2.208.184.15.1.10.20.1.2
 Context: *[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:languageCode
 Item: (HealthConcernSubSectionCDASection)
 -->
-    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:languageCode" id="d15974401e942-false-d19629477e0">
+    <rule context="*[hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]]/hl7:section[hl7:templateId[@root = '1.2.208.184.15.1.10.20.1.2'][@extension = '2018-11-28']]/hl7:languageCode" id="d22815354e1282-false-d26444246e0">
         <extends rule="CS"/>
         <assert role="error" see="http://art-decor.org/art-decor/decor-templates--medcom-documents-?id=1.2.208.184.15.1.10.20.1.2" test="(local-name-from-QName(resolve-QName(@xsi:type,.))='CS' and namespace-uri-from-QName(resolve-QName(@xsi:type,.))='urn:hl7-org:v3') or not(@xsi:type)">(HealthConcernSubSectionCDASection): If an @xsi:type instruction is present it SHALL be valued "{urn:hl7-org:v3}:CS". Found "{<value-of select="namespace-uri-from-QName(resolve-QName(@xsi:type,.))"/>}:<value-of select="local-name-from-QName(resolve-QName(@xsi:type,.))"/>"</assert>
     </rule>
