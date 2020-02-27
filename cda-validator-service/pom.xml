@@ -9,6 +9,11 @@
     <version>1.2.0-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <cxf.version>3.6.5</cxf.version>
+        <jetty.version>9.4.26.v20200117</jetty.version>
+        <slf4j.version>1.7.30</slf4j.version>
     </properties>
 
     <parent>
@@ -21,7 +26,7 @@
         <dependency>
             <groupId>org.openehealth.ipf.modules</groupId>
             <artifactId>ipf-modules-cda-core</artifactId>
-            <version>3.6.3</version>
+            <version>${cxf.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.codehaus.groovy</groupId>
@@ -46,18 +51,17 @@
         <dependency>
             <groupId>org.openehealth.ipf.modules</groupId>
             <artifactId>ipf-modules-cda-mdht</artifactId>
-            <!-- <version>3.2-SNAPSHOT</version> -->
-            <version>3.6.3</version>
+            <version>${cxf.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openehealth.ipf.commons</groupId>
             <artifactId>ipf-commons-xml</artifactId>
-            <version>3.6.3</version>
+            <version>${cxf.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.21</version>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>
@@ -82,18 +86,18 @@
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
-            <version>4.0</version>
+            <version>4.2.2</version>
         </dependency>
         <dependency>
             <groupId>com.google.inject.extensions</groupId>
             <artifactId>guice-servlet</artifactId>
-            <version>4.0</version>
+            <version>4.2.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlet</artifactId>
-            <version>9.4.5.v20170502</version>
+            <version>${jetty.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -105,13 +109,13 @@
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
-            <version>9.4.5.v20170502</version>
+            <version>${jetty.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
-            <version>9.4.5.v20170502</version>
+            <version>${jetty.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -137,12 +141,12 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.21</version>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jul-to-slf4j</artifactId>
-            <version>1.7.21</version>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
@@ -170,7 +174,7 @@
         <dependency>
             <groupId>com.sun.xml.stream.buffer</groupId>
             <artifactId>streambuffer</artifactId>
-            <version>1.5.3</version>
+            <version>1.5.8</version>
         </dependency>
         <dependency>
             <groupId>com.sun.xml.ws</groupId>
@@ -233,7 +237,7 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.5.2</version>
+            <version>4.5.11</version>
             <scope>test</scope>
         </dependency>
 
@@ -245,7 +249,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.21</version>
+            <version>${slf4j.version}</version>
         </dependency>
         <!-- https://scm.gforge.inria.fr/anonscm/svn/gazelle/Maven/CDAGenerator/trunk/CDAGenerator-ejb/src/main/java/net/ihe/gazelle/cda/validator/ws/MicroDocumentValidation.java -->
         <dependency>
@@ -298,7 +302,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>3.1.0</version>
                 <executions>
                     <execution>
                         <id>copy-resources</id>
