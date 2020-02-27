@@ -145,15 +145,15 @@
         <active pattern="template-1.2.208.184.10.4-2019-11-15T235912"/>
         <active pattern="template-1.2.208.184.14.11.1-2019-11-16T214752"/>
         <active pattern="template-1.2.208.184.14.11.2-2019-12-15T233224"/>
-        <active pattern="template-2.16.840.1.113883.10.12.801-2005-09-07T000000"/>
-        <active pattern="template-2.16.840.1.113883.10.12.802-2005-09-07T000000"/>
-        <active pattern="template-2.16.840.1.113883.10.12.803-2005-09-07T000000"/>
-        <active pattern="template-2.16.840.1.113883.10.12.804-2005-09-07T000000"/>
-        <active pattern="template-2.16.840.1.113883.10.12.805-2005-09-07T000000"/>
-        <active pattern="template-2.16.840.1.113883.10.12.806-2005-09-07T000000"/>
-        <active pattern="template-2.16.840.1.113883.10.12.807-2005-09-07T000000"/>
-        <active pattern="template-2.16.840.1.113883.10.12.808-2005-09-07T000000"/>
-        <active pattern="template-2.16.840.1.113883.10.12.809-2005-09-07T000000"/>
+        <active pattern="template-2.16.840.1.113883.10.12.301-2005-09-07T000000"/>
+        <active pattern="template-2.16.840.1.113883.10.12.302-2005-09-07T000000"/>
+        <active pattern="template-2.16.840.1.113883.10.12.303-2005-09-07T000000"/>
+        <active pattern="template-2.16.840.1.113883.10.12.304-2005-09-07T000000"/>
+        <active pattern="template-2.16.840.1.113883.10.12.305-2005-09-07T000000"/>
+        <active pattern="template-2.16.840.1.113883.10.12.306-2005-09-07T000000"/>
+        <active pattern="template-2.16.840.1.113883.10.12.307-2005-09-07T000000"/>
+        <active pattern="template-2.16.840.1.113883.10.12.308-2005-09-07T000000"/>
+        <active pattern="template-2.16.840.1.113883.10.12.309-2005-09-07T000000"/>
     </phase>
     <phase id="AppointmentDocument">
         <active pattern="template-1.2.208.184.10.4-2019-11-15T235912"/>
@@ -167,32 +167,32 @@
     <phase id="AppointmentCDAEncounterSDTC">
         <active pattern="template-1.2.208.184.14.11.2-2019-12-15T233224"/>
     </phase>
-    <phase id="CDAActSDTC">
-        <active pattern="template-2.16.840.1.113883.10.12.801-2005-09-07T000000"/>
+    <phase id="CDAAct">
+        <active pattern="template-2.16.840.1.113883.10.12.301-2005-09-07T000000"/>
     </phase>
-    <phase id="CDAEncounterSDTC">
-        <active pattern="template-2.16.840.1.113883.10.12.802-2005-09-07T000000"/>
+    <phase id="CDAEncounter">
+        <active pattern="template-2.16.840.1.113883.10.12.302-2005-09-07T000000"/>
     </phase>
-    <phase id="CDAObservationSDTC">
-        <active pattern="template-2.16.840.1.113883.10.12.803-2005-09-07T000000"/>
+    <phase id="CDAObservation">
+        <active pattern="template-2.16.840.1.113883.10.12.303-2005-09-07T000000"/>
     </phase>
-    <phase id="CDAObservationMediaSDTC">
-        <active pattern="template-2.16.840.1.113883.10.12.804-2005-09-07T000000"/>
+    <phase id="CDAObservationMedia">
+        <active pattern="template-2.16.840.1.113883.10.12.304-2005-09-07T000000"/>
     </phase>
-    <phase id="CDAOrganizerSDTC">
-        <active pattern="template-2.16.840.1.113883.10.12.805-2005-09-07T000000"/>
+    <phase id="CDAOrganizer">
+        <active pattern="template-2.16.840.1.113883.10.12.305-2005-09-07T000000"/>
     </phase>
-    <phase id="CDAProcedureSDTC">
-        <active pattern="template-2.16.840.1.113883.10.12.806-2005-09-07T000000"/>
+    <phase id="CDAProcedure">
+        <active pattern="template-2.16.840.1.113883.10.12.306-2005-09-07T000000"/>
     </phase>
-    <phase id="CDARegionOfInterestSDTC">
-        <active pattern="template-2.16.840.1.113883.10.12.807-2005-09-07T000000"/>
+    <phase id="CDARegionOfInterest">
+        <active pattern="template-2.16.840.1.113883.10.12.307-2005-09-07T000000"/>
     </phase>
-    <phase id="CDASubstanceAdministrationSDTC">
-        <active pattern="template-2.16.840.1.113883.10.12.808-2005-09-07T000000"/>
+    <phase id="CDASubstanceAdministration">
+        <active pattern="template-2.16.840.1.113883.10.12.308-2005-09-07T000000"/>
     </phase>
-    <phase id="CDASupplySDTC">
-        <active pattern="template-2.16.840.1.113883.10.12.809-2005-09-07T000000"/>
+    <phase id="CDASupply">
+        <active pattern="template-2.16.840.1.113883.10.12.309-2005-09-07T000000"/>
     </phase>
 
    <!-- Include schematrons from templates with explicit * or ** context (but no representing templates), only those used in scenario template -->
@@ -201,22 +201,22 @@
     <include href="include/1.2.208.184.14.11.1-2019-11-16T214752.sch"/>
    <!-- AppointmentCDAEncounterSDTC -->
     <include href="include/1.2.208.184.14.11.2-2019-12-15T233224.sch"/>
-   <!-- CDAActSDTC -->
-    <include href="include/2.16.840.1.113883.10.12.801-2005-09-07T000000.sch"/>
-   <!-- CDAEncounterSDTC -->
-    <include href="include/2.16.840.1.113883.10.12.802-2005-09-07T000000.sch"/>
-   <!-- CDAObservationSDTC -->
-    <include href="include/2.16.840.1.113883.10.12.803-2005-09-07T000000.sch"/>
-   <!-- CDAObservationMediaSDTC -->
-    <include href="include/2.16.840.1.113883.10.12.804-2005-09-07T000000.sch"/>
-   <!-- CDAOrganizerSDTC -->
-    <include href="include/2.16.840.1.113883.10.12.805-2005-09-07T000000.sch"/>
-   <!-- CDAProcedureSDTC -->
-    <include href="include/2.16.840.1.113883.10.12.806-2005-09-07T000000.sch"/>
-   <!-- CDARegionOfInterestSDTC -->
-    <include href="include/2.16.840.1.113883.10.12.807-2005-09-07T000000.sch"/>
-   <!-- CDASubstanceAdministrationSDTC -->
-    <include href="include/2.16.840.1.113883.10.12.808-2005-09-07T000000.sch"/>
-   <!-- CDASupplySDTC -->
-    <include href="include/2.16.840.1.113883.10.12.809-2005-09-07T000000.sch"/>
+   <!-- CDAAct -->
+    <include href="include/2.16.840.1.113883.10.12.301-2005-09-07T000000.sch"/>
+   <!-- CDAEncounter -->
+    <include href="include/2.16.840.1.113883.10.12.302-2005-09-07T000000.sch"/>
+   <!-- CDAObservation -->
+    <include href="include/2.16.840.1.113883.10.12.303-2005-09-07T000000.sch"/>
+   <!-- CDAObservationMedia -->
+    <include href="include/2.16.840.1.113883.10.12.304-2005-09-07T000000.sch"/>
+   <!-- CDAOrganizer -->
+    <include href="include/2.16.840.1.113883.10.12.305-2005-09-07T000000.sch"/>
+   <!-- CDAProcedure -->
+    <include href="include/2.16.840.1.113883.10.12.306-2005-09-07T000000.sch"/>
+   <!-- CDARegionOfInterest -->
+    <include href="include/2.16.840.1.113883.10.12.307-2005-09-07T000000.sch"/>
+   <!-- CDASubstanceAdministration -->
+    <include href="include/2.16.840.1.113883.10.12.308-2005-09-07T000000.sch"/>
+   <!-- CDASupply -->
+    <include href="include/2.16.840.1.113883.10.12.309-2005-09-07T000000.sch"/>
 </schema>
