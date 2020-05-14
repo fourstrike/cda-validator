@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class SVRLController {
-
+    //TODO: undo var
+    //TODO: undo cda-validator-schematron/pom.xml med <release>11</release>
   private final SchematronEngine saxonEngine;
 
   public SVRLController(
@@ -34,7 +36,8 @@ public class SVRLController {
       throw new RuntimeException("Only a single 'profile' environment is currently supported");
     }
 
-    var resource = resourceLoader.getResource(profiles.iterator().next());
+//    var resource = resourceLoader.getResource(profiles.iterator().next());
+    Resource resource = resourceLoader.getResource(profiles.iterator().next());
 
     if (!resource.exists()) {
       throw new RuntimeException("Profile at " + resource.getFile().toPath() + " not found");
@@ -47,7 +50,8 @@ public class SVRLController {
                consumes = MediaType.APPLICATION_XML_VALUE,
                produces = MediaType.APPLICATION_JSON_VALUE)
   public ValidationResponse validate(@RequestBody(required = true) String xmlDocument) {
-    var svlr = saxonEngine.validate(xmlDocument);
+//    var svlr = saxonEngine.validate(xmlDocument);
+	  SchematronOutputType svlr = saxonEngine.validate(xmlDocument);
     return toReturnType(svlr);
   }
 
@@ -76,7 +80,8 @@ public class SVRLController {
                     }
             );
 
-    var validationResponse = new ValidationResponse();
+//    var validationResponse = new ValidationResponse();
+    ValidationResponse validationResponse = new ValidationResponse();
     validationResponse.apply(validationHandler.getDiagnostics());
     return validationResponse;
   }

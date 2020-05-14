@@ -1,6 +1,9 @@
 package dk.medcom.cda.model;
 
 import dk.medcom.cda.CollectingValidationHandler.Level;
+
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -41,12 +44,19 @@ public class ValidationResponse {
     final List<ValidationEntry> mInfos = collidedMap.get(Level.INFO);
     final List<ValidationEntry> mWarnings = collidedMap.get(Level.WARNING);
     final List<ValidationEntry> mErrors = collidedMap.get(Level.ERROR);
+    
+    
+    infos = mInfos == null ? new LinkedList<>() : mInfos;
+    warnings = mWarnings == null ? new LinkedList<>() : mWarnings;
+    errors = mErrors == null ? new LinkedList<>() : mErrors;
 
-    infos = mInfos == null ? List.of()
-            : mInfos;
-    warnings = mWarnings == null ? List.of()
-            : mWarnings;
-    errors = mErrors == null ? List.of()
-            : mErrors;
+    //TODO: undo
+//    infos = mInfos == null ? List.of()
+//            : mInfos;
+//    warnings = mWarnings == null ? List.of()
+//            : mWarnings;
+//    errors = mErrors == null ? List.of()
+//            : mErrors;
+
   }
 }

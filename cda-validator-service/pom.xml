@@ -332,6 +332,7 @@
 						<directory>${project.build.directory}/classes/resources/</directory>
 						</resource>
 					</webResources>
+					<attachClasses>true</attachClasses>
 				</configuration>
 			</plugin>
         </plugins>

@@ -2,6 +2,7 @@ package dk.medcom.cda;
 
 import dk.medcom.cda.model.ValidationEntry;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -15,10 +16,15 @@ public class CollectingValidationHandler {
   Map<Level, List<ValidationEntry>> map;
 
   public CollectingValidationHandler() {
-
-    map = Map.of(Level.INFO, new LinkedList<>(),
-            Level.WARNING, new LinkedList<>(),
-            Level.ERROR, new LinkedList<>());
+//siden 9
+//    map = Map.of(Level.INFO, new LinkedList<>(),
+//            Level.WARNING, new LinkedList<>(),
+//            Level.ERROR, new LinkedList<>());
+	    //TODO: undo
+	  map = new HashMap();
+	  map.put(Level.INFO, new LinkedList<>());
+	  map.put(Level.WARNING, new LinkedList<>());
+	  map.put(Level.ERROR, new LinkedList<>());
   }
 
   public void handleError(final ValidationEntry validationEntry) {
