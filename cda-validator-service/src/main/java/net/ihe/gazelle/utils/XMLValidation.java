@@ -10,6 +10,8 @@ import javax.xml.parsers.SAXParserFactory;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 
+import org.apache.xerces.jaxp.SAXParserFactoryImpl;
+
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
@@ -26,7 +28,7 @@ public class XMLValidation {
 
 	static {
 		try {
-			factoryBASIC = SAXParserFactory.newInstance();
+			factoryBASIC = SAXParserFactoryImpl.newInstance();
 			factoryBASIC.setValidating(false);
 			factoryBASIC.setNamespaceAware(true);
 		} catch (final Exception e) {
@@ -39,7 +41,7 @@ public class XMLValidation {
 
 				@Override
 				public SAXParserFactory load(final String key) throws Exception {
-					final SAXParserFactory factoryCDA = SAXParserFactory.newInstance();
+					final SAXParserFactory factoryCDA = SAXParserFactoryImpl.newInstance();
 					factoryCDA.setNamespaceAware(true);
 					final SchemaFactory sfactory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
 					final Schema schema = sfactory.newSchema(new File(ProjectDependencies.CDA_XSD));
